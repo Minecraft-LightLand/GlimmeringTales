@@ -4,8 +4,8 @@
     "children": [
       {
         "type": "l2magic:sound",
-        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:entity.arrow.hit",
+        "pitch": "5+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:entity.wind_charge.wind_burst",
         "volume": "1"
       },
       {

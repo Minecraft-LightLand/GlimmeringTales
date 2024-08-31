@@ -12,7 +12,7 @@
         },
         {
           "type": "l2magic:sound",
-          "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+          "pitch": "0.5+rand(-0.1,0.1)+rand(-0.1,0.1)",
           "sound": "minecraft:item.firecharge.use",
           "volume": "1"
         },

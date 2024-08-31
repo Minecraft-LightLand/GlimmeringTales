@@ -4,7 +4,7 @@
     "children": [
       {
         "type": "l2magic:sound",
-        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "pitch": "2+rand(-0.1,0.1)+rand(-0.1,0.1)",
         "sound": "minecraft:block.powder_snow.place",
         "volume": "1"
       },

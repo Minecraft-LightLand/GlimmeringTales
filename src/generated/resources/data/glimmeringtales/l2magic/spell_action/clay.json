@@ -10,7 +10,7 @@
             "type": "l2magic:sound",
             "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
             "sound": "minecraft:block.gravel.hit",
-            "volume": "1"
+            "volume": "0.5"
           },
           {
             "type": "l2magic:set_block",

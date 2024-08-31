@@ -7,7 +7,7 @@
         "action": {
           "type": "l2magic:sound",
           "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-          "sound": "minecraft:block.snow.hit",
+          "sound": "minecraft:entity.breeze.idle_ground",
           "volume": "1"
         },
         "predicate": "TickUsing%2==0"

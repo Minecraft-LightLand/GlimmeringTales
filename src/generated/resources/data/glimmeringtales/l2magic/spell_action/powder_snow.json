@@ -6,8 +6,8 @@
       "children": [
         {
           "type": "l2magic:sound",
-          "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-          "sound": "minecraft:block.powder_snow.hit",
+          "pitch": "1+rand(-0.5,0.2)+rand(-0.5,0.2)",
+          "sound": "minecraft:entity.breeze.idle_ground",
           "volume": "1"
         },
         {

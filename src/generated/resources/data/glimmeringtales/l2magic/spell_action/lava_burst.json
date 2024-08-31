@@ -5,7 +5,7 @@
       {
         "type": "l2magic:sound",
         "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:item.firecharge.use",
+        "sound": "minecraft:block.pointed_dripstone.drip_lava_into_cauldron",
         "volume": "1"
       },
       {
