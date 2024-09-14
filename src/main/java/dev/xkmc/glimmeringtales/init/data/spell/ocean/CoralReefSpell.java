@@ -50,7 +50,7 @@ public class CoralReefSpell {
 					"[Block] Create bubbles to attack nearby entities",
 					"For all entities in range, create bubble attack dealing %s",
 					SpellTooltipData.damage()
-			).graph("O<->LSF");
+			).graph("O->LSF");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

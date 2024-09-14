@@ -29,7 +29,7 @@ public class ThunderSpells {
 					"[Block] Create a lightning strike",
 					"Create a lightning strike in target position, inflicting %s multiple times",
 					SpellTooltipData.of(GTEngine.THUNDER)
-			);
+			).graph("T<->SFO");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

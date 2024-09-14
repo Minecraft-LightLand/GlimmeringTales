@@ -2,6 +2,19 @@
   "cost": 80,
   "elem": "glimmeringtales:snow",
   "focus": 10,
+  "graph": {
+    "flows": [
+      "ST<->LEFO"
+    ],
+    "map": {
+      "E": "glimmeringtales:earth",
+      "F": "glimmeringtales:flame",
+      "L": "glimmeringtales:life",
+      "O": "glimmeringtales:ocean",
+      "S": "glimmeringtales:snow",
+      "T": "glimmeringtales:thunder"
+    }
+  },
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:blue_ice",
   "tooltip": {

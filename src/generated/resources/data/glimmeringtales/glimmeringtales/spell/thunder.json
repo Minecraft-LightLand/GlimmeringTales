@@ -2,6 +2,17 @@
   "cost": 100,
   "elem": "glimmeringtales:thunder",
   "focus": 10,
+  "graph": {
+    "flows": [
+      "T<->SFO"
+    ],
+    "map": {
+      "F": "glimmeringtales:flame",
+      "O": "glimmeringtales:ocean",
+      "S": "glimmeringtales:snow",
+      "T": "glimmeringtales:thunder"
+    }
+  },
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 16.0,

@@ -58,9 +58,9 @@ public class MagicHexScreen extends Screen {
 		if (Math.abs(accurate_mouse_y - my) > 1)
 			accurate_mouse_y = my;
 		graph.box.render(g, 0, col_bg, WindowBox.RenderType.FILL);
-		//graph.box.startClip(g); TODO
+		graph.box.startClip(g);
 		graph.render(g, accurate_mouse_x, accurate_mouse_y, partial);
-		//graph.box.endClip(g); TODO
+		graph.box.endClip(g);
 		graph.box.render(g, 8, col_m1, WindowBox.RenderType.MARGIN);
 		graph.box.render(g, 2, col_m0, WindowBox.RenderType.MARGIN);
 

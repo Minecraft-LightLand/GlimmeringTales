@@ -4,7 +4,7 @@
   "focus": 30,
   "graph": {
     "flows": [
-      "O<->LSF"
+      "O->LSF"
     ],
     "map": {
       "F": "glimmeringtales:flame",

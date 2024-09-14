@@ -1,6 +1,5 @@
 package dev.xkmc.glimmeringtales.content.research.render;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 
@@ -39,27 +38,11 @@ public class WindowBox {
 	}
 
 	public void startClip(GuiGraphics g) {
-		g.pose().pushPose();
-		RenderSystem.enableDepthTest();
-		g.pose().translate(0.0F, 0.0F, 950.0F);
-		RenderSystem.colorMask(false, false, false, false);
-		g.fill(4680, 2260, -4680, -2260, -16777216);
-		RenderSystem.colorMask(true, true, true, true);
-		g.pose().translate(0.0F, 0.0F, -950.0F);
-		RenderSystem.depthFunc(518);
-		g.fill(x, y, x + w, y + h, -16777216);
-		RenderSystem.depthFunc(515);
+		g.enableScissor(x, y, x + w, y + h);
 	}
 
 	public void endClip(GuiGraphics g) {
-		RenderSystem.depthFunc(518);
-		g.pose().translate(0.0F, 0.0F, -950.0F);
-		RenderSystem.colorMask(false, false, false, false);
-		g.fill(4680, 2260, -4680, -2260, -16777216);
-		RenderSystem.colorMask(true, true, true, true);
-		g.pose().translate(0.0F, 0.0F, 950.0F);
-		RenderSystem.depthFunc(515);
-		g.pose().popPose();
+		g.disableScissor();
 	}
 
 	public enum RenderType {

@@ -55,7 +55,7 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			);
+			).graph("S->LEFO");
 
 	public static final NatureSpellBuilder PACK_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("packed_ice")).cost(60).damageFreeze()
@@ -65,7 +65,7 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			);
+			).graph("S<->LEFO");
 
 	public static final NatureSpellBuilder BLUE_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("blue_ice")).cost(80).damageFreeze()
@@ -75,7 +75,7 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			);
+			).graph("ST<->LEFO");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx, DoubleVariable dmg, IntVariable dur) {
 		var range = "5";

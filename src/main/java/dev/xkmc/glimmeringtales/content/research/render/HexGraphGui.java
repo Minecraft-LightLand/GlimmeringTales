@@ -257,7 +257,7 @@ public class HexGraphGui {
 		int[] col_masks = new int[6];
 		for (int i = 0; i < 6; i++) {
 			SpellElement elem = screen.result.getElem(i);
-			if (elem != null) {
+			if (elem != null && !ignore[i]) {
 				masks[i] = 1 << ELEM_2_ID.get(elem);
 				col_masks[ELEM_2_ID.get(elem)] = elem.getColor();
 			}
@@ -303,7 +303,7 @@ public class HexGraphGui {
 				double y = cell.getY() * magn;
 				int dire = f.arrow.dir.ind;
 				int n = 0;
-				for (int i = 0; i < 5; i++) {
+				for (int i = 0; i < 6; i++) {
 					if ((mask & 1 << i) > 0) {
 						cols[n] = col_masks[i];
 						n++;
@@ -382,7 +382,7 @@ public class HexGraphGui {
 				} else {
 					if (selected == null) {
 						col = 0x00B0B0B0;
-						for (int i = 0; i < 5; i++) {
+						for (int i = 0; i < 6; i++) {
 							if (masks[cell.row][cell.cell] == 1 << i) {
 								col = col_masks[i];
 							}
