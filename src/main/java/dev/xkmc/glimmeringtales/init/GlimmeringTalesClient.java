@@ -36,11 +36,11 @@ public class GlimmeringTalesClient {
 	@SubscribeEvent
 	public static void onModelLoad(ModelEvent.RegisterAdditional event) {
 		for (var item : GTItems.CORES) {
-			event.register(item.get().model());
+			event.register(item.model());
 		}
 		for (var item : GTItems.HANDLES) {
-			event.register(item.get().icon());
-			event.register(item.get().model());
+			event.register(item.icon());
+			event.register(item.model());
 		}
 	}
 

@@ -1,0 +1,33 @@
+{
+  "type": "glimmeringtales:wand_craft",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "l2complements:blackstone_core"
+    },
+    "F": {
+      "item": "l2complements:soul_flame"
+    },
+    "I": {
+      "item": "minecraft:blaze_rod"
+    },
+    "O": {
+      "item": "glimmeringtales:crystal_of_nature"
+    },
+    "V": {
+      "item": "minecraft:twisting_vines"
+    },
+    "W": {
+      "item": "minecraft:weeping_vines"
+    }
+  },
+  "pattern": [
+    " WO",
+    "FIC",
+    "IV "
+  ],
+  "result": {
+    "count": 1,
+    "id": "glimmeringtales:nether_wand"
+  }
+}

@@ -56,7 +56,7 @@ public class DripstoneSpells {
 					"[Block] Shoot stalagmite spikes from ground",
 					"Shoot stalagmite spikes from ground to pierce entities, dealing %s and inflict %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, GTEngine.EP_STACK)
-			).graph("E->SF","L->OT","SO->E","FT->L");
+			);
 
 	public static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/pointed_dripstone_up_tip.png");
 	public static final DoubleVariable DMG = DoubleVariable.of("4");

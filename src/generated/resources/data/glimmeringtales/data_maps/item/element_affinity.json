@@ -48,9 +48,21 @@
         "glimmeringtales:life": 0.5
       }
     },
+    "glimmeringtales:nether_wand": {
+      "affinity": {
+        "glimmeringtales:earth": 0.25,
+        "glimmeringtales:flame": 0.25
+      }
+    },
     "glimmeringtales:ocean_wand": {
       "affinity": {
         "glimmeringtales:ocean": 0.25,
+        "glimmeringtales:thunder": 0.25
+      }
+    },
+    "glimmeringtales:thunder_wand": {
+      "affinity": {
+        "glimmeringtales:snow": 0.25,
         "glimmeringtales:thunder": 0.25
       }
     },

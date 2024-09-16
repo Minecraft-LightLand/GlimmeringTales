@@ -4,6 +4,7 @@ import com.google.common.base.Suppliers;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import dev.xkmc.l2core.util.Proxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -42,12 +43,12 @@ public class GTBEWLR extends BlockEntityWithoutLevelRenderer {
 	@Override
 	public void renderByItem(ItemStack stack, ItemDisplayContext type, PoseStack pose,
 							 MultiBufferSource bufferSource, int light, int overlay) {
-		if (stack.getItem() instanceof RuneWandItem item) {
-			renderWand(item, stack, type, pose, bufferSource, light, overlay);
+		if (stack.getItem() instanceof RuneWandItem) {
+			renderWand(stack, type, pose, bufferSource, light, overlay);
 		}
 	}
 
-	public void renderWand(RuneWandItem item, ItemStack stack, ItemDisplayContext type, PoseStack pose,
+	public void renderWand(ItemStack stack, ItemDisplayContext type, PoseStack pose,
 						   MultiBufferSource bufferSource, int light, int overlay) {
 		var manager = Minecraft.getInstance().getModelManager();
 		var handle = RuneWandItem.getHandle(stack);
@@ -70,11 +71,13 @@ public class GTBEWLR extends BlockEntityWithoutLevelRenderer {
 	}
 
 	private static void wandCore(WandHandleItem item, PoseStack pose) {
-		float tick = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(true) + Minecraft.getInstance().player.tickCount;
-		float offset = item.offset();
-		float size = item.size();
+		var pl = Minecraft.getInstance().player;
+		if (pl == null) return;
+		float tick = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(true) + pl.tickCount;
+		var data = item.data(Proxy.getRegistryAccess());
+		float size = data.size();
 		pose.translate(0.5, 0.5, 0.5);
-		pose.translate(0, offset, 0);
+		pose.translate(0, data.offset(), 0);
 		pose.rotateAround(Axis.YP.rotationDegrees(tick * 20), 0, 0, 0);
 		pose.rotateAround(new Quaternionf().rotateTo(1, 1, 1, 0, 1, 0), 0, 0, 0);
 		pose.scale(size, size, size);

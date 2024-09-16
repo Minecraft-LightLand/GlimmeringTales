@@ -7,6 +7,7 @@ import dev.xkmc.glimmeringtales.content.capability.PlayerResearchCapability;
 import dev.xkmc.glimmeringtales.content.core.spell.*;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeData;
 import dev.xkmc.glimmeringtales.content.item.wand.RuneSwapType;
+import dev.xkmc.glimmeringtales.content.item.wand.WandData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.l2backpack.content.quickswap.type.MatcherSwapType;
@@ -49,6 +50,8 @@ public class GTRegistries {
 			GlimmeringTales.REG.dataMap("block_melt", Registries.BLOCK, BlockReplace.class);
 	public static final DataMapReg<Item, AttributeData> ITEM_ATTR =
 			GlimmeringTales.REG.dataMap("curio_attributes", Registries.ITEM, AttributeData.class);
+	public static final DataMapReg<Item, WandData> WAND_MODEL =
+			GlimmeringTales.REG.dataMap("wand_model", Registries.ITEM, WandData.class);
 
 	public static final SimpleEntry<Attribute> MAX_MANA = reg("max_mana", 400, 1000000, "Max Mana");
 	public static final SimpleEntry<Attribute> MANA_REGEN = reg("mana_regen", 20, 1000000, "Mana Regen");

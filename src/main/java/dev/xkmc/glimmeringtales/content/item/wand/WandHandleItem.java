@@ -5,6 +5,7 @@ import dev.xkmc.glimmeringtales.init.data.GTLang;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -18,12 +19,8 @@ import java.util.List;
 
 public class WandHandleItem extends Item {
 
-	private final float size, offset;
-
-	public WandHandleItem(Properties prop, float size, float offset) {
+	public WandHandleItem(Properties prop) {
 		super(prop);
-		this.size = size;
-		this.offset = offset;
 	}
 
 	public ModelResourceLocation model() {
@@ -34,12 +31,11 @@ public class WandHandleItem extends Item {
 		return ModelResourceLocation.standalone(BuiltInRegistries.ITEM.getKey(this).withPath(e -> "item/" + e + "_icon"));
 	}
 
-	public float size() {
-		return size;
-	}
 
-	public float offset() {
-		return offset;
+	public WandData data(@Nullable RegistryAccess access) {
+		if (access == null) return WandData.DEF;
+		var ans = GTRegistries.WAND_MODEL.get(access, builtInRegistryHolder());
+		return ans == null ? WandData.DEF : ans;
 	}
 
 	@Override
