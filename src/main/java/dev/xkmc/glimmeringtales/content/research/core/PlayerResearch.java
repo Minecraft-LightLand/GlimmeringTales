@@ -69,14 +69,13 @@ public class PlayerResearch {
 		if (player instanceof ServerPlayer sp) {
 			var research = get(id);
 			if (research != null) {
-				var handler = research.getSolution();
-				var flow = handler.getMatrix(true);
-				var order = dat.order();
-				var graph = research.getGraph();
-				if (order.check(handler, flow, graph, new boolean[6], new boolean[6])) {
-					data.put(id, dat);
-				}
-
+				//var handler = research.getSolution();
+				//var flow = handler.getMatrix(true);
+				//var order = dat.order();
+				//var graph = research.getGraph();
+				//TODO verify
+				//if (order.check(handler, flow, graph, new boolean[6], new boolean[6]))
+				data.put(id, dat);
 			}
 			data.sync(sp);
 		} else {

@@ -8,6 +8,7 @@ import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.core.spell.SpellElement;
 import dev.xkmc.glimmeringtales.content.entity.hostile.MobCastingData;
+import dev.xkmc.glimmeringtales.content.research.core.HexGraph;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
@@ -130,7 +131,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	public NatureSpellBuilder focusAndCost(int focus, int cost, int max) {
 		nature = nature(id);
 		this.natureFactory = e -> new NatureSpell(e, elem.get(), focus, cost, max,
-				desc == null ? warnEmpty() : desc.data, mob, graph == null ? null : graph.get());
+				desc == null ? warnEmpty() : desc.data, mob, graph == null ? warnNoGraph() : graph.get());
 		return this;
 	}
 
@@ -278,6 +279,12 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	private SpellTooltipData warnEmpty() {
 		GlimmeringTales.LOGGER.error("Spell {} does not have description setup", id);
 		return SpellTooltipData.of();
+	}
+
+	@Nullable
+	private HexGraphData warnNoGraph() {
+		GlimmeringTales.LOGGER.error("Spell {} does not have graph setup", id);
+		return null;
 	}
 
 	public record BlockSpellBuilder(DataMapProvider.Builder<BlockSpell, Block> builder) {

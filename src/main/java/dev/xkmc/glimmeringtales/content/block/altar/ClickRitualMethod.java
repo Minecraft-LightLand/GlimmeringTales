@@ -28,7 +28,7 @@ public class ClickRitualMethod implements UseItemOnBlockMethod, UseWithoutItemBl
 			return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 		if (stack.isEmpty())
 			return ItemInteractionResult.SKIP_DEFAULT_BLOCK_INTERACTION;
-		level.playSound(null,pos, SoundEvents.END_PORTAL_FRAME_FILL, SoundSource.BLOCKS,1,1);
+		level.playSound(null, pos, SoundEvents.END_PORTAL_FRAME_FILL, SoundSource.BLOCKS, 1, 1);
 		be.setItem(stack.split(1));
 		return ItemInteractionResult.SUCCESS;
 	}
@@ -39,7 +39,7 @@ public class ClickRitualMethod implements UseItemOnBlockMethod, UseWithoutItemBl
 	) {
 		if (!(level.getBlockEntity(pos) instanceof BaseRitualBlockEntity be))
 			return InteractionResult.PASS;
-		if (be.getItem().isEmpty())
+		if (be.getItem().isEmpty() || be.locked())
 			return InteractionResult.PASS;
 		ItemStack stack = be.getItem();
 		be.setItem(ItemStack.EMPTY);
