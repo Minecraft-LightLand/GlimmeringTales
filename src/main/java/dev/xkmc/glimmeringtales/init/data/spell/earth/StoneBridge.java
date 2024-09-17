@@ -16,11 +16,13 @@ import dev.xkmc.l2magic.content.engine.modifier.ForwardOffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
+import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
@@ -49,6 +51,11 @@ public class StoneBridge {
 						new PredicateLogic(
 								BlockTestCondition.Type.REPLACEABLE.get(),
 								new ListLogic(List.of(
+										new SoundInstance(
+												SoundEvents.STONE_PLACE,
+												DoubleVariable.of("1"),
+												DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
+										),
 										new SetBlock(GTItems.FAKE_STONE.getDefaultState()),
 										new ScheduleTick(IntVariable.of("rand(180,220)"), GTItems.FAKE_STONE.get())
 								)),

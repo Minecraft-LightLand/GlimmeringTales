@@ -104,6 +104,11 @@ public class AmethystPenetration {
 	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
 				new SoundInstance(
+						SoundEvents.BREEZE_SHOOT,
+						DoubleVariable.of("0.3"),
+						DoubleVariable.of("1.8+rand(-0.1,0.1)+rand(-0.1,0.1)")
+				),
+				new SoundInstance(
 						SoundEvents.AMETHYST_BLOCK_BREAK,
 						DoubleVariable.of("1"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")

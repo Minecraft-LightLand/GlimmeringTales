@@ -70,7 +70,7 @@ public class SnowSpells {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.SNOW_BREAK,
-						DoubleVariable.of("1"),
+						DoubleVariable.of("10"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new LoopIterator(

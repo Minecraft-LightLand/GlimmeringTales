@@ -83,6 +83,11 @@ public class AmethystSpells {
 		int theta = 24;
 		return new ListLogic(List.of(
 				new SoundInstance(
+						SoundEvents.WIND_CHARGE_BURST.value(),
+						DoubleVariable.of("2"),
+						DoubleVariable.of("5+rand(-0.1,0.1)+rand(-0.1,0.1)")
+				),
+				new SoundInstance(
 						SoundEvents.AMETHYST_BLOCK_BREAK,
 						DoubleVariable.of("1"),
 						DoubleVariable.of("0.8+rand(-0.1,0.1)+rand(-0.1,0.1)")
