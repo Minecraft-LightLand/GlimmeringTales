@@ -82,7 +82,7 @@ public class IceSpells {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.POWDER_SNOW_PLACE,
-						DoubleVariable.of("1"),
+						DoubleVariable.of("10"),
 						DoubleVariable.of("2+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new DelayedIterator(

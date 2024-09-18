@@ -66,7 +66,7 @@ public class CoralReefSpell {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.BUBBLE_COLUMN_BUBBLE_POP,
-						DoubleVariable.of("1"),
+						DoubleVariable.of("10"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new LoopIterator(

@@ -128,6 +128,12 @@ public class SandSpells {
 								DoubleVariable.of("1"),
 								DoubleVariable.of("1+rand(-0.5,0.2)+rand(-0.5,0.2)")
 						), null),
+				new DelayedIterator(IntVariable.of("90"), IntVariable.of("1"),
+						new SoundInstance(
+								SoundEvents.SAND_BREAK,
+								DoubleVariable.of("1"),
+								DoubleVariable.of("1+rand(-0.5,0.2)+rand(-0.5,0.2)")
+						), null),
 				new DelayedIterator(IntVariable.of("90"), IntVariable.of("1"), tick, null)
 						.move(OffsetModifier.ABOVE)
 		));
