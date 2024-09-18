@@ -4,6 +4,12 @@
     "children": [
       {
         "type": "l2magic:sound",
+        "pitch": "1.8+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:entity.breeze.shoot",
+        "volume": "0.3"
+      },
+      {
+        "type": "l2magic:sound",
         "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
         "sound": "minecraft:block.amethyst_block.break",
         "volume": "1"

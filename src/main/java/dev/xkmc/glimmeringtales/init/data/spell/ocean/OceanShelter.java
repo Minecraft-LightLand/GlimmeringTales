@@ -90,8 +90,8 @@ public class OceanShelter {
 	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
 				new SoundInstance(
-						SoundEvents.CONDUIT_AMBIENT_SHORT,
-						DoubleVariable.of("1"),
+						SoundEvents.BUBBLE_COLUMN_BUBBLE_POP,
+						DoubleVariable.of("2"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new CustomProjectileShoot(

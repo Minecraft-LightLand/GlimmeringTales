@@ -4,7 +4,13 @@
     "children": [
       {
         "type": "l2magic:sound",
-        "pitch": "rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:entity.breeze.jump",
+        "volume": "0.3"
+      },
+      {
+        "type": "l2magic:sound",
+        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
         "sound": "minecraft:block.pointed_dripstone.land",
         "volume": "1"
       },

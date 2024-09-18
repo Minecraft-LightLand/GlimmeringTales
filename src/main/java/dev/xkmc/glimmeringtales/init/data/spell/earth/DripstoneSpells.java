@@ -12,6 +12,7 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
@@ -90,9 +91,14 @@ public class DripstoneSpells {
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
 				new SoundInstance(
+						SoundEvents.BREEZE_JUMP,
+						DoubleVariable.of("0.3"),
+						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
+				),
+				new SoundInstance(
 						SoundEvents.POINTED_DRIPSTONE_LAND,
 						DoubleVariable.of("1"),
-						DoubleVariable.of("rand(-0.1,0.1)+rand(-0.1,0.1)")
+						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new CustomProjectileShoot(
 						DoubleVariable.of("0.8"),

@@ -5,8 +5,8 @@
       {
         "type": "l2magic:sound",
         "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:block.conduit.ambient.short",
-        "volume": "1"
+        "sound": "minecraft:block.bubble_column.bubble_pop",
+        "volume": "2"
       },
       {
         "type": "l2magic:move",
