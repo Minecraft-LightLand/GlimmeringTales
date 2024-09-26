@@ -104,7 +104,7 @@ public class GTItems {
 
 	public static final VarHolder<WandHandleItem>
 			WOOD_WAND, LIFE_WAND, GOLD_WAND, OCEAN_WAND,
-			THUNDER_WAND, NETHER_WAND;
+			THUNDER_WAND, NETHER_WAND, ENDER_WAND;
 
 
 	public static final BlockEntry<SelfDestroyTransparent> FAKE_GLASS;
@@ -375,13 +375,12 @@ public class GTItems {
 			RUNES = VarItemInit.setup(GlimmeringTales.REGISTRATE, GlimmeringTales.loc("block_runes"),
 					e -> new BlockRuneItem(new Item.Properties().fireResistant()),
 					(rl, b) -> b.tag(GTTagGen.RUNE).model((ctx, pvd) -> {
-								pvd.generated(ctx, pvd.modLoc("item/rune/" + ctx.getName()));
-								pvd.getBuilder(ctx.getName() + "_core").parent(
-												new ModelFile.UncheckedModelFile(pvd.modLoc("custom/rune_core")))
-										.texture("all", pvd.modLoc("item/rune/" + ctx.getName()))
-										.renderType("cutout");
-							})
-							.onRegister(CORES::add)
+						pvd.generated(ctx, pvd.modLoc("item/rune/" + ctx.getName()));
+						pvd.getBuilder(ctx.getName() + "_core").parent(
+										new ModelFile.UncheckedModelFile(pvd.modLoc("custom/rune_core")))
+								.texture("all", pvd.modLoc("item/rune/" + ctx.getName()))
+								.renderType("cutout");
+					}).onRegister(CORES::add)
 			);
 
 			SPELLS = VarItemInit.setup(GlimmeringTales.REGISTRATE, GlimmeringTales.loc("spell_runes"),
@@ -398,7 +397,7 @@ public class GTItems {
 			);
 
 			WAND_HANDLES = VarItemInit.setup(GlimmeringTales.REGISTRATE, GlimmeringTales.loc("wand_handles"),
-					e -> new WandHandleItem(new Item.Properties()),
+					e -> new WandHandleItem(new Item.Properties(), e),
 					(rl, b) -> b.removeTab(TAB.key())
 							.model((ctx, pvd) -> {
 								pvd.handheld(ctx, pvd.modLoc("item/handle/" + ctx.getName()));
@@ -409,8 +408,12 @@ public class GTItems {
 												new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName())))
 										.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
 										.renderType("cutout");
-							})
-							.onRegister(HANDLES::add)
+								if (ctx.get().shadow() != null)
+									pvd.getBuilder(ctx.getName() + "_shadow").parent(
+													new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName() + "_shadow")))
+											.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
+											.renderType("cutout");
+							}).onRegister(HANDLES::add)
 			);
 
 			Curios.register();
@@ -468,6 +471,7 @@ public class GTItems {
 			OCEAN_WAND = handle("ocean_wand", 0.25f, 0.92f, "Ocean");
 			THUNDER_WAND = handle("thunder_wand", 0.23f, 0.70f, "Thunder");
 			NETHER_WAND = handle("nether_wand", 0.22f, 0.75f, "Nether");
+			ENDER_WAND = handle("ender_wand", 0.25f, 0.75f, "Ender");
 		}
 
 		{
@@ -515,18 +519,14 @@ public class GTItems {
 	}
 
 	private static ItemEntry<SpellCoreItem> core(String id) {
-		var ans = GlimmeringTales.REGISTRATE.item(id, SpellCoreItem::new)
+		return GlimmeringTales.REGISTRATE.item(id, SpellCoreItem::new)
 				.model((ctx, pvd) -> {
 					pvd.generated(ctx, pvd.modLoc("item/crystal/" + ctx.getName()));
 					pvd.getBuilder(ctx.getName() + "_core").parent(
 									new ModelFile.UncheckedModelFile(pvd.modLoc("custom/rune_core")))
 							.texture("all", pvd.modLoc("item/core/" + ctx.getName()))
 							.renderType("cutout");
-				})
-				.tag(GTTagGen.CRYSTAL)
-				.onRegister(CORES::add)
-				.register();
-		return ans;
+				}).tag(GTTagGen.CRYSTAL).onRegister(CORES::add).register();
 	}
 
 	private static VarHolder<BlockRuneItem> rune(String id, String name) {

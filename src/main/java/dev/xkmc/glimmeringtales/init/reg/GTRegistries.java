@@ -29,6 +29,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -73,15 +74,14 @@ public class GTRegistries {
 	public static final MatcherSwapType SWAP = new RuneSwapType();
 
 	private static ElemEntry reg(String id, ChatFormatting color) {
-		var attr = reg(id + "_affinity", 0, 1000,
-				RegistrateLangProvider.toEnglishName(id + "_affinity"), L2DamageTracker.PERCENTAGE);
+		var attr = L2DamageTracker.regPerc(GlimmeringTales.REGISTRATE, id + "_affinity",
+				RegistrateLangProvider.toEnglishName(id + "_affinity"));
 		return new ElemEntry(GlimmeringTales.REGISTRATE.generic(ELEMENT, id, () -> new SpellElement(color, attr))
 				.defaultLang().register(), attr);
 	}
 
-	@SafeVarargs
-	public static SimpleEntry<Attribute> reg(String id, double def, double max, String name, TagKey<Attribute>... tags) {
-		return L2DamageTracker.regWrapped(GlimmeringTales.REGISTRATE, id, def, 0, max, name, tags);
+	public static SimpleEntry<Attribute> reg(String id, double def, double max, String name) {
+		return L2DamageTracker.reg(GlimmeringTales.REGISTRATE, id, e -> new RangedAttribute(e, def, 0, max), name);
 	}
 
 	public static void register() {

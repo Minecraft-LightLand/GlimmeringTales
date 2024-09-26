@@ -1,0 +1,7 @@
+{
+  "parent": "glimmeringtales:custom/ender_wand",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "glimmeringtales:item/wand/ender_wand"
+  }
+}

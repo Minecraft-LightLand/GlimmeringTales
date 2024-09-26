@@ -1,5 +1,9 @@
 {
   "values": {
+    "glimmeringtales:ender_wand": {
+      "offset": 0.75,
+      "size": 0.25
+    },
     "glimmeringtales:gold_wand": {
       "offset": 0.75,
       "size": 0.25

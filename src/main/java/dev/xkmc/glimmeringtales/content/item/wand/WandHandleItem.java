@@ -19,8 +19,11 @@ import java.util.List;
 
 public class WandHandleItem extends Item {
 
-	public WandHandleItem(Properties prop) {
+	private final ResourceLocation id;
+
+	public WandHandleItem(Properties prop, ResourceLocation id) {
 		super(prop);
+		this.id = id;
 	}
 
 	public ModelResourceLocation model() {
@@ -31,6 +34,11 @@ public class WandHandleItem extends Item {
 		return ModelResourceLocation.standalone(BuiltInRegistries.ITEM.getKey(this).withPath(e -> "item/" + e + "_icon"));
 	}
 
+	@Nullable
+	public ModelResourceLocation shadow() {
+		if (!id.getPath().startsWith("ender")) return null;
+		return ModelResourceLocation.standalone(BuiltInRegistries.ITEM.getKey(this).withPath(e -> "item/" + e + "_shadow"));
+	}
 
 	public WandData data(@Nullable RegistryAccess access) {
 		if (access == null) return WandData.DEF;

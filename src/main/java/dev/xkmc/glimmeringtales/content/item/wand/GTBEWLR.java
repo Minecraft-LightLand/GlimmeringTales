@@ -9,6 +9,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderDispatcher;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
@@ -53,16 +54,20 @@ public class GTBEWLR extends BlockEntityWithoutLevelRenderer {
 		var manager = Minecraft.getInstance().getModelManager();
 		var handle = RuneWandItem.getHandle(stack);
 		if (type == ItemDisplayContext.GUI) {
-			render(stack, type, false, pose, bufferSource, light, overlay,
-					manager.getModel(handle.icon()), Consumers.nop());
+			render(stack, pose, bufferSource, light, overlay,
+					manager.getModel(handle.icon()), Consumers.nop(), false);
 			return;
 		}
-		render(stack, type, false, pose, bufferSource, light, overlay,
-				manager.getModel(handle.model()), GTBEWLR::wandHandle);
+		var shadow = handle.shadow();
+		if (shadow != null)
+			render(stack, pose, bufferSource, light, overlay,
+					manager.getModel(shadow), GTBEWLR::wandHandle, true);
+		render(stack, pose, bufferSource, light, overlay,
+				manager.getModel(handle.model()), GTBEWLR::wandHandle, false);
 		var sel = RuneWandItem.getCore(stack);
 		if (sel.getItem() instanceof IWandCoreItem core) {
-			render(sel, type, false, pose, bufferSource, light, overlay,
-					manager.getModel(core.model()), p -> wandCore(handle, p));
+			render(sel, pose, bufferSource, light, overlay,
+					manager.getModel(core.model()), p -> wandCore(handle, p), false);
 		}
 	}
 
@@ -84,19 +89,17 @@ public class GTBEWLR extends BlockEntityWithoutLevelRenderer {
 		pose.translate(-0.5, -0.5, -0.5);
 	}
 
-	public void render(ItemStack stack, ItemDisplayContext ctx, boolean offhand, PoseStack pose, MultiBufferSource buffer,
-					   int light, int overlay, BakedModel baked, Consumer<PoseStack> transform) {
+	public void render(ItemStack stack, PoseStack pose, MultiBufferSource buffer,
+					   int light, int overlay, BakedModel baked, Consumer<PoseStack> transform, boolean ender) {
 		ItemRenderer ir = Minecraft.getInstance().getItemRenderer();
 		if (!stack.isEmpty()) {
 			pose.pushPose();
 			transform.accept(pose);
-			boolean flag1 = true;
-			for (var model : baked.getRenderPasses(stack, flag1)) {
-				for (var rendertype : model.getRenderTypes(stack, flag1)) {
-					// rendertype = RenderType.END_GATEWAY;
-					VertexConsumer vertexconsumer;
-					vertexconsumer = ItemRenderer.getFoilBufferDirect(buffer, rendertype, true, stack.hasFoil());
-					ir.renderModelLists(model, stack, light, overlay, pose, vertexconsumer);
+			for (var model : baked.getRenderPasses(stack, true)) {
+				for (var rendertype : model.getRenderTypes(stack, true)) {
+					if (ender) rendertype = RenderType.END_GATEWAY;
+					VertexConsumer vc = ItemRenderer.getFoilBufferDirect(buffer, rendertype, true, !ender && stack.hasFoil());
+					ir.renderModelLists(model, stack, light, overlay, pose, vc);
 				}
 			}
 			pose.popPose();

@@ -12,6 +12,8 @@ import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 
+import java.util.Optional;
+
 @EventBusSubscriber(value = Dist.CLIENT, modid = GlimmeringTales.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class GlimmeringTalesClient {
 
@@ -41,6 +43,7 @@ public class GlimmeringTalesClient {
 		for (var item : GTItems.HANDLES) {
 			event.register(item.icon());
 			event.register(item.model());
+			Optional.ofNullable(item.shadow()).ifPresent(event::register);
 		}
 	}
 
