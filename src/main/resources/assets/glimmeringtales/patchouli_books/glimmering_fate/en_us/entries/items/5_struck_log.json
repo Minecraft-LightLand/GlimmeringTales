@@ -1,0 +1,70 @@
+{
+  "name": "雷焰木",
+  "icon": "glimmeringtales:struck_log",
+  "category": "glimmeringtales:items",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:struck_log",
+      "title": "雷焰木",
+      "text": "在$(9)沼泽$()和$(9)橡树林$()中，存有少量$(9)雷焰树$()。$(br2)这种树已经失去了生长能力，$(9)不会掉落树苗$()。$(br2)在$(9)露天$()情况下点燃树干就会降下雷电。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "雷焰树",
+      "enable_visualize": false,
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "  B  ",
+            " BBB ",
+            "  B  ",
+            "     "
+          ],
+          [
+            "     ",
+            "  BB ",
+            " BAB ",
+            "  B  ",
+            "     "
+          ],
+          [
+            "BBBBB",
+            "BBBBB",
+            "BBABB",
+            "BBBBB",
+            "BBBBB"
+          ],
+          [
+            "BBBBB",
+            "BBBBB",
+            "BBABB",
+            "BBBBB",
+            "BBBB "
+          ],
+          [
+            "     ",
+            "     ",
+            "  A  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  A  ",
+            "  0  ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "A": "glimmeringtales:struck_log",
+          "B": "glimmeringtales:struck_leaves"
+        }
+      }
+    }
+  ]
+}

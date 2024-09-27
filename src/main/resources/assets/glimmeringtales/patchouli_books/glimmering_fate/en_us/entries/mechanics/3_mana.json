@@ -1,0 +1,12 @@
+{
+  "name": "魔力",
+  "icon": "glimmeringtales:charm_of_capacity",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(9)魔力$()是玩家施放法术时必需的属性，会随时间自然回复。$(br2)在施放法术时魔力会被消耗，$(9)越高级$()的法术$(9)消耗$()的魔力也会$(9)越多$()。$(br2)魔力可以通过各种方式增加上限或减少消耗。$(br2)与专注不同，在施放法术时$(9)不会中断魔力的回复$()。"
+    }
+  ]
+}

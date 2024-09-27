@@ -1,0 +1,22 @@
+{
+  "name": "符石",
+  "icon": "glimmeringtales:bamboo",
+  "category": "glimmeringtales:items",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:rune",
+      "title": "方块符石",
+      "text": "进行$(l:mechanics/5_ritual)仪式$(/l)获取。$(br2)通过把方块的魔力特征刻印到符石内，直接施放$(l:mechanics/1_nature_spell#方块施法)方块法术$(/l)。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:spell",
+      "title": "高级符石",
+      "text": "进行$(l:mechanics/5_ritual)仪式$(/l)获取。$(br2)由方块符石升级而来。$(br)可以施放$(9)高级法术$()。",
+      "link_recipe": true
+    }
+  ]
+}

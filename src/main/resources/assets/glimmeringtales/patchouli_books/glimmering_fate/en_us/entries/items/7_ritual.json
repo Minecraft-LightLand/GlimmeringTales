@@ -1,0 +1,19 @@
+{
+  "name": "仪式方块",
+  "icon": "glimmeringtales:ritual_matrix",
+  "category": "glimmeringtales:items",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:ritual_matrix,glimmeringtales:ritual_altar",
+      "title": "仪式方块",
+      "text": "$(9)仪式矩阵$()和$(9)仪式祭坛$()上可以放置一个物品，可作为$(9)物品展示台$()使用。$(br2)通常需要$(9)1$()个仪式矩阵和$(9)8$()个仪式祭坛来进行$(l:mechanics/5_ritual)仪式$(/l)。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:ritual_matrix",
+      "recipe2": "glimmeringtales:ritual_altar"
+    }
+  ]
+}

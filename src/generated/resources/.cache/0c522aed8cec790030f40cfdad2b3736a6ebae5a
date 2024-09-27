@@ -1,4 +1,4 @@
-// 1.21.1	2024-09-26T10:06:12.569127	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (enchantment), Tags (damage_type), Tags (worldgen/biome)]
+// 1.21.1	2024-09-26T10:30:48.717598	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (enchantment), Tags (damage_type), Tags (worldgen/biome)]
 f628b87d75a2e2a6c5157d17ef22b26cb8b260eb assets/glimmeringtales/blockstates/bamboo.json
 4132de47f0c0e042aadf759876c94ea0a1d95cd2 assets/glimmeringtales/blockstates/clay_carpet.json
 dd5961b34518b83da6777b460a9272a73e5bbd2a assets/glimmeringtales/blockstates/crystal_vine.json
@@ -87,9 +87,8 @@ c653da05315a1b098bb80e2e7a673c255833e820 assets/glimmeringtales/models/item/drip
 2f5085152b5416a2e7f3d393f0253d27a4d28bd5 assets/glimmeringtales/models/item/earthquake.json
 b9dfa4c0bf10717dc12da2fd5b11b2381baa7496 assets/glimmeringtales/models/item/earthquake_core.json
 caa83c6eb89eed0e79e7e4e0d98a4fc0eb6fb3a3 assets/glimmeringtales/models/item/ender_wand.json
-92a7dccce6b9a556604c5e5e6fc754a567f701b6 assets/glimmeringtales/models/item/ender_wand_handle.json
+958d8f7a714f88064f5c0e7d9ef4f784b3df3d84 assets/glimmeringtales/models/item/ender_wand_handle.json
 caa83c6eb89eed0e79e7e4e0d98a4fc0eb6fb3a3 assets/glimmeringtales/models/item/ender_wand_icon.json
-8a9b7d863e00560dd9968046f3d0091d88ff8adc assets/glimmeringtales/models/item/ender_wand_shadow.json
 014a34e55bc6ec604753e71ba1f44297feb00d02 assets/glimmeringtales/models/item/flame_dash.json
 25eda5b40ad6340f9db2298908f88144c3c4cd5f assets/glimmeringtales/models/item/flame_dash_core.json
 72abf9cfa1890a48940968f0c972bd8b95ef8661 assets/glimmeringtales/models/item/flower.json

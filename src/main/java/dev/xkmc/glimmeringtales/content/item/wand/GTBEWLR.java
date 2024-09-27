@@ -55,19 +55,15 @@ public class GTBEWLR extends BlockEntityWithoutLevelRenderer {
 		var handle = RuneWandItem.getHandle(stack);
 		if (type == ItemDisplayContext.GUI) {
 			render(stack, pose, bufferSource, light, overlay,
-					manager.getModel(handle.icon()), Consumers.nop(), false);
+					manager.getModel(handle.icon()), Consumers.nop());
 			return;
 		}
-		var shadow = handle.shadow();
-		if (shadow != null)
-			render(stack, pose, bufferSource, light, overlay,
-					manager.getModel(shadow), GTBEWLR::wandHandle, true);
 		render(stack, pose, bufferSource, light, overlay,
-				manager.getModel(handle.model()), GTBEWLR::wandHandle, false);
+				manager.getModel(handle.model()), GTBEWLR::wandHandle);
 		var sel = RuneWandItem.getCore(stack);
 		if (sel.getItem() instanceof IWandCoreItem core) {
 			render(sel, pose, bufferSource, light, overlay,
-					manager.getModel(core.model()), p -> wandCore(handle, p), false);
+					manager.getModel(core.model()), p -> wandCore(handle, p));
 		}
 	}
 
@@ -90,15 +86,15 @@ public class GTBEWLR extends BlockEntityWithoutLevelRenderer {
 	}
 
 	public void render(ItemStack stack, PoseStack pose, MultiBufferSource buffer,
-					   int light, int overlay, BakedModel baked, Consumer<PoseStack> transform, boolean ender) {
+					   int light, int overlay, BakedModel baked, Consumer<PoseStack> transform) {
 		ItemRenderer ir = Minecraft.getInstance().getItemRenderer();
 		if (!stack.isEmpty()) {
 			pose.pushPose();
 			transform.accept(pose);
 			for (var model : baked.getRenderPasses(stack, true)) {
 				for (var rendertype : model.getRenderTypes(stack, true)) {
-					if (ender) rendertype = RenderType.END_GATEWAY;
-					VertexConsumer vc = ItemRenderer.getFoilBufferDirect(buffer, rendertype, true, !ender && stack.hasFoil());
+					if (rendertype.name.startsWith("glimmeringtales_ender")) rendertype = RenderType.END_GATEWAY;
+					VertexConsumer vc = ItemRenderer.getFoilBufferDirect(buffer, rendertype, true, stack.hasFoil());
 					ir.renderModelLists(model, stack, light, overlay, pose, vc);
 				}
 			}

@@ -47,7 +47,9 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -398,22 +400,7 @@ public class GTItems {
 
 			WAND_HANDLES = VarItemInit.setup(GlimmeringTales.REGISTRATE, GlimmeringTales.loc("wand_handles"),
 					e -> new WandHandleItem(new Item.Properties(), e),
-					(rl, b) -> b.removeTab(TAB.key())
-							.model((ctx, pvd) -> {
-								pvd.handheld(ctx, pvd.modLoc("item/handle/" + ctx.getName()));
-								pvd.getBuilder(ctx.getName() + "_icon").parent(
-												new ModelFile.UncheckedModelFile(pvd.mcLoc("item/handheld")))
-										.texture("layer0", pvd.modLoc("item/handle/" + ctx.getName()));
-								pvd.getBuilder(ctx.getName() + "_handle").parent(
-												new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName())))
-										.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
-										.renderType("cutout");
-								if (ctx.get().shadow() != null)
-									pvd.getBuilder(ctx.getName() + "_shadow").parent(
-													new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName() + "_shadow")))
-											.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
-											.renderType("cutout");
-							}).onRegister(HANDLES::add)
+					(rl, b) -> b.removeTab(TAB.key()).onRegister(HANDLES::add)
 			);
 
 			Curios.register();
@@ -471,7 +458,7 @@ public class GTItems {
 			OCEAN_WAND = handle("ocean_wand", 0.25f, 0.92f, "Ocean");
 			THUNDER_WAND = handle("thunder_wand", 0.23f, 0.70f, "Thunder");
 			NETHER_WAND = handle("nether_wand", 0.22f, 0.75f, "Nether");
-			ENDER_WAND = handle("ender_wand", 0.25f, 0.75f, "Ender");
+			ENDER_WAND = handleShadow("ender_wand", 0.25f, 0.75f, "Ender");
 		}
 
 		{
@@ -539,6 +526,36 @@ public class GTItems {
 
 	private static VarHolder<WandHandleItem> handle(String id, float size, float offset, String name) {
 		return WAND_HANDLES.add(new VarHolder<>(id, (rl, b) -> b
+				.model((ctx, pvd) -> {
+					pvd.handheld(ctx, pvd.modLoc("item/handle/" + ctx.getName()));
+					pvd.getBuilder(ctx.getName() + "_icon").parent(
+									new ModelFile.UncheckedModelFile(pvd.mcLoc("item/handheld")))
+							.texture("layer0", pvd.modLoc("item/handle/" + ctx.getName()));
+					pvd.getBuilder(ctx.getName() + "_handle").parent(
+									new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName())))
+							.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
+							.renderType("cutout");
+				})
+				.dataMap(GTRegistries.WAND_MODEL.reg(), new WandData(size, offset)).lang(name)));
+	}
+
+	private static VarHolder<WandHandleItem> handleShadow(String id, float size, float offset, String name) {
+		return WAND_HANDLES.add(new VarHolder<>(id, (rl, b) -> b
+				.model((ctx, pvd) -> {
+					pvd.handheld(ctx, pvd.modLoc("item/handle/" + ctx.getName()));
+					pvd.getBuilder(ctx.getName() + "_icon").parent(
+									new ModelFile.UncheckedModelFile(pvd.mcLoc("item/handheld")))
+							.texture("layer0", pvd.modLoc("item/handle/" + ctx.getName()));
+					pvd.getBuilder(ctx.getName() + "_handle").customLoader(CompositeModelBuilder::begin)
+							.child("shadow", new ItemModelBuilder(null, pvd.existingFileHelper)
+									.parent(new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName() + "_shadow")))
+									.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
+									.renderType(GlimmeringTales.loc("ender")))
+							.child("base", new ItemModelBuilder(null, pvd.existingFileHelper)
+									.parent(new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName())))
+									.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
+									.renderType("cutout"));
+				})
 				.dataMap(GTRegistries.WAND_MODEL.reg(), new WandData(size, offset)).lang(name)));
 	}
 

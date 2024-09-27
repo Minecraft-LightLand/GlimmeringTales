@@ -1,0 +1,18 @@
+{
+  "name": "紫晶音叉",
+  "icon": "glimmeringtales:amethyst_resonator",
+  "category": "glimmeringtales:items",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:amethyst_resonator",
+      "title": "紫晶音叉",
+      "text": "$(9)紫晶音叉$()可以探测到附近的$(9)紫水晶母岩$()。$(br2)物品上的数字为附近的紫水晶母岩数量。$(br2)探测到的紫水晶母岩会透过方块显示位置。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:amethyst_resonator"
+    }
+  ]
+}

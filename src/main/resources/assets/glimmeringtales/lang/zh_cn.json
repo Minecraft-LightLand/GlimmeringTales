@@ -62,6 +62,7 @@
   "item.glimmeringtales.ocean_wand": "海神杖柄",
   "item.glimmeringtales.nether_wand": "下界杖柄",
   "item.glimmeringtales.thunder_wand": "雷霆杖柄",
+  "item.glimmeringtales.ender_wand": "末影杖柄",
 
   "item.glimmeringtales.dripstone": "符石: 钟乳石",
   "item.glimmeringtales.clay": "符石: 粘土",
@@ -324,17 +325,16 @@
   "nature_spell.glimmeringtales.ocean_shelter.detail": "向前方喷射持续5秒的泡泡。对敌人：造成%s，施加%s。对友方：%s，给予%s",
   "nature_spell.glimmeringtales.charge_burst.brief": "[范围] 生成一道闪电，并在周围产生电荷爆发",
   "nature_spell.glimmeringtales.charge_burst.detail": "在目标位置生成一道闪电造成多段%s。然后在周围产生电荷爆发，造成%s",
+  "nature_spell.glimmeringtales.flame_dash.brief": "[充能]蓄力然后向前冲刺，灼烧周围敌人",
+  "nature_spell.glimmeringtales.flame_dash.detail": "蓄力，然后进入相同时间的烈焰冲刺模式，向前快速移动，击退接触到的实体并造成%s",
+  "nature_spell.glimmeringtales.icy_flash.brief": "[远程]瞬移到目标位置并造成伤害",
+  "nature_spell.glimmeringtales.icy_flash.detail": "瞬移到目标位置，对周围敌人造成%s，并施加%s",
+  "nature_spell.glimmeringtales.meteor.brief": "[范围]生成一个陨石坠落",
+  "nature_spell.glimmeringtales.meteor.detail": "生成一个坠落的陨石，击中地面或敌人时爆炸并造成%s",
 
-  "patchouli.glimmeringtales.landing": "欢迎来到以自然为主题的魔法模组《微光纪事》",
+  "patchouli.glimmeringtales.landing": "欢迎来到以自然为主题的魔法模组$(9)《微光纪事》$()$(br2)“许多人相信自然是伴随着电闪雷鸣诞生的，在空无一物的寰宇当中绽放出靛青的光芒，需予以古树火种，使青金再次夺目。”",
   "patchouli.glimmeringtales.title": "微光纪事指南",
   "entity.glimmeringtales.falling_block": "坠落方块",
-  "entity.glimmeringtales.lightning_bolt": "闪电",
-
-  "nature_spell.glimmeringtales.flame_dash.brief": "[Charge] Charge and launch yourself as a rolling flame ball",
-  "nature_spell.glimmeringtales.flame_dash.detail": "Charge, and then enter flame dashing mode for the same duration as you charged, move forward and knock off enemies, dealing %s",
-  "nature_spell.glimmeringtales.icy_flash.brief": "[Range] Teleport to target and deal damage",
-  "nature_spell.glimmeringtales.icy_flash.detail": "Teleport to target position, dealing %s to surrounding enemies, and inflict %s",
-  "nature_spell.glimmeringtales.meteor.brief": "[Ranged] Create a meteor falling at target",
-  "nature_spell.glimmeringtales.meteor.detail": "Create a meteor falling slowly, dealing %s on impact"
+  "entity.glimmeringtales.lightning_bolt": "闪电"
 
 }
