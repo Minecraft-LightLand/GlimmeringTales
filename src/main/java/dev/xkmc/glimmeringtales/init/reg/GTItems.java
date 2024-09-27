@@ -327,7 +327,7 @@ public class GTItems {
 							p -> new DamageTypeCurioItem(p.stacksTo(1).fireResistant(),
 									e -> GTDamageStates.MAGIC, GTLang.TOOLTIP_MAGIC::get))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.add(L2DamageTracker.MAGIC_FACTOR, 0.25)
 					)).lang("Glove of Sorcerer")
@@ -337,7 +337,7 @@ public class GTItems {
 							p -> new DamageTypeCurioItem(p.stacksTo(1).fireResistant(),
 									e -> DefaultDamageState.BYPASS_MAGIC, GTLang.TOOLTIP_ABYSS::get))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.total(GTRegistries.MANA_REGEN, -0.5)
 					)).lang("Glove of Abyss")
@@ -348,7 +348,7 @@ public class GTItems {
 									e -> e.is(GTRegistries.OCEAN.damgeTag()) ? DefaultDamageState.BYPASS_COOLDOWN : null,
 									() -> GTLang.TOOLTIP_COOLDOWN.get(GTRegistries.OCEAN.get().coloredDesc())))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.total(GTRegistries.MANA_REGEN, -0.25)
 					)).lang("Glove of Ocean")
@@ -359,7 +359,7 @@ public class GTItems {
 									e -> e.is(GTRegistries.THUNDER.damgeTag()) ? DefaultDamageState.BYPASS_COOLDOWN : null,
 									() -> GTLang.TOOLTIP_COOLDOWN.get(GTRegistries.THUNDER.get().coloredDesc())))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.total(GTRegistries.MANA_REGEN, -0.25)
 					)).lang("Glove of Thunder")
@@ -562,7 +562,7 @@ public class GTItems {
 	private static VarHolder<AttributeCurioItem> curio(String id, String part, AttributeData data) {
 		return CURIOS.add(new VarHolder<>(id, (rl, b) -> b
 				.dataMap(GTRegistries.ITEM_ATTR.reg(), data)
-				.tag(GTTagGen.curio(part), GTTagGen.UNIQUE)));
+				.tag(GTTagGen.item(part), GTTagGen.curio(part), GTTagGen.UNIQUE)));
 	}
 
 	private static BlockEntry<DelegateBlock> magma(String id) {

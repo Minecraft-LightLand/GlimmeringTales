@@ -68,7 +68,7 @@ public class CactusSpell {
 								DoubleVariable.of("1"),
 								ctx.proj,
 								IntVariable.of("rand(8,12)"),
-								false, true,
+								false, false,
 								Map.of()
 						).move(new RotationModifier(
 								DoubleVariable.of(360 / theta + "*j"),

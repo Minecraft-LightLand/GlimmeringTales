@@ -16,7 +16,7 @@
             "type": "l2magic:move",
             "child": {
               "type": "l2magic:custom_projectile",
-              "bypassEntity": true,
+              "bypassEntity": false,
               "bypassWall": false,
               "config": "glimmeringtales:cactus",
               "life": "rand(8,12)",

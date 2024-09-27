@@ -99,7 +99,7 @@ public class AmethystSpells {
 								new CustomProjectileShoot(
 										DoubleVariable.of("1"), ctx.proj,
 										IntVariable.of("100"),
-										false, true,
+										false, false,
 										Map.of()
 								).move(new RotationModifier(
 										DoubleVariable.of(360 / theta + "*j"),
