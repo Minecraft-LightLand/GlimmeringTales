@@ -1,0 +1,33 @@
+{
+  "type": "glimmeringtales:wand_craft",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "l2complements:void_eye"
+    },
+    "F": {
+      "item": "l2complements:hard_ice"
+    },
+    "I": {
+      "item": "minecraft:end_rod"
+    },
+    "O": {
+      "item": "glimmeringtales:crystal_of_nature"
+    },
+    "V": {
+      "item": "l2complements:shulkerate_ingot"
+    },
+    "W": {
+      "item": "minecraft:chorus_flower"
+    }
+  },
+  "pattern": [
+    " WO",
+    "FIC",
+    "IV "
+  ],
+  "result": {
+    "count": 1,
+    "id": "glimmeringtales:ender_wand"
+  }
+}

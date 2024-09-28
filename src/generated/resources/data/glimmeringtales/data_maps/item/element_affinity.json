@@ -38,6 +38,12 @@
         "glimmeringtales:snow": 1.5
       }
     },
+    "glimmeringtales:ender_wand": {
+      "affinity": {
+        "glimmeringtales:earth": 0.25,
+        "glimmeringtales:snow": 0.25
+      }
+    },
     "glimmeringtales:gold_wand": {
       "affinity": {
         "glimmeringtales:earth": 0.25

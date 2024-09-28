@@ -297,6 +297,16 @@ public class GTRecipeGen {
 					.define('V', Items.TWISTING_VINES)
 					.define('F', LCItems.SOUL_FLAME)
 					.save(pvd);
+
+			unlock(pvd, new WandRecipeBuilder(GTItems.ENDER_WAND, 1)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+					.pattern(" WO").pattern("FIC").pattern("IV ")
+					.define('O', GTItems.CRYSTAL_NATURE)
+					.define('I', Items.END_ROD)
+					.define('W', Items.CHORUS_FLOWER)
+					.define('C', LCItems.VOID_EYE)
+					.define('V', LCMats.SHULKERATE.getIngot())
+					.define('F', LCItems.HARD_ICE)
+					.save(pvd);
 		}
 
 		// life

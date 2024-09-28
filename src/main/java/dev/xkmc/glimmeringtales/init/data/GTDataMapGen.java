@@ -81,6 +81,10 @@ public class GTDataMapGen {
 					GTRegistries.EARTH.get(), 0.25d,
 					GTRegistries.FLAME.get(), 0.25d
 			)), false);
+			builder.add(GTItems.ENDER_WAND.item(), ElementAffinity.of(Map.of(
+					GTRegistries.EARTH.get(), 0.25d,
+					GTRegistries.SNOW.get(), 0.25d
+			)), false);
 		}
 		// melt
 		{
