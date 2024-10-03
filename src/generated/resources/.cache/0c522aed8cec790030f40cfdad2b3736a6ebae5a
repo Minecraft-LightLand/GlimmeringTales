@@ -1,4 +1,4 @@
-// 1.21.1	2024-09-28T19:12:16.392481	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (enchantment), Tags (damage_type), Tags (worldgen/biome)]
+// 1.21.1	2024-09-29T01:10:56.959422	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (enchantment), Tags (damage_type), Tags (worldgen/biome)]
 f628b87d75a2e2a6c5157d17ef22b26cb8b260eb assets/glimmeringtales/blockstates/bamboo.json
 4132de47f0c0e042aadf759876c94ea0a1d95cd2 assets/glimmeringtales/blockstates/clay_carpet.json
 dd5961b34518b83da6777b460a9272a73e5bbd2a assets/glimmeringtales/blockstates/crystal_vine.json
@@ -481,7 +481,7 @@ df31d5e800298c017c5d911f29bfd019f5ef0115 data/glimmeringtales/data_maps/block/bl
 61a6e72d815d5b3043ecad1ca163c144a828841d data/glimmeringtales/data_maps/item/curio_attributes.json
 14bf41876855cc0d66a56f462190b484f3938ab3 data/glimmeringtales/data_maps/item/element_affinity.json
 52e852e0a9d99e7a3be4a9c0988e20f2028c8b91 data/glimmeringtales/data_maps/item/rune_block.json
-cb84f6b08e513bdde50ce602108249fc961f2452 data/glimmeringtales/data_maps/item/wand_model.json
+4bc26966c36ef21f48e61f64ab175f095ca7c47e data/glimmeringtales/data_maps/item/wand_model.json
 8d20a9e52c40bc99530deaabf820422dc71a087d data/glimmeringtales/glimmeringtales/spell/amethyst.json
 23df2b3f960b18d3d1dff554918404c4a16a78bb data/glimmeringtales/glimmeringtales/spell/amethyst_penetration.json
 6977b7ef8699bc56ae67282e0483bd8e33ce6092 data/glimmeringtales/glimmeringtales/spell/bamboo.json

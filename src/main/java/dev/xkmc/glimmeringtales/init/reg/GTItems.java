@@ -458,7 +458,7 @@ public class GTItems {
 			OCEAN_WAND = handle("ocean_wand", 0.25f, 0.92f, "Ocean");
 			THUNDER_WAND = handle("thunder_wand", 0.23f, 0.70f, "Thunder");
 			NETHER_WAND = handle("nether_wand", 0.22f, 0.75f, "Nether");
-			ENDER_WAND = handleShadow("ender_wand", 0.25f, 0.75f, "Ender");
+			ENDER_WAND = handleShadow("ender_wand", 0.25f, 0.70f, "Ender");
 		}
 
 		{
