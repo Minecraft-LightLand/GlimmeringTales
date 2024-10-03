@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import dev.xkmc.l2core.util.Proxy;
+import dev.xkmc.l2core.util.ServerProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -75,7 +76,7 @@ public class GTBEWLR extends BlockEntityWithoutLevelRenderer {
 		var pl = Minecraft.getInstance().player;
 		if (pl == null) return;
 		float tick = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(true) + pl.tickCount;
-		var data = item.data(Proxy.getRegistryAccess());
+		var data = item.data(ServerProxy.getRegistryAccess());
 		float size = data.size();
 		pose.translate(0.5, 0.5, 0.5);
 		pose.translate(0, data.offset(), 0);

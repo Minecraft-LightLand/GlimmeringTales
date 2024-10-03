@@ -4,6 +4,7 @@ import dev.xkmc.glimmeringtales.content.item.rune.BaseRuneItem;
 import dev.xkmc.glimmeringtales.content.research.core.OpenGraphPacket;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.l2core.util.Proxy;
+import dev.xkmc.l2core.util.ServerProxy;
 import dev.xkmc.l2menustacker.click.ReadOnlyStackClickHandler;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -17,7 +18,7 @@ public class GTClickHandler extends ReadOnlyStackClickHandler {
 
 	@Override
 	protected void handle(ServerPlayer player, ItemStack stack) {
-		var reg = Proxy.getRegistryAccess();
+		var reg = ServerProxy.getRegistryAccess();
 		if (reg != null && stack.getItem() instanceof BaseRuneItem rune) {
 			var spell = rune.getSpellInfo(reg).spell();
 			if (spell != null && spell.value().graph() != null) {
@@ -29,7 +30,7 @@ public class GTClickHandler extends ReadOnlyStackClickHandler {
 
 	@Override
 	public boolean isAllowed(ItemStack stack) {
-		var reg = Proxy.getRegistryAccess();
+		var reg = ServerProxy.getRegistryAccess();
 		if (reg != null && stack.getItem() instanceof BaseRuneItem rune) {
 			var spell = rune.getSpellInfo(reg).spell();
 			return spell != null && spell.value().graph() != null;
