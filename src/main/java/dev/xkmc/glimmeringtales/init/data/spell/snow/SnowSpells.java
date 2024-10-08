@@ -36,7 +36,7 @@ import java.util.Map;
 public class SnowSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("snow")).cost(40)
+			.build(GlimmeringTales.loc("snow")).focusAndCost(40, 120)
 			.damageFreeze()
 			.projectile(SnowSpells::proj)
 			.block(SnowSpells::gen, GTItems.RUNE_SNOW, RuneBlock::of,

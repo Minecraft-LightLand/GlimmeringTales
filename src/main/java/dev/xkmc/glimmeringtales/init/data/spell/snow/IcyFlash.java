@@ -34,7 +34,7 @@ import java.util.List;
 public class IcyFlash {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("icy_flash")).focusAndCost(40, 200)
+			.build(GlimmeringTales.loc("icy_flash")).focusAndCost(100, 400)
 			.damageExplosion()
 			.spell(e -> new SpellAction(icyFlash(e), GTItems.ICY_FLASH.get(), 2010,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))

@@ -28,7 +28,7 @@ public record NatureSpell(
 		SpellTooltipData tooltip,
 		@Nullable MobCastingData mob,
 		@Nullable HexGraphData graph
-		) {
+) {
 
 	private static final int MIN_MANA_COST = 1, CAST_COOLDOWN = 10, BREAK_COOLDOWN = 20;
 	private static final double MIN_AFFINITY = 0.2;

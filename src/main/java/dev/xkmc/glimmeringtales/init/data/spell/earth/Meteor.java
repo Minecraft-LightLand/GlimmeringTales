@@ -13,7 +13,6 @@ import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.logic.RandomVariableLogic;
 import dev.xkmc.l2magic.content.engine.modifier.ForwardOffsetModifier;
-import dev.xkmc.l2magic.content.engine.modifier.RandomOffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
 import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
@@ -22,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.KnockBackProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PropertyProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
-import dev.xkmc.l2magic.content.engine.selector.ApproxCylinderSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
@@ -42,7 +40,7 @@ import java.util.Map;
 public class Meteor {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("meteor")).focusAndCost(60, 200)
+			.build(GlimmeringTales.loc("meteor")).focusAndCost(160, 1000)
 			.damageExplosion().projectile(Meteor::proj)
 			.spell(e -> new SpellAction(starfall(e), GTItems.METEOR.get(), 2010,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))

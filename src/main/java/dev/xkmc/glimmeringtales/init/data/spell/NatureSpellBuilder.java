@@ -8,7 +8,6 @@ import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.core.spell.SpellElement;
 import dev.xkmc.glimmeringtales.content.entity.hostile.MobCastingData;
-import dev.xkmc.glimmeringtales.content.research.core.HexGraph;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;

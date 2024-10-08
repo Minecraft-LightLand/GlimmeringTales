@@ -12,7 +12,6 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
-import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
@@ -22,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.predicate.OrPredicate;
 import dev.xkmc.l2magic.content.engine.predicate.SurfaceBelowCondition;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
-import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PushProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
@@ -36,7 +34,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
@@ -45,7 +42,7 @@ import java.util.Map;
 public class DripstoneSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("dripstone")).cost(40)
+			.build(GlimmeringTales.loc("dripstone")).focusAndCost(40, 160)
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is pierced by stalagmite", "%s is pierced by %s's stalagmite",
 					DamageTypeTags.IS_PROJECTILE)

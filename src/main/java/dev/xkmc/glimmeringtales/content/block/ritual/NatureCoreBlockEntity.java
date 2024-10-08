@@ -83,8 +83,8 @@ public class NatureCoreBlockEntity extends CoreRitualBlockEntity {
 			recipe = opt.get().value();
 			update = true;
 		}
-		if(remainTime %114514==totalTime%114514) {
-			level.playSound(null,this.getBlockPos(), SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS,1,0.78F);
+		if (remainTime % 114514 == totalTime % 114514) {
+			level.playSound(null, this.getBlockPos(), SoundEvents.PORTAL_TRIGGER, SoundSource.BLOCKS, 1, 0.78F);
 		}
 		remainTime--;
 		if (remainTime <= 0) {
@@ -95,7 +95,7 @@ public class NatureCoreBlockEntity extends CoreRitualBlockEntity {
 			recipeId = null;
 			recipe = null;
 			update = true;
-			level.playSound(null,this.getBlockPos(), SoundEvents.VAULT_OPEN_SHUTTER, SoundSource.BLOCKS,1,1);
+			level.playSound(null, this.getBlockPos(), SoundEvents.VAULT_OPEN_SHUTTER, SoundSource.BLOCKS, 1, 1);
 		}
 		if (update) {
 			sync();

@@ -46,7 +46,7 @@ public class ClickRitualMethod implements UseItemOnBlockMethod, UseWithoutItemBl
 		if (pl.getItemInHand(InteractionHand.MAIN_HAND).isEmpty())
 			pl.setItemInHand(InteractionHand.MAIN_HAND, stack);
 		else pl.getInventory().placeItemBackInInventory(stack);
-		level.playSound(null,pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1, 1.5F);
+		level.playSound(null, pos, SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.BLOCKS, 1, 1.5F);
 		return InteractionResult.SUCCESS;
 	}
 

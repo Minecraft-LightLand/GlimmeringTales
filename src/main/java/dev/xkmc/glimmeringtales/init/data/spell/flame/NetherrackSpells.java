@@ -22,9 +22,6 @@ import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
-import net.minecraft.world.damagesource.DamageEffects;
-import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
@@ -32,7 +29,7 @@ import java.util.List;
 public class NetherrackSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("netherrack")).cost(60)
+			.build(GlimmeringTales.loc("netherrack")).focusAndCost(40, 100)
 			.damageFire()
 			.block(NetherrackSpells::gen, GTItems.RUNE_NETHERRACK, RuneBlock::of,
 					(b, e) -> b.add(Blocks.NETHERRACK, BlockSpell.of(e)))

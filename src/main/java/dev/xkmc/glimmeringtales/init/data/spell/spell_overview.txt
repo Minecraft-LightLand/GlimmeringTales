@@ -1,0 +1,59 @@
+Spell       Focus       Cost
+
+cactus      20          60
+vine        30          90
+flower      50          250
+bamboo      80          400
+haybale     100         500
+
+stone       40          120
+dripstone   40          160
+gravel      50          150
+amethyst    50          200
+sand        60          240
+clay        60          240
+quartz      100         400
+
+netherrack  40          100
+soul        40          120
+magma       40          160
+
+snow        40          120
+ice         40          200
+pack ice    50          300
+powdersnow  60          300
+blue ice    60          400
+
+sponge      40          100
+coral       100         400
+
+thunder     100         500
+
+bridge      80          400
+amethyst    60          300
+earthquake  160         640
+meteor      160         1000
+
+flame dash  1/tick      5/tick
+flame pent  100         400
+lava burst  5(150)      20(600)
+
+icy flash   100          400
+storm       2/tick      5/tick
+tornado     1/tick      5/tick
+
+ocean       2/tick      10/tick
+
+charge      120         800
+ring        160         1200
+
+
+
+
+
+
+
+
+
+
+

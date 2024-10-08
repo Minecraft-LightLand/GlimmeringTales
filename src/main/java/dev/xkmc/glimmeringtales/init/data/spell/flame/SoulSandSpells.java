@@ -33,7 +33,7 @@ import java.util.List;
 public class SoulSandSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("soul_sand")).cost(60)
+			.build(GlimmeringTales.loc("soul_sand")).focusAndCost(40, 120)
 			.damageCustom(e -> new DamageType(e, 0, DamageEffects.BURNING),
 					"%s is blazed by ghosts", "%s is blazed by ghosts summoned by %s",
 					GTDamageTypeGen.magic(DamageTypeTags.IS_FIRE))

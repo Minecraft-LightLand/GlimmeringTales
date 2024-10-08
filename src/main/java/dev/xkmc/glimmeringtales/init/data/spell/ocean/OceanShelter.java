@@ -41,7 +41,7 @@ import java.util.Map;
 public class OceanShelter {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.OCEAN
-			.build(GlimmeringTales.loc("ocean_shelter")).focusAndCost(3, 5).mob(6, 1)
+			.build(GlimmeringTales.loc("ocean_shelter")).focusAndCost(2, 10).mob(6, 1)
 			.damageCustom(msg -> new DamageType(msg, 0.1f, DamageEffects.DROWNING),
 					"%s is drowned by magical bubbles",
 					"%s is drowned by %s with magical bubbles",

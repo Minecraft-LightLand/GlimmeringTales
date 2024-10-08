@@ -38,7 +38,7 @@ import java.util.Map;
 public class ChargeBurst {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("charge_burst")).focusAndCost(40, 60).mob(16, 1)
+			.build(GlimmeringTales.loc("charge_burst")).focusAndCost(120, 800).mob(16, 1)
 			.damageCustom(msg -> new DamageType(msg, 0.1f),
 					"%s is electrocuted by charge burst",
 					"%s is electrocuted by %s with charge burst",

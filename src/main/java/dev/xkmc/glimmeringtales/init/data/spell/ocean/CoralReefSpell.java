@@ -39,7 +39,7 @@ import java.util.Map;
 public class CoralReefSpell {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.OCEAN
-			.build(GlimmeringTales.loc("coral_reef")).focusAndCost(30, 80)
+			.build(GlimmeringTales.loc("coral_reef")).focusAndCost(100, 400)
 			.damageCustom(e -> new DamageType(e, 0.1f, DamageEffects.DROWNING),
 					"%s is drowned by coral magic", "%s is drowned by %s's coral magic",
 					GTDamageTypeGen.magic())

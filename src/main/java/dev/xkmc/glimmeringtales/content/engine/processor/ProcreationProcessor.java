@@ -34,20 +34,14 @@ public record ProcreationProcessor(
 	public void process(Collection<LivingEntity> le, EngineContext ctx) {
 		if (!(ctx.user().level() instanceof ServerLevel sl)) return;
 		for (var e : le) {
-			if (e instanceof Animal animal)
-				if (ctx.user().user() instanceof Player player) {
-					if (!animal.isBaby()) {
-						animal.setInLove(player);
-					} else {
-						animal.ageUp(getSpeedUpSecondsWhenFeeding(-animal.getAge()), true);
-					}
-				} else {
-					if (!animal.isBaby()) {
-						animal.setInLove(null);
-					} else {
-						animal.ageUp(getSpeedUpSecondsWhenFeeding(-animal.getAge()), true);
-					}
-				}
+			if (!(e instanceof Animal animal)) continue;
+			Player player = ctx.user().user() instanceof Player pl ? pl : null;
+			if (!animal.isBaby()) {
+				animal.setInLove(player);
+			} else {
+				animal.ageUp(getSpeedUpSecondsWhenFeeding(-animal.getAge()), true);
+			}
+
 		}
 	}
 

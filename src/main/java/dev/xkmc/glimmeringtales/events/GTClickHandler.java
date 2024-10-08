@@ -3,7 +3,6 @@ package dev.xkmc.glimmeringtales.events;
 import dev.xkmc.glimmeringtales.content.item.rune.BaseRuneItem;
 import dev.xkmc.glimmeringtales.content.research.core.OpenGraphPacket;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
-import dev.xkmc.l2core.util.Proxy;
 import dev.xkmc.l2core.util.ServerProxy;
 import dev.xkmc.l2menustacker.click.ReadOnlyStackClickHandler;
 import net.minecraft.resources.ResourceLocation;
