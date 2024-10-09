@@ -1,7 +1,7 @@
 {
-  "cost": 200,
+  "cost": 1000,
   "elem": "glimmeringtales:earth",
-  "focus": 60,
+  "focus": 160,
   "graph": {
     "flows": [
       "T<->LEFSO"

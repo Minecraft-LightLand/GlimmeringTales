@@ -1,7 +1,7 @@
 {
-  "cost": 80,
+  "cost": 400,
   "elem": "glimmeringtales:ocean",
-  "focus": 30,
+  "focus": 100,
   "graph": {
     "flows": [
       "O->LSF"

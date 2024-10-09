@@ -1,7 +1,7 @@
 {
-  "cost": 100,
+  "cost": 1200,
   "elem": "glimmeringtales:thunder",
-  "focus": 60,
+  "focus": 160,
   "graph": {
     "flows": [
       "LEFSOT|"

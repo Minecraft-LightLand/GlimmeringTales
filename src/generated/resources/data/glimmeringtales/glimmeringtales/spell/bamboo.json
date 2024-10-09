@@ -1,7 +1,7 @@
 {
-  "cost": 20,
+  "cost": 400,
   "elem": "glimmeringtales:life",
-  "focus": 10,
+  "focus": 80,
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:bamboo",
   "tooltip": {

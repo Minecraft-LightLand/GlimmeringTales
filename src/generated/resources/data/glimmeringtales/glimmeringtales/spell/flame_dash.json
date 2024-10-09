@@ -1,7 +1,7 @@
 {
   "cost": 5,
   "elem": "glimmeringtales:flame",
-  "focus": 2,
+  "focus": 1,
   "graph": {
     "flows": [
       "F->OT",

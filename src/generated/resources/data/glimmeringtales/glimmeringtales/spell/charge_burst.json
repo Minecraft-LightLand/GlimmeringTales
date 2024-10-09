@@ -1,7 +1,7 @@
 {
-  "cost": 60,
+  "cost": 800,
   "elem": "glimmeringtales:thunder",
-  "focus": 40,
+  "focus": 120,
   "graph": {
     "flows": [
       "EOFST|"
