@@ -1,42 +1,42 @@
-Spell       Focus       Cost
+Spell       Focus       Cost    Raio
 
-cactus      20          60      仙人掌 - 大范围1点伤害
-vine        30          90      藤蔓 - 大范围聚集，1伤害
-flower      50          250     花 - 范围回复
-bamboo      80          400     竹子 - 牢笼
-haybale     100         500     干草块 - 繁殖生物
-stone       40          120     石头 - 生成平台
-dripstone   40          160     滴水石 - 小范围伤害
-gravel      50          150     沙砾 - 中范围伤害
-amethyst    50          200     紫水晶 - 散射
-sand        60          240     沙子 - 小范围伤害 + 控制
-clay        60          240     粘土 - 中范围控制
-quartz      100         400     石英 - 牢笼
-netherrack  40          100     地狱岩 - 小范围伤害
-soul        40          120     灵魂沙 - 小范围伤害
-magma       40          160     岩浆块 - 中范围烫脚
-snow        40          120     雪块 - 散射
-ice         40          200     冰 - 大范围冻结水面，小额伤害+短时间略微减速
-pack ice    50          300     浮冰 - 大范围冻结水面，中额伤害+中时间略微减速
-powdersnow  60          300     细雪 - 中范围小额伤害+减速
-blue ice    60          400     蓝冰 - 大范围冻结水面，大额伤害+长时间略微减速
-sponge      40          100     海绵 - 吸水
-coral       100         400     珊瑚 - 范围持续小额伤害
-thunder     100         500     雷霆 - 雷击
+cactus      20          60      3       仙人掌 - 大范围1点伤害
+vine        30          90      3       藤蔓 - 大范围聚集，1伤害
+flower      50          250     5       花 - 范围回复
+bamboo      80          400     5       竹子 - 牢笼
+haybale     100         500     5       干草块 - 繁殖生物
+stone       40          120     3       石头 - 生成平台
+dripstone   40          160     4       滴水石 - 小范围伤害
+gravel      50          150     3       沙砾 - 中范围伤害
+amethyst    50          200     4       紫水晶 - 散射
+sand        60          240     4       沙子 - 小范围伤害 + 控制
+clay        60          240     4       粘土 - 中范围控制
+quartz      100         400     4       石英 - 牢笼
+netherrack  40          100     2.5     地狱岩 - 小范围伤害
+soul        40          120     3       灵魂沙 - 小范围伤害
+magma       40          160     4       岩浆块 - 中范围烫脚
+snow        40          120     3       雪块 - 散射
+ice         40          200     5       冰 - 大范围冻结水面，小额伤害+短时间略微减速
+pack ice    50          300     6       浮冰 - 大范围冻结水面，中额伤害+中时间略微减速
+powdersnow  60          300     5       细雪 - 中范围小额伤害+减速
+blue ice    60          400     6.7     蓝冰 - 大范围冻结水面，大额伤害+长时间略微减速
+sponge      40          100     2.5     海绵 - 吸水
+coral       100         400     4       珊瑚 - 范围持续小额伤害
+thunder     100         500     5       雷霆 - 雷击
 
-bridge      80          400     石桥 - 搭桥
-amethyst    60          300     紫晶霰 - 定向伤害
-earthquake  160         640     地震 - 自身中心范围伤害
-meteor      160         1000    陨石 - 大范围延迟伤害
-flame dash  1/tick      5/tick  烈焰冲刺 - 蓄力然后冲刺，附带冲撞伤害
-flame pent  100         400     狱火烙印 - 中范围伤害
-lava burst  5(150)      20(600) 地层熔毁 - 蓄力大范围伤害
-icy flash   100         400     冰闪 - 瞬移+伤害
-storm       2/tick      5/tick  暴风雪 - 范围击退+持续伤害+减速
-tornado     1/tick      5/tick  雪龙卷 - 定向持续伤害+减速
-ocean       2/tick      10/tick 深海守护 - 持续创造能造成伤害并击退的低速泡泡
-charge      120         800     漫雷 - 雷击然后范围伤害
-ring        160         1200    召雷环 - 范围雷击
+bridge      80          400     5       石桥 - 搭桥
+amethyst    60          300     5       紫晶霰 - 定向伤害
+earthquake  160         640     8       地震 - 自身中心范围伤害
+meteor      160         1000    6.3     陨石 - 大范围延迟伤害
+flame dash  1/tick      5/tick  5       烈焰冲刺 - 蓄力然后冲刺，附带冲撞伤害
+flame pent  100         400     4       狱火烙印 - 中范围伤害
+lava burst  5(150)      20(600) 4       地层熔毁 - 蓄力大范围伤害
+icy flash   100         400     4       冰闪 - 瞬移+伤害
+storm       2/tick      5/tick  2.5     暴风雪 - 范围击退+持续伤害+减速
+tornado     1/tick      5/tick  5       雪龙卷 - 定向持续伤害+减速
+ocean       2/tick      10/tick 5       深海守护 - 持续创造能造成伤害并击退的低速泡泡
+charge      120         800     6.7     漫雷 - 雷击然后范围伤害
+ring        160         1200    7.5     召雷环 - 范围雷击
 
 
 
