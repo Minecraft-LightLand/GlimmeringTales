@@ -1,6 +1,6 @@
 {
-  "name": "物品",
-  "description": "本模组的所有物品功能和使用介绍",
+  "name": "Items",
+  "description": "Key items and item mechanics",
   "icon": "glimmeringtales:crystal_of_nature",
   "sortnum": 3
 }

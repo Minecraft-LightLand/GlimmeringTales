@@ -1,12 +1,12 @@
 {
-  "name": "研究",
+  "name": "Spell Research",
   "icon": "glimmeringtales:thunderstorm",
   "category": "glimmeringtales:mechanics",
   "sortnum": 6,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "在任意GUI内右键可研究的符石即可打开$(9)研究$()界面，通过连接通路使所有宝石的魔力均匀流通。$(br2)按$(9)R$()测试流通，按$(9)F$()保存通路。$(br2)魔力已流通的符石最高可以获得$(9)-50%魔力消耗$()的效果。"
+      "text": "Right-click a researchable rune in any GUI to open the $(9)research$() menu, where you can connect pathways to evenly distribute the mana of all crystals.$(br2)Press $(9)R$() to test the flow, and press $(9)F$() to save the pathway."
     }
   ]
 }

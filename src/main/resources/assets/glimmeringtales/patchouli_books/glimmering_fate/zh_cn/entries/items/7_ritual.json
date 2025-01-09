@@ -1,5 +1,5 @@
 {
-  "name": "Ritual",
+  "name": "仪式方块",
   "icon": "glimmeringtales:ritual_matrix",
   "category": "glimmeringtales:items",
   "sortnum": 7,
@@ -7,8 +7,8 @@
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:ritual_matrix,glimmeringtales:ritual_altar",
-      "title": "Ritual",
-      "text": "The $(9)Ritual Matrix$() and $(9)Ritual Altar$() can hold an item, functioning as an $(9)item display pedestal$().$(br2)Place $(9)8$() Ritual Altars around $(9)1$() Ritual Matrix to perform a $(l:mechanics/5_ritual)ritual$(/l)."
+      "title": "仪式方块",
+      "text": "$(9)仪式矩阵$()和$(9)仪式祭坛$()上可以放置一个物品，可作为$(9)物品展示台$()使用。$(br2)通常需要$(9)1$()个仪式矩阵和$(9)8$()个仪式祭坛来进行$(l:mechanics/5_ritual)仪式$(/l)。"
     },
     {
       "type": "patchouli:crafting",

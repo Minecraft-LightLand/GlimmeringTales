@@ -1,12 +1,12 @@
 {
-  "name": "获取更多属性符石",
+  "name": "Obtaining More Runes",
   "icon": "glimmeringtales:hell_mark",
   "category": "glimmeringtales:stages",
   "sortnum": 3,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "此时如果你想获得更多种类的$(l:items/4_runestone)方块符石$(/l)。$(br2)那么你可能需要获取对应的$(9)宝石$()。$(li)前往$(9)下界$()寻找材料制作出$(l:items/1_crystal#蕴炎风雪宝石)$(c)蕴炎宝石$(/l)$()。$(li)前往$(9)雪山$()寻找材料制作出$(l:items/1_crystal#蕴炎风雪宝石)$(b)风雪宝石$(/l)$()。$(li)前往$(9)海洋$()寻找$(9)宝藏$()制作出$(l:items/1_crystal#深海雷霆宝石)$(3)深海宝石$(/l)$()。"
+      "text": "At this point, if you want to obtain more types of $(l:items/4_runestone)block runes$(/l),$(br2)you will need to acquire the corresponding $(9)crystals$().$(li)Head to the $(9)Nether$() to find materials and craft the $(l:items/1_crystal#winterstorm_flame_crystal)$(c)Crystal of Flame$(/l).$(li)Travel to the $(9)snowy mountains$() to gather materials and craft the $(l:items/1_crystal#winterstorm_flame_crystal)$(b)Crystal of Winterstorm$(/l).$(li)Explore the $(9)ocean$() to find $(9)heart of the sea$() and craft $(l:items/1_crystal#ocean_thunder_crystal)$(3)Crystal of Ocean$(/l)."
     }
   ]
 }

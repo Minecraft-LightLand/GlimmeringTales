@@ -1,5 +1,5 @@
 {
-  "name": "宝石",
+  "name": "Crystals",
   "icon": "glimmeringtales:crystal_of_earth",
   "category": "glimmeringtales:items",
   "sortnum": 1,
@@ -7,49 +7,51 @@
     {
       "type": "patchouli:spotlight",
       "item": "tag:glimmeringtales:crystal",
-      "title": "宝石",
-      "text": "$(9)宝石$()是非常重要的原材料，用于制作各种属性的道具。$(br2)另外，宝石还可以放入$(l:items/2_wand)法杖$(/l)内进行$(l:mechanics/1_nature_spell#方块施法)方块施法$(/l)。"
+      "title": "Crystals",
+      "text": "$(9)Crystals$() are essential ingredients for crafting elemental equipments. $(br2)Crystals can also be put into $(l:items/2_wand)wands$(/l) for $(l:mechanics/1_nature_spell#block_spell_casting)block spell casting$(/l)."
     },
     {
-      "type": "patchouli:text",
-      "text": "自然的表征方式多种多样，自然宝石难以在单一方面突破极限。$(br2)为此，你需要通过$(9)一些方式$()获取其他的宝石。"
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_nature",
+      "text": "Formed by lightning-struck $(9)lapis_lazuli$() item.",
+      "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:crystal_of_earth",
-      "text": "$(9)雷电$()转化$(9)紫水晶母岩$()获得。",
+      "text": "Formed by lightning-struck $(9)budding amethyst$() block.",
       "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:crystal_of_life",
-      "text": "$(l:items/1_crystal#匮乏宝石合成)自然之种$(/l)被动生长获得。",
+      "text": "Passively grown using $(l:items/1_crystal#depleted_crystal_recipe)seed of nature$(/l).",
       "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:crystal_of_flame",
-      "anchor": "蕴炎风雪宝石",
-      "text": "使用$(l:items/1_crystal#匮乏宝石合成)匮乏的蕴炎宝石$(/l)吸收大量$(9)熔岩$()获得。",
+      "anchor": "winterstorm_flame_crystal",
+      "text": "Formed by using $(l:items/1_crystal#depleted_crystal_recipe)depleted crystal of flame$(/l) to absorb large amounts of $(9)lava$().",
       "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:crystal_of_winterstorm",
-      "text": "使用$(l:items/1_crystal#匮乏宝石合成)匮乏的风雪宝石$(/l)吸收大量$(9)细雪$()获得。",
+      "text": "Formed by using a $(l:items/1_crystal#depleted_crystal_recipe)depleted crystal of winterstorm$(/l) to absorb large amounts of $(9)powder snow$().",
       "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:crystal_of_ocean",
-      "anchor": "深海雷霆宝石",
-      "text": "使用$(9)潮涌核心$()进行$(l:mechanics/5_ritual)仪式$(/l)获得。",
+      "anchor": "ocean_thunder_crystal",
+      "text": "Crafted with $(9)conduit$() using $(l:mechanics/5_ritual)ritual$(/l).",
       "link_recipe": true
     },
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:crystal_of_thunder",
-      "text": "使用$(a)自然$()、$(6)地脉$()、$(c)蕴炎$()、$(b)风雪$()、$(3)深海$()宝石进行$(l:mechanics/5_ritual)仪式$(/l)获得。",
+      "text": "Craft with $(a)Life$(), $(6)Earth$(), $(c)Flame$(), $(b)Winterstorm$(), and $(3)Ocean$() crystals using $(l:mechanics/5_ritual)ritual$(/l).",
       "link_recipe": true
     },
     {
@@ -58,7 +60,7 @@
     },
     {
       "type": "patchouli:crafting",
-      "anchor": "匮乏宝石合成",
+      "anchor": "depleted_crystal_recipe",
       "recipe": "glimmeringtales:depleted_crystal_of_flame",
       "recipe2": "glimmeringtales:depleted_crystal_of_winterstorm"
     }

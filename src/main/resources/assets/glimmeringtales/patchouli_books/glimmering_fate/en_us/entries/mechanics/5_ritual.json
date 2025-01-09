@@ -1,16 +1,16 @@
 {
-  "name": "仪式",
+  "name": "Ritual",
   "icon": "glimmeringtales:ritual_matrix",
   "category": "glimmeringtales:mechanics",
   "sortnum": 5,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "本模组大多数物品都需要仪式进行制作。$(br)需要$(l:items/7_ritual)仪式矩阵和仪式祭坛$(/l)。$(br2)仪式祭坛需要摆放在仪式矩阵$(9)3格范围内$()，出现符文飘向矩阵表示链接成功。$(br2)制作时需要向矩阵和祭坛摆放需要的物品，使用$(9)法杖右键$()矩阵即可开始仪式。"
+      "text": "Most items in this mod require rituals to craft.$(br)You will need $(l:items/7_ritual)Ritual Matrix and Ritual Altars$(/l).$(br2)The Ritual Altars must be placed within $(9)3 blocks$() of the Ritual Matrix, and the connection is successful when you see glyphs float toward the matrix.$(br2)To begin the ritual, place the required items on the matrix and altars, then right-click the matrix with a $(9)wand$()."
     },
     {
       "type": "patchouli:multiblock",
-      "name": "仪式摆放",
+      "name": "Ritual Setup",
       "enable_visualize": false,
       "multiblock": {
         "pattern": [
@@ -27,7 +27,7 @@
           "M": "glimmeringtales:ritual_matrix"
         }
       },
-      "text": "只需围绕矩阵摆放即可，上图$(9)仅供参考$()。"
+      "text": "Simply place the altars around the matrix, the diagram above is $(9)for reference only$()."
     }
   ]
 }

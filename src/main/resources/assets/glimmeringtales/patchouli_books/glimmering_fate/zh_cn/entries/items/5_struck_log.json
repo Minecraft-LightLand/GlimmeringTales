@@ -1,5 +1,5 @@
 {
-  "name": "Struck Log",
+  "name": "雷焰木",
   "icon": "glimmeringtales:struck_log",
   "category": "glimmeringtales:items",
   "sortnum": 5,
@@ -7,13 +7,13 @@
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:struck_log",
-      "title": "Struck Log",
-      "text": "In $(9)swamps$() and $(9)oak groves$(), there are a few $(9)Struck Trees$().$(br2)These trees $(9)do not drop saplings$().$(br2)When ignited while exposed to $(9)sky$(), it will consume itself and summon lightning.",
+      "title": "雷焰木",
+      "text": "在$(9)沼泽$()和$(9)橡树林$()中，存有少量$(9)雷焰树$()。$(br2)这种树已经失去了生长能力，$(9)不会掉落树苗$()。$(br2)在$(9)露天$()情况下点燃树干就会降下雷电。",
       "link_recipe": true
     },
     {
       "type": "patchouli:multiblock",
-      "name": "Struck Tree",
+      "name": "雷焰树",
       "enable_visualize": false,
       "multiblock": {
         "pattern": [

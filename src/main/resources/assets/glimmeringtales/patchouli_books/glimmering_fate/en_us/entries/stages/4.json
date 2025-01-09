@@ -1,12 +1,12 @@
 {
-  "name": "开始量产",
+  "name": "Renewable Crystals",
   "icon": "glimmeringtales:thunder",
   "category": "glimmeringtales:stages",
   "sortnum": 4,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "在集齐了$(a)自然$()，$(6)地脉$()，$(c)蕴炎$()，$(b)风雪$()，$(3)深海$()宝石后，你需要使用仪式将它们合成为$(l:items/1_crystal#深海雷霆宝石)雷霆宝石$(/l)。$(br2)在制作出雷霆符石后，你就可以量产雷焰木和各种宝石了。"
+      "text": "After collecting the $(a)Nature$(), $(6)Earth$(), $(c)Flame$(), $(b)Winterstorm$(), and $(3)Ocean$() crystals, you can now use combine them into the $(l:items/1_crystal#ocean_thunder_crystal)Thunder Crystal$(/l).$(br2)Once you craft the Thunder Rune, you get crystals easier."
     }
   ]
 }

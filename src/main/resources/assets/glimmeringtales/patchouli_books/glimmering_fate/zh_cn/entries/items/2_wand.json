@@ -1,5 +1,5 @@
 {
-  "name": "Wand",
+  "name": "法杖",
   "icon": "glimmeringtales:wand",
   "category": "glimmeringtales:items",
   "sortnum": 2,
@@ -7,8 +7,8 @@
     {
       "type": "patchouli:spotlight",
       "item": "glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:wood_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:life_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:gold_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:ocean_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:thunder_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:nether_wand\"]",
-      "title": "Wand",
-      "text": "Players can use $(9)Nature crystal$() to craft $(9)wands$(). Wands provide nine rune slots and offer some attribute bonus.$(br2)Right click the wand item in inventory menu to open it. $(br2)Hold the wand and press $(9)Shift + scroll$() to select runes/crystals."
+      "title": "法杖",
+      "text": "玩家可以使用$(9)自然宝石$()制作$(9)法杖$()。$(br2)法杖能够提供9格符石槽位和部分属性加成。$(br2)在任意GUI$(9)右键$()法杖打开。$(br2)手持法杖按住$(9)Shift+滚轮$()选择符石/宝石。"
     },
     {
       "type": "patchouli:crafting",

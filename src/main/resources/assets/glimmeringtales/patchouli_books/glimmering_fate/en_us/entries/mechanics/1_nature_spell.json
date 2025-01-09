@@ -1,5 +1,5 @@
 {
-  "name": "法术",
+  "name": "Nature spell",
   "icon": "glimmeringtales:wand",
   "category": "glimmeringtales:mechanics",
   "sortnum": 1,
@@ -7,8 +7,8 @@
     {
       "type": "patchouli:spotlight",
       "item": "tag:glimmeringtales:core",
-      "title": "法术",
-      "text": "指使用$(l:items/1_crystal)宝石$(/l)或$(l:items/4_runestone)符石$(/l)以$(l:items/2_wand)法杖$(/l)作为媒介施放的法术。$(br2)属性分为地脉、生机、蕴炎、风雪、深海、雷霆。$(br2)施法方式可以分为$(l:mechanics/1_nature_spell#方块施法)方块施法$(/l)和$(l:mechanics/1_nature_spell#符石施法)符石施法$(/l)。"
+      "title": "Spell Casting",
+      "text": "You can cast spells with $(l:items/1_crystal)crystals$(/l) or $(l:items/4_runestone)runes$(/l) as a medium with $(l:items/2_wand)wands$(/l).$(br2)Spell casting can be classified into $(l:mechanics/1_nature_spell#block_spell_casting)block spell casting$(/l) and $(l:mechanics/1_nature_spell#rune_spell_casting)rune spell casting$(/l)."
     },
     {
       "type": "patchouli:entity",
@@ -18,26 +18,26 @@
     {
       "type": "patchouli:spotlight",
       "item": "tag:glimmeringtales:crystal",
-      "anchor": "方块施法",
-      "title": "方块施法",
-      "text": "在使用$(l:items/1_crystal)宝石$(/l)施放法术时，需要使用拥有$(9)对应亲和度$()的宝石对着可用方块施放。$(br2)不同宝石对不同种类加成也有所不同。"
+      "anchor": "block_spell_casting",
+      "title": "Block Spell casting",
+      "text": "When casting spells with $(l:items/1_crystal)crystals$(/l), you need to use a crystal with the $(9)corresponding element$() and cast the spell on a compatible block.$(br2)Crystals provide elemental affinity to reduce mana cost for related elements."
     },
     {
       "type": "patchouli:text",
-      "title": "各属性方块施法可用方块",
-      "text": "$(li)$(a)生机$()：竹子、仙人掌、花、藤蔓、干草块$(li)$(6)地脉$()：沙子、沙砾、粘土、石头、石英、钟乳石、紫水晶$(li)$(c)蕴炎$()：岩浆块、下界岩、灵魂沙$(li)$(b)风雪$()：雪、细雪、冰、浮冰、蓝冰$(li)$(3)深海$()：海绵、珊瑚块"
+      "title": "Available Blocks",
+      "text": "$(li)$(a)Life$(): Bamboo, Cactus, Flowers, Vines, Hay Bales$(li)$(6)Earth$(): Sand, Gravel, Clay, Stone, Quartz, Stalactites, Amethyst$(li)$(c)Flame$(): Magma Blocks, Netherrack, Soul Sand$(li)$(b)Winterstorm$(): Snow, Powder Snow, Ice, Packed Ice, Blue Ice$(li)$(3)Ocean$(): Sponge, Coral Blocks"
     },
     {
       "type": "patchouli:spotlight",
       "item": "tag:glimmeringtales:rune,tag:glimmeringtales:spell",
-      "anchor": "符石施法",
-      "title": "符石施法",
-      "text": "在使用$(l:items/4_runestone)符石$(/l)施放法术时$(br)部分法术可以选择在目标位置施放，也可以对着方块施放，两种施放方式各有优劣。$(br2)每种法术都有独特的用法。"
+      "anchor": "rune_spell_casting",
+      "title": "Rune Spellcasting",
+      "text": "When casting spells with $(l:items/4_runestone)runes$(/l),$(br)you no longer need the presence of respective blocks.$(br2)There are 2 kinds of runes: block runes that resembles the spell when you cast crystals onto blocks, and advanced spells that can have more varieties such as charging-casting, continuous-casting, casting at target entity, or toward facing direction."
     },
     {
       "type": "patchouli:text",
-      "title": "各属性可能存在的伤害类型",
-      "text": "$(li)$(a)生机$()：微光法术，生命法术，魔法$(li)$(6)地脉$()：微光法术，地脉法术，弹射物，爆炸，坠落方块$(li)$(c)蕴炎$()：微光法术，蕴炎法术，魔法，火焰，爆炸$(li)$(b)风雪$()：微光法术，风雪法术，弹射物，冰冻$(li)$(3)深海$()：微光法术，深海法术，魔法$(li)$(3)雷霆$()：微光法术，雷霆法术，雷电"
+      "title": "Damage Types",
+      "text": "Damage from spells can have multiple categorization based on their elements and forms.$(li)$(a)Life$(): Spell, Life Spell, Magic$(li)$(6)Earth$(): Spell, Earth Spell, Projectile, Explosion, Falling Block$(li)$(c)Flame$(): Spell, Flame Spell, Magic, Fire, Explosion$(li)$(b)Winterstorm$(): Spell, Frost Spell, Projectile, Freezing$(li)$(3)Ocean$(): Spells, Ocean Spell, Magic$(li)$(3)Thunder$(): Spell, Thunder Spell, Lightning"
     }
   ]
 }

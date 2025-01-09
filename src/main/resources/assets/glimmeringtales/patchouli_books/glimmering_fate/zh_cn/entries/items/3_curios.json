@@ -1,0 +1,35 @@
+{
+  "name": "饰品",
+  "icon": "glimmeringtales:glove_of_sorcerer",
+  "category": "glimmeringtales:items",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:unique_curios",
+      "title": "饰品",
+      "text": "通过$(l:mechanics/5_ritual)仪式$(/l)合成。$(br2)分为$(9)手套$()，$(9)戒指$()，$(9)护符$()。$(br2)能够在一定程度上提高法术的$(9)效果$()或$(9)续航能力$()。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:glove",
+      "title": "手套",
+      "text": "为玩家提供$(9)伤害属性$()上的变化。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:ring",
+      "title": "戒指",
+      "text": "为玩家提供$(9)魔力上限$()和$(l:mechanics/4_affinity)亲和度$(/l)。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:charm",
+      "title": "护符",
+      "text": "为玩家提供$(9)基础数值$()上的变化。",
+      "link_recipe": true
+    }
+  ]
+}

@@ -1,12 +1,12 @@
 {
-  "name": "如何开始",
+  "name": "Start of the Journey",
   "icon": "glimmeringtales:struck_log",
   "category": "glimmeringtales:stages",
   "sortnum": 1,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "首先，需要与自然相通的媒介。$(br2)你需要寻找$(l:items/5_struck_log)雷焰树$(/l)，获取雷焰木来制造$(9)雷电$()。$(br2)通过$(9)雷击青金石$()获得自然宝石。$(br2)获得自然宝石后，你就可以制作$(l:items/2_wand)法杖$(/l)使用$(l:items/1_crystal)宝石$(/l)进行$(l:mechanics/1_nature_spell#方块施法)方块施法$(/l)了。"
+      "text": "First, you need a medium that connects with nature.$(br2)You will need to find $(l:items/5_struck_log)Struck Trees$(/l) and gather Struck Log to summon $(9)lightning$().$(br2)Strike lapis lazuli with lightning to obtain nature crystals.$(br2)Once you have the nature crystal, you can craft a $(l:items/2_wand)wand$(/l) and use $(l:items/1_crystal)crystals$(/l) for $(l:mechanics/1_nature_spell#block_spell_casting)block spell casting$(/l)."
     }
   ]
 }

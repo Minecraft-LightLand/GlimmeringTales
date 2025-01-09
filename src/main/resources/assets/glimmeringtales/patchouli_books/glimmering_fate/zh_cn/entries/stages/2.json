@@ -1,0 +1,16 @@
+{
+  "name": "寻找紫水晶",
+  "icon": "glimmeringtales:amethyst_resonator",
+  "category": "glimmeringtales:stages",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "或许你感觉$(l:mechanics/1_nature_spell#方块施法)方块施法$(/l)局限性太大了，想随时随地施法。$(br2)那么你就可以进行下一步了。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "下一步需要获取$(9)地脉宝石$()，你需要寻找$(9)紫水晶母岩$()。$(br2)使用$(l:items/6_amethyst_resonator)紫晶音叉$(/l)可以帮助你快速寻找紫水晶母岩。$(br2)通过$(9)雷击紫水晶母岩$()获得地脉宝石。$(br2)获得地脉宝石后，玩家就可以合成$(l:items/7_ritual)仪式方块$(/l)来获取$(l:items/4_runestone)方块符石$(/l)了。"
+    }
+  ]
+}
