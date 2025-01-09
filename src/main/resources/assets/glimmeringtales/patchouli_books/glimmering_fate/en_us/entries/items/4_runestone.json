@@ -1,0 +1,22 @@
+{
+  "name": "Runes",
+  "icon": "glimmeringtales:bamboo",
+  "category": "glimmeringtales:items",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:rune",
+      "title": "Block Runes",
+      "text": "Craft through $(l:mechanics/5_ritual)ritual$(/l).$(br2)By infusing crystals with respective blocks, you can cast $(l:mechanics/1_nature_spell#block_spell_casting)block spells$(/l) directly without presence of those blocks.",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:spell",
+      "title": "Spell Runes",
+      "text": "Craft through $(l:mechanics/5_ritual)ritual$(/l).$(br2)Standalone spell rune as an upgrade from block spells.$(br)Can cast $(9)advanced spells$() that has more variety and power.",
+      "link_recipe": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Ritual",
+  "icon": "glimmeringtales:ritual_matrix",
+  "category": "glimmeringtales:items",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:ritual_matrix,glimmeringtales:ritual_altar",
+      "title": "Ritual",
+      "text": "The $(9)Ritual Matrix$() and $(9)Ritual Altar$() can hold an item, functioning as an $(9)item display pedestal$().$(br2)Place $(9)8$() Ritual Altars around $(9)1$() Ritual Matrix to perform a $(l:mechanics/5_ritual)ritual$(/l)."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:ritual_matrix",
+      "recipe2": "glimmeringtales:ritual_altar"
+    }
+  ]
+}

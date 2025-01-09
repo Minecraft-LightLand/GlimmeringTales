@@ -1,0 +1,66 @@
+{
+  "name": "宝石",
+  "icon": "glimmeringtales:crystal_of_earth",
+  "category": "glimmeringtales:items",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:crystal",
+      "title": "宝石",
+      "text": "$(9)宝石$()是非常重要的原材料，用于制作各种属性的道具。$(br2)另外，宝石还可以放入$(l:items/2_wand)法杖$(/l)内进行$(l:mechanics/1_nature_spell#方块施法)方块施法$(/l)。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "自然的表征方式多种多样，自然宝石难以在单一方面突破极限。$(br2)为此，你需要通过$(9)一些方式$()获取其他的宝石。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_earth",
+      "text": "$(9)雷电$()转化$(9)紫水晶母岩$()获得。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_life",
+      "text": "$(l:items/1_crystal#匮乏宝石合成)自然之种$(/l)被动生长获得。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_flame",
+      "anchor": "蕴炎风雪宝石",
+      "text": "使用$(l:items/1_crystal#匮乏宝石合成)匮乏的蕴炎宝石$(/l)吸收大量$(9)熔岩$()获得。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_winterstorm",
+      "text": "使用$(l:items/1_crystal#匮乏宝石合成)匮乏的风雪宝石$(/l)吸收大量$(9)细雪$()获得。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_ocean",
+      "anchor": "深海雷霆宝石",
+      "text": "使用$(9)潮涌核心$()进行$(l:mechanics/5_ritual)仪式$(/l)获得。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_thunder",
+      "text": "使用$(a)自然$()、$(6)地脉$()、$(c)蕴炎$()、$(b)风雪$()、$(3)深海$()宝石进行$(l:mechanics/5_ritual)仪式$(/l)获得。",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:crystal_vine"
+    },
+    {
+      "type": "patchouli:crafting",
+      "anchor": "匮乏宝石合成",
+      "recipe": "glimmeringtales:depleted_crystal_of_flame",
+      "recipe2": "glimmeringtales:depleted_crystal_of_winterstorm"
+    }
+  ]
+}

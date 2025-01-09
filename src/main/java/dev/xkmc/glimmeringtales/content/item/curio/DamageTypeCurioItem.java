@@ -1,6 +1,5 @@
 package dev.xkmc.glimmeringtales.content.item.curio;
 
-import dev.xkmc.glimmeringtales.init.data.GTLang;
 import dev.xkmc.l2damagetracker.contents.damage.DamageState;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -38,7 +37,7 @@ public class DamageTypeCurioItem extends AttributeCurioItem {
 	public interface Factory {
 
 		@Nullable
-		 DamageState getState(Holder<DamageType> type);
+		DamageState getState(Holder<DamageType> type);
 
 	}
 

@@ -1,23 +1,7 @@
 {
-  "cost": 40,
+  "cost": 160,
   "elem": "glimmeringtales:earth",
-  "focus": 10,
-  "graph": {
-    "flows": [
-      "E->SF",
-      "L->OT",
-      "SO->E",
-      "FT->L"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "focus": 40,
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:dripstone",
   "tooltip": {

@@ -1,7 +1,7 @@
 {
-  "cost": 100,
+  "cost": 500,
   "elem": "glimmeringtales:thunder",
-  "focus": 10,
+  "focus": 100,
   "graph": {
     "flows": [
       "T<->SFO"

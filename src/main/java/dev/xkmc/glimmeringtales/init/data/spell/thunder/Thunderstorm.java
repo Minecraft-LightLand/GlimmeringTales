@@ -32,7 +32,7 @@ import java.util.List;
 public class Thunderstorm {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("thunderstorm")).focusAndCost(60, 100).mob(16, 1)
+			.build(GlimmeringTales.loc("thunderstorm")).focusAndCost(160, 1200).mob(16, 1)
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.THUNDERSTORM.get(), 2002,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
 			).lang("Thunderstorm").desc(

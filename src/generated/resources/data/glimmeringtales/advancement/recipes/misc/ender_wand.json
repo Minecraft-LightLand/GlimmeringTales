@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crystal_of_nature": {
+      "conditions": {
+        "items": [
+          {
+            "items": "glimmeringtales:crystal_of_nature"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "glimmeringtales:ender_wand"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crystal_of_nature"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "glimmeringtales:ender_wand"
+    ]
+  }
+}

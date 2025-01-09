@@ -53,7 +53,7 @@ public class SnowStorm {
 			).graph("SF->LE", "LE->OT", "OT->SF");
 
 	public static final NatureSpellBuilder SNOW_TORNADO = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("snow_tornado")).focusAndCost(2, 5).mob(6, 1).damageFreeze()
+			.build(GlimmeringTales.loc("snow_tornado")).focusAndCost(1, 5).mob(6, 1).damageFreeze()
 			.spell(ctx -> new SpellAction(tornado(ctx),
 					GTItems.SNOW_TORNADO.asItem(), 100,
 					SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT

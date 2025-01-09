@@ -1,7 +1,7 @@
 {
-  "cost": 5,
+  "cost": 10,
   "elem": "glimmeringtales:ocean",
-  "focus": 3,
+  "focus": 2,
   "graph": {
     "flows": [
       "OS<->LET"

@@ -1,0 +1,12 @@
+{
+  "name": "获取更多属性符石",
+  "icon": "glimmeringtales:hell_mark",
+  "category": "glimmeringtales:stages",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "此时如果你想获得更多种类的$(l:items/4_runestone)方块符石$(/l)。$(br2)那么你可能需要获取对应的$(9)宝石$()。$(li)前往$(9)下界$()寻找材料制作出$(l:items/1_crystal#蕴炎风雪宝石)$(c)蕴炎宝石$(/l)$()。$(li)前往$(9)雪山$()寻找材料制作出$(l:items/1_crystal#蕴炎风雪宝石)$(b)风雪宝石$(/l)$()。$(li)前往$(9)海洋$()寻找$(9)宝藏$()制作出$(l:items/1_crystal#深海雷霆宝石)$(3)深海宝石$(/l)$()。"
+    }
+  ]
+}

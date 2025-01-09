@@ -19,9 +19,9 @@
       },
       {
         "type": "l2magic:sound",
-        "pitch": "0",
-        "sound": "minecraft:entity.enderman.teleport",
-        "volume": "2"
+        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:entity.breeze.land",
+        "volume": "3"
       },
       {
         "type": "l2magic:processor",

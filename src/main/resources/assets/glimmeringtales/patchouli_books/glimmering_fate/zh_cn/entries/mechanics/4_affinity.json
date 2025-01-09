@@ -1,0 +1,12 @@
+{
+  "name": "亲和度",
+  "icon": "glimmeringtales:ring_of_nature",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "在释放$(l:mechanics/1_nature_spell)法术$(/l)时，会根据$(l:items/2_wand)法杖$(/l)的$(9)亲和度$()和$(l:items/1_crystal)宝石$(/l)的$(9)亲和度$()来减少此次施法的$(9)魔力消耗$()。$(br2)亲和度越高，施放对应属性法术时的魔力消耗也会越少。"
+    }
+  ]
+}

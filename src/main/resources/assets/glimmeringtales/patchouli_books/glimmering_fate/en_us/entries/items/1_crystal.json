@@ -1,0 +1,68 @@
+{
+  "name": "Crystals",
+  "icon": "glimmeringtales:crystal_of_earth",
+  "category": "glimmeringtales:items",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:crystal",
+      "title": "Crystals",
+      "text": "$(9)Crystals$() are essential ingredients for crafting elemental equipments. $(br2)Crystals can also be put into $(l:items/2_wand)wands$(/l) for $(l:mechanics/1_nature_spell#block_spell_casting)block spell casting$(/l)."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_nature",
+      "text": "Formed by lightning-struck $(9)lapis_lazuli$() item.",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_earth",
+      "text": "Formed by lightning-struck $(9)budding amethyst$() block.",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_life",
+      "text": "Passively grown using $(l:items/1_crystal#depleted_crystal_recipe)seed of nature$(/l).",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_flame",
+      "anchor": "winterstorm_flame_crystal",
+      "text": "Formed by using $(l:items/1_crystal#depleted_crystal_recipe)depleted crystal of flame$(/l) to absorb large amounts of $(9)lava$().",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_winterstorm",
+      "text": "Formed by using a $(l:items/1_crystal#depleted_crystal_recipe)depleted crystal of winterstorm$(/l) to absorb large amounts of $(9)powder snow$().",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_ocean",
+      "anchor": "ocean_thunder_crystal",
+      "text": "Crafted with $(9)conduit$() using $(l:mechanics/5_ritual)ritual$(/l).",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:crystal_of_thunder",
+      "text": "Craft with $(a)Life$(), $(6)Earth$(), $(c)Flame$(), $(b)Winterstorm$(), and $(3)Ocean$() crystals using $(l:mechanics/5_ritual)ritual$(/l).",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:crystal_vine"
+    },
+    {
+      "type": "patchouli:crafting",
+      "anchor": "depleted_crystal_recipe",
+      "recipe": "glimmeringtales:depleted_crystal_of_flame",
+      "recipe2": "glimmeringtales:depleted_crystal_of_winterstorm"
+    }
+  ]
+}

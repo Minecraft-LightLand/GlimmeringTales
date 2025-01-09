@@ -38,7 +38,7 @@ import java.util.List;
 public class PowderSnowSpell {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("powder_snow")).cost(60)
+			.build(GlimmeringTales.loc("powder_snow")).focusAndCost(60, 300)
 			.damageFreeze()
 			.block(PowderSnowSpell::gen, GTItems.RUNE_POWDER_SNOW, RuneBlock::offset,
 					(b, e) -> b.add(Blocks.POWDER_SNOW, BlockSpell.cost(e)))

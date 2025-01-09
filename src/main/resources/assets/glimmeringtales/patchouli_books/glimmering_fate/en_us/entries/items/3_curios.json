@@ -1,0 +1,35 @@
+{
+  "name": "Accessories",
+  "icon": "glimmeringtales:glove_of_sorcerer",
+  "category": "glimmeringtales:items",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:unique_curios",
+      "title": "Accessories",
+      "text": "Crafted through $(l:mechanics/5_ritual)ritual$(/l).$(br2)Accessories can be in the form of $(9)gloves$(), $(9)rings$(), and $(9)charms$().$(br2)They can enhance $(9)spell power$() or reduce $(9)consumption$()."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:glove",
+      "title": "Glove",
+      "text": "Alter $(9)damage types$() of elemental spells.",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:ring",
+      "title": "Ring",
+      "text": "Increase $(9)mana capacity$() and $(l:mechanics/4_affinity)elemental affinity$(/l).",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:charm",
+      "title": "Charm",
+      "text": "Increase various $(9)attributes$() related to respective elements.",
+      "link_recipe": true
+    }
+  ]
+}

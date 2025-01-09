@@ -1,0 +1,12 @@
+{
+  "name": "Spell Research",
+  "icon": "glimmeringtales:thunderstorm",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Right-click a researchable rune in any GUI to open the $(9)research$() menu, where you can connect pathways to evenly distribute the mana of all crystals.$(br2)Press $(9)R$() to test the flow, and press $(9)F$() to save the pathway."
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
-  "cost": 20,
+  "cost": 160,
   "elem": "glimmeringtales:flame",
-  "focus": 10,
+  "focus": 40,
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:magma",
   "tooltip": {

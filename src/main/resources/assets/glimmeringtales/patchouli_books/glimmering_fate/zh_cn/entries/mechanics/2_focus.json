@@ -1,0 +1,12 @@
+{
+  "name": "专注",
+  "icon": "minecraft:player_head",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(9)专注$()是玩家施放法术时必需的属性，会随时间自然回复。$(br2)专注的上限和恢复速度都是固定的，$(9)无法通过任何方式增加$()。$(br2)在施放法术时会消耗专注并$(9)停止回复$()，这使得玩家无法一直施放法术。"
+    }
+  ]
+}

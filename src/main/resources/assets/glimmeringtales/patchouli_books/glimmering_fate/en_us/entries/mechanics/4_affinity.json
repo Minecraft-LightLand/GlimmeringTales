@@ -1,0 +1,12 @@
+{
+  "name": "Affinity",
+  "icon": "glimmeringtales:ring_of_nature",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "When casting $(l:mechanics/1_nature_spell)spells$(/l), $(9)elemental affinity$() of $(l:items/2_wand)wand$(/l), $(l:items/1_crystal)crystal$(/l), and player will reduce the $(9)mana consumption$() of the spell.$(br2)The higher the affinity, the less mana is consumed when casting spells of the corresponding element."
+    }
+  ]
+}

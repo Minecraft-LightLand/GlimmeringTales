@@ -1,0 +1,7 @@
+{
+  "parent": "glimmeringtales:custom/thunder_wand",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "glimmeringtales:item/wand/thunder_wand"
+  }
+}

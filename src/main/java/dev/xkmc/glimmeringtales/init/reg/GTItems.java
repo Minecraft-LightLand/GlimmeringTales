@@ -47,13 +47,14 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
+import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 public class GTItems {
 
@@ -64,9 +65,10 @@ public class GTItems {
 	public static final VarItemInit<AttributeCurioItem> CURIOS;
 	public static final VarItemInit<BlockRuneItem> RUNES;
 	public static final VarItemInit<SpellRuneItem> SPELLS;
+	public static final VarItemInit<WandHandleItem> WAND_HANDLES;
 
-	public static final List<Supplier<? extends IWandCoreItem>> CORES = new ArrayList<>();
-	public static final List<ItemEntry<? extends WandHandleItem>> HANDLES = new ArrayList<>();
+	public static final List<IWandCoreItem> CORES = new ArrayList<>();
+	public static final List<WandHandleItem> HANDLES = new ArrayList<>();
 
 	public static final ItemEntry<SpellCoreItem> CRYSTAL_NATURE,
 			CRYSTAL_LIFE, CRYSTAL_FLAME, CRYSTAL_EARTH, CRYSTAL_WINTERSTORM,
@@ -84,7 +86,6 @@ public class GTItems {
 
 	public static final ItemEntry<RuneWandItem> WAND;
 	public static final MenuEntry<WandMenu> WAND_MENU;
-	public static final ItemEntry<WandHandleItem> WOOD_WAND, LIFE_WAND, GOLD_WAND, OCEAN_WAND;
 
 	public static final ItemEntry<DamageTypeCurioItem> GLOVE_OF_SORCERER, GLOVE_OF_ABYSS, GLOVE_OF_OCEAN, GLOVE_OF_THUNDER;
 
@@ -102,6 +103,11 @@ public class GTItems {
 			STONE_BRIDGE, AMETHYST_PENETRATION, EARTHQUAKE, METEOR,
 			OCEAN_SHELTER,
 			THUNDERSTORM, CHARGE_BURST;
+
+	public static final VarHolder<WandHandleItem>
+			WOOD_WAND, LIFE_WAND, GOLD_WAND, OCEAN_WAND,
+			THUNDER_WAND, NETHER_WAND, ENDER_WAND;
+
 
 	public static final BlockEntry<SelfDestroyTransparent> FAKE_GLASS;
 	public static final BlockEntry<DelegateBlock> CLAY_CARPET, FAKE_STONE, FAKE_BAMBOO,
@@ -314,11 +320,6 @@ public class GTItems {
 
 			WAND_MENU = L2Backpack.REGISTRATE.menu("wand", WandMenu::fromNetwork, () -> WandScreen::new).register();
 
-			WOOD_WAND = handle("wood_wand", 0.25f, 0.75f, "Wooden");
-			LIFE_WAND = handle("life_wand", 0.25f, 0.87f, "Bamboo");
-			GOLD_WAND = handle("gold_wand", 0.25f, 0.75f, "Golden");
-			OCEAN_WAND = handle("ocean_wand", 0.25f, 0.92f, "Ocean");
-
 		}
 
 		{
@@ -326,7 +327,7 @@ public class GTItems {
 							p -> new DamageTypeCurioItem(p.stacksTo(1).fireResistant(),
 									e -> GTDamageStates.MAGIC, GTLang.TOOLTIP_MAGIC::get))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.add(L2DamageTracker.MAGIC_FACTOR, 0.25)
 					)).lang("Glove of Sorcerer")
@@ -336,7 +337,7 @@ public class GTItems {
 							p -> new DamageTypeCurioItem(p.stacksTo(1).fireResistant(),
 									e -> DefaultDamageState.BYPASS_MAGIC, GTLang.TOOLTIP_ABYSS::get))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.total(GTRegistries.MANA_REGEN, -0.5)
 					)).lang("Glove of Abyss")
@@ -347,7 +348,7 @@ public class GTItems {
 									e -> e.is(GTRegistries.OCEAN.damgeTag()) ? DefaultDamageState.BYPASS_COOLDOWN : null,
 									() -> GTLang.TOOLTIP_COOLDOWN.get(GTRegistries.OCEAN.get().coloredDesc())))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.total(GTRegistries.MANA_REGEN, -0.25)
 					)).lang("Glove of Ocean")
@@ -358,7 +359,7 @@ public class GTItems {
 									e -> e.is(GTRegistries.THUNDER.damgeTag()) ? DefaultDamageState.BYPASS_COOLDOWN : null,
 									() -> GTLang.TOOLTIP_COOLDOWN.get(GTRegistries.THUNDER.get().coloredDesc())))
 					.model((ctx, pvd) -> pvd.generated(ctx, pvd.modLoc("item/curio/" + ctx.getName())))
-					.tag(GTTagGen.curio("hands"), GTTagGen.UNIQUE)
+					.tag(GTTagGen.curio("hands"), GTTagGen.item("glove"), GTTagGen.UNIQUE)
 					.dataMap(GTRegistries.ITEM_ATTR.reg(), AttributeData.of(
 							AttributeData.total(GTRegistries.MANA_REGEN, -0.25)
 					)).lang("Glove of Thunder")
@@ -381,7 +382,7 @@ public class GTItems {
 										new ModelFile.UncheckedModelFile(pvd.modLoc("custom/rune_core")))
 								.texture("all", pvd.modLoc("item/rune/" + ctx.getName()))
 								.renderType("cutout");
-					})
+					}).onRegister(CORES::add)
 			);
 
 			SPELLS = VarItemInit.setup(GlimmeringTales.REGISTRATE, GlimmeringTales.loc("spell_runes"),
@@ -394,9 +395,13 @@ public class GTItems {
 												new ModelFile.UncheckedModelFile(pvd.modLoc("custom/rune_core")))
 										.texture("all", pvd.modLoc("item/spell/" + ctx.getName()))
 										.renderType("cutout");
-							})
+							}).onRegister(CORES::add)
 			);
 
+			WAND_HANDLES = VarItemInit.setup(GlimmeringTales.REGISTRATE, GlimmeringTales.loc("wand_handles"),
+					e -> new WandHandleItem(new Item.Properties(), e),
+					(rl, b) -> b.removeTab(TAB.key()).onRegister(HANDLES::add)
+			);
 
 			Curios.register();
 
@@ -446,6 +451,14 @@ public class GTItems {
 			OCEAN_SHELTER = spell("ocean_shelter");
 			THUNDERSTORM = spell("thunderstorm");
 			CHARGE_BURST = spell("charge_burst");
+
+			WOOD_WAND = handle("wood_wand", 0.25f, 0.75f, "Wooden");
+			LIFE_WAND = handle("life_wand", 0.25f, 0.87f, "Bamboo");
+			GOLD_WAND = handle("gold_wand", 0.25f, 0.75f, "Golden");
+			OCEAN_WAND = handle("ocean_wand", 0.25f, 0.92f, "Ocean");
+			THUNDER_WAND = handle("thunder_wand", 0.23f, 0.70f, "Thunder");
+			NETHER_WAND = handle("nether_wand", 0.22f, 0.75f, "Nether");
+			ENDER_WAND = handleShadow("ender_wand", 0.25f, 0.70f, "Ender");
 		}
 
 		{
@@ -493,54 +506,63 @@ public class GTItems {
 	}
 
 	private static ItemEntry<SpellCoreItem> core(String id) {
-		var ans = GlimmeringTales.REGISTRATE.item(id, SpellCoreItem::new)
+		return GlimmeringTales.REGISTRATE.item(id, SpellCoreItem::new)
 				.model((ctx, pvd) -> {
 					pvd.generated(ctx, pvd.modLoc("item/crystal/" + ctx.getName()));
 					pvd.getBuilder(ctx.getName() + "_core").parent(
 									new ModelFile.UncheckedModelFile(pvd.modLoc("custom/rune_core")))
 							.texture("all", pvd.modLoc("item/core/" + ctx.getName()))
 							.renderType("cutout");
-				})
-				.tag(GTTagGen.CRYSTAL)
-				.register();
-		CORES.add(ans);
-		return ans;
+				}).tag(GTTagGen.CRYSTAL).onRegister(CORES::add).register();
 	}
 
 	private static VarHolder<BlockRuneItem> rune(String id, String name) {
-		var ans = RUNES.add(new VarHolder<>(id, (rl, b) -> b.lang(name)));
-		CORES.add(ans);
-		return ans;
+		return RUNES.add(new VarHolder<>(id, (rl, b) -> b.lang(name)));
 	}
 
 	private static VarHolder<SpellRuneItem> spell(String id) {
-		var ans = SPELLS.add(new VarHolder<>(id, (rl, b) -> b));
-		CORES.add(() -> ans.item().get());
-		return ans;
+		return SPELLS.add(new VarHolder<>(id, (rl, b) -> b));
 	}
 
-	private static ItemEntry<WandHandleItem> handle(String id, float size, float offset, String name) {
-		var ans = GlimmeringTales.REGISTRATE.item(id,
-						p -> new WandHandleItem(p, size, offset))
+	private static VarHolder<WandHandleItem> handle(String id, float size, float offset, String name) {
+		return WAND_HANDLES.add(new VarHolder<>(id, (rl, b) -> b
 				.model((ctx, pvd) -> {
-					pvd.handheld(ctx, pvd.modLoc("item/handle/" + id));
+					pvd.handheld(ctx, pvd.modLoc("item/handle/" + ctx.getName()));
 					pvd.getBuilder(ctx.getName() + "_icon").parent(
 									new ModelFile.UncheckedModelFile(pvd.mcLoc("item/handheld")))
-							.texture("layer0", pvd.modLoc("item/handle/" + id));
+							.texture("layer0", pvd.modLoc("item/handle/" + ctx.getName()));
 					pvd.getBuilder(ctx.getName() + "_handle").parent(
 									new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName())))
 							.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
 							.renderType("cutout");
-				}).removeTab(TAB.key()).lang(name)
-				.register();
-		HANDLES.add(ans);
-		return ans;
+				})
+				.dataMap(GTRegistries.WAND_MODEL.reg(), new WandData(size, offset)).lang(name)));
+	}
+
+	private static VarHolder<WandHandleItem> handleShadow(String id, float size, float offset, String name) {
+		return WAND_HANDLES.add(new VarHolder<>(id, (rl, b) -> b
+				.model((ctx, pvd) -> {
+					pvd.handheld(ctx, pvd.modLoc("item/handle/" + ctx.getName()));
+					pvd.getBuilder(ctx.getName() + "_icon").parent(
+									new ModelFile.UncheckedModelFile(pvd.mcLoc("item/handheld")))
+							.texture("layer0", pvd.modLoc("item/handle/" + ctx.getName()));
+					pvd.getBuilder(ctx.getName() + "_handle").customLoader(CompositeModelBuilder::begin)
+							.child("shadow", new ItemModelBuilder(null, pvd.existingFileHelper)
+									.parent(new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName() + "_shadow")))
+									.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
+									.renderType(GlimmeringTales.loc("ender")))
+							.child("base", new ItemModelBuilder(null, pvd.existingFileHelper)
+									.parent(new ModelFile.UncheckedModelFile(pvd.modLoc("custom/" + ctx.getName())))
+									.texture("all", pvd.modLoc("item/wand/" + ctx.getName()))
+									.renderType("cutout"));
+				})
+				.dataMap(GTRegistries.WAND_MODEL.reg(), new WandData(size, offset)).lang(name)));
 	}
 
 	private static VarHolder<AttributeCurioItem> curio(String id, String part, AttributeData data) {
 		return CURIOS.add(new VarHolder<>(id, (rl, b) -> b
 				.dataMap(GTRegistries.ITEM_ATTR.reg(), data)
-				.tag(GTTagGen.curio(part), GTTagGen.UNIQUE)));
+				.tag(GTTagGen.item(part), GTTagGen.curio(part), GTTagGen.UNIQUE)));
 	}
 
 	private static BlockEntry<DelegateBlock> magma(String id) {

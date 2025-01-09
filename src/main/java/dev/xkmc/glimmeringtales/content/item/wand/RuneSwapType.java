@@ -40,8 +40,8 @@ public class RuneSwapType extends MatcherSwapType {
 		ItemStack core = token.getStack();
 		ItemStack wand = token.token().stack();
 		var s = RuneWandItem.getHandle(wand);
-		ResourceLocation TEX = s.getFrame().withSuffix("_frame");
-		ResourceLocation SELECTED = s.getFrame().withSuffix("_selected");
+		ResourceLocation TEX = s.getFrame().withPath(e -> "selection/" + e + "_frame");
+		ResourceLocation SELECTED = s.getFrame().withPath(e -> "selection/" + e + "_selected");
 		int i = entry.i();
 		int size = 9;
 		int h = ctx.g().guiHeight();

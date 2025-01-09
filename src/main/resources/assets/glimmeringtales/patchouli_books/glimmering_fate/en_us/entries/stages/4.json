@@ -1,0 +1,12 @@
+{
+  "name": "Renewable Crystals",
+  "icon": "glimmeringtales:thunder",
+  "category": "glimmeringtales:stages",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "After collecting the $(a)Nature$(), $(6)Earth$(), $(c)Flame$(), $(b)Winterstorm$(), and $(3)Ocean$() crystals, you can now use combine them into the $(l:items/1_crystal#ocean_thunder_crystal)Thunder Crystal$(/l).$(br2)Once you craft the Thunder Rune, you get crystals easier."
+    }
+  ]
+}

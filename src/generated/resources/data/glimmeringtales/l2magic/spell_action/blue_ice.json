@@ -6,7 +6,7 @@
         "type": "l2magic:sound",
         "pitch": "2+rand(-0.1,0.1)+rand(-0.1,0.1)",
         "sound": "minecraft:block.powder_snow.place",
-        "volume": "1"
+        "volume": "10"
       },
       {
         "type": "l2magic:iterate_delayed",

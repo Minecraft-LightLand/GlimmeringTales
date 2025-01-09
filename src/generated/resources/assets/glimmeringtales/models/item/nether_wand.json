@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "glimmeringtales:item/handle/nether_wand"
+  }
+}

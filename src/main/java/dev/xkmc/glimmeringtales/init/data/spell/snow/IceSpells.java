@@ -47,7 +47,7 @@ public class IceSpells {
 	private static final IntVariable BLUE_DUR = IntVariable.of("300");
 
 	public static final NatureSpellBuilder ICE = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("ice")).cost(40).damageFreeze()
+			.build(GlimmeringTales.loc("ice")).focusAndCost(4, 200).damageFreeze()
 			.block(ctx -> gen(ctx, ICE_DMG, ICE_DUR), GTItems.RUNE_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.ICE, BlockSpell.of(e)),
 					(b, e) -> b.add(Blocks.FROSTED_ICE, BlockSpell.of(e))
@@ -58,7 +58,7 @@ public class IceSpells {
 			).graph("S->LEFO");
 
 	public static final NatureSpellBuilder PACK_ICE = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("packed_ice")).cost(60).damageFreeze()
+			.build(GlimmeringTales.loc("packed_ice")).focusAndCost(50, 300).damageFreeze()
 			.block(ctx -> gen(ctx, PACK_DMG, PACK_DUR), GTItems.RUNE_PACKED_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.PACKED_ICE, BlockSpell.of(e)))
 			.lang("Freeze II").desc(
@@ -68,7 +68,7 @@ public class IceSpells {
 			).graph("S<->LEFO");
 
 	public static final NatureSpellBuilder BLUE_ICE = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("blue_ice")).cost(80).damageFreeze()
+			.build(GlimmeringTales.loc("blue_ice")).focusAndCost(60, 400).damageFreeze()
 			.block(ctx -> gen(ctx, BLUE_DMG, BLUE_DUR), GTItems.RUNE_BLUE_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.BLUE_ICE, BlockSpell.of(e)))
 			.lang("Freeze III").desc(
@@ -82,7 +82,7 @@ public class IceSpells {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.POWDER_SNOW_PLACE,
-						DoubleVariable.of("1"),
+						DoubleVariable.of("10"),
 						DoubleVariable.of("2+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new DelayedIterator(

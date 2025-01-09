@@ -1,0 +1,29 @@
+{
+  "name": "Wand",
+  "icon": "glimmeringtales:wand",
+  "category": "glimmeringtales:items",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:wood_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:life_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:gold_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:ocean_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:thunder_wand\"],glimmeringtales:wand[glimmeringtales:handle=\"glimmeringtales:nether_wand\"]",
+      "title": "Wand",
+      "text": "Players can use $(9)Nature crystal$() to craft $(9)wands$(). Wands provide nine rune slots and offer some attribute bonus.$(br2)Right click the wand item in inventory menu to open it. $(br2)Hold the wand and press $(9)Shift + scroll$() to select runes/crystals."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:wood_wand",
+      "recipe2": "glimmeringtales:life_wand"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:gold_wand",
+      "recipe2": "glimmeringtales:ocean_wand"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:thunder_wand",
+      "recipe2": "glimmeringtales:nether_wand"
+    }
+  ]
+}

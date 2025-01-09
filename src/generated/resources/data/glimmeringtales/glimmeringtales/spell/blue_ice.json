@@ -1,7 +1,7 @@
 {
-  "cost": 80,
+  "cost": 400,
   "elem": "glimmeringtales:snow",
-  "focus": 10,
+  "focus": 60,
   "graph": {
     "flows": [
       "ST<->LEFO"

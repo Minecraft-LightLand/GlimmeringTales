@@ -1,0 +1,70 @@
+{
+  "name": "Struck Log",
+  "icon": "glimmeringtales:struck_log",
+  "category": "glimmeringtales:items",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:struck_log",
+      "title": "Struck Log",
+      "text": "In $(9)swamps$() and $(9)oak groves$(), there are a few $(9)Struck Trees$().$(br2)These trees $(9)do not drop saplings$().$(br2)When ignited while exposed to $(9)sky$(), it will consume itself and summon lightning.",
+      "link_recipe": true
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "Struck Tree",
+      "enable_visualize": false,
+      "multiblock": {
+        "pattern": [
+          [
+            "     ",
+            "  B  ",
+            " BBB ",
+            "  B  ",
+            "     "
+          ],
+          [
+            "     ",
+            "  BB ",
+            " BAB ",
+            "  B  ",
+            "     "
+          ],
+          [
+            "BBBBB",
+            "BBBBB",
+            "BBABB",
+            "BBBBB",
+            "BBBBB"
+          ],
+          [
+            "BBBBB",
+            "BBBBB",
+            "BBABB",
+            "BBBBB",
+            "BBBB "
+          ],
+          [
+            "     ",
+            "     ",
+            "  A  ",
+            "     ",
+            "     "
+          ],
+          [
+            "     ",
+            "     ",
+            "  A  ",
+            "  0  ",
+            "     "
+          ]
+        ],
+        "mapping": {
+          "A": "glimmeringtales:struck_log",
+          "B": "glimmeringtales:struck_leaves"
+        }
+      }
+    }
+  ]
+}

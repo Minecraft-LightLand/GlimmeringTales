@@ -85,8 +85,7 @@ public class Frac implements Comparable<Frac> {
 
 	@Override
 	public boolean equals(Object o) {
-		if (o instanceof Frac) {
-			Frac f = (Frac) o;
+		if (o instanceof Frac f) {
 			if (!isFrac || !((Frac) o).isFrac)
 				return false;
 			return f.num == num && f.den == den;

@@ -1,0 +1,12 @@
+{
+  "name": "Mana",
+  "icon": "glimmeringtales:charm_of_capacity",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(9)Mana$() is a vital resource required for players to cast spells, and it regenerates naturally slowly over time.$(br2)Mana capacity can be increased by accessories. Consumption can be reduced by elemental affinity."
+    }
+  ]
+}

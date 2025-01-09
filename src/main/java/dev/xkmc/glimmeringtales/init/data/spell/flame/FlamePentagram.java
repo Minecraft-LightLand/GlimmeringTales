@@ -43,7 +43,7 @@ import java.util.List;
 public class FlamePentagram {
 
 	public static final NatureSpellBuilder HELL_MARK = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(40, 160).mob(16, 1)
+			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 400).mob(16, 1)
 			.damageFire()
 			.spell(ctx -> new SpellAction(flameBurst(ctx),
 					GTItems.HELL_MARK.asItem(), 200,
@@ -55,7 +55,7 @@ public class FlamePentagram {
 			).graph("E->SF", "L->OT", "SO->E", "FT->L");
 
 	public static final NatureSpellBuilder LAVA_BURST = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(3, 10, 30)
+			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(5, 20, 30)
 			.damageExplosion()
 			.spell(ctx -> new SpellAction(earthquake(ctx),
 					GTItems.LAVA_BURST.asItem(), 300,
@@ -71,10 +71,14 @@ public class FlamePentagram {
 
 	private static ConfiguredEngine<?> flameBurst(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
-				new SoundInstance(
-						SoundEvents.FIRECHARGE_USE,
-						DoubleVariable.of("1"),
-						DoubleVariable.of("rand(-0.1,0.1)+rand(-0.1,0.1)")
+				new DelayedIterator(
+						IntVariable.of("5"),
+						IntVariable.of("8"),
+						new SoundInstance(
+								SoundEvents.FIRECHARGE_USE,
+								DoubleVariable.of("1"),
+								DoubleVariable.of("rand(-0.1,0.1)+rand(-0.1,0.1)")
+						), null
 				),
 				star(4, 0.3).move(
 						new SetDirectionModifier(

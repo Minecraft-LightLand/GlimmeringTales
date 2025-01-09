@@ -6,7 +6,7 @@
         "type": "l2magic:sound",
         "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
         "sound": "minecraft:block.snow.break",
-        "volume": "1"
+        "volume": "10"
       },
       {
         "type": "l2magic:move",
@@ -20,7 +20,7 @@
                 "type": "l2magic:move",
                 "child": {
                   "type": "l2magic:custom_projectile",
-                  "bypassEntity": true,
+                  "bypassEntity": false,
                   "bypassWall": false,
                   "config": "glimmeringtales:snow",
                   "life": "100",

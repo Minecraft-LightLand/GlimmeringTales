@@ -41,7 +41,7 @@ import java.util.Map;
 public class AmethystSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("amethyst")).cost(40)
+			.build(GlimmeringTales.loc("amethyst")).focusAndCost(50, 200)
 			.damageCustom(msg -> new DamageType(msg, 0.1f),
 					"%s is pierced by amethyst shards",
 					"%s is pierced by %s with amethyst shards",
@@ -83,6 +83,11 @@ public class AmethystSpells {
 		int theta = 24;
 		return new ListLogic(List.of(
 				new SoundInstance(
+						SoundEvents.WIND_CHARGE_BURST.value(),
+						DoubleVariable.of("2"),
+						DoubleVariable.of("5+rand(-0.1,0.1)+rand(-0.1,0.1)")
+				),
+				new SoundInstance(
 						SoundEvents.AMETHYST_BLOCK_BREAK,
 						DoubleVariable.of("1"),
 						DoubleVariable.of("0.8+rand(-0.1,0.1)+rand(-0.1,0.1)")
@@ -94,7 +99,7 @@ public class AmethystSpells {
 								new CustomProjectileShoot(
 										DoubleVariable.of("1"), ctx.proj,
 										IntVariable.of("100"),
-										false, true,
+										false, false,
 										Map.of()
 								).move(new RotationModifier(
 										DoubleVariable.of(360 / theta + "*j"),

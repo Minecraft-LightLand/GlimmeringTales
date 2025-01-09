@@ -1,0 +1,18 @@
+{
+  "name": "Amethyst resonator",
+  "icon": "glimmeringtales:amethyst_resonator",
+  "category": "glimmeringtales:items",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "glimmeringtales:amethyst_resonator",
+      "title": "Amethyst Resonator",
+      "text": "The $(9)Amethyst resonator$() can detect $(9)amethyst geodes$().$(br2)The number displayed on the item indicates the amount of amethyst geodes within range.$(br2)The detected amethyst geodes will reveal their location through icons in world."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "glimmeringtales:amethyst_resonator"
+    }
+  ]
+}

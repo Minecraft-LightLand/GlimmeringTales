@@ -21,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.predicate.OrPredicate;
 import dev.xkmc.l2magic.content.engine.predicate.SurfaceBelowCondition;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
-import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PushProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
@@ -35,7 +34,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.List;
@@ -44,7 +42,7 @@ import java.util.Map;
 public class DripstoneSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("dripstone")).cost(40)
+			.build(GlimmeringTales.loc("dripstone")).focusAndCost(40, 160)
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is pierced by stalagmite", "%s is pierced by %s's stalagmite",
 					DamageTypeTags.IS_PROJECTILE)
@@ -56,7 +54,7 @@ public class DripstoneSpells {
 					"[Block] Shoot stalagmite spikes from ground",
 					"Shoot stalagmite spikes from ground to pierce entities, dealing %s and inflict %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, GTEngine.EP_STACK)
-			).graph("E->SF","L->OT","SO->E","FT->L");
+			);
 
 	public static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/pointed_dripstone_up_tip.png");
 	public static final DoubleVariable DMG = DoubleVariable.of("4");
@@ -90,9 +88,14 @@ public class DripstoneSpells {
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
 				new SoundInstance(
+						SoundEvents.BREEZE_JUMP,
+						DoubleVariable.of("0.3"),
+						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
+				),
+				new SoundInstance(
 						SoundEvents.POINTED_DRIPSTONE_LAND,
 						DoubleVariable.of("1"),
-						DoubleVariable.of("rand(-0.1,0.1)+rand(-0.1,0.1)")
+						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new CustomProjectileShoot(
 						DoubleVariable.of("0.8"),

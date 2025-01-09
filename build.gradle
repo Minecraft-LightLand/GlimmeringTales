@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.153'
+    id 'net.neoforged.gradle.userdev' version '7.0.165'
 }
 
 version = mod_version
@@ -54,7 +54,7 @@ runs {
         modSource project.sourceSets.common
     }
     data {
-        programArguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+        arguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
         modSource project.sourceSets.data
     }
 }
@@ -103,6 +103,7 @@ tasks.withType(JavaCompile).configureEach {
 jar {
     manifest {
         attributes([
+                "Automatic-Module-Name"   : "${mod_id}",
                 "Specification-Title"     : "${mod_id}",
                 "Specification-Vendor"    : "xkmc",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
@@ -123,9 +124,6 @@ repositories {
         url "https://maven.ithundxr.dev/snapshots"
     }
     maven {
-        url = "https://maven.theillusivec4.top/"
-    }
-    maven {
         // Location of the maven for vazkii's mods
         name 'blamejared'
         url 'https://maven.blamejared.com'
@@ -137,11 +135,12 @@ repositories {
         }
     }
     maven {
-        // Location of the maven that hosts JEI files (and TiC)
-        name 'Progwml6 maven'
-        url 'https://dvs1.progwml6.com/files/maven'
+        name = "Modrinth"
+        url = "https://api.modrinth.com/maven"
+        content {
+            includeGroup "maven.modrinth"
+        }
     }
-
     maven {
         name = "OctoStudios"
         url = uri("https://maven.octo-studios.com/releases")
@@ -187,12 +186,16 @@ dependencies {
     implementation "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
     implementation "vazkii.patchouli:Patchouli:${patchouli_ver}"
 
-    implementation "curse.maven:adorned-1036809:5684431"
+    //implementation "curse.maven:adorned-1036809:5740650"
 
-    //compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+    compileOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
     //runtimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
-    //dataRuntimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
-    //commonRuntimeOnly "curse.maven:cloth-config-348521:5623420"
-    //commonRuntimeOnly "curse.maven:accessories-938917:5669937"
-    //commonRuntimeOnly "curse.maven:accessories-cc-layer-1005683:5669968"
+    dataRuntimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_version}"
+    commonRuntimeOnly "curse.maven:cloth-config-348521:5623420"
+    commonRuntimeOnly "maven.modrinth:accessories:1.1.0-beta.5+1.21.1"
+    commonRuntimeOnly "maven.modrinth:accessories-cc-layer:9.0.12+1.21.1"
+
+    //implementation "curse.maven:embeddium-908741:5681729"
+    implementation "maven.modrinth:sodium:mc1.21-0.6.0-beta.2-neoforge"
+    implementation "curse.maven:irisshaders-455508:5765375"
 }

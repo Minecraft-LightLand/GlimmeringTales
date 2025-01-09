@@ -1,0 +1,12 @@
+{
+  "name": "Focus",
+  "icon": "minecraft:player_head",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(9)Focus$() is a crucial resource required for players to cast spells, and it naturally regenerates quickly over time.$(br2)The maximum focus and regeneration speed are fixed and $(9)cannot be increased by any means$().$(br2)Spell casting consumes focus and $(9)pause regeneration$() for a while."
+    }
+  ]
+}

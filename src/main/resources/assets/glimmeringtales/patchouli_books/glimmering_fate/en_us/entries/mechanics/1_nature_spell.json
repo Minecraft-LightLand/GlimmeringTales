@@ -1,0 +1,43 @@
+{
+  "name": "Nature spell",
+  "icon": "glimmeringtales:wand",
+  "category": "glimmeringtales:mechanics",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:core",
+      "title": "Spell Casting",
+      "text": "You can cast spells with $(l:items/1_crystal)crystals$(/l) or $(l:items/4_runestone)runes$(/l) as a medium with $(l:items/2_wand)wands$(/l).$(br2)Spell casting can be classified into $(l:mechanics/1_nature_spell#block_spell_casting)block spell casting$(/l) and $(l:mechanics/1_nature_spell#rune_spell_casting)rune spell casting$(/l)."
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:item{Item:{id:\"glimmeringtales:wand\",components:{\"glimmeringtales:handle\":\"glimmeringtales:thunder_wand\",\"l2backpack:backpack_content\":[{item:{count:1,id:\"glimmeringtales:thunder\"},slot:0}]}}}",
+      "scale": 2
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:crystal",
+      "anchor": "block_spell_casting",
+      "title": "Block Spell casting",
+      "text": "When casting spells with $(l:items/1_crystal)crystals$(/l), you need to use a crystal with the $(9)corresponding element$() and cast the spell on a compatible block.$(br2)Crystals provide elemental affinity to reduce mana cost for related elements."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Available Blocks",
+      "text": "$(li)$(a)Life$(): Bamboo, Cactus, Flowers, Vines, Hay Bales$(li)$(6)Earth$(): Sand, Gravel, Clay, Stone, Quartz, Stalactites, Amethyst$(li)$(c)Flame$(): Magma Blocks, Netherrack, Soul Sand$(li)$(b)Winterstorm$(): Snow, Powder Snow, Ice, Packed Ice, Blue Ice$(li)$(3)Ocean$(): Sponge, Coral Blocks"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:rune,tag:glimmeringtales:spell",
+      "anchor": "rune_spell_casting",
+      "title": "Rune Spellcasting",
+      "text": "When casting spells with $(l:items/4_runestone)runes$(/l),$(br)you no longer need the presence of respective blocks.$(br2)There are 2 kinds of runes: block runes that resembles the spell when you cast crystals onto blocks, and advanced spells that can have more varieties such as charging-casting, continuous-casting, casting at target entity, or toward facing direction."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Damage Types",
+      "text": "Damage from spells can have multiple categorization based on their elements and forms.$(li)$(a)Life$(): Spell, Life Spell, Magic$(li)$(6)Earth$(): Spell, Earth Spell, Projectile, Explosion, Falling Block$(li)$(c)Flame$(): Spell, Flame Spell, Magic, Fire, Explosion$(li)$(b)Winterstorm$(): Spell, Frost Spell, Projectile, Freezing$(li)$(3)Ocean$(): Spells, Ocean Spell, Magic$(li)$(3)Thunder$(): Spell, Thunder Spell, Lightning"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Finding Amethyst",
+  "icon": "glimmeringtales:amethyst_resonator",
+  "category": "glimmeringtales:stages",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Perhaps you find $(l:mechanics/1_nature_spell#block_spell_casting)block spell casting$(/l) too limited and want to cast spells anywhere, anytime.$(br2)If so, you're ready for the next step."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The next step is to obtain the $(9)Crystal of Earth$(), which requires finding $(9)amethyst geodes$().$(br2)Using the $(l:items/6_amethyst_resonator)Amethyst Resonator$(/l) will help you quickly locate amethyst geodes.$(br2)Strike the amethyst geodes with lightning to obtain Crystal of Earth.$(br2)Once you have the Crystal of earth, you can craft $(l:items/7_ritual)ritual matrix$(/l) to acquire $(l:items/4_runestone)block runes$(/l)."
+    }
+  ]
+}

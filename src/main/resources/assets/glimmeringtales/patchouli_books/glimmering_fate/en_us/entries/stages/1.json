@@ -1,0 +1,12 @@
+{
+  "name": "Start of the Journey",
+  "icon": "glimmeringtales:struck_log",
+  "category": "glimmeringtales:stages",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "First, you need a medium that connects with nature.$(br2)You will need to find $(l:items/5_struck_log)Struck Trees$(/l) and gather Struck Log to summon $(9)lightning$().$(br2)Strike lapis lazuli with lightning to obtain nature crystals.$(br2)Once you have the nature crystal, you can craft a $(l:items/2_wand)wand$(/l) and use $(l:items/1_crystal)crystals$(/l) for $(l:mechanics/1_nature_spell#block_spell_casting)block spell casting$(/l)."
+    }
+  ]
+}

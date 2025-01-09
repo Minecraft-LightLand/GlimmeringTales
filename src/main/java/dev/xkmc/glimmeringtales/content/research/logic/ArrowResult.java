@@ -31,8 +31,7 @@ public class ArrowResult extends LocateResult {
 	}
 
 	public boolean equals(LocateResult loc) {
-		if (loc instanceof ArrowResult) {
-			ArrowResult arr = (ArrowResult) loc;
+		if (loc instanceof ArrowResult arr) {
 			return arr.row == row && arr.cell == cell && arr.dir == dir;
 		}
 		return false;

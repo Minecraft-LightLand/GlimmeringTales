@@ -36,7 +36,7 @@ import java.util.List;
 public class RuneWandItem extends SingleSwapItem implements IGlowingTarget, FastItem {
 
 	public static WandHandleItem getHandle(ItemStack stack) {
-		var item = GTItems.WAND_HANDLE.getOrDefault(stack, GTItems.WOOD_WAND);
+		var item = GTItems.WAND_HANDLE.getOrDefault(stack, GTItems.WOOD_WAND.item());
 		return item.value() instanceof WandHandleItem handle ? handle : GTItems.WOOD_WAND.get();
 	}
 
@@ -146,7 +146,7 @@ public class RuneWandItem extends SingleSwapItem implements IGlowingTarget, Fast
 
 	public void fillCreativeTabs(CreativeModeTabModifier x) {
 		for (var e : GTItems.HANDLES) {
-			x.accept(GTItems.WAND_HANDLE.set(getDefaultInstance(), e), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+			x.accept(GTItems.WAND_HANDLE.set(getDefaultInstance(), e.builtInRegistryHolder()), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
 		}
 	}
 

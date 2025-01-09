@@ -1,0 +1,23 @@
+{
+  "children": {
+    "base": {
+      "parent": "glimmeringtales:custom/ender_wand",
+      "render_type": "minecraft:cutout",
+      "textures": {
+        "all": "glimmeringtales:item/wand/ender_wand"
+      }
+    },
+    "shadow": {
+      "parent": "glimmeringtales:custom/ender_wand_shadow",
+      "render_type": "glimmeringtales:ender",
+      "textures": {
+        "all": "glimmeringtales:item/wand/ender_wand"
+      }
+    }
+  },
+  "item_render_order": [
+    "shadow",
+    "base"
+  ],
+  "loader": "neoforge:composite"
+}

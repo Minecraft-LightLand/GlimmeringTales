@@ -1,0 +1,12 @@
+{
+  "name": "Obtaining More Runes",
+  "icon": "glimmeringtales:hell_mark",
+  "category": "glimmeringtales:stages",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "At this point, if you want to obtain more types of $(l:items/4_runestone)block runes$(/l),$(br2)you will need to acquire the corresponding $(9)crystals$().$(li)Head to the $(9)Nether$() to find materials and craft the $(l:items/1_crystal#winterstorm_flame_crystal)$(c)Crystal of Flame$(/l).$(li)Travel to the $(9)snowy mountains$() to gather materials and craft the $(l:items/1_crystal#winterstorm_flame_crystal)$(b)Crystal of Winterstorm$(/l).$(li)Explore the $(9)ocean$() to find $(9)heart of the sea$() and craft $(l:items/1_crystal#ocean_thunder_crystal)$(3)Crystal of Ocean$(/l)."
+    }
+  ]
+}

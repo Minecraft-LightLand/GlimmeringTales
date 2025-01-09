@@ -42,7 +42,7 @@ import java.util.function.BiFunction;
 public class GravelSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("gravel")).cost(20)
+			.build(GlimmeringTales.loc("gravel")).focusAndCost(50, 150)
 			.damageCustom(s -> new DamageType(s, 0.1f),
 					"%s is scratched to death by flint", "%s is scratched to death by %s with flint",
 					DamageTypeTags.IS_PROJECTILE)
@@ -126,14 +126,18 @@ public class GravelSpells {
 
 
 		return new ListLogic(List.of(
-				new DelayedIterator(IntVariable.of("30"), IntVariable.of("1"),
+				new DelayedIterator(IntVariable.of("5"), IntVariable.of("5"),
 						new SoundInstance(
 								SoundEvents.BREEZE_IDLE_GROUND,
 								DoubleVariable.of("1"),
-								DoubleVariable.of("0.8+rand(-0.5,0.2)+rand(-0.5,0.2)")
-						),
-
-						null),
+								DoubleVariable.of("0.7+rand(-0.5,0.2)+rand(-0.5,0.2)")
+						), null),
+				new DelayedIterator(IntVariable.of("22"), IntVariable.of("2"),
+						new SoundInstance(
+								SoundEvents.GRAVEL_BREAK,
+								DoubleVariable.of("0.7"),
+								DoubleVariable.of("0.3+rand(-0.1,0.1)+rand(-0.1,0.1)")
+						), null),
 
 				new DelayedIterator(IntVariable.of("18"), IntVariable.of("2"), damage, null),
 				new DelayedIterator(IntVariable.of("22"), IntVariable.of("2"), tick, null)

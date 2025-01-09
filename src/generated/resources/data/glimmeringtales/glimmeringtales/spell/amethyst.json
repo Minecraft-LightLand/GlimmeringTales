@@ -1,7 +1,7 @@
 {
-  "cost": 40,
+  "cost": 200,
   "elem": "glimmeringtales:earth",
-  "focus": 10,
+  "focus": 50,
   "graph": {
     "flows": [
       "E->SF",

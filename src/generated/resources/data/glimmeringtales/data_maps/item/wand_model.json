@@ -1,0 +1,32 @@
+{
+  "values": {
+    "glimmeringtales:ender_wand": {
+      "offset": 0.7,
+      "size": 0.25
+    },
+    "glimmeringtales:gold_wand": {
+      "offset": 0.75,
+      "size": 0.25
+    },
+    "glimmeringtales:life_wand": {
+      "offset": 0.87,
+      "size": 0.25
+    },
+    "glimmeringtales:nether_wand": {
+      "offset": 0.75,
+      "size": 0.22
+    },
+    "glimmeringtales:ocean_wand": {
+      "offset": 0.92,
+      "size": 0.25
+    },
+    "glimmeringtales:thunder_wand": {
+      "offset": 0.7,
+      "size": 0.23
+    },
+    "glimmeringtales:wood_wand": {
+      "offset": 0.75,
+      "size": 0.25
+    }
+  }
+}

@@ -40,7 +40,7 @@ public class SpellTooltipRegistry {
 			super(Component.class);
 		}
 
-		protected static MutableComponent damageStart(OptionalDouble dmg){
+		protected static MutableComponent damageStart(OptionalDouble dmg) {
 			return dmg.isEmpty() ? Component.empty() : GTLang.DESC_DMG.get(
 					Component.literal((int) dmg.getAsDouble() + "").withStyle(ChatFormatting.DARK_AQUA)
 			).append(GTLang.DESC_SPACE.get());

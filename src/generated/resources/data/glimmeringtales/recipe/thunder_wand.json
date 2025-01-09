@@ -1,0 +1,27 @@
+{
+  "type": "glimmeringtales:wand_craft",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "l2complements:poseidite_ingot"
+    },
+    "L": {
+      "item": "l2complements:totemic_gold_ingot"
+    },
+    "O": {
+      "item": "glimmeringtales:crystal_of_nature"
+    },
+    "V": {
+      "item": "l2complements:hard_ice"
+    }
+  },
+  "pattern": [
+    " VO",
+    "VLV",
+    "IV "
+  ],
+  "result": {
+    "count": 1,
+    "id": "glimmeringtales:thunder_wand"
+  }
+}

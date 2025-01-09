@@ -36,7 +36,7 @@ import java.util.Map;
 public class SnowSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("snow")).cost(40)
+			.build(GlimmeringTales.loc("snow")).focusAndCost(40, 120)
 			.damageFreeze()
 			.projectile(SnowSpells::proj)
 			.block(SnowSpells::gen, GTItems.RUNE_SNOW, RuneBlock::of,
@@ -70,7 +70,7 @@ public class SnowSpells {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.SNOW_BREAK,
-						DoubleVariable.of("1"),
+						DoubleVariable.of("10"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new LoopIterator(
@@ -81,7 +81,7 @@ public class SnowSpells {
 										new CustomProjectileShoot(
 												DoubleVariable.of("1"), ctx.proj,
 												IntVariable.of("100"),
-												false, true,
+												false, false,
 												Map.of()
 										).move(new RotationModifier(
 												DoubleVariable.of(360 / theta + "*j+r0*360"),

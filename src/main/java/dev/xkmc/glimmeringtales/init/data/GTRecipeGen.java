@@ -279,6 +279,34 @@ public class GTRecipeGen {
 					.define('I', LCMats.POSEIDITE.getIngot())
 					.define('V', Items.PRISMARINE_CRYSTALS)
 					.save(pvd);
+
+			unlock(pvd, new WandRecipeBuilder(GTItems.THUNDER_WAND, 1)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+					.pattern(" VO").pattern("VLV").pattern("IV ")
+					.define('O', GTItems.CRYSTAL_NATURE)
+					.define('L', LCMats.TOTEMIC_GOLD.getIngot())
+					.define('I', LCMats.POSEIDITE.getIngot())
+					.define('V', LCItems.HARD_ICE)
+					.save(pvd);
+
+			unlock(pvd, new WandRecipeBuilder(GTItems.NETHER_WAND, 1)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+					.pattern(" WO").pattern("FIC").pattern("IV ")
+					.define('O', GTItems.CRYSTAL_NATURE)
+					.define('I', Items.BLAZE_ROD)
+					.define('W', Items.WEEPING_VINES)
+					.define('C', LCItems.BLACKSTONE_CORE)
+					.define('V', Items.TWISTING_VINES)
+					.define('F', LCItems.SOUL_FLAME)
+					.save(pvd);
+
+			unlock(pvd, new WandRecipeBuilder(GTItems.ENDER_WAND, 1)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+					.pattern(" WO").pattern("FIC").pattern("IV ")
+					.define('O', GTItems.CRYSTAL_NATURE)
+					.define('I', Items.END_ROD)
+					.define('W', Items.CHORUS_FLOWER)
+					.define('C', LCItems.VOID_EYE)
+					.define('V', LCMats.SHULKERATE.getIngot())
+					.define('F', LCItems.HARD_ICE)
+					.save(pvd);
 		}
 
 		// life

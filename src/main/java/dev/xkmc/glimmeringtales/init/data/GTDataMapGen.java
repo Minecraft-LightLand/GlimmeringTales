@@ -60,18 +60,30 @@ public class GTDataMapGen {
 					GTRegistries.THUNDER.get(), 1.5d
 			)), false);
 
-			builder.add(GTItems.WOOD_WAND, ElementAffinity.of(Map.of(
+			builder.add(GTItems.WOOD_WAND.item(), ElementAffinity.of(Map.of(
 					GTRegistries.LIFE.get(), 0.25d
 			)), false);
-			builder.add(GTItems.LIFE_WAND, ElementAffinity.of(Map.of(
+			builder.add(GTItems.LIFE_WAND.item(), ElementAffinity.of(Map.of(
 					GTRegistries.LIFE.get(), 0.5d
 			)), false);
-			builder.add(GTItems.GOLD_WAND, ElementAffinity.of(Map.of(
+			builder.add(GTItems.GOLD_WAND.item(), ElementAffinity.of(Map.of(
 					GTRegistries.EARTH.get(), 0.25d
 			)), false);
-			builder.add(GTItems.OCEAN_WAND, ElementAffinity.of(Map.of(
+			builder.add(GTItems.OCEAN_WAND.item(), ElementAffinity.of(Map.of(
 					GTRegistries.OCEAN.get(), 0.25d,
 					GTRegistries.THUNDER.get(), 0.25d
+			)), false);
+			builder.add(GTItems.THUNDER_WAND.item(), ElementAffinity.of(Map.of(
+					GTRegistries.SNOW.get(), 0.25d,
+					GTRegistries.THUNDER.get(), 0.25d
+			)), false);
+			builder.add(GTItems.NETHER_WAND.item(), ElementAffinity.of(Map.of(
+					GTRegistries.EARTH.get(), 0.25d,
+					GTRegistries.FLAME.get(), 0.25d
+			)), false);
+			builder.add(GTItems.ENDER_WAND.item(), ElementAffinity.of(Map.of(
+					GTRegistries.EARTH.get(), 0.25d,
+					GTRegistries.SNOW.get(), 0.25d
 			)), false);
 		}
 		// melt

@@ -7,6 +7,7 @@ import dev.xkmc.glimmeringtales.content.capability.PlayerResearchCapability;
 import dev.xkmc.glimmeringtales.content.core.spell.*;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeData;
 import dev.xkmc.glimmeringtales.content.item.wand.RuneSwapType;
+import dev.xkmc.glimmeringtales.content.item.wand.WandData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.l2backpack.content.quickswap.type.MatcherSwapType;
@@ -28,6 +29,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
@@ -49,10 +51,12 @@ public class GTRegistries {
 			GlimmeringTales.REG.dataMap("block_melt", Registries.BLOCK, BlockReplace.class);
 	public static final DataMapReg<Item, AttributeData> ITEM_ATTR =
 			GlimmeringTales.REG.dataMap("curio_attributes", Registries.ITEM, AttributeData.class);
+	public static final DataMapReg<Item, WandData> WAND_MODEL =
+			GlimmeringTales.REG.dataMap("wand_model", Registries.ITEM, WandData.class);
 
-	public static final SimpleEntry<Attribute> MAX_MANA = reg("max_mana", 400, 1000000, "Max Mana");
+	public static final SimpleEntry<Attribute> MAX_MANA = reg("max_mana", 2000, 1000000, "Max Mana");
 	public static final SimpleEntry<Attribute> MANA_REGEN = reg("mana_regen", 20, 1000000, "Mana Regen");
-	public static final SimpleEntry<Attribute> MAX_FOCUS = reg("max_focus", 100, 1000000, "Max Focus");
+	public static final SimpleEntry<Attribute> MAX_FOCUS = reg("max_focus", 200, 1000000, "Max Focus");
 
 	public static final ElemEntry LIFE = reg("life", ChatFormatting.GREEN);
 	public static final ElemEntry EARTH = reg("earth", ChatFormatting.GOLD);
@@ -70,15 +74,14 @@ public class GTRegistries {
 	public static final MatcherSwapType SWAP = new RuneSwapType();
 
 	private static ElemEntry reg(String id, ChatFormatting color) {
-		var attr = reg(id + "_affinity", 0, 1000,
-				RegistrateLangProvider.toEnglishName(id + "_affinity"), L2DamageTracker.PERCENTAGE);
+		var attr = L2DamageTracker.regPerc(GlimmeringTales.REGISTRATE, id + "_affinity",
+				RegistrateLangProvider.toEnglishName(id + "_affinity"));
 		return new ElemEntry(GlimmeringTales.REGISTRATE.generic(ELEMENT, id, () -> new SpellElement(color, attr))
 				.defaultLang().register(), attr);
 	}
 
-	@SafeVarargs
-	public static SimpleEntry<Attribute> reg(String id, double def, double max, String name, TagKey<Attribute>... tags) {
-		return L2DamageTracker.regWrapped(GlimmeringTales.REGISTRATE, id, def, 0, max, name, tags);
+	public static SimpleEntry<Attribute> reg(String id, double def, double max, String name) {
+		return L2DamageTracker.reg(GlimmeringTales.REGISTRATE, id, e -> new RangedAttribute(e, def, 0, max), name);
 	}
 
 	public static void register() {

@@ -1,10 +1,7 @@
 package dev.xkmc.glimmeringtales.content.research.logic;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
-import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
 
 import java.util.Locale;
 

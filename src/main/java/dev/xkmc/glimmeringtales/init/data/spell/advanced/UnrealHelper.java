@@ -2,11 +2,8 @@ package dev.xkmc.glimmeringtales.init.data.spell.advanced;
 
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
-import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.MoveEngine;
 import dev.xkmc.l2magic.content.engine.logic.PredicateLogic;
-import dev.xkmc.l2magic.content.engine.modifier.Dir2NormalModifier;
-import dev.xkmc.l2magic.content.engine.modifier.ForwardOffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetPosModifier;
 import dev.xkmc.l2magic.content.engine.predicate.OrPredicate;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;

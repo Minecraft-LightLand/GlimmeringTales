@@ -3,10 +3,15 @@
     "type": "l2magic:list",
     "children": [
       {
-        "type": "l2magic:sound",
-        "pitch": "rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:item.firecharge.use",
-        "volume": "1"
+        "type": "l2magic:iterate_delayed",
+        "child": {
+          "type": "l2magic:sound",
+          "pitch": "rand(-0.1,0.1)+rand(-0.1,0.1)",
+          "sound": "minecraft:item.firecharge.use",
+          "volume": "1"
+        },
+        "delay": "8",
+        "step": "5"
       },
       {
         "type": "l2magic:move",
