@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
 import dev.xkmc.glimmeringtales.content.engine.processor.StackingEffectProcessor;
 import dev.xkmc.glimmeringtales.content.engine.render.OrientedCrossRenderData;
@@ -58,7 +59,7 @@ public class AmethystPenetration {
 					"[Forward] Shoot several amethyst shards forward",
 					"Shoot amethyst shards in a fan area in front of you, dealing %s and stack %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, GTEngine.EP_STACK)
-			).graph("EF<->LS");
+			).graph(ResearchBonus.small4(16), "EF<->LS");
 
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/infused_amethyst.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("12");

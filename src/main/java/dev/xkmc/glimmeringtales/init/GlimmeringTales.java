@@ -6,6 +6,7 @@ import dev.xkmc.glimmeringtales.content.block.altar.BaseRitualBlockEntity;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipRegistry;
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.glimmeringtales.content.research.core.GraphToServerPacket;
+import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.content.research.core.OpenGraphPacket;
 import dev.xkmc.glimmeringtales.events.GTAttackListener;
 import dev.xkmc.glimmeringtales.events.GTClickHandler;
@@ -21,6 +22,7 @@ import dev.xkmc.l2magic.content.engine.core.ProcessorType;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.init.registrate.EngineRegistry;
 import dev.xkmc.l2serial.network.PacketHandler;
+import dev.xkmc.l2serial.serialization.codec.CodecAdaptor;
 import dev.xkmc.l2serial.serialization.custom_handler.Handlers;
 import dev.xkmc.l2serial.util.Wrappers;
 import net.minecraft.resources.ResourceLocation;
@@ -70,6 +72,7 @@ public class GlimmeringTales {
 
 	private static void initHandlers() {
 		Handlers.registerReg(NatureSpell.class, GTRegistries.SPELL);
+		Handlers.registerReg(HexGraphData.class, GTRegistries.GRAPH);
 		Handlers.registerReg(SpellAction.class, EngineRegistry.SPELL);
 		Handlers.enableVanilla(Wrappers.cast(ProcessorType.class), EngineRegistry.PROCESSOR.registry().get());
 		SpellTooltipRegistry.init();
@@ -93,7 +96,10 @@ public class GlimmeringTales {
 
 	@SubscribeEvent
 	public static void onDatapackRegistry(DataPackRegistryEvent.NewRegistry event) {
-		event.dataPackRegistry(GTRegistries.SPELL, NatureSpell.CODEC, NatureSpell.CODEC);
+		var spell = new CodecAdaptor<>(NatureSpell.class);
+		var graph = new CodecAdaptor<>(HexGraphData.class);
+		event.dataPackRegistry(GTRegistries.SPELL, spell, spell);
+		event.dataPackRegistry(GTRegistries.GRAPH, graph, graph);
 	}
 
 	@SubscribeEvent
@@ -125,6 +131,7 @@ public class GlimmeringTales {
 		init.add(EngineRegistry.PROJECTILE, GTSpells::genProjectiles);
 		init.add(EngineRegistry.SPELL, GTSpells::genSpells);
 		init.add(GTRegistries.SPELL, GTSpells::genNature);
+		init.add(GTRegistries.GRAPH, GTSpells::genGraph);
 		GTWorldGen.genFeatures(init);
 		init.addDependency(ProviderType.DATA_MAP, ProviderType.DYNAMIC);
 		init.addDependency(GTTagGen.BIOME, ProviderType.DYNAMIC);

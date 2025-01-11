@@ -64,6 +64,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:amethyst",
-  "order": 1002,
+  "order": 1000,
   "trigger_type": "TARGET_POS"
 }

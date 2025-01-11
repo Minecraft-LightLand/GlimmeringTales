@@ -32,7 +32,7 @@ public class MagmaSpells {
 					"[Block] Melts stones into magma temporarily",
 					"Melts stone, deep slate, and netherrack in a circular area for 10 seconds",
 					SpellTooltipData.of()
-			);
+			).graph(NetherrackSpells.BUILDER);
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

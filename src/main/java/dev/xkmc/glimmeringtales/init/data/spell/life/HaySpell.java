@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.life;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.processor.ProcreationProcessor;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
@@ -28,14 +29,14 @@ import java.util.List;
 public class HaySpell {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.LIFE
-			.build(GlimmeringTales.loc("procreation")).focusAndCost(100, 500)
+			.build(GlimmeringTales.loc("procreation")).focusAndCost(60, 300)
 			.block(ctx -> procreation(ctx, 4), GTItems.RUNE_HAYBALE, RuneBlock::offset,
 					(b, e) -> b.add(Blocks.HAY_BLOCK, BlockSpell.cost(e)))
 			.lang("Procreation").desc(
 					"[Block] Breed nearby animals",
 					"Feed all nearby animals",
 					SpellTooltipData.of()
-			);
+			).graph(ResearchBonus.adv2(11), "O->EF", "EF->L");
 
 	private static ConfiguredEngine<?> procreation(NatureSpellBuilder ctx, double r) {
 		return new ListLogic(List.of(

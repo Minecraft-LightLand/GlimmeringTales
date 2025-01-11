@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
@@ -37,7 +38,7 @@ public class StoneBridge {
 					"[Forward] Create a temporary stone bridge",
 					"Create a stone bridge extending forward lasting for 10 seconds",
 					SpellTooltipData.of()
-			).graph("LEF|");
+			).graph(ResearchBonus.base4(36, 12, 7, 6), "LEF|");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new LoopIterator(

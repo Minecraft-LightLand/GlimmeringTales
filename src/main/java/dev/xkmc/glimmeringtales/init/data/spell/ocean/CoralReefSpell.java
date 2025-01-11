@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.ocean;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
@@ -50,7 +51,7 @@ public class CoralReefSpell {
 					"[Block] Create bubbles to attack nearby entities",
 					"For all entities in range, create bubble attack dealing %s",
 					SpellTooltipData.damage()
-			).graph("O->LSF");
+			).graph(ResearchBonus.small3(12), "O->LSF");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

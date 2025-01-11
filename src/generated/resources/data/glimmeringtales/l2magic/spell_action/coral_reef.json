@@ -92,6 +92,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:coral_reef",
-  "order": 1021,
+  "order": 1020,
   "trigger_type": "TARGET_POS"
 }

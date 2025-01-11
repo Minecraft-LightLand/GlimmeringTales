@@ -22,29 +22,29 @@ public class NatureSpellGenRegistry {
 
 		// earth
 		LIST.addAll(List.of(
-				DripstoneSpells.BUILDER, // 1010
-				ClaySpells.BUILDER, // 1020
-				AmethystSpells.BUILDER, // 1030
-				SandSpells.BUILDER, // 1040
-				QuartzSpells.BUILDER, // 1050
-				GravelSpells.BUILDER, // 1060
+				AmethystSpells.BUILDER,
+				DripstoneSpells.BUILDER,
+				QuartzSpells.BUILDER,
+				ClaySpells.BUILDER,
+				SandSpells.BUILDER,
+				GravelSpells.BUILDER,
 				StoneSpells.BUILDER
 		));
 
 		// vine
 		LIST.addAll(List.of(
-				VinesSpell.BUILDER, // 1050
+				BambooSpell.BUILDER,
+				VinesSpell.BUILDER,
 				HaySpell.BUILDER,
 				CactusSpell.BUILDER,
-				BambooSpell.BUILDER,
 				FlowerSpell.BUILDER
 		));
 
 		// others
 		LIST.addAll(List.of(
-				MagmaSpells.BUILDER,
 				NetherrackSpells.BUILDER,
 				SoulSandSpells.BUILDER,
+				MagmaSpells.BUILDER,
 
 				SnowSpells.BUILDER,
 				PowderSnowSpell.BUILDER,
@@ -52,8 +52,8 @@ public class NatureSpellGenRegistry {
 				IceSpells.PACK_ICE,
 				IceSpells.BLUE_ICE,
 
-				SpongeSpell.BUILDER,
 				CoralReefSpell.BUILDER,
+				SpongeSpell.BUILDER,
 
 				ThunderSpells.BUILDER
 		));

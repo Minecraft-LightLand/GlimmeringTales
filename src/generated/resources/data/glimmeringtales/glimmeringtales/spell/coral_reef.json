@@ -2,17 +2,7 @@
   "cost": 400,
   "elem": "glimmeringtales:ocean",
   "focus": 100,
-  "graph": {
-    "flows": [
-      "O->LSF"
-    ],
-    "map": {
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow"
-    }
-  },
+  "graph": "glimmeringtales:coral_reef",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:coral_reef",
   "tooltip": {

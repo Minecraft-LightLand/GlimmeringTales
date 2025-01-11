@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
@@ -32,7 +33,7 @@ public class QuartzSpells {
 					"[Block] Create a temorary glass shell",
 					"Create a spherical glass shell lasting for 10 seconds",
 					SpellTooltipData.of()
-			).graph("E<->SF");
+			).graph(ResearchBonus.small2(10), "E<->SF");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

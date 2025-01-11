@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.ocean;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
 import dev.xkmc.glimmeringtales.content.engine.processor.PassiveHealProcessor;
 import dev.xkmc.glimmeringtales.content.engine.render.InflatingRenderData;
@@ -53,7 +54,7 @@ public class OceanShelter {
 					"[Continuous] Shoot bubbles that hurt enemies and heal allies",
 					"Continuously shoot bubbles forward lasting 5 seconds. To enemies, deals %s and inflicts %s. To allies, %s and gives %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, EngineRegistry.EFFECT, GTEngine.HEAL, EngineRegistry.EFFECT)
-			).graph("OS<->LET");
+			).graph(ResearchBonus.small4(21), "OS<->LET");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/bubble.png");

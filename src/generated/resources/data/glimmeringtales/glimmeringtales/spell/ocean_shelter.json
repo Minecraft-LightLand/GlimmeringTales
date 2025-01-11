@@ -2,18 +2,7 @@
   "cost": 10,
   "elem": "glimmeringtales:ocean",
   "focus": 2,
-  "graph": {
-    "flows": [
-      "OS<->LET"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:ocean_shelter",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 6.0,

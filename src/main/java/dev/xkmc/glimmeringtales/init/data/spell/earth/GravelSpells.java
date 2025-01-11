@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -52,7 +53,7 @@ public class GravelSpells {
 					"[Block] Create flint storm",
 					"Create a flint storm, dealing %s, and inflict %s",
 					SpellTooltipData.damageAndEffect()
-			).graph("E->S", "S->F", "F->E");
+			).graph(ResearchBonus.small2(8), "E->S", "S->F", "F->E");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

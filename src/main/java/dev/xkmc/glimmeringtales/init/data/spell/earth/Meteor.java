@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.render.FakeBlockRenderData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -48,7 +49,7 @@ public class Meteor {
 					"[Ranged] Create a meteor falling at target",
 					"Create a meteor falling slowly, dealing %s on impact",
 					SpellTooltipData.damage()
-			).graph("T<->LEFSO");
+			).graph(ResearchBonus.small4(35), "T<->LEFSO");
 
 	private static ProjectileConfig proj(NatureSpellBuilder ctx) {
 		return ProjectileConfig.builder(SelectionType.ALL)

@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -50,7 +51,7 @@ public class SandSpells {
 					"[Block] Create sandstorm trapping enemies",
 					"Create a sand tornado, trapping enemies touched, dealing %s, and inflict %s",
 					SpellTooltipData.damageAndEffect()
-			).graph("E->SF");
+			).graph(ResearchBonus.small2(7), "E->SF");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

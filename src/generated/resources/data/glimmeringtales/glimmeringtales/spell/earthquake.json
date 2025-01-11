@@ -2,24 +2,7 @@
   "cost": 640,
   "elem": "glimmeringtales:earth",
   "focus": 160,
-  "graph": {
-    "flows": [
-      "L->E",
-      "E->F",
-      "F->S",
-      "S->O",
-      "O->T",
-      "T->L"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:earthquake",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 5.0,

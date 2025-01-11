@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.life;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
@@ -31,7 +32,7 @@ public class BambooSpell {
 					"[Block] Generate a bamboo cage",
 					"Generate a spherical cage of bamboo lasting 10 seconds",
 					SpellTooltipData.of()
-			);
+			).graph(ResearchBonus.small2(8), "O->E", "E->L");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

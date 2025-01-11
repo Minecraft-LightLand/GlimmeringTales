@@ -1,0 +1,32 @@
+{
+  "bonuses": [
+    {
+      "cost": 36,
+      "focusBonus": 1.0,
+      "manaBonus": 0.7
+    },
+    {
+      "cost": 12,
+      "focusBonus": 1.0,
+      "manaBonus": 0.7
+    },
+    {
+      "cost": 7,
+      "focusBonus": 0.5,
+      "manaBonus": 1.0
+    },
+    {
+      "cost": 6,
+      "focusBonus": 0.5,
+      "manaBonus": 1.0
+    }
+  ],
+  "flows": [
+    "LEF|"
+  ],
+  "map": {
+    "E": "glimmeringtales:earth",
+    "F": "glimmeringtales:flame",
+    "L": "glimmeringtales:life"
+  }
+}

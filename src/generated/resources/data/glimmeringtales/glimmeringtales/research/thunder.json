@@ -1,0 +1,28 @@
+{
+  "bonuses": [
+    {
+      "cost": 36,
+      "focusBonus": 1.0,
+      "manaBonus": 0.8
+    },
+    {
+      "cost": 22,
+      "focusBonus": 1.0,
+      "manaBonus": 0.8
+    },
+    {
+      "cost": 18,
+      "focusBonus": 0.5,
+      "manaBonus": 1.0
+    }
+  ],
+  "flows": [
+    "T<->SFO"
+  ],
+  "map": {
+    "F": "glimmeringtales:flame",
+    "O": "glimmeringtales:ocean",
+    "S": "glimmeringtales:snow",
+    "T": "glimmeringtales:thunder"
+  }
+}

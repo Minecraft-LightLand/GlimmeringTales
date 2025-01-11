@@ -20,7 +20,12 @@ public record SpellCost(double focus, double mana) {
 	}
 
 	public MutableComponent focusText(double factor) {
-		return Component.literal(Math.round(focus() * factor) + "");
+		double val = focus() * factor;
+		int num = (int) Math.round(val);
+		if (val < 5 && Math.abs(val - num) > 0.1) {
+			return Component.literal(Math.round(val * 10) * 0.1 + "");
+		}
+		return Component.literal(num + "");
 	}
 
 	public void addCostInfo(List<Component> list, Player player) {

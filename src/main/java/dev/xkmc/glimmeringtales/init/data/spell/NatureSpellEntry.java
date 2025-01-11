@@ -3,6 +3,7 @@ package dev.xkmc.glimmeringtales.init.data.spell;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
+import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -27,6 +28,10 @@ public abstract class NatureSpellEntry extends SpellDataGenEntry {
 
 	protected static DataGenCachedHolder<SpellAction> spell(ResourceLocation id) {
 		return new DataGenCachedHolder<>(ResourceKey.create(EngineRegistry.SPELL, id));
+	}
+
+	protected static DataGenCachedHolder<HexGraphData> graph(ResourceLocation id) {
+		return new DataGenCachedHolder<>(ResourceKey.create(GTRegistries.GRAPH, id));
 	}
 
 	protected static DataGenCachedHolder<ProjectileConfig> projectile(ResourceLocation id) {
@@ -54,5 +59,11 @@ public abstract class NatureSpellEntry extends SpellDataGenEntry {
 	}
 
 	public void regRune(DataMapProvider.Builder<RuneBlock, Item> item) {
+
 	}
+
+	public void regGraph(BootstrapContext<HexGraphData> ctx) {
+
+	}
+
 }

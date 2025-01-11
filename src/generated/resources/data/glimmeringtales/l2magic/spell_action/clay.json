@@ -43,6 +43,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:clay",
-  "order": 1001,
+  "order": 1003,
   "trigger_type": "TARGET_POS"
 }

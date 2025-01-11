@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.snow;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -46,7 +47,7 @@ public class PowderSnowSpell {
 					"[Block] Create snow storm trapping enemies",
 					"Create a snow tornado, trapping enemies touched, dealing %s, and inflict %s",
 					SpellTooltipData.damageAndEffect()
-			);
+			).graph(ResearchBonus.small3(21), "S<->LEFO");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

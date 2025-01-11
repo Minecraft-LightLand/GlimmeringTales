@@ -8,6 +8,7 @@ import dev.xkmc.glimmeringtales.content.core.spell.*;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeData;
 import dev.xkmc.glimmeringtales.content.item.wand.RuneSwapType;
 import dev.xkmc.glimmeringtales.content.item.wand.WandData;
+import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.l2backpack.content.quickswap.type.MatcherSwapType;
@@ -39,6 +40,8 @@ public class GTRegistries {
 			GlimmeringTales.REGISTRATE.newRegistry("element", SpellElement.class);
 	public static final ResourceKey<Registry<NatureSpell>> SPELL =
 			ResourceKey.createRegistryKey(GlimmeringTales.loc("spell"));
+	public static final ResourceKey<Registry<HexGraphData>> GRAPH =
+			ResourceKey.createRegistryKey(GlimmeringTales.loc("research"));
 	public static final DataMapReg<Block, BlockSpell> BLOCK =
 			GlimmeringTales.REG.dataMap("block_spell", Registries.BLOCK, BlockSpell.class);
 	public static final DataMapReg<Item, ElementAffinity> AFFINITY =

@@ -52,6 +52,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:quartz",
-  "order": 1004,
+  "order": 1002,
   "trigger_type": "TARGET_POS"
 }

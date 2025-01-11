@@ -2,19 +2,7 @@
   "cost": 1200,
   "elem": "glimmeringtales:thunder",
   "focus": 160,
-  "graph": {
-    "flows": [
-      "LEFSOT|"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:thunderstorm",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 16.0,

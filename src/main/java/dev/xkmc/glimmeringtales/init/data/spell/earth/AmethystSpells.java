@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.processor.StackingEffectProcessor;
 import dev.xkmc.glimmeringtales.content.engine.render.OrientedCrossRenderData;
@@ -53,7 +54,7 @@ public class AmethystSpells {
 					"[Block] Splash amethyst shards",
 					"Create a semisphere of amethyst shards, dealing %s and stack %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, GTEngine.EP_STACK)
-			).graph("E->SF", "SF->L", "L->E");
+			).graph(ResearchBonus.small3(16), "E->SF", "SF->L", "L->E");
 
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/amethyst.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("4");

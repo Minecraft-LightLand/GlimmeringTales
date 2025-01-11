@@ -2,6 +2,7 @@
   "cost": 120,
   "elem": "glimmeringtales:snow",
   "focus": 40,
+  "graph": "glimmeringtales:snow",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:snow",
   "tooltip": {

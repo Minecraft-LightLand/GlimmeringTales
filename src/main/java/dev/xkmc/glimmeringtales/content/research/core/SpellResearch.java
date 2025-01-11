@@ -1,5 +1,6 @@
 package dev.xkmc.glimmeringtales.content.research.core;
 
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.SpellElement;
 import dev.xkmc.glimmeringtales.content.research.logic.HexHandler;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
@@ -7,7 +8,6 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class SpellResearch {
@@ -80,14 +80,19 @@ public class SpellResearch {
 		player.save(id, data);
 	}
 
-	public List<Component> getFullDesc() {
-		List<Component> list = new ArrayList<>();
+	public void getFullDesc(List<Component> list, List<ResearchBonus> bonuses) {
 		list.add(GTLang.HEX_STATUS.get(getState().getDesc()).withStyle(ChatFormatting.GRAY));
-		if (usable()) {
-			var cost = Component.literal("" + getCost()).withStyle(ChatFormatting.AQUA);
-			list.add(GTLang.HEX_COST.get(cost).withStyle(ChatFormatting.GRAY));
+		if (!usable()) return;
+		var cost = Component.literal("" + getCost()).withStyle(ChatFormatting.AQUA);
+		list.add(GTLang.HEX_COST.get(cost).withStyle(ChatFormatting.GRAY));
+		list.add(GTLang.HEX_BONUS.get().withStyle(ChatFormatting.GRAY));
+		for (var e : bonuses) {
+			var format = getCost() <= e.cost() ? ChatFormatting.YELLOW : ChatFormatting.DARK_GRAY;
+			list.add(e.desc().withStyle(format));
+			if (getCost() > e.cost()) {
+				break;
+			}
 		}
-		return list;
 	}
 
 }

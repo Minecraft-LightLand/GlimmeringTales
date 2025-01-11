@@ -89,6 +89,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:dripstone",
-  "order": 1000,
+  "order": 1001,
   "trigger_type": "TARGET_POS"
 }

@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.thunder;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
 import dev.xkmc.glimmeringtales.content.engine.instance.LightningInstance;
 import dev.xkmc.glimmeringtales.content.engine.render.AnimatedCrossRenderData;
@@ -50,7 +51,7 @@ public class ChargeBurst {
 					"[Ranged] Create a lightning strike and charge spikes around it",
 					"Create a lightning strike on target position, inflicting %s multiple times, then create charge spikes on the ground around it, inflicting %s",
 					SpellTooltipData.of(GTEngine.THUNDER, EngineRegistry.DAMAGE)
-			).graph("EOFST|");
+			).graph(ResearchBonus.mid4(47), "EOFST|");
 
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/charge.png");
 	private static final DoubleVariable STRIKE = DoubleVariable.of("5");

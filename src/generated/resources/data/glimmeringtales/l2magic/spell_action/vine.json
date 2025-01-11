@@ -55,6 +55,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:vine",
-  "order": 1007,
+  "order": 1008,
   "trigger_type": "TARGET_POS"
 }

@@ -23,12 +23,12 @@ public record AnimatedCrossSpriteType(ResourceLocation tex)
 
 	@Override
 	public void create(ProjectileRenderer r, SimplifiedProjectile e, PoseStack pose, float pTick) {
-		PoseStack.Pose mat = pose.last();
+		PoseStack.Pose mat = pose.last().copy();
 		ProjectileRenderHelper.add(this, new Ins(mat, 1, 0));
 	}
 
 	public void create(PoseStack pose, int index, int max) {
-		PoseStack.Pose mat = pose.last();
+		PoseStack.Pose mat = pose.last().copy();
 		ProjectileRenderHelper.add(this, new Ins(mat, 1f / max, 1f * index / max));
 	}
 

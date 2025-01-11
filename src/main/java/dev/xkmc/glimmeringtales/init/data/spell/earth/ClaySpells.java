@@ -32,7 +32,7 @@ public class ClaySpells {
 					"[Block] Form a circular carpet to trap entities",
 					"Create a circular field of clay carpet lasting 5 seconds to immobilize entities",
 					SpellTooltipData.of()
-			).graph("E->SF", "SF->LO", "LO->E");
+			).graph(QuartzSpells.BUILDER);
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

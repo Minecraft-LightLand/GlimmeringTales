@@ -18,6 +18,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:sponge",
-  "order": 1020,
+  "order": 1021,
   "trigger_type": "TARGET_POS"
 }

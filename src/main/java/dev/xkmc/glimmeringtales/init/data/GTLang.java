@@ -56,6 +56,10 @@ public enum GTLang {
 
 	HEX_STATUS("hex.status", "Research status: %s", 1),
 	HEX_COST("hex.cost", "Cost: %s", 1),
+	HEX_BONUS("hex.bonus", "Research Bonus:", 0),
+	HEX_BONUS_MANA("hex.bonus_mana", "- Cost <= %s: -%s%% mana cost", 2),
+	HEX_BONUS_FOCUS("hex.bonus_focus", "- Cost <= %s: -%s%% focus cost", 2),
+	HEX_BONUS_BOTH("hex.bonus_both", "- Cost <= %s: -%s%% mana cost, -%s%% focus cost", 3),
 	;
 
 	final String id, def;

@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.snow;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -47,7 +48,7 @@ public class IceSpells {
 	private static final IntVariable BLUE_DUR = IntVariable.of("300");
 
 	public static final NatureSpellBuilder ICE = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("ice")).focusAndCost(4, 200).damageFreeze()
+			.build(GlimmeringTales.loc("ice")).focusAndCost(40, 200).damageFreeze()
 			.block(ctx -> gen(ctx, ICE_DMG, ICE_DUR), GTItems.RUNE_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.ICE, BlockSpell.of(e)),
 					(b, e) -> b.add(Blocks.FROSTED_ICE, BlockSpell.of(e))
@@ -55,7 +56,7 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			).graph("S->LEFO");
+			).graph(ResearchBonus.small3(24), "ST<->LEFO");
 
 	public static final NatureSpellBuilder PACK_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("packed_ice")).focusAndCost(50, 300).damageFreeze()
@@ -65,7 +66,7 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			).graph("S<->LEFO");
+			).graph(ICE);
 
 	public static final NatureSpellBuilder BLUE_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("blue_ice")).focusAndCost(60, 400).damageFreeze()
@@ -75,7 +76,7 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			).graph("ST<->LEFO");
+			).graph(ICE);
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx, DoubleVariable dmg, IntVariable dur) {
 		var range = "5";

@@ -1,14 +1,15 @@
 package dev.xkmc.glimmeringtales.content.core.spell;
 
-import com.mojang.serialization.Codec;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.entity.hostile.MobCastingData;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
+import dev.xkmc.glimmeringtales.content.research.core.PlayerResearch;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchState;
+import dev.xkmc.glimmeringtales.content.research.core.SpellResearch;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
-import dev.xkmc.l2serial.serialization.codec.CodecAdaptor;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
@@ -27,16 +28,14 @@ public record NatureSpell(
 		int focus, int cost, int maxConsumeTick,
 		SpellTooltipData tooltip,
 		@Nullable MobCastingData mob,
-		@Nullable HexGraphData graph
+		@Nullable Holder<HexGraphData> graph
 ) {
 
 	private static final int MIN_MANA_COST = 1, CAST_COOLDOWN = 10, BREAK_COOLDOWN = 20;
 	private static final double MIN_AFFINITY = 0.2;
 
-	public static final Codec<NatureSpell> CODEC = new CodecAdaptor<>(NatureSpell.class);
-
 	public boolean consumeMana(LivingEntity user, ItemStack stack, double affinity, int useTick, boolean charging, boolean simulate) {
-		var consume = manaCost(affinity);
+		var consume = manaCost(user, affinity);
 		var cast = spell().value().castType();
 		if (maxConsumeTick > 0) {
 			if (cast == SpellCastType.CONTINUOUS && useTick > maxConsumeTick) consume = SpellCost.ZERO;
@@ -66,9 +65,24 @@ public record NatureSpell(
 		return Component.translatable(SpellAction.lang(spell().unwrapKey().orElseThrow().location()));
 	}
 
-	public SpellCost manaCost(double affinity) {
+	public SpellCost manaCost(@Nullable LivingEntity le, double affinity) {
 		if (affinity < MIN_AFFINITY) affinity = MIN_AFFINITY;
-		return new SpellCost(focus, Math.max(MIN_MANA_COST, Math.round(cost / affinity)));
+		int mana = (int) Math.round(cost / affinity);
+		int focus = focus();
+		if (le instanceof Player player && graph != null) {
+			var g = graph.value();
+			SpellResearch research = PlayerResearch.of(player).get(graph.unwrapKey().orElseThrow().location());
+			if (research != null && research.getState() == ResearchState.COMPLETED) {
+				int cost = research.getCost();
+				for (var ent : g.bonuses()) {
+					if (cost <= ent.cost()) {
+						mana = ent.modifyMana(mana);
+						focus = ent.modifyFocus(focus);
+					}
+				}
+			}
+		}
+		return new SpellCost(focus, Math.max(MIN_MANA_COST, mana));
 	}
 
 	void addDescription(List<Component> list, SpellCost consume, boolean advanced) {

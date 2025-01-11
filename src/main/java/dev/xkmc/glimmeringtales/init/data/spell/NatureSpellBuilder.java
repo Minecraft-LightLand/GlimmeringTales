@@ -3,10 +3,7 @@ package dev.xkmc.glimmeringtales.init.data.spell;
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltip;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
-import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
-import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
-import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
-import dev.xkmc.glimmeringtales.content.core.spell.SpellElement;
+import dev.xkmc.glimmeringtales.content.core.spell.*;
 import dev.xkmc.glimmeringtales.content.entity.hostile.MobCastingData;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
@@ -53,6 +50,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	public DataGenCachedHolder<ProjectileConfig> proj;
 	public DataGenCachedHolder<SpellAction> spell;
 	public DataGenCachedHolder<NatureSpell> nature;
+	public DataGenCachedHolder<HexGraphData> graph;
 	public ResourceKey<DamageType> damage;
 
 	private Function<NatureSpellBuilder, ProjectileConfig> projectileFactory;
@@ -60,11 +58,11 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	private Function<Holder<SpellAction>, NatureSpell> natureFactory;
 	private Function<ResourceLocation, String> langFactory;
 	private Function<Holder<NatureSpell>, RuneBlock> runeFactory;
+	private Supplier<HexGraphData> graphFactory;
 	private SpellDamageEntry damageEntry;
 	private SpellDesc desc;
 	private ItemLike icon;
 	private MobCastingData mob;
-	private Supplier<HexGraphData> graph;
 
 	private DataGenContext cache;
 
@@ -130,7 +128,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	public NatureSpellBuilder focusAndCost(int focus, int cost, int max) {
 		nature = nature(id);
 		this.natureFactory = e -> new NatureSpell(e, elem.get(), focus, cost, max,
-				desc == null ? warnEmpty() : desc.data, mob, graph == null ? warnNoGraph() : graph.get());
+				desc == null ? warnEmpty() : desc.data, mob, graph);
 		return this;
 	}
 
@@ -157,11 +155,17 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 		return this;
 	}
 
+	public NatureSpellBuilder graph(NatureSpellBuilder other) {
+		graph = other.graph;
+		return this;
+	}
+
 	/**
 	 * L - life, E - earth, F - flame, S - snow, O - ocean, T - thunder
 	 */
-	public NatureSpellBuilder graph(String... strs) {
-		this.graph = () -> {
+	public NatureSpellBuilder graph(ArrayList<ResearchBonus> bonus, String... strs) {
+		this.graph = graph(id);
+		this.graphFactory = () -> {
 			LinkedHashMap<String, SpellElement> map = new LinkedHashMap<>();
 			for (var s : strs) {
 				for (int i = 0; i < s.length(); i++) {
@@ -181,7 +185,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 					}
 				}
 			}
-			return new HexGraphData(map, new ArrayList<>(List.of(strs)));
+			return new HexGraphData(map, new ArrayList<>(List.of(strs)), bonus);
 		};
 		return this;
 	}
@@ -233,6 +237,12 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	public void regRune(DataMapProvider.Builder<RuneBlock, Item> item) {
 		if (runeFactory != null)
 			item.add(icon.asItem().builtInRegistryHolder(), runeFactory.apply(nature), false);
+	}
+
+	@Override
+	public void regGraph(BootstrapContext<HexGraphData> ctx) {
+		if (graphFactory == null) return;
+		ctx.register(graph.key, graphFactory.get());
 	}
 
 	@Override

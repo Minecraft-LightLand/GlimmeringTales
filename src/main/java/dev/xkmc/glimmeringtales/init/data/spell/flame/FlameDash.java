@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.flame;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
@@ -41,7 +42,7 @@ public class FlameDash {
 					"[Charge] Charge and launch yourself as a rolling flame ball",
 					"Charge, and then enter flame dashing mode for the same duration as you charged, move forward and knock off enemies, dealing %s",
 					SpellTooltipData.damage()
-			).graph("F->OT", "OT->S", "S->LE", "LE->F");
+			).graph(ResearchBonus.small4(24), "F->OT", "OT->S", "S->LE", "LE->F");
 
 	private static ConfiguredEngine<?> flameCharge(NatureSpellBuilder ctx) {
 		return new PredicateLogic(BooleanVariable.of("Power==0"),

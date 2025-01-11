@@ -39,7 +39,7 @@ public record SpellInfo(@Nullable Holder<NatureSpell> spell,
 	public SpellCost getCost(LivingEntity player, ItemStack wand) {
 		if (spell == null) return SpellCost.ZERO;
 		var ns = spell.value();
-		return ns.manaCost(affinity().getFinalAffinity(ns.elem(), player, wand));
+		return ns.manaCost(player, affinity().getFinalAffinity(ns.elem(), player, wand));
 	}
 
 	public List<Component> getCastTooltip(Player player, ItemStack wand, ItemStack core) {
@@ -61,18 +61,17 @@ public record SpellInfo(@Nullable Holder<NatureSpell> spell,
 		if (spell == null) return;
 		var ns = spell.value();
 		var id = spell.unwrapKey().orElseThrow();
-		ns.addDescription(list, ns.manaCost(1), advanced());
+		ns.addDescription(list, ns.manaCost(null, 1), advanced());
 		list.add(SpellTooltip.get(level, ns).format(id));
 		if (ns.mob() != null) {
 			list.add(GTLang.TOOLTIP_MOB_USE.get().withStyle(ChatFormatting.RED));
 		}
 		if (ns.graph() == null) return;
-
 		var pl = Proxy.getPlayer();
 		if (pl == null) return;
-		var research = PlayerResearch.of(pl).get(id.location());
+		var research = PlayerResearch.of(pl).get(ns.graph().unwrapKey().orElseThrow().location());
 		if (research == null) return;
-		list.addAll(research.getFullDesc());
+		research.getFullDesc(list, ns.graph().value().bonuses());
 	}
 
 }

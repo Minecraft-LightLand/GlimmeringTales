@@ -18,13 +18,13 @@ public class GTClickHandler extends ReadOnlyStackClickHandler {
 	@Override
 	protected void handle(ServerPlayer player, ItemStack stack) {
 		var reg = ServerProxy.getRegistryAccess();
-		if (reg != null && stack.getItem() instanceof BaseRuneItem rune) {
-			var spell = rune.getSpellInfo(reg).spell();
-			if (spell != null && spell.value().graph() != null) {
-				var id = spell.unwrapKey().orElseThrow().location();
-				GlimmeringTales.HANDLER.toClientPlayer(new OpenGraphPacket(id), player);
-			}
-		}
+		if (reg == null || !(stack.getItem() instanceof BaseRuneItem rune)) return;
+		var spell = rune.getSpellInfo(reg).spell();
+		if (spell == null) return;
+		var graph = spell.value().graph();
+		if (graph == null) return;
+		var id = graph.unwrapKey().orElseThrow().location();
+		GlimmeringTales.HANDLER.toClientPlayer(new OpenGraphPacket(id), player);
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.life;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.render.OrientedCrossRenderData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
@@ -48,7 +49,7 @@ public class CactusSpell {
 					"[Block] Splash cactus spikes",
 					"Shoot cactus spikes forming a circle, dealing %s ",
 					SpellTooltipData.damage()
-			);
+			).graph(ResearchBonus.small2(10), "O->E", "E->LS");
 
 	public static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/cactus.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("1");

@@ -2,19 +2,7 @@
   "cost": 200,
   "elem": "glimmeringtales:earth",
   "focus": 50,
-  "graph": {
-    "flows": [
-      "E->SF",
-      "SF->L",
-      "L->E"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "S": "glimmeringtales:snow"
-    }
-  },
+  "graph": "glimmeringtales:amethyst",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:amethyst",
   "tooltip": {

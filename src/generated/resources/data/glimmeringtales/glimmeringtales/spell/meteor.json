@@ -2,19 +2,7 @@
   "cost": 1000,
   "elem": "glimmeringtales:earth",
   "focus": 160,
-  "graph": {
-    "flows": [
-      "T<->LEFSO"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:meteor",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:meteor",
   "tooltip": {

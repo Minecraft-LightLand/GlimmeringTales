@@ -2,21 +2,7 @@
   "cost": 5,
   "elem": "glimmeringtales:snow",
   "focus": 1,
-  "graph": {
-    "flows": [
-      "S->OT",
-      "OT->LEF",
-      "LEF->S"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:snow_tornado",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 6.0,

@@ -75,6 +75,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:soul_sand",
-  "order": 1014,
+  "order": 1013,
   "trigger_type": "TARGET_POS"
 }

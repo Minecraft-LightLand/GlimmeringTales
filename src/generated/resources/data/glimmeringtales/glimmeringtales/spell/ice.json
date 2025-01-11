@@ -1,19 +1,8 @@
 {
   "cost": 200,
   "elem": "glimmeringtales:snow",
-  "focus": 4,
-  "graph": {
-    "flows": [
-      "S->LEFO"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow"
-    }
-  },
+  "focus": 40,
+  "graph": "glimmeringtales:ice",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:ice",
   "tooltip": {

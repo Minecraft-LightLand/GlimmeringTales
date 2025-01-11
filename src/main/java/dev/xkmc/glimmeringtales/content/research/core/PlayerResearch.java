@@ -43,10 +43,9 @@ public class PlayerResearch {
 
 	@Nullable
 	public SpellResearch get(ResourceLocation id, @Nullable ResearchData dat) {
-		var reg = player.level().registryAccess().registryOrThrow(GTRegistries.SPELL);
+		var reg = player.level().registryAccess().registryOrThrow(GTRegistries.GRAPH);
 		if (validSpells == null) {
-			validSpells = reg.holders()
-					.filter(e -> e.value().graph() != null).map(e -> e.key().location())
+			validSpells = reg.holders().map(e -> e.key().location())
 					.collect(Collectors.toCollection(LinkedHashSet::new));
 		}
 		if (!validSpells.contains(id))
@@ -54,9 +53,7 @@ public class PlayerResearch {
 		if (cache.containsKey(id)) {
 			return cache.get(id);
 		}
-		var spell = reg.get(id);
-		if (spell == null) return null;
-		var graph = spell.graph();
+		var graph = reg.get(id);
 		if (graph == null) return null;
 		if (dat == null) dat = ResearchData.create(graph.map().size());
 		var map = HexGraph.create(id, graph.map(), graph.flows());

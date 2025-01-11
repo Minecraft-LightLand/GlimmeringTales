@@ -2,6 +2,7 @@
   "cost": 60,
   "elem": "glimmeringtales:life",
   "focus": 20,
+  "graph": "glimmeringtales:cactus",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:cactus",
   "tooltip": {

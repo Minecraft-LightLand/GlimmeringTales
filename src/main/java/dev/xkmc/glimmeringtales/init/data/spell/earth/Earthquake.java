@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.instance.GTKnockBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -41,7 +42,7 @@ public class Earthquake {
 					"[Surrounding] Shake the ground and throw blocks into air",
 					"Create earthquake dealing dealing %s, then throw blocks around you into the air that deals %s on fall",
 					SpellTooltipData.damageAndFalling()
-			).graph("L->E", "E->F", "F->S", "S->O", "O->T", "T->L");
+			).graph(ResearchBonus.small4(19), "L->E", "E->F", "F->S", "S->O", "O->T", "T->L");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("2");
 	private static final DoubleVariable INIT = DoubleVariable.of("10");

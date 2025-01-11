@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.snow;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
@@ -42,7 +43,7 @@ public class IcyFlash {
 					"[Range] Teleport to target and deal damage",
 					"Teleport to target position, dealing %s to surrounding enemies, and inflict %s",
 					SpellTooltipData.damageAndEffect()
-			).graph("LEO<->FST");
+			).graph(ResearchBonus.mid4(42), "LEO<->FST");
 
 	private static ConfiguredEngine<?> icyFlash(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

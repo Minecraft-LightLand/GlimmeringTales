@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.thunder;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.instance.LightningInstance;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
@@ -29,7 +30,7 @@ public class ThunderSpells {
 					"[Block] Create a lightning strike",
 					"Create a lightning strike in target position, inflicting %s multiple times",
 					SpellTooltipData.of(GTEngine.THUNDER)
-			).graph("T<->SFO");
+			).graph(ResearchBonus.small3(18), "T<->SFO");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

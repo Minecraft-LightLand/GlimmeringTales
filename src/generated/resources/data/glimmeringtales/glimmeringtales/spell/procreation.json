@@ -1,7 +1,8 @@
 {
-  "cost": 500,
+  "cost": 300,
   "elem": "glimmeringtales:life",
-  "focus": 100,
+  "focus": 60,
+  "graph": "glimmeringtales:procreation",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:procreation",
   "tooltip": {

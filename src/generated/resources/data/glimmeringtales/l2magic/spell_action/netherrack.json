@@ -69,6 +69,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:netherrack",
-  "order": 1013,
+  "order": 1012,
   "trigger_type": "TARGET_POS"
 }

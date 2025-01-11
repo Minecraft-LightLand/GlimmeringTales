@@ -43,7 +43,7 @@ public class SoulSandSpells {
 					"[Block] burn enemies in a small area",
 					"Create ghost sparks and inflict %s",
 					SpellTooltipData.damage()
-			);
+			).graph(NetherrackSpells.BUILDER);
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

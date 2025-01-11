@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.snow;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
@@ -45,7 +46,7 @@ public class SnowSpells {
 					"[Block] Splash snowballs everywhere",
 					"Create a semisphere of snowballs, dealing %s",
 					SpellTooltipData.damage()
-			);
+			).graph(ResearchBonus.small3(13), "S->LEFO");
 
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/snowball.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("2");

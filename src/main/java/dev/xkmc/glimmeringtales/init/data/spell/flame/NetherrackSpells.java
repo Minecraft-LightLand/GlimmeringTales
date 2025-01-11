@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.flame;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -37,7 +38,7 @@ public class NetherrackSpells {
 					"[Block] burn enemies in a small area",
 					"Create flame sparks and inflict %s",
 					SpellTooltipData.damage()
-			);
+			).graph(ResearchBonus.small3(20), "E->SF", "SF->LO", "LO->E");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

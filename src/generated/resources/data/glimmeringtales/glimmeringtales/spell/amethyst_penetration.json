@@ -2,17 +2,7 @@
   "cost": 300,
   "elem": "glimmeringtales:earth",
   "focus": 60,
-  "graph": {
-    "flows": [
-      "EF<->LS"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "S": "glimmeringtales:snow"
-    }
-  },
+  "graph": "glimmeringtales:amethyst_penetration",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 16.0,

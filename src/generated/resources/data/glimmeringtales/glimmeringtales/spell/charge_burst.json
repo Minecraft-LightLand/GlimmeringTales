@@ -2,18 +2,7 @@
   "cost": 800,
   "elem": "glimmeringtales:thunder",
   "focus": 120,
-  "graph": {
-    "flows": [
-      "EOFST|"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:charge_burst",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 16.0,

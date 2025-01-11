@@ -30,7 +30,7 @@ public class SpongeSpell {
 					"[Block] Absorb water nearby",
 					"Absorb water nearby, equivalent to range of water",
 					SpellTooltipData.of()
-			);
+			).graph(CoralReefSpell.BUILDER);
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

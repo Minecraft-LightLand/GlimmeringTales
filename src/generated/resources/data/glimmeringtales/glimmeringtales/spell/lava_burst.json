@@ -2,21 +2,7 @@
   "cost": 20,
   "elem": "glimmeringtales:flame",
   "focus": 5,
-  "graph": {
-    "flows": [
-      "E<->SF",
-      "SF<->OT",
-      "OT<->L"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:lava_burst",
   "maxConsumeTick": 30,
   "spell": "glimmeringtales:lava_burst",
   "tooltip": {

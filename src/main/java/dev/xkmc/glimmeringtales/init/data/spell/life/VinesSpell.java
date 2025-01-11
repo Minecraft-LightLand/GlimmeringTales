@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.life;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
@@ -40,7 +41,7 @@ public class VinesSpell {
 					"[Block] Pull enemies to center",
 					"Pull surrounding enemies toward target position, dealing %s",
 					SpellTooltipData.damage()
-			);
+			).graph(ResearchBonus.small2(18), "O->E", "E->L", "L->O", "S->T", "T->F", "F->S");
 
 	private static ConfiguredEngine<?> vine(NatureSpellBuilder ctx, double radius, double step) {
 		return new ListLogic(List.of(

@@ -2,22 +2,7 @@
   "cost": 400,
   "elem": "glimmeringtales:flame",
   "focus": 100,
-  "graph": {
-    "flows": [
-      "E->SF",
-      "L->OT",
-      "SO->E",
-      "FT->L"
-    ],
-    "map": {
-      "E": "glimmeringtales:earth",
-      "F": "glimmeringtales:flame",
-      "L": "glimmeringtales:life",
-      "O": "glimmeringtales:ocean",
-      "S": "glimmeringtales:snow",
-      "T": "glimmeringtales:thunder"
-    }
-  },
+  "graph": "glimmeringtales:hell_mark",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 16.0,

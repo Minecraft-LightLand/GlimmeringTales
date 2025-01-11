@@ -41,6 +41,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:hay_bale",
-  "order": 1008,
+  "order": 1009,
   "trigger_type": "TARGET_POS"
 }
