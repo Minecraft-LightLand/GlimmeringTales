@@ -6,7 +6,69 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "在任意GUI内右键可研究的符石即可打开$(9)研究$()界面，通过连接通路使所有宝石的魔力均匀流通。$(br2)按$(9)R$()测试流通，按$(9)F$()保存通路。$(br2)魔力已流通的符石最高可以获得$(9)-50%魔力消耗$()的效果。"
+      "text": "在任意GUI内右键可研究的符石即可打开$(9)研究$()界面，通过连接通路使所有元素魔力流符合目标。$(br2)按$(9)+$()/$(9)-$()调整图的大小，按$(9)R$()测试流通，按$(9)F$()保存通路。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "右上角显示了目标魔力流。你可以拖拽元素来改变元素源方位。$(br2)如果一个元素源向另一个元素源发送粒子，那图上就要有一条魔力通路让魔力能流向目标。如果一个元素源向多个目标发送粒子，那魔力通路就得平分这个元素源流出的魔力流"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "当你完成构建一张图且测试流通后，你可以点击图上一个元素源来查看这个元素源流出的魔力流，用于排查和分析。在那之后，你还可以查看每一条路径上的魔力流的具体的流量$(br2)法术图的复杂度就是图中被激活的节点数量。通过降低复杂度可以降低法术消耗"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "魔力流机制 - 1",
+      "images": [
+        "glimmeringtales:textures/patchouli/hex_1.png"
+      ],
+      "border": false,
+      "text": "只有一条通路时，魔力流跟随通路流动"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "魔力流机制 - 2",
+      "images": [
+        "glimmeringtales:textures/patchouli/hex_2.png"
+      ],
+      "border": false,
+      "text": "如果前方有多条可选通路，选择偏转最小的通路"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "魔力流机制 - 3",
+      "images": [
+        "glimmeringtales:textures/patchouli/hex_3.png"
+      ],
+      "border": false,
+      "text": "你可以用上述机制实现往返分离的岔路口"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "魔力流机制 - 4",
+      "images": [
+        "glimmeringtales:textures/patchouli/hex_4.png"
+      ],
+      "border": false,
+      "text": "如果存在2个相同的最小偏转通路，则平分，魔力流"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "魔力流机制 - 5",
+      "images": [
+        "glimmeringtales:textures/patchouli/hex_5.png"
+      ],
+      "border": false,
+      "text": "如果魔力流抵达死路，则魔力流回流"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "魔力流机制 - 6",
+      "images": [
+        "glimmeringtales:textures/patchouli/hex_6.png"
+      ],
+      "border": false,
+      "text": "你可以让魔力流成环来实现魔力流的三分和五分"
     }
   ]
 }

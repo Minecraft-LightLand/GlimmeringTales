@@ -1,12 +1,74 @@
 {
-  "name": "Spell Research",
-  "icon": "glimmeringtales:thunderstorm",
-  "category": "glimmeringtales:mechanics",
-  "sortnum": 6,
-  "pages": [
-    {
-      "type": "patchouli:text",
-      "text": "Right-click a researchable rune in any GUI to open the $(9)research$() menu, where you can connect pathways to evenly distribute the mana of all crystals.$(br2)Press $(9)R$() to test the flow, and press $(9)F$() to save the pathway."
-    }
-  ]
+	"name": "Spell Research",
+	"icon": "glimmeringtales:thunderstorm",
+	"category": "glimmeringtales:mechanics",
+	"sortnum": 6,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Right-click a researchable rune in any GUI to open the $(9)research$() menu, where you can connect paths to construct a graph that element flows match expectations.$(br2)Press $(9)Press$(9)+$()/$(9)-$() to adjust canvas size, R$() to compile, and $(9)F$() to save the graph."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "On the upper right section, you can see the expected flow of elements, and you can drag-and-drop elements to change slots.$(br2) If an element is sending particles to another element, your graph should have path for the element to reach there. If it leads to multiple elements, your graph should evenly distribute the flows among the destinations."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Once you establish a graph and compile, you can click on element sources in graph to see individual flow of each elements. Then you can hover onto each connection to see the exact amount of flow there.$(br2)Cost of a graph is the number of nodes you used. Minimizing cost would make the spell more efficient and reduce mana consumption."
+		},
+		{
+			"type": "patchouli:image",
+			"title": "Flow Mechanics 1",
+			"images": [
+				"glimmeringtales:textures/patchouli/hex_1.png"
+			],
+			"border": false,
+			"text": "Flow follows the path if there is only one way to go"
+		},
+		{
+			"type": "patchouli:image",
+			"title": "Flow Mechanics 2",
+			"images": [
+				"glimmeringtales:textures/patchouli/hex_2.png"
+			],
+			"border": false,
+			"text": "If there are multiple paths forward, flow follows the one the has least deviation"
+		},
+		{
+			"type": "patchouli:image",
+			"title": "Flow Mechanics 3",
+			"images": [
+				"glimmeringtales:textures/patchouli/hex_3.png"
+			],
+			"border": false,
+			"text": "You can use this technique to create paths that separate incoming and outgoing flows"
+		},
+		{
+			"type": "patchouli:image",
+			"title": "Flow Mechanics 4",
+			"images": [
+				"glimmeringtales:textures/patchouli/hex_4.png"
+			],
+			"border": false,
+			"text": "If there are 2 paths with same deviation, the flow is split into 2"
+		},
+		{
+			"type": "patchouli:image",
+			"title": "Flow Mechanics 5",
+			"images": [
+				"glimmeringtales:textures/patchouli/hex_5.png"
+			],
+			"border": false,
+			"text": "If flow reaches dead end, it will go back"
+		},
+		{
+			"type": "patchouli:image",
+			"title": "Flow Mechanics 6",
+			"images": [
+				"glimmeringtales:textures/patchouli/hex_6.png"
+			],
+			"border": false,
+			"text": "You can loop back flows to create non-binary fractions of flow"
+		}
+	]
 }
