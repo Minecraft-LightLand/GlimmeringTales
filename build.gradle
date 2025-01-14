@@ -1,13 +1,18 @@
+import net.darkhax.curseforgegradle.TaskPublishCurseForge
+
 plugins {
     id 'java-library'
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.gradle.userdev' version '7.0.165'
+    id 'net.darkhax.curseforgegradle' version '[1.1.24,)'
+    id "at.stnwtr.gradle-secrets-plugin" version "1.0.1"
+    id "com.modrinth.minotaur" version "2.+"
 }
 
 version = mod_version
-group = 'dev.kxmc'
+group = 'dev.xkmc'
 
 repositories {
     mavenLocal()
@@ -73,6 +78,8 @@ tasks.withType(ProcessResources).configureEach {
             mod_id                 : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors            : mod_authors, mod_description: mod_description,
             l2library_version_range: l2library_version_range,
+            l2complements_version_range: l2complements_version_range,
+            l2backpack_version_range: l2backpack_version_range,
             curios_version_range   : curios_version_range,
     ]
     inputs.properties replaceProperties
@@ -198,4 +205,42 @@ dependencies {
     //implementation "curse.maven:embeddium-908741:5681729"
     implementation "maven.modrinth:sodium:mc1.21.1-0.6.1-neoforge"
     implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
+}
+
+
+tasks.register('publishCurseForge', TaskPublishCurseForge) {
+    apiToken = secrets.get("curseforge_token")
+    def mainFile = upload(project.curseforge_project, new File("./build/libs/${mod_id}-${mod_version}.jar"))
+    mainFile.changelog = new File('./changelog.txt')
+    mainFile.addEnvironment("Client", "Server")
+    mainFile.addGameVersion("1.21.1")
+    mainFile.addModLoader("NeoForge")
+    mainFile.addRequirement(
+            "l2library",
+            "curios",
+            "patchouli",
+            "l2-backpack",
+            "l2-complements"
+    )
+    mainFile.releaseType = "beta"
+    disableVersionDetection()
+}
+
+modrinth {
+    token = secrets.get("modrinth_token")
+    projectId = project.modrinth_project
+    versionName = "Glimmering Tales ${project.mod_version}"
+    versionNumber = project.mod_version
+    versionType = "beta"
+    uploadFile = new File("./build/libs/${mod_id}-${mod_version}.jar")
+    gameVersions = ["1.21.1"]
+    loaders = ["neoforge"]
+    changelog = new File('./changelog.txt').text.split("\n\n")[0]
+    dependencies {
+        required.project "l2library"
+        required.project "curios"
+        required.project "l2backpack"
+        required.project "l2-complements"
+        required.project "patchouli"
+    }
 }
