@@ -140,24 +140,24 @@ public class GTRecipeGen {
 
 			// earth - transmute
 			{
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.REDSTONE, Items.GLOWSTONE_DUST, 20);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.GLOWSTONE_DUST, Items.REDSTONE, 20);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SAND, Items.RED_SAND, 10);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.RED_SAND, Items.SAND, 10);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SOUL_SAND, Items.SOUL_SOIL, 10);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SOUL_SOIL, Items.SOUL_SAND, 10);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.STONE, Items.DEEPSLATE, 10);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.DEEPSLATE, Items.STONE, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.REDSTONE, Items.GLOWSTONE_DUST, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.GLOWSTONE_DUST, Items.REDSTONE, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SAND, Items.RED_SAND, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.RED_SAND, Items.SAND, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SOUL_SAND, Items.SOUL_SOIL, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SOUL_SOIL, Items.SOUL_SAND, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.STONE, Items.DEEPSLATE, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.DEEPSLATE, Items.STONE, 40);
 			}
 
 			// earth - crystallize
 			{
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.COBBLED_DEEPSLATE, Items.DEEPSLATE, 10);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.COBBLESTONE, Items.STONE, 10);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.GLASS, Items.QUARTZ, 100);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.QUARTZ, Items.AMETHYST_SHARD, 40);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.AMETHYST_SHARD, Items.LAPIS_LAZULI, 40);
-				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.PRISMARINE_SHARD, Items.COPPER_INGOT, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.COBBLED_DEEPSLATE, Items.DEEPSLATE, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.COBBLESTONE, Items.STONE, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.GLASS, Items.QUARTZ, 120);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.QUARTZ, Items.AMETHYST_SHARD, 80);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.AMETHYST_SHARD, Items.LAPIS_LAZULI, 80);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.PRISMARINE_SHARD, Items.COPPER_INGOT, 80);
 			}
 
 			// fire

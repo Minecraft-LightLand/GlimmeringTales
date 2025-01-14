@@ -26,6 +26,7 @@ public class GTJeiPlugin implements IModPlugin {
 	public final StrikeItemRecipeCategory STRIKE_ITEM = new StrikeItemRecipeCategory();
 	public final ItemTransformationRecipeCategory TRANSFORM = new ItemTransformationRecipeCategory();
 	public final RitualRecipeCategory RITUAL = new RitualRecipeCategory();
+	public final InfuseRecipeCategory INFUSE = new InfuseRecipeCategory();
 
 	public IGuiHelper GUI_HELPER;
 
@@ -50,6 +51,7 @@ public class GTJeiPlugin implements IModPlugin {
 		registration.addRecipeCategories(STRIKE_ITEM.init(helper));
 		registration.addRecipeCategories(TRANSFORM.init(helper));
 		registration.addRecipeCategories(RITUAL.init(helper));
+		registration.addRecipeCategories(INFUSE.init(helper));
 	}
 
 	@Override
@@ -63,6 +65,7 @@ public class GTJeiPlugin implements IModPlugin {
 		registration.addRecipes(STRIKE_BLOCK.getRecipeType(), STRIKE_BLOCK.getAll(GTRecipes.RT_STRIKE_BLOCK.get()));
 		registration.addRecipes(STRIKE_ITEM.getRecipeType(), STRIKE_ITEM.getAll(GTRecipes.RT_STRIKE_ITEM.get()));
 		registration.addRecipes(RITUAL.getRecipeType(), RITUAL.getAll(GTRecipes.RT_RITUAL.get()));
+		registration.addRecipes(INFUSE.getRecipeType(), INFUSE.getAll(GTRecipes.RT_INFUSE.get()));
 		registration.addRecipes(TRANSFORM.getRecipeType(), List.of(
 				new ItemTransformation(GTItems.DEPLETED_FLAME.asStack(), GTItems.CRYSTAL_FLAME.asStack()),
 				new ItemTransformation(GTItems.DEPLETED_WINTERSTORM.asStack(), GTItems.CRYSTAL_WINTERSTORM.asStack()),
@@ -82,6 +85,7 @@ public class GTJeiPlugin implements IModPlugin {
 		registration.addRecipeCatalyst(Blocks.LIGHTNING_ROD.asItem().getDefaultInstance(), STRIKE_ITEM.getRecipeType());
 		registration.addRecipeCatalyst(GTItems.RITUAL_MATRIX.asStack(), RITUAL.getRecipeType());
 		registration.addRecipeCatalyst(GTItems.RITUAL_ALTAR.asStack(), RITUAL.getRecipeType());
+		registration.addRecipeCatalyst(GTItems.INFUSER.asStack(), INFUSE.getRecipeType());
 	}
 
 	@Override

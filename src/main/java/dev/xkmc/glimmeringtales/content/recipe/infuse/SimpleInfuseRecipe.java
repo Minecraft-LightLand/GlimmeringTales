@@ -32,7 +32,6 @@ public class SimpleInfuseRecipe extends InfuseRecipe<SimpleInfuseRecipe> {
 
 	@Override
 	public ItemStack assemble(InfuserItemContainer cont, HolderLookup.Provider provider) {
-		cont.getItem(0).shrink(1);
 		cont.getItem(1).shrink(1);
 		return result.copy();
 	}

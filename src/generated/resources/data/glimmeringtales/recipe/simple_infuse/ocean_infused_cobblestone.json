@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_ocean"
+  },
+  "input": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:prismarine"
+  },
+  "time": 200
+}

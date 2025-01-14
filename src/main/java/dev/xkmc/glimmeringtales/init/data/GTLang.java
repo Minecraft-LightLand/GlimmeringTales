@@ -53,6 +53,7 @@ public enum GTLang {
 	JEI_STRIKE_BLOCK("jei.strike_block", "Lightning Strikes Block", 0),
 	JEI_TRANSFORM("jei.transform", "Item Special Transformation", 0),
 	JEI_RITUAL("jei.ritual", "Ritual", 0),
+	JEI_INFUSE("jei.infuse", "Infuse", 0),
 
 	HEX_STATUS("hex.status", "Research status: %s", 1),
 	HEX_COST("hex.cost", "Cost: %s", 1),

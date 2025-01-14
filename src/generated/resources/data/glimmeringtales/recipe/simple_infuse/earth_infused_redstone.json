@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_earth"
+  },
+  "input": {
+    "item": "minecraft:redstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:glowstone_dust"
+  },
+  "time": 40
+}

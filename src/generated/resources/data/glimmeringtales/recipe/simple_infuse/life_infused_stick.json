@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_life"
+  },
+  "input": {
+    "item": "minecraft:stick"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:dead_bush"
+  },
+  "time": 100
+}

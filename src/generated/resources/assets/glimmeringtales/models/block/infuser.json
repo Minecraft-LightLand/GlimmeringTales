@@ -1,0 +1,8 @@
+{
+  "parent": "glimmeringtales:custom/infuser",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "glimmeringtales:block/infuser",
+    "particle": "minecraft:block/amethyst_block"
+  }
+}

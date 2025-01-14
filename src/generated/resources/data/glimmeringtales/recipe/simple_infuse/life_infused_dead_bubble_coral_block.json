@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_life"
+  },
+  "input": {
+    "item": "minecraft:dead_bubble_coral_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:bubble_coral_block"
+  },
+  "time": 200
+}

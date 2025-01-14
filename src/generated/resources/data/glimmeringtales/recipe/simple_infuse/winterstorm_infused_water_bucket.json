@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_winterstorm"
+  },
+  "input": {
+    "item": "minecraft:water_bucket"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:powder_snow_bucket"
+  },
+  "time": 200
+}

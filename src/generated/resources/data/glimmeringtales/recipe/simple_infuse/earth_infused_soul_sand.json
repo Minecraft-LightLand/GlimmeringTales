@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_earth"
+  },
+  "input": {
+    "item": "minecraft:soul_sand"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:soul_soil"
+  },
+  "time": 40
+}

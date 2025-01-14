@@ -6,6 +6,9 @@ import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.entry.MenuEntry;
 import dev.xkmc.glimmeringtales.content.block.crop.LifeCrystalCrop;
+import dev.xkmc.glimmeringtales.content.block.infuser.InfuserBlock;
+import dev.xkmc.glimmeringtales.content.block.infuser.InfuserBlockEntity;
+import dev.xkmc.glimmeringtales.content.block.infuser.InfuserBlockRenderer;
 import dev.xkmc.glimmeringtales.content.block.misc.*;
 import dev.xkmc.glimmeringtales.content.block.ritual.*;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeCurioItem;
@@ -30,6 +33,7 @@ import dev.xkmc.l2core.init.reg.varitem.VarHolder;
 import dev.xkmc.l2core.init.reg.varitem.VarItemInit;
 import dev.xkmc.l2damagetracker.contents.damage.DefaultDamageState;
 import dev.xkmc.l2damagetracker.init.L2DamageTracker;
+import dev.xkmc.l2modularblock.core.BlockTemplates;
 import dev.xkmc.l2modularblock.core.DelegateBlock;
 import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.core.Holder;
@@ -80,9 +84,10 @@ public class GTItems {
 	public static final BlockEntry<SaplingBlock> STRUCK_SAPLING;
 	public static final ItemEntry<AmethystResonator> RESONATOR;
 
-	public static final BlockEntry<DelegateBlock> RITUAL_ALTAR, RITUAL_MATRIX;
+	public static final BlockEntry<DelegateBlock> RITUAL_ALTAR, RITUAL_MATRIX, INFUSER;
 	public static final BlockEntityEntry<NatureSideBlockEntity> ALTAR_BE;
 	public static final BlockEntityEntry<NatureCoreBlockEntity> MATRIX_BE;
+	public static final BlockEntityEntry<InfuserBlockEntity> INFUSER_BE;
 
 	public static final ItemEntry<RuneWandItem> WAND;
 	public static final MenuEntry<WandMenu> WAND_MENU;
@@ -304,6 +309,14 @@ public class GTItems {
 					.validBlock(RITUAL_MATRIX)
 					.renderer(() -> MatrixRenderer::new)
 					.register();
+
+			INFUSER = GlimmeringTales.REGISTRATE.block("infuser", p ->
+							DelegateBlock.newBaseBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).lightLevel(s -> 11).noOcclusion(),
+									BlockTemplates.WATER, new InfuserBlock(), InfuserBlock.BE))
+					.blockstate(InfuserBlock::buildStates).simpleItem().register();
+
+			INFUSER_BE = GlimmeringTales.REGISTRATE.blockEntity("infuser", InfuserBlockEntity::new)
+					.validBlock(INFUSER).renderer(()-> InfuserBlockRenderer::new).register();
 		}
 
 		{

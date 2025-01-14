@@ -17,6 +17,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpellCoreItem extends LightningImmuneItem implements IBlockSpellItem {
@@ -46,6 +47,15 @@ public class SpellCoreItem extends LightningImmuneItem implements IBlockSpellIte
 	@Nullable
 	public ElementAffinity getAffinity(Level level) {
 		return GTRegistries.AFFINITY.get(level.registryAccess(), builtInRegistryHolder());
+	}
+
+	public int getColor(Level level) {
+		var aff = getAffinity(level);
+		if (aff != null && aff.affinity().entrySet().size() == 1) {
+			var e = new ArrayList<>(aff.affinity().entrySet()).getFirst().getKey();
+			return e.getColor();
+		}
+		return -1;
 	}
 
 	@Override

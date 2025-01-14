@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_flame"
+  },
+  "input": {
+    "item": "minecraft:slime_ball"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:magma_cream"
+  },
+  "time": 100
+}

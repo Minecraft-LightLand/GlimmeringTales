@@ -3,6 +3,7 @@ package dev.xkmc.glimmeringtales.init;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.xkmc.glimmeringtales.compat.PatchouliCompat;
 import dev.xkmc.glimmeringtales.content.block.altar.BaseRitualBlockEntity;
+import dev.xkmc.glimmeringtales.content.block.infuser.InfuserBlockEntity;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipRegistry;
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.glimmeringtales.content.research.core.GraphToServerPacket;
@@ -107,6 +108,7 @@ public class GlimmeringTales {
 		event.registerItem(Capabilities.ItemHandler.ITEM, (stack, c) -> new BaseBagItemHandler(stack), GTItems.WAND);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GTItems.ALTAR_BE.get(), BaseRitualBlockEntity::getItemHandler);
 		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GTItems.MATRIX_BE.get(), BaseRitualBlockEntity::getItemHandler);
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, GTItems.INFUSER_BE.get(), InfuserBlockEntity::getItemHandler);
 	}
 
 

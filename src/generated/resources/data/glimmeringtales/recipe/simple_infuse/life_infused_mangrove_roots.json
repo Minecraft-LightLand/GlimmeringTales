@@ -1,0 +1,14 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_life"
+  },
+  "input": {
+    "item": "minecraft:mangrove_roots"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:vine"
+  },
+  "time": 100
+}
