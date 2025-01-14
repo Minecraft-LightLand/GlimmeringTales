@@ -7,16 +7,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 
-public class SimpleInuseRecipeBuilder extends BaseRecipeBuilder<
-		SimpleInuseRecipeBuilder, SimpleInfuseRecipe,
+public class SimpleInfuseRecipeBuilder extends BaseRecipeBuilder<
+		SimpleInfuseRecipeBuilder, SimpleInfuseRecipe,
 		InfuseRecipe<?>, InfuserItemContainer
 		> {
 
-	public SimpleInuseRecipeBuilder(Item crystal, Ingredient input, ItemStack result) {
+	public SimpleInfuseRecipeBuilder(Item crystal, Ingredient input, ItemStack result, int time) {
 		super(GTRecipes.RSI_SIMPLE.get(), result.getItem());
 		this.recipe.crystal = Ingredient.of(crystal);
 		this.recipe.input = input;
 		this.recipe.result = result;
+		this.recipe.time = time;
 	}
 
 }

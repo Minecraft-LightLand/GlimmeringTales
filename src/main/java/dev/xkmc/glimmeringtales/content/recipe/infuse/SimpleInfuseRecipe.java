@@ -21,7 +21,7 @@ public class SimpleInfuseRecipe extends InfuseRecipe<SimpleInfuseRecipe> {
 	@SerialField
 	public ItemStack result = ItemStack.EMPTY;
 
-	public SimpleInfuseRecipe(RecType<SimpleInfuseRecipe, InfuseRecipe<?>, InfuserItemContainer> fac) {
+	public SimpleInfuseRecipe() {
 		super(GTRecipes.RSI_SIMPLE.get());
 	}
 

@@ -1,0 +1,13 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_ocean"
+  },
+  "input": {
+    "item": "minecraft:armadillo_scute"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:turtle_scute"
+  }
+}

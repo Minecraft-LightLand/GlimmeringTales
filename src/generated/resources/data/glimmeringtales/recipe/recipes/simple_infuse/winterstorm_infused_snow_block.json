@@ -1,0 +1,13 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_winterstorm"
+  },
+  "input": {
+    "item": "minecraft:snow_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:ice"
+  }
+}

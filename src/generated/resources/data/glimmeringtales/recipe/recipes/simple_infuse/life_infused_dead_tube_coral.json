@@ -1,0 +1,13 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_life"
+  },
+  "input": {
+    "item": "minecraft:dead_tube_coral"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:tube_coral"
+  }
+}

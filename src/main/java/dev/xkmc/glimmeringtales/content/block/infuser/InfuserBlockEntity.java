@@ -18,7 +18,7 @@ public class InfuserBlockEntity extends BaseBlockEntity
 		implements TickableBlockEntity, BaseContainerListener {
 
 	@SerialField
-	private final InfuserItemContainer items = new InfuserItemContainer(2).setMax(1).add(this);
+	protected final InfuserItemContainer items = new InfuserItemContainer(2).setMax(1).add(this);
 
 	private final IItemHandler handler;
 

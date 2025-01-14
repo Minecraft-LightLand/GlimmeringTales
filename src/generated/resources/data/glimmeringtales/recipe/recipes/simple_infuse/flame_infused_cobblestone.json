@@ -1,0 +1,13 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_flame"
+  },
+  "input": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:blackstone"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "glimmeringtales:simple_infuse",
+  "crystal": {
+    "item": "glimmeringtales:crystal_of_ocean"
+  },
+  "input": {
+    "item": "minecraft:flint"
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:prismarine_shard"
+  }
+}

@@ -2,22 +2,28 @@ package dev.xkmc.glimmeringtales.init.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
+import dev.xkmc.glimmeringtales.content.item.rune.SpellCoreItem;
 import dev.xkmc.glimmeringtales.content.recipe.craft.WandRecipeBuilder;
+import dev.xkmc.glimmeringtales.content.recipe.infuse.SimpleInfuseRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.ritual.SimpleRitualRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeBlockRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeItemRecipeBuilder;
+import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.l2complements.init.materials.LCMats;
 import dev.xkmc.l2complements.init.registrate.LCItems;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 
@@ -96,6 +102,93 @@ public class GTRecipeGen {
 					.define('W', GTItems.STRUCK_LOG)
 					.define('D', Items.DEEPSLATE_BRICKS)
 					.save(pvd);
+		}
+
+		// infuse
+		{
+			//life - misc
+			{
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.STICK, Items.DEAD_BUSH, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_BUSH, Items.OAK_SAPLING, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.MANGROVE_ROOTS, Items.VINE, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.POISONOUS_POTATO, Items.POTATO, 40);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DIRT, Items.GRASS_BLOCK, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.COARSE_DIRT, Items.DIRT, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.SAND, Items.COARSE_DIRT, 100);
+			}
+
+			// life - coral
+			{
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_BRAIN_CORAL, Items.BRAIN_CORAL, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_BUBBLE_CORAL, Items.BUBBLE_CORAL, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_FIRE_CORAL, Items.FIRE_CORAL, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_HORN_CORAL, Items.HORN_CORAL, 100);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_TUBE_CORAL, Items.TUBE_CORAL, 100);
+
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_BRAIN_CORAL_FAN, Items.BRAIN_CORAL_FAN, 160);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_BUBBLE_CORAL_FAN, Items.BUBBLE_CORAL_FAN, 160);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_FIRE_CORAL_FAN, Items.FIRE_CORAL_FAN, 160);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_HORN_CORAL_FAN, Items.HORN_CORAL_FAN, 160);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_TUBE_CORAL_FAN, Items.TUBE_CORAL_FAN, 160);
+
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_BRAIN_CORAL_BLOCK, Items.BRAIN_CORAL_BLOCK, 200);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_BUBBLE_CORAL_BLOCK, Items.BUBBLE_CORAL_BLOCK, 200);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_FIRE_CORAL_BLOCK, Items.FIRE_CORAL_BLOCK, 200);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_HORN_CORAL_BLOCK, Items.HORN_CORAL_BLOCK, 200);
+				infuse(pvd, GTItems.CRYSTAL_LIFE.get(), Items.DEAD_TUBE_CORAL_BLOCK, Items.TUBE_CORAL_BLOCK, 200);
+			}
+
+			// earth - transmute
+			{
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.REDSTONE, Items.GLOWSTONE_DUST, 20);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.GLOWSTONE_DUST, Items.REDSTONE, 20);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SAND, Items.RED_SAND, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.RED_SAND, Items.SAND, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SOUL_SAND, Items.SOUL_SOIL, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.SOUL_SOIL, Items.SOUL_SAND, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.STONE, Items.DEEPSLATE, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.DEEPSLATE, Items.STONE, 10);
+			}
+
+			// earth - crystallize
+			{
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.COBBLED_DEEPSLATE, Items.DEEPSLATE, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.COBBLESTONE, Items.STONE, 10);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.GLASS, Items.QUARTZ, 100);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.QUARTZ, Items.AMETHYST_SHARD, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.AMETHYST_SHARD, Items.LAPIS_LAZULI, 40);
+				infuse(pvd, GTItems.CRYSTAL_EARTH.get(), Items.PRISMARINE_SHARD, Items.COPPER_INGOT, 40);
+			}
+
+			// fire
+			{
+				infuse(pvd, GTItems.CRYSTAL_FLAME.get(), Items.SANDSTONE, Items.NETHERRACK, 20);
+				infuse(pvd, GTItems.CRYSTAL_FLAME.get(), Items.COBBLESTONE, Items.BLACKSTONE, 40);
+				infuse(pvd, GTItems.CRYSTAL_FLAME.get(), Items.NETHERRACK, Items.MAGMA_BLOCK, 100);
+				infuse(pvd, GTItems.CRYSTAL_FLAME.get(), Items.SLIME_BALL, Items.MAGMA_CREAM, 100);
+			}
+
+			// snow
+			{
+				infuse(pvd, GTItems.CRYSTAL_WINTERSTORM.get(), Items.SNOW_BLOCK, Items.ICE, 20);
+				infuse(pvd, GTItems.CRYSTAL_WINTERSTORM.get(), Items.ICE, Items.PACKED_ICE, 80);
+				infuse(pvd, GTItems.CRYSTAL_WINTERSTORM.get(), Items.PACKED_ICE, Items.BLUE_ICE, 200);
+				infuse(pvd, GTItems.CRYSTAL_WINTERSTORM.get(), Items.WATER_BUCKET, Items.POWDER_SNOW_BUCKET, 200);
+			}
+
+			// ocean
+			{
+				infuse(pvd, GTItems.CRYSTAL_OCEAN.get(), Items.FLINT, Items.PRISMARINE_SHARD, 40);
+				infuse(pvd, GTItems.CRYSTAL_OCEAN.get(), Items.ARMADILLO_SCUTE, Items.TURTLE_SCUTE, 100);
+				infuse(pvd, GTItems.CRYSTAL_OCEAN.get(), Items.SHULKER_SHELL, Items.NAUTILUS_SHELL, 100);
+				infuse(pvd, GTItems.CRYSTAL_OCEAN.get(), Items.COBBLESTONE, Items.PRISMARINE, 200);
+			}
+
+			// thunder
+			{
+				infuse(pvd, GTItems.CRYSTAL_THUNDER.get(), ItemTags.LOGS, GTItems.STRUCK_LOG, 20);
+			}
+
 		}
 
 		// ring
@@ -531,6 +624,22 @@ public class GTRecipeGen {
 
 		}
 
+	}
+
+	public static void infuse(RegistrateRecipeProvider pvd, SpellCoreItem crystal, ItemLike in, ItemLike out, int time) {
+		var reg = BuiltInRegistries.ITEM;
+		String path = reg.getKey(crystal).getPath().substring(11) + "_infused_" + reg.getKey(in.asItem()).getPath();
+		unlock(pvd, new SimpleInfuseRecipeBuilder(crystal, Ingredient.of(in),
+				out.asItem().getDefaultInstance(), time)::unlockedBy, crystal)
+				.save(pvd, GlimmeringTales.loc(path));
+	}
+
+	public static void infuse(RegistrateRecipeProvider pvd, SpellCoreItem crystal, TagKey<Item> in, ItemLike out, int time) {
+		var reg = BuiltInRegistries.ITEM;
+		String path = reg.getKey(crystal).getPath().substring(11) + "_infused_" + in.location().getPath();
+		unlock(pvd, new SimpleInfuseRecipeBuilder(crystal, Ingredient.of(in),
+				out.asItem().getDefaultInstance(), time)::unlockedBy, crystal)
+				.save(pvd, GlimmeringTales.loc(path));
 	}
 
 	public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, Criterion<InventoryChangeTrigger.TriggerInstance>, T> func, Item item) {
