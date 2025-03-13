@@ -4,7 +4,7 @@ import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
 import dev.xkmc.glimmeringtales.content.item.rune.SpellCoreItem;
 import dev.xkmc.glimmeringtales.content.recipe.craft.WandRecipeBuilder;
-import dev.xkmc.glimmeringtales.content.recipe.infuse.SimpleInfuseRecipeBuilder;
+import dev.xkmc.glimmeringtales.content.block.infuser.SimpleInfuseRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.ritual.SimpleRitualRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeBlockRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeItemRecipeBuilder;

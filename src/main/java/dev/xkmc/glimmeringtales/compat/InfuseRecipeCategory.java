@@ -1,7 +1,7 @@
 package dev.xkmc.glimmeringtales.compat;
 
-import dev.xkmc.glimmeringtales.content.recipe.infuse.InfuseRecipe;
-import dev.xkmc.glimmeringtales.content.recipe.infuse.SimpleInfuseRecipe;
+import dev.xkmc.glimmeringtales.content.block.infuser.InfuseRecipe;
+import dev.xkmc.glimmeringtales.content.block.infuser.SimpleInfuseRecipe;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;

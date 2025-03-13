@@ -1,7 +1,6 @@
 package dev.xkmc.glimmeringtales.content.block.infuser;
 
 import dev.xkmc.glimmeringtales.content.item.rune.SpellCoreItem;
-import dev.xkmc.glimmeringtales.content.recipe.infuse.InfuseRecipe;
 import dev.xkmc.glimmeringtales.init.reg.GTRecipes;
 import dev.xkmc.l2core.base.tile.BaseBlockEntity;
 import dev.xkmc.l2core.base.tile.BaseContainerListener;

@@ -1,6 +1,5 @@
-package dev.xkmc.glimmeringtales.content.recipe.infuse;
+package dev.xkmc.glimmeringtales.content.block.infuser;
 
-import dev.xkmc.glimmeringtales.content.block.infuser.InfuserItemContainer;
 import dev.xkmc.glimmeringtales.init.reg.GTRecipes;
 import dev.xkmc.l2serial.serialization.marker.SerialClass;
 import dev.xkmc.l2serial.serialization.marker.SerialField;
