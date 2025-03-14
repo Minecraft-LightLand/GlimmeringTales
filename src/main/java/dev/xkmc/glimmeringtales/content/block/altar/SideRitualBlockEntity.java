@@ -80,7 +80,7 @@ public class SideRitualBlockEntity extends BaseRitualBlockEntity implements Tick
 	public void onPlaced() {
 		if (level == null || level.isClientSide()) return;
 		core = null;
-		int r = PerformanceConstants.RANGE;
+		int r = PerformanceConstants.range();
 		BlockPos self = getBlockPos();
 		BlockPos ansPos = null;
 		CoreRitualBlockEntity ansBE = null;

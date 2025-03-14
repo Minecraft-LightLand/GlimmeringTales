@@ -29,6 +29,7 @@ public class GTConfigs {
 		public final ModConfigSpec.IntValue crystalOfWinterstormRequirement;
 		public final ModConfigSpec.IntValue wandInteractionDistance;
 		public final ModConfigSpec.IntValue focusCoolDown;
+		public final ModConfigSpec.IntValue ritualRange;
 
 		public Server(Builder builder) {
 			markL2();
@@ -45,6 +46,9 @@ public class GTConfigs {
 			focusCoolDown = builder
 					.text("Cooldown on focus restoration after casting spell")
 					.defineInRange("focusCoolDown", 40, 0, 1000);
+			ritualRange = builder
+					.text("Range for ritual blocks to check for each other")
+					.defineInRange("ritualRange", 3, 1, 16);
 			builder.pop();
 		}
 	}
