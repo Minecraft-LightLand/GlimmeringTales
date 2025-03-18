@@ -70,6 +70,8 @@
   "glimmeringtales.configuration.resonatorSearchRadius.tooltip": "Range: 16 ~ 128",
   "glimmeringtales.configuration.resonatorSearchTrialsPerTick": "Amethyst Resonator search trials per tick",
   "glimmeringtales.configuration.resonatorSearchTrialsPerTick.tooltip": "Range: 16 ~ 10000",
+  "glimmeringtales.configuration.ritualRange": "Range for ritual blocks to check for each other",
+  "glimmeringtales.configuration.ritualRange.tooltip": "Range: 1 ~ 16",
   "glimmeringtales.configuration.section.l2configs.glimmeringtales.client.toml": "Glimmering Tales Client Configuration",
   "glimmeringtales.configuration.section.l2configs.glimmeringtales.client.toml.title": "Glimmering Tales Client Configuration",
   "glimmeringtales.configuration.section.l2configs.glimmeringtales.server.toml": "Glimmering Tales Server Configuration",
