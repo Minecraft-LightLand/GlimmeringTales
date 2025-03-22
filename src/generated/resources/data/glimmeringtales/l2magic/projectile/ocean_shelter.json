@@ -35,9 +35,9 @@
               },
               {
                 "type": "l2magic:effect",
+                "duration": "100",
                 "ambient": true,
                 "amplifier": "1",
-                "duration": "100",
                 "effect": "minecraft:weakness",
                 "visible": true
               }
@@ -67,9 +67,9 @@
           },
           {
             "type": "l2magic:effect",
+            "duration": "100",
             "ambient": true,
             "amplifier": "0",
-            "duration": "100",
             "effect": "minecraft:conduit_power",
             "visible": true
           }

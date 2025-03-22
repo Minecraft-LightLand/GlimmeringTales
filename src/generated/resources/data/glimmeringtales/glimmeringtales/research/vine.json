@@ -1,16 +1,4 @@
 {
-  "bonuses": [
-    {
-      "cost": 36,
-      "focusBonus": 1.0,
-      "manaBonus": 0.8
-    },
-    {
-      "cost": 18,
-      "focusBonus": 1.0,
-      "manaBonus": 0.8
-    }
-  ],
   "flows": [
     "O->E",
     "E->L",
@@ -26,5 +14,17 @@
     "O": "glimmeringtales:ocean",
     "S": "glimmeringtales:snow",
     "T": "glimmeringtales:thunder"
-  }
+  },
+  "bonuses": [
+    {
+      "cost": 36,
+      "focusBonus": 1.0,
+      "manaBonus": 0.8
+    },
+    {
+      "cost": 18,
+      "focusBonus": 1.0,
+      "manaBonus": 0.8
+    }
+  ]
 }

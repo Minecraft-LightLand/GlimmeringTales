@@ -35,9 +35,9 @@
               },
               {
                 "type": "l2magic:effect",
+                "duration": "100",
                 "ambient": false,
                 "amplifier": "0",
-                "duration": "100",
                 "effect": "l2complements:incarceration",
                 "visible": false
               }
@@ -67,9 +67,9 @@
           },
           {
             "type": "l2magic:effect",
+            "duration": "100",
             "ambient": false,
             "amplifier": "1",
-            "duration": "100",
             "effect": "minecraft:resistance",
             "visible": false
           }

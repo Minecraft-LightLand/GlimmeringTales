@@ -1,6 +1,8 @@
 package dev.xkmc.glimmeringtales.init;
 
 import com.tterrag.registrate.providers.ProviderType;
+import dev.shadowsoffire.apotheosis.Apotheosis;
+import dev.xkmc.glimmeringtales.compat.apoth.ApothCompat;
 import dev.xkmc.glimmeringtales.compat.misc.PatchouliCompat;
 import dev.xkmc.glimmeringtales.content.block.altar.BaseRitualBlockEntity;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipRegistry;
@@ -27,6 +29,7 @@ import dev.xkmc.l2serial.serialization.custom_handler.Handlers;
 import dev.xkmc.l2serial.util.Wrappers;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -57,7 +60,7 @@ public class GlimmeringTales {
 	public static final L2Registrate REGISTRATE = new L2Registrate(MODID);
 	public static GTDamageTypeGen DMG_GEN;
 
-	public GlimmeringTales() {
+	public GlimmeringTales(IEventBus bus) {
 		GTRegistries.register();
 		GTItems.register();
 		GTRecipes.register();
@@ -65,6 +68,9 @@ public class GlimmeringTales {
 		GTEntities.register();
 		if (ModList.get().isLoaded(PatchouliAPI.MOD_ID)) {
 			PatchouliCompat.gen();
+		}
+		if (ModList.get().isLoaded(Apotheosis.MODID)) {
+			ApothCompat.register(bus);
 		}
 		DMG_GEN = new GTDamageTypeGen(REGISTRATE);
 		new GTClickHandler(loc("hex"));
@@ -143,6 +149,13 @@ public class GlimmeringTales {
 		var pvd = event.getLookupProvider();
 		gen.addProvider(run, new GTSlotGen(out, file, pvd));
 		gen.addProvider(run, new GTHostilityGen(gen, pvd));
+	}
+
+	@SubscribeEvent(priority = EventPriority.LOW)
+	public static void gatherDataLate(GatherDataEvent event) {
+		if (ModList.get().isLoaded(Apotheosis.MODID)) {
+			ApothCompat.data(event);
+		}
 	}
 
 	public static ResourceLocation loc(String id) {

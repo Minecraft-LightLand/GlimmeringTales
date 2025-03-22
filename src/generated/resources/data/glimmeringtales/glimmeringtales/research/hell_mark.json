@@ -1,4 +1,18 @@
 {
+  "flows": [
+    "E->SF",
+    "L->OT",
+    "SO->E",
+    "FT->L"
+  ],
+  "map": {
+    "E": "glimmeringtales:earth",
+    "F": "glimmeringtales:flame",
+    "L": "glimmeringtales:life",
+    "O": "glimmeringtales:ocean",
+    "S": "glimmeringtales:snow",
+    "T": "glimmeringtales:thunder"
+  },
   "bonuses": [
     {
       "cost": 100,
@@ -20,19 +34,5 @@
       "focusBonus": 0.5,
       "manaBonus": 1.0
     }
-  ],
-  "flows": [
-    "E->SF",
-    "L->OT",
-    "SO->E",
-    "FT->L"
-  ],
-  "map": {
-    "E": "glimmeringtales:earth",
-    "F": "glimmeringtales:flame",
-    "L": "glimmeringtales:life",
-    "O": "glimmeringtales:ocean",
-    "S": "glimmeringtales:snow",
-    "T": "glimmeringtales:thunder"
-  }
+  ]
 }
