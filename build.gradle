@@ -194,7 +194,6 @@ dependencies {
     runtimeOnly "dev.xkmc:better_creative_tabs:0.1.2"
 
     implementation "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
-    implementation "vazkii.patchouli:Patchouli:${patchouli_ver}"
 
     //implementation "curse.maven:adorned-1036809:5740650"
 
@@ -214,6 +213,13 @@ dependencies {
     compileOnly("com.simibubi.create:create-1.21.1:6.0.1-13") { transitive = false }
     compileOnly("net.createmod.ponder:Ponder-NeoForge-1.21.1:1.0.39") { transitive = false }
     compileOnly("dev.engine-room.flywheel:flywheel-neoforge-1.21.1:1.0.0-10")
+
+    implementation "curse.maven:apothic-attributes-898963:6302334"
+    implementation "curse.maven:patchouli-306770:6164617"
+    implementation "curse.maven:placebo-283644:6274181"
+    implementation "curse.maven:apothic-spawners-986583:6148923"
+    implementation "curse.maven:apothic-enchanting-1063926:6084297"
+    implementation "curse.maven:apotheosis-313970:6302343"
 }
 
 

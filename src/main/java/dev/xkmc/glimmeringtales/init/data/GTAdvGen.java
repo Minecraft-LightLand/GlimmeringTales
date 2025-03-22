@@ -1,7 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data;
 
 import com.tterrag.registrate.providers.RegistrateAdvancementProvider;
-import dev.xkmc.glimmeringtales.compat.PatchouliCompat;
+import dev.xkmc.glimmeringtales.compat.misc.PatchouliCompat;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.l2core.serial.advancements.AdvancementGenerator;

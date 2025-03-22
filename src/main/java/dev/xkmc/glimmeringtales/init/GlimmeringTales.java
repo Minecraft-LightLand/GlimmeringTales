@@ -1,7 +1,7 @@
 package dev.xkmc.glimmeringtales.init;
 
 import com.tterrag.registrate.providers.ProviderType;
-import dev.xkmc.glimmeringtales.compat.PatchouliCompat;
+import dev.xkmc.glimmeringtales.compat.misc.PatchouliCompat;
 import dev.xkmc.glimmeringtales.content.block.altar.BaseRitualBlockEntity;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipRegistry;
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;

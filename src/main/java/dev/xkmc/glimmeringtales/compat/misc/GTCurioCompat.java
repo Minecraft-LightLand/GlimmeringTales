@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.compat;
+package dev.xkmc.glimmeringtales.compat.misc;
 
 import dev.xkmc.l2serial.util.Wrappers;
 import net.minecraft.world.entity.LivingEntity;

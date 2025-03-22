@@ -1,7 +1,7 @@
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 
-package dev.xkmc.glimmeringtales.compat;
+package dev.xkmc.glimmeringtales.compat.jei;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 

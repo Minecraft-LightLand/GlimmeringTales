@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.compat;
+package dev.xkmc.glimmeringtales.compat.misc;
 
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
