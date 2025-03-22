@@ -11,7 +11,9 @@
     "glimmeringtales:earthquake",
     "glimmeringtales:meteor",
     "glimmeringtales:ocean_shelter",
+    "glimmeringtales:illusory_field",
     "glimmeringtales:thunderstorm",
-    "glimmeringtales:charge_burst"
+    "glimmeringtales:charge_burst",
+    "glimmeringtales:thunder_surge"
   ]
 }

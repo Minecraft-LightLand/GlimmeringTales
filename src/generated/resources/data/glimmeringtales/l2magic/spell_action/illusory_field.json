@@ -1,0 +1,50 @@
+{
+  "action": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:sound",
+        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:block.bubble_column.bubble_pop",
+        "volume": "2"
+      },
+      {
+        "type": "l2magic:iterate_delayed",
+        "child": {
+          "type": "l2magic:random_pos_fan",
+          "child": {
+            "type": "l2magic:move",
+            "child": {
+              "type": "l2magic:custom_projectile",
+              "bypassEntity": true,
+              "bypassWall": true,
+              "config": "glimmeringtales:illusory_field",
+              "life": "rand(90,110)",
+              "params": {},
+              "speed": "rand(0.04,0.09)"
+            },
+            "modifiers": [
+              {
+                "type": "l2magic:direction",
+                "x": "rand(-3,3)",
+                "y": "100",
+                "z": "rand(-3,3)"
+              }
+            ]
+          },
+          "count": "6",
+          "maxAngle": "360",
+          "maxRadius": "7",
+          "minAngle": "0",
+          "minRadius": "0"
+        },
+        "delay": "1",
+        "step": "40"
+      }
+    ]
+  },
+  "cast_type": "INSTANT",
+  "icon": "glimmeringtales:illusory_field",
+  "order": 2000,
+  "trigger_type": "TARGET_POS"
+}

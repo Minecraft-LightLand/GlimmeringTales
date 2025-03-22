@@ -515,6 +515,14 @@ public class GTRecipeGen {
 					.side(Items.SEA_LANTERN, 4)
 					.save(pvd);
 
+			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_OCEAN, GTItems.ILLUSORY_FIELD)::unlockedBy, GTItems.CRYSTAL_OCEAN.get())
+					.side(GTItems.RUNE_CORAL_REEF, 1)
+					.side(GTItems.RUNE_SPONGE, 1)
+					.side(GTItems.EARTHQUAKE, 1)
+					.side(GTItems.WINTER_STORM, 1)
+					.side(Items.SEA_LANTERN, 4)
+					.save(pvd);
+
 			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_THUNDER, GTItems.THUNDERSTORM)::unlockedBy, GTItems.CRYSTAL_THUNDER.get())
 					.side(GTItems.RUNE_ICE, 1)
 					.side(GTItems.RUNE_CORAL_REEF, 1)
@@ -527,6 +535,13 @@ public class GTRecipeGen {
 					.side(GTItems.RUNE_DRIPSTONE, 1)
 					.side(LCMats.POSEIDITE.getIngot(), 2)
 					.side(LCItems.STRONG_CHARGE, 4)
+					.save(pvd);
+
+			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_THUNDER, GTItems.THUNDER_SURGE)::unlockedBy, GTItems.CRYSTAL_THUNDER.get())
+					.side(GTItems.THUNDERSTORM, 1)
+					.side(GTItems.CHARGE_BURST, 1)
+					.side(LCItems.GUARDIAN_EYE, 2)
+					.side(LCMats.POSEIDITE.getIngot(), 4)
 					.save(pvd);
 
 		}

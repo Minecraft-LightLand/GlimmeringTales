@@ -169,7 +169,7 @@ if (lljij.toBoolean()) {
 }
 
 dependencies {
-    implementation "com.tterrag.registrate:Registrate:${registrate_version}"
+    compileOnly "com.tterrag.registrate:Registrate:${registrate_version}"
     implementation "dev.xkmc:l2serial:${l2serial_ver}"
     implementation "dev.xkmc:l2modularblocks:${l2modularblocks_ver}"
     implementation "dev.xkmc:l2core:${l2core_ver}"
@@ -189,7 +189,7 @@ dependencies {
 
     runtimeOnly "dev.xkmc:modulargolems:${modulargolems_ver}"
     runtimeOnly "dev.xkmc:l2weaponry:${l2weaponry_ver}"
-    runtimeOnly "dev.xkmc:l2archery:${l2archery_ver}"
+    //runtimeOnly "dev.xkmc:l2archery:${l2archery_ver}"
     runtimeOnly "dev.xkmc:danmaku_api:${danmaku_api_ver}"
     runtimeOnly "dev.xkmc:better_creative_tabs:0.1.2"
 
@@ -206,8 +206,8 @@ dependencies {
     //commonRuntimeOnly "maven.modrinth:accessories-cc-layer:9.0.12+1.21.1"
 
     //implementation "curse.maven:embeddium-908741:5681729"
-    implementation "maven.modrinth:sodium:mc1.21.1-0.6.1-neoforge"
-    implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
+    implementation "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
+    //implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
 
     implementation "curse.maven:create-328085:6255497"
 

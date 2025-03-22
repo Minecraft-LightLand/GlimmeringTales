@@ -44,11 +44,6 @@ ring        160         1200    7.5     召雷环 - 范围雷击
 
 
 
-
-
-
-
-
-
+//TODO illusory field: icon, recipe
 
 

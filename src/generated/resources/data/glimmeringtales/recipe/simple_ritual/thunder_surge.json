@@ -1,0 +1,55 @@
+{
+  "type": "glimmeringtales:simple_ritual",
+  "core": {
+    "ingredient": {
+      "item": "glimmeringtales:crystal_of_thunder"
+    },
+    "remainder": {
+      "count": 1,
+      "id": "glimmeringtales:thunder_surge"
+    }
+  },
+  "list": [
+    {
+      "ingredient": {
+        "item": "glimmeringtales:thunderstorm"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:charge_burst"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:guardian_eye"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:guardian_eye"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:poseidite_ingot"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:poseidite_ingot"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:poseidite_ingot"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:poseidite_ingot"
+      }
+    }
+  ],
+  "time": 100
+}

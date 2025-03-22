@@ -101,8 +101,8 @@ public class GTItems {
 			HELL_MARK, LAVA_BURST, FLAME_DASH,
 			WINTER_STORM, SNOW_TORNADO, ICY_FLASH,
 			STONE_BRIDGE, AMETHYST_PENETRATION, EARTHQUAKE, METEOR,
-			OCEAN_SHELTER,
-			THUNDERSTORM, CHARGE_BURST;
+			OCEAN_SHELTER, ILLUSORY_FIELD,
+			THUNDERSTORM, CHARGE_BURST, THUNDER_SURGE;
 
 	public static final VarHolder<WandHandleItem>
 			WOOD_WAND, LIFE_WAND, GOLD_WAND, OCEAN_WAND,
@@ -449,8 +449,10 @@ public class GTItems {
 			EARTHQUAKE = spell("earthquake");
 			METEOR = spell("meteor");
 			OCEAN_SHELTER = spell("ocean_shelter");
+			ILLUSORY_FIELD = spell("illusory_field");
 			THUNDERSTORM = spell("thunderstorm");
 			CHARGE_BURST = spell("charge_burst");
+			THUNDER_SURGE = spell("thunder_surge");
 
 			WOOD_WAND = handle("wood_wand", 0.25f, 0.75f, "Wooden");
 			LIFE_WAND = handle("life_wand", 0.25f, 0.87f, "Bamboo");
