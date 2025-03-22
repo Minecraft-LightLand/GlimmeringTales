@@ -6,7 +6,7 @@
 	"pages": [
 		{
 			"type": "patchouli:text",
-			"text": "Right-click a researchable rune in any GUI to open the $(9)research$() menu, where you can connect paths to construct a graph that element flows match expectations.$(br2)Press $(9)Press$(9)+$()/$(9)-$() to adjust canvas size, R$() to compile, and $(9)F$() to save the graph."
+			"text": "Right-click a researchable rune in any GUI to open the $(9)research$() menu, where you can connect paths to construct a graph that element flows match expectations.$(br2)Press $(9)Press +/-$() to adjust canvas size, R$() to compile, and $(9)F$() to save the graph."
 		},
 		{
 			"type": "patchouli:text",

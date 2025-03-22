@@ -1,2 +1,8 @@
+3.0.7
+- L2Hostility compat: put wands on mobs
+
+3.0.6
+- Add config option for ritual search range
+
 3.0.5
-- Release, but still WIP
+- Release

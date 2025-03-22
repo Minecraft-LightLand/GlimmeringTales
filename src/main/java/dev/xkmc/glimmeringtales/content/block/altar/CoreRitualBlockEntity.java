@@ -84,7 +84,7 @@ public class CoreRitualBlockEntity extends BaseRitualBlockEntity implements Tick
 	public void onPlaced() {
 		if (level == null || level.isClientSide()) return;
 		linked.clear();
-		int r = PerformanceConstants.RANGE;
+		int r = PerformanceConstants.range();
 		BlockPos self = getBlockPos();
 		for (int x = -r; x <= r; x++) {
 			for (int y = -r; y <= r; y++) {

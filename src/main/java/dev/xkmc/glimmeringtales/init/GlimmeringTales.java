@@ -144,6 +144,7 @@ public class GlimmeringTales {
 		var file = event.getExistingFileHelper();
 		var pvd = event.getLookupProvider();
 		gen.addProvider(run, new GTSlotGen(out, file, pvd));
+		gen.addProvider(run, new GTHostilityGen(gen, pvd));
 	}
 
 	public static ResourceLocation loc(String id) {
