@@ -2,7 +2,6 @@ package dev.xkmc.glimmeringtales.compat.apoth;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 import dev.shadowsoffire.apotheosis.Apoth;
-import dev.shadowsoffire.apotheosis.data.RarityProvider;
 import dev.shadowsoffire.apotheosis.loot.LootCategory;
 import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import dev.shadowsoffire.apothic_attributes.modifiers.EntitySlotGroup;

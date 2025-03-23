@@ -44,7 +44,7 @@
             ]
           }
         },
-        "delayPerBlock": "5",
+        "delayPerBlock": "7",
         "plane": false,
         "range": "3"
       }

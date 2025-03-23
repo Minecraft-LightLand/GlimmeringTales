@@ -72,7 +72,7 @@ public class AmethystPenetration {
 						DoubleVariable.ZERO,
 						IntVariable.of("20")
 				).move(ForwardOffsetModifier.of("-0.2")))
-				.hit(new FilteredProcessor(new InvulFrameFilter(IntVariable.of("4")), List.of(
+				.hit(new FilteredProcessor(new InvulFrameFilter(IntVariable.of("5")), List.of(
 						new DamageProcessor(ctx.damage(), DMG, true, true),
 						new CastAtProcessor(CastAtProcessor.PosType.CENTER, CastAtProcessor.DirType.UP,
 								new ListLogic(List.of(

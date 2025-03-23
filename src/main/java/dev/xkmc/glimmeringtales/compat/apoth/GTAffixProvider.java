@@ -116,6 +116,7 @@ public class GTAffixProvider extends DynamicRegistryProvider<Affix> {
 		LootRarity rare = rarity("rare");
 		LootRarity epic = rarity("epic");
 		LootRarity mythic = rarity("mythic");
+		//LootRarity ancient = rarity("ancient");
 		for (var e : LIST) e.gen(this, common, uncommon, rare, epic, mythic);
 		futures.add(CompletableFuture.runAsync(Objects.requireNonNull(RarityRegistry.INSTANCE)::validateExistingHolders));
 		futures.add(CompletableFuture.runAsync(Objects.requireNonNull(AffixRegistry.INSTANCE)::validateExistingHolders));

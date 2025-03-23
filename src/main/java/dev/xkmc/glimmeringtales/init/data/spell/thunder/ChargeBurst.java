@@ -63,7 +63,7 @@ public class ChargeBurst {
 						SelectionType.ENEMY_NO_FAMILY,
 						new BoxSelector(DoubleVariable.of("1"), DoubleVariable.of("1"), false),
 						List.of(new FilteredProcessor(
-								new InvulFrameFilter(IntVariable.of("4")),
+								new InvulFrameFilter(IntVariable.of("9")),
 								List.of(new DamageProcessor(ctx.damage(), CHARGE, true, false)),
 								List.of()
 						))
@@ -81,7 +81,7 @@ public class ChargeBurst {
 				new LightningInstance(STRIKE),
 				new CustomProjectileShoot(DoubleVariable.ZERO, ctx.proj, IntVariable.of("12"), true, true, Map.of())
 						.move(OffsetModifier.of("0", "-0.49", "0"))
-						.circular(DoubleVariable.of("5"), DoubleVariable.of("2"), false, null,
+						.circular(DoubleVariable.of("6"), DoubleVariable.of("2"), false, null,
 								BlockTestCondition.Type.BLOCKS_MOTION.get().invert(),
 								BlockTestCondition.Type.BLOCKS_MOTION.get().move(OffsetModifier.BELOW)
 						)

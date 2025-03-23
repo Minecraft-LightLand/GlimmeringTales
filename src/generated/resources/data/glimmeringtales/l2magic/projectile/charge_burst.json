@@ -25,7 +25,7 @@
         "fallback": [],
         "filter": {
           "type": "glimmeringtales:invulnerability_frame",
-          "frame": "4"
+          "frame": "9"
         }
       }
     ],
