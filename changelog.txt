@@ -1,3 +1,7 @@
+3.0.8
+- Add 5 more spells
+- Add Apotheosis integration
+
 3.0.7
 - L2Hostility compat: put wands on mobs
 

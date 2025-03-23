@@ -238,8 +238,8 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
             "l2-backpack",
             "l2-complements"
     )
-    mainFile.addOptional("l2hostility")
-    mainFile.releaseType = "beta"
+    mainFile.addOptional("l2hostility","apotheosis")
+    mainFile.releaseType = "release"
     disableVersionDetection()
 }
 
@@ -248,7 +248,7 @@ modrinth {
     projectId = project.modrinth_project
     versionName = "Glimmering Tales ${project.mod_version}"
     versionNumber = project.mod_version
-    versionType = "beta"
+    versionType = "release"
     uploadFile = new File("./build/libs/${mod_id}-${mod_version}.jar")
     gameVersions = ["1.21.1"]
     loaders = ["neoforge"]
