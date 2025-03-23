@@ -8,6 +8,8 @@ import dev.xkmc.glimmeringtales.content.block.api.CropGrowListener;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.l2core.serial.loot.LootHelper;
+import dev.xkmc.l2harvester.api.HarvestResult;
+import dev.xkmc.l2harvester.api.HarvestableBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -18,8 +20,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -29,10 +33,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.CommonHooks;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LifeCrystalCrop extends CropBlock implements CropGrowListener {
+public class LifeCrystalCrop extends CropBlock implements CropGrowListener, HarvestableBlock {
 
 	public static final MapCodec<LifeCrystalCrop> CODEC = simpleCodec(LifeCrystalCrop::new);
 
@@ -54,6 +59,12 @@ public class LifeCrystalCrop extends CropBlock implements CropGrowListener {
 	@Override
 	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
 		list.add(GTLang.TOOLTIP_VINE.get().withStyle(ChatFormatting.GRAY));
+	}
+
+	@Override
+	public @Nullable HarvestResult getHarvestResult(Level level, BlockState state, BlockPos blockPos) {
+		if (state.getValue(AGE) < getMaxAge()) return null;
+		return new HarvestResult(Blocks.AIR.defaultBlockState(), List.of(GTItems.CRYSTAL_LIFE.asStack()));
 	}
 
 	public MapCodec<LifeCrystalCrop> codec() {

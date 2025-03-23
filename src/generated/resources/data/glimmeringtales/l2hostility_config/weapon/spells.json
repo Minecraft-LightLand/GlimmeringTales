@@ -131,6 +131,76 @@
           "weight": 50
         },
         {
+          "level": 300,
+          "stack": [
+            {
+              "components": {
+                "glimmeringtales:handle": "glimmeringtales:nether_wand",
+                "l2backpack:backpack_content": [
+                  {
+                    "item": {
+                      "count": 1,
+                      "id": "glimmeringtales:spark_burst"
+                    },
+                    "slot": 0
+                  }
+                ]
+              },
+              "count": 1,
+              "id": "glimmeringtales:wand"
+            },
+            {
+              "components": {
+                "glimmeringtales:handle": "glimmeringtales:nether_wand",
+                "l2backpack:backpack_content": [
+                  {
+                    "item": {
+                      "count": 1,
+                      "id": "glimmeringtales:soul_burst"
+                    },
+                    "slot": 0
+                  }
+                ]
+              },
+              "count": 1,
+              "id": "glimmeringtales:wand"
+            },
+            {
+              "components": {
+                "glimmeringtales:handle": "glimmeringtales:ocean_wand",
+                "l2backpack:backpack_content": [
+                  {
+                    "item": {
+                      "count": 1,
+                      "id": "glimmeringtales:illusory_field"
+                    },
+                    "slot": 0
+                  }
+                ]
+              },
+              "count": 1,
+              "id": "glimmeringtales:wand"
+            },
+            {
+              "components": {
+                "glimmeringtales:handle": "glimmeringtales:ocean_wand",
+                "l2backpack:backpack_content": [
+                  {
+                    "item": {
+                      "count": 1,
+                      "id": "glimmeringtales:dark_rain"
+                    },
+                    "slot": 0
+                  }
+                ]
+              },
+              "count": 1,
+              "id": "glimmeringtales:wand"
+            }
+          ],
+          "weight": 50
+        },
+        {
           "level": 350,
           "stack": [
             {
@@ -173,6 +243,22 @@
                     "item": {
                       "count": 1,
                       "id": "glimmeringtales:thunder"
+                    },
+                    "slot": 0
+                  }
+                ]
+              },
+              "count": 1,
+              "id": "glimmeringtales:wand"
+            },
+            {
+              "components": {
+                "glimmeringtales:handle": "glimmeringtales:thunder_wand",
+                "l2backpack:backpack_content": [
+                  {
+                    "item": {
+                      "count": 1,
+                      "id": "glimmeringtales:thunder_surge"
                     },
                     "slot": 0
                   }

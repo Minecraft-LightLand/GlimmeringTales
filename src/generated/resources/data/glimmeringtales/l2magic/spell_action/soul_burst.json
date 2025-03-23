@@ -1,0 +1,42 @@
+{
+  "action": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:sound",
+        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:item.firecharge.use",
+        "volume": "2"
+      },
+      {
+        "type": "l2magic:move",
+        "child": {
+          "type": "l2magic:custom_projectile",
+          "bypassEntity": false,
+          "bypassWall": false,
+          "config": "glimmeringtales:soul_burst",
+          "life": "rand(40,60)",
+          "params": {},
+          "speed": "rand(0.5,0.6)"
+        },
+        "modifiers": [
+          {
+            "type": "l2magic:offset",
+            "x": "0",
+            "y": "-0.2",
+            "z": "0"
+          },
+          {
+            "type": "l2magic:rotate",
+            "degree": "rand(-10,10)",
+            "vertical": "rand(-3,3)"
+          }
+        ]
+      }
+    ]
+  },
+  "cast_type": "CONTINUOUS",
+  "icon": "glimmeringtales:soul_burst",
+  "order": 2000,
+  "trigger_type": "FACING_FRONT"
+}

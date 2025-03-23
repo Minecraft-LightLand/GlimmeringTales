@@ -22,9 +22,9 @@
             },
             {
               "type": "l2magic:effect",
+              "duration": "300",
               "ambient": false,
               "amplifier": "0",
-              "duration": "300",
               "effect": "l2complements:frost",
               "visible": false
             }

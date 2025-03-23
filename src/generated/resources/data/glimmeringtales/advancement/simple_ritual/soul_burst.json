@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_crystal_of_flame": {
+      "conditions": {
+        "items": [
+          {
+            "items": "glimmeringtales:crystal_of_flame"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "glimmeringtales:soul_burst"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_crystal_of_flame"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "glimmeringtales:soul_burst"
+    ]
+  }
+}

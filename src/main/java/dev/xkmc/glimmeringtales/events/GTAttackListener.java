@@ -1,6 +1,6 @@
 package dev.xkmc.glimmeringtales.events;
 
-import dev.xkmc.glimmeringtales.compat.GTCurioCompat;
+import dev.xkmc.glimmeringtales.compat.misc.GTCurioCompat;
 import dev.xkmc.glimmeringtales.content.item.curio.DamageTypeCurioItem;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.l2damagetracker.contents.attack.AttackListener;

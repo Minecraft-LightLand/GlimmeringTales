@@ -1,0 +1,87 @@
+{
+  "filter": "NONE",
+  "hit": [],
+  "motion": {
+    "type": "l2magic:simple",
+    "friction": "0.04",
+    "gravity": "0"
+  },
+  "params": [],
+  "renderer": {
+    "type": "glimmeringtales:inflating",
+    "initial": 0.3,
+    "rate": 4.0,
+    "texture": "glimmeringtales:textures/spell/bubble.png"
+  },
+  "size": {
+    "fullBlockCollision": false,
+    "size": "0.25"
+  },
+  "tick": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:processor",
+        "processors": [
+          {
+            "type": "l2magic:filtered",
+            "action": [
+              {
+                "type": "l2magic:damage",
+                "damage": "4",
+                "damage_type": "glimmeringtales:illusory_field",
+                "indirect": true,
+                "positioned": false
+              },
+              {
+                "type": "l2magic:effect",
+                "duration": "100",
+                "ambient": false,
+                "amplifier": "0",
+                "effect": "l2complements:incarceration",
+                "visible": false
+              }
+            ],
+            "fallback": [],
+            "filter": {
+              "type": "glimmeringtales:invulnerability_frame",
+              "frame": "5"
+            }
+          }
+        ],
+        "selector": {
+          "type": "l2magic:box",
+          "center": true,
+          "size": "1",
+          "y": "1"
+        },
+        "target": "ENEMY_NO_FAMILY"
+      },
+      {
+        "type": "l2magic:processor",
+        "processors": [
+          {
+            "type": "glimmeringtales:heal_interval",
+            "heal": "1",
+            "interval": "10"
+          },
+          {
+            "type": "l2magic:effect",
+            "duration": "100",
+            "ambient": false,
+            "amplifier": "1",
+            "effect": "minecraft:resistance",
+            "visible": false
+          }
+        ],
+        "selector": {
+          "type": "l2magic:box",
+          "center": true,
+          "size": "1",
+          "y": "1"
+        },
+        "target": "ALLY_AND_FAMILY"
+      }
+    ]
+  }
+}

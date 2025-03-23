@@ -1,0 +1,37 @@
+{
+  "type": "apotheosis:attribute",
+  "attribute": "apothic_attributes:projectile_damage",
+  "categories": [
+    "apotheosis:wand"
+  ],
+  "definition": {
+    "affix_type": "stat",
+    "exclusive_set": [],
+    "weights": {
+      "weight": 100
+    }
+  },
+  "operation": "add_value",
+  "values": {
+    "apotheosis:common": {
+      "min": 0.2,
+      "max": 0.4
+    },
+    "apotheosis:uncommon": {
+      "min": 0.26,
+      "max": 0.52
+    },
+    "apotheosis:rare": {
+      "min": 0.32000002,
+      "max": 0.64000005
+    },
+    "apotheosis:epic": {
+      "min": 0.38000003,
+      "max": 0.76000005
+    },
+    "apotheosis:mythic": {
+      "min": 0.44000003,
+      "max": 0.88000005
+    }
+  }
+}

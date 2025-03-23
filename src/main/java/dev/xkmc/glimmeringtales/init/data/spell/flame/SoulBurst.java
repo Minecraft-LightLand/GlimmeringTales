@@ -1,0 +1,86 @@
+package dev.xkmc.glimmeringtales.init.data.spell.flame;
+
+import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.init.GlimmeringTales;
+import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
+import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.reg.GTItems;
+import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
+import dev.xkmc.l2complements.init.registrate.LCEffects;
+import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.logic.ListLogic;
+import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
+import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
+import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
+import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
+import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
+import dev.xkmc.l2magic.content.engine.selector.SelectionType;
+import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
+import dev.xkmc.l2magic.content.engine.spell.SpellAction;
+import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
+import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
+import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
+import dev.xkmc.l2magic.content.engine.variable.IntVariable;
+import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
+import dev.xkmc.l2magic.content.entity.engine.CustomProjectileShoot;
+import dev.xkmc.l2magic.content.entity.motion.SimpleMotion;
+import dev.xkmc.l2magic.init.registrate.EngineRegistry;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageEffects;
+import net.minecraft.world.damagesource.DamageType;
+
+import java.util.List;
+import java.util.Map;
+
+public class SoulBurst {
+
+	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
+			.build(GlimmeringTales.loc("soul_burst")).focusAndCost(2, 16).mob(12, 1)
+			.damageCustom(e -> new DamageType(e, 0, DamageEffects.BURNING),
+					"%s is blazed by ghosts", "%s is blazed by ghosts summoned by %s",
+					GTDamageTypeGen.magic(DamageTypeTags.IS_FIRE, DamageTypeTags.BYPASSES_COOLDOWN))
+			.projectile(SoulBurst::proj)
+			.spell(ctx -> new SpellAction(gen(ctx), GTItems.SOUL_BURST.get(),
+					2000, SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT))
+			.lang("Soul Burst").desc(
+					"[Continuous] Shoot soul sparks that hurts and ignite enemies",
+					"Continuously shoot soul sparks forward, deal %s and inflict %s",
+					SpellTooltipData.of(EngineRegistry.DAMAGE, EngineRegistry.EFFECT)
+			).graph(FlamePentagram.HELL_MARK);
+
+	private static final DoubleVariable DMG = DoubleVariable.of("6");
+
+	public static ProjectileConfig proj(NatureSpellBuilder ctx) {
+		return ProjectileConfig.builder(SelectionType.ENEMY_NO_FAMILY)
+				.tick(new SimpleParticleInstance(ParticleTypes.SOUL_FIRE_FLAME, DoubleVariable.ZERO))
+				.hit(new DamageProcessor(ctx.damage(), DMG, true, true))
+				.hit(new EffectProcessor(LCEffects.FLAME, IntVariable.of("60"), IntVariable.of("1"), false, false))
+				.size(DoubleVariable.of("0.25"))
+				.motion(new SimpleMotion(DoubleVariable.of("0.01"), DoubleVariable.ZERO))
+				.build();
+	}
+
+	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
+		return new ListLogic(List.of(
+				new SoundInstance(
+						SoundEvents.FIRECHARGE_USE,
+						DoubleVariable.of("2"),
+						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
+				),
+				new CustomProjectileShoot(
+						DoubleVariable.of("rand(0.5,0.6)"),
+						ctx.proj,
+						IntVariable.of("rand(40,60)"),
+						false, false,
+						Map.of()
+				).move(
+						OffsetModifier.of("0", "-0.2", "0"),
+						RotationModifier.of("rand(-10,10)", "rand(-3,3)")
+				)
+		));
+
+	}
+
+}

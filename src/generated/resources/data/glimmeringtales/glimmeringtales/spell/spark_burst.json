@@ -1,0 +1,21 @@
+{
+  "cost": 10,
+  "elem": "glimmeringtales:flame",
+  "focus": 2,
+  "graph": "glimmeringtales:hell_mark",
+  "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 12.0,
+    "maxUseTick": 40,
+    "timeFactor": 1.0
+  },
+  "spell": "glimmeringtales:spark_burst",
+  "tooltip": {
+    "list": [
+      {
+        "id": "l2magic:damage",
+        "reg": "l2magic:processor"
+      }
+    ]
+  }
+}

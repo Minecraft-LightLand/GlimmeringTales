@@ -1,0 +1,33 @@
+{
+  "cost": 600,
+  "elem": "glimmeringtales:ocean",
+  "focus": 120,
+  "graph": "glimmeringtales:illusory_field",
+  "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 16.0,
+    "maxUseTick": 40,
+    "timeFactor": 1.0
+  },
+  "spell": "glimmeringtales:illusory_field",
+  "tooltip": {
+    "list": [
+      {
+        "id": "l2magic:damage",
+        "reg": "l2magic:processor"
+      },
+      {
+        "id": "l2magic:effect",
+        "reg": "l2magic:processor"
+      },
+      {
+        "id": "glimmeringtales:heal_interval",
+        "reg": "l2magic:processor"
+      },
+      {
+        "id": "l2magic:effect",
+        "reg": "l2magic:processor"
+      }
+    ]
+  }
+}

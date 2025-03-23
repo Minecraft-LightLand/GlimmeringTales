@@ -1,26 +1,4 @@
 {
-  "bonuses": [
-    {
-      "cost": 100,
-      "focusBonus": 1.0,
-      "manaBonus": 0.7
-    },
-    {
-      "cost": 36,
-      "focusBonus": 1.0,
-      "manaBonus": 0.7
-    },
-    {
-      "cost": 25,
-      "focusBonus": 0.5,
-      "manaBonus": 1.0
-    },
-    {
-      "cost": 21,
-      "focusBonus": 0.5,
-      "manaBonus": 1.0
-    }
-  ],
   "flows": [
     "E->SF",
     "L->OT",
@@ -34,5 +12,27 @@
     "O": "glimmeringtales:ocean",
     "S": "glimmeringtales:snow",
     "T": "glimmeringtales:thunder"
-  }
+  },
+  "bonuses": [
+    {
+      "cost": 100,
+      "focusBonus": 1.0,
+      "manaBonus": 0.7
+    },
+    {
+      "cost": 36,
+      "focusBonus": 1.0,
+      "manaBonus": 0.7
+    },
+    {
+      "cost": 26,
+      "focusBonus": 0.5,
+      "manaBonus": 1.0
+    },
+    {
+      "cost": 22,
+      "focusBonus": 0.5,
+      "manaBonus": 1.0
+    }
+  ]
 }

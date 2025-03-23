@@ -1,0 +1,55 @@
+{
+  "type": "glimmeringtales:simple_ritual",
+  "core": {
+    "ingredient": {
+      "item": "glimmeringtales:crystal_of_ocean"
+    },
+    "remainder": {
+      "count": 1,
+      "id": "glimmeringtales:dark_rain"
+    }
+  },
+  "list": [
+    {
+      "ingredient": {
+        "item": "glimmeringtales:coral_reef"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:flower"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:soul_sand"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:winter_storm"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:cursed_droplet"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:cursed_droplet"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:cursed_droplet"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:cursed_droplet"
+      }
+    }
+  ],
+  "time": 100
+}

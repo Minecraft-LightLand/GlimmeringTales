@@ -1,0 +1,51 @@
+{
+  "action": {
+    "type": "l2magic:list",
+    "children": [
+      {
+        "type": "l2magic:sound",
+        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+        "sound": "minecraft:weather.rain",
+        "volume": "2"
+      },
+      {
+        "type": "l2magic:random_pos_fan",
+        "child": {
+          "type": "l2magic:move",
+          "child": {
+            "type": "l2magic:custom_projectile",
+            "bypassEntity": false,
+            "bypassWall": false,
+            "config": "glimmeringtales:dark_rain",
+            "life": "rand(20,30)",
+            "params": {},
+            "speed": "rand(0.4,0.5)"
+          },
+          "modifiers": [
+            {
+              "type": "l2magic:offset",
+              "x": "0",
+              "y": "7",
+              "z": "0"
+            },
+            {
+              "type": "l2magic:direction",
+              "x": "0",
+              "y": "-1",
+              "z": "0"
+            }
+          ]
+        },
+        "count": "20",
+        "maxAngle": "360",
+        "maxRadius": "12",
+        "minAngle": "0",
+        "minRadius": "0"
+      }
+    ]
+  },
+  "cast_type": "CONTINUOUS",
+  "icon": "glimmeringtales:dark_rain",
+  "order": 2000,
+  "trigger_type": "TARGET_POS"
+}

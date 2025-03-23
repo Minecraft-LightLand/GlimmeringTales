@@ -148,6 +148,7 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven { url = "https://maven.createmod.net" }
     maven {
         name = "OctoStudios"
         url = uri("https://maven.octo-studios.com/releases")
@@ -168,7 +169,7 @@ if (lljij.toBoolean()) {
 }
 
 dependencies {
-    implementation "com.tterrag.registrate:Registrate:${registrate_version}"
+    compileOnly "com.tterrag.registrate:Registrate:${registrate_version}"
     implementation "dev.xkmc:l2serial:${l2serial_ver}"
     implementation "dev.xkmc:l2modularblocks:${l2modularblocks_ver}"
     implementation "dev.xkmc:l2core:${l2core_ver}"
@@ -178,6 +179,7 @@ dependencies {
 
     implementation jarJar(group: 'dev.xkmc', name: 'l2magic', version: "[${l2magic_ver},)")
     implementation jarJar(group: 'dev.xkmc', name: 'fast_projectile_api', version: "[${fast_projectile_api_ver},)")
+    implementation jarJar(group: 'dev.xkmc', name: 'l2harvester', version: "[${l2harvester_ver},)")
 
     implementation "dev.xkmc:l2library:${l2library_ver}"
     implementation "dev.xkmc:l2damagetracker:${l2damagetracker_ver}"
@@ -187,12 +189,12 @@ dependencies {
 
     runtimeOnly "dev.xkmc:modulargolems:${modulargolems_ver}"
     runtimeOnly "dev.xkmc:l2weaponry:${l2weaponry_ver}"
-    runtimeOnly "dev.xkmc:l2archery:${l2archery_ver}"
+    //runtimeOnly "dev.xkmc:l2archery:${l2archery_ver}"
     runtimeOnly "dev.xkmc:danmaku_api:${danmaku_api_ver}"
     runtimeOnly "dev.xkmc:better_creative_tabs:0.1.2"
 
     implementation "mezz.jei:jei-${jei_minecraft_version}:${jei_version}"
-    implementation "vazkii.patchouli:Patchouli:${patchouli_ver}"
+    implementation "curse.maven:jade-324717:5813144"
 
     //implementation "curse.maven:adorned-1036809:5740650"
 
@@ -204,8 +206,21 @@ dependencies {
     //commonRuntimeOnly "maven.modrinth:accessories-cc-layer:9.0.12+1.21.1"
 
     //implementation "curse.maven:embeddium-908741:5681729"
-    implementation "maven.modrinth:sodium:mc1.21.1-0.6.1-neoforge"
-    implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
+    implementation "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
+    //implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
+
+    implementation "curse.maven:create-328085:6255497"
+
+    compileOnly("com.simibubi.create:create-1.21.1:6.0.1-13") { transitive = false }
+    compileOnly("net.createmod.ponder:Ponder-NeoForge-1.21.1:1.0.39") { transitive = false }
+    compileOnly("dev.engine-room.flywheel:flywheel-neoforge-1.21.1:1.0.0-10")
+
+    implementation "curse.maven:apothic-attributes-898963:6302334"
+    implementation "curse.maven:patchouli-306770:6164617"
+    implementation "curse.maven:placebo-283644:6274181"
+    implementation "curse.maven:apothic-spawners-986583:6148923"
+    implementation "curse.maven:apothic-enchanting-1063926:6084297"
+    implementation "curse.maven:apotheosis-313970:6302343"
 }
 
 
@@ -223,8 +238,8 @@ tasks.register('publishCurseForge', TaskPublishCurseForge) {
             "l2-backpack",
             "l2-complements"
     )
-    mainFile.addOptional("l2hostility")
-    mainFile.releaseType = "beta"
+    mainFile.addOptional("l2hostility","apotheosis")
+    mainFile.releaseType = "release"
     disableVersionDetection()
 }
 
@@ -233,7 +248,7 @@ modrinth {
     projectId = project.modrinth_project
     versionName = "Glimmering Tales ${project.mod_version}"
     versionNumber = project.mod_version
-    versionType = "beta"
+    versionType = "release"
     uploadFile = new File("./build/libs/${mod_id}-${mod_version}.jar")
     gameVersions = ["1.21.1"]
     loaders = ["neoforge"]

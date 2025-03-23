@@ -1,4 +1,13 @@
 {
+  "flows": [
+    "O->LSF"
+  ],
+  "map": {
+    "F": "glimmeringtales:flame",
+    "L": "glimmeringtales:life",
+    "O": "glimmeringtales:ocean",
+    "S": "glimmeringtales:snow"
+  },
   "bonuses": [
     {
       "cost": 36,
@@ -15,14 +24,5 @@
       "focusBonus": 0.5,
       "manaBonus": 1.0
     }
-  ],
-  "flows": [
-    "O->LSF"
-  ],
-  "map": {
-    "F": "glimmeringtales:flame",
-    "L": "glimmeringtales:life",
-    "O": "glimmeringtales:ocean",
-    "S": "glimmeringtales:snow"
-  }
+  ]
 }

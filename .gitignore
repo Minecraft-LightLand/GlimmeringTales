@@ -28,5 +28,6 @@ run
 runs
 
 .DS_Store
+ignored
 
 secrets.properties

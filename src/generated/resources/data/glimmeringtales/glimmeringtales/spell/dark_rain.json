@@ -1,0 +1,25 @@
+{
+  "cost": 16,
+  "elem": "glimmeringtales:ocean",
+  "focus": 2,
+  "graph": "glimmeringtales:illusory_field",
+  "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 16.0,
+    "maxUseTick": 40,
+    "timeFactor": 1.0
+  },
+  "spell": "glimmeringtales:dark_rain",
+  "tooltip": {
+    "list": [
+      {
+        "id": "l2magic:damage",
+        "reg": "l2magic:processor"
+      },
+      {
+        "id": "l2magic:effect",
+        "reg": "l2magic:processor"
+      }
+    ]
+  }
+}

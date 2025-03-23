@@ -1,0 +1,7 @@
+{
+  "parent": "glimmeringtales:custom/rune_core",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "glimmeringtales:item/spell/spark_burst"
+  }
+}

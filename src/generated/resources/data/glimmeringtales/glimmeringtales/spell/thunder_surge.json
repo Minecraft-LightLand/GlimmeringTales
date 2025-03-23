@@ -1,0 +1,21 @@
+{
+  "cost": 1800,
+  "elem": "glimmeringtales:thunder",
+  "focus": 180,
+  "graph": "glimmeringtales:thunderstorm",
+  "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 16.0,
+    "maxUseTick": 40,
+    "timeFactor": 1.0
+  },
+  "spell": "glimmeringtales:thunder_surge",
+  "tooltip": {
+    "list": [
+      {
+        "id": "glimmeringtales:thunder",
+        "reg": "l2magic:configured_engine"
+      }
+    ]
+  }
+}

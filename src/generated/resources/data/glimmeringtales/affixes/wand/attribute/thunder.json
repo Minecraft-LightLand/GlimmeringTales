@@ -1,0 +1,37 @@
+{
+  "type": "apotheosis:attribute",
+  "attribute": "l2damagetracker:lightning_damage",
+  "categories": [
+    "apotheosis:wand"
+  ],
+  "definition": {
+    "affix_type": "stat",
+    "exclusive_set": [],
+    "weights": {
+      "weight": 100
+    }
+  },
+  "operation": "add_value",
+  "values": {
+    "apotheosis:common": {
+      "min": 0.4,
+      "max": 0.8
+    },
+    "apotheosis:uncommon": {
+      "min": 0.52,
+      "max": 1.04
+    },
+    "apotheosis:rare": {
+      "min": 0.64000005,
+      "max": 1.2800001
+    },
+    "apotheosis:epic": {
+      "min": 0.76000005,
+      "max": 1.5200001
+    },
+    "apotheosis:mythic": {
+      "min": 0.88000005,
+      "max": 1.7600001
+    }
+  }
+}

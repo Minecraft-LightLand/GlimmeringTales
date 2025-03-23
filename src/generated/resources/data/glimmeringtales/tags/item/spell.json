@@ -3,6 +3,8 @@
     "glimmeringtales:hell_mark",
     "glimmeringtales:lava_burst",
     "glimmeringtales:flame_dash",
+    "glimmeringtales:spark_burst",
+    "glimmeringtales:soul_burst",
     "glimmeringtales:winter_storm",
     "glimmeringtales:snow_tornado",
     "glimmeringtales:icy_flash",
@@ -11,7 +13,10 @@
     "glimmeringtales:earthquake",
     "glimmeringtales:meteor",
     "glimmeringtales:ocean_shelter",
+    "glimmeringtales:illusory_field",
+    "glimmeringtales:dark_rain",
     "glimmeringtales:thunderstorm",
-    "glimmeringtales:charge_burst"
+    "glimmeringtales:charge_burst",
+    "glimmeringtales:thunder_surge"
   ]
 }
