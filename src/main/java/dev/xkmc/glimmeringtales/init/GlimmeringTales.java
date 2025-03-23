@@ -66,6 +66,7 @@ public class GlimmeringTales {
 		GTRecipes.register();
 		GTEngine.register();
 		GTEntities.register();
+		GTParticles.register();
 		if (ModList.get().isLoaded(PatchouliAPI.MOD_ID)) {
 			PatchouliCompat.gen();
 		}
@@ -149,6 +150,7 @@ public class GlimmeringTales {
 		var pvd = event.getLookupProvider();
 		gen.addProvider(run, new GTSlotGen(out, file, pvd));
 		gen.addProvider(run, new GTHostilityGen(gen, pvd));
+		gen.addProvider(run, new GTParticleGen(out, file));
 	}
 
 	@SubscribeEvent(priority = EventPriority.LOW)

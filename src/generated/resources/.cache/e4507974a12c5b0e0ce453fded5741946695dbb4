@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-23T15:54:42.612319	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Custom Registrate Provider]
+// 1.21.1	2025-03-23T18:04:49.34214	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Custom Registrate Provider]
 f628b87d75a2e2a6c5157d17ef22b26cb8b260eb assets/glimmeringtales/blockstates/bamboo.json
 4132de47f0c0e042aadf759876c94ea0a1d95cd2 assets/glimmeringtales/blockstates/clay_carpet.json
 dd5961b34518b83da6777b460a9272a73e5bbd2a assets/glimmeringtales/blockstates/crystal_vine.json
@@ -605,7 +605,7 @@ a7fd189c5d66f25b9147b15cdef6bf8e31a7d57d data/glimmeringtales/l2magic/projectile
 447c87d4a7133c82e298137af08c029e208691f6 data/glimmeringtales/l2magic/projectile/cactus.json
 2d4353bff17e5048433d9f8d665a12ad1baedba5 data/glimmeringtales/l2magic/projectile/charge_burst.json
 18b1ecb9fd8237271b1c30b811d4c4f330e1c4f6 data/glimmeringtales/l2magic/projectile/coral_reef.json
-aaa68c6ab8ca2d05b95113912f55476795fb81b2 data/glimmeringtales/l2magic/projectile/dark_rain.json
+7b4438671ced82e4d656a983ed4d3ee4cc5a73e3 data/glimmeringtales/l2magic/projectile/dark_rain.json
 aa32b2ecbb55bd0a6b42c451968de35f1f69271d data/glimmeringtales/l2magic/projectile/dripstone.json
 0be296cc8148947622cddffe0668c431f62318af data/glimmeringtales/l2magic/projectile/illusory_field.json
 ac04de8fcf41ba8b79e4265e5b753f68790cd248 data/glimmeringtales/l2magic/projectile/meteor.json

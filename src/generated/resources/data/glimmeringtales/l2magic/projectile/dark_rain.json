@@ -29,7 +29,7 @@
   },
   "tick": {
     "type": "l2magic:particle",
-    "particle": "minecraft:bubble_pop",
+    "particle": "glimmeringtales:dark_rain",
     "speed": "0"
   }
 }

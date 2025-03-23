@@ -5,6 +5,7 @@ import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
+import dev.xkmc.glimmeringtales.init.reg.GTParticles;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -12,6 +13,7 @@ import dev.xkmc.l2magic.content.engine.iterator.RingRandomIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
+import dev.xkmc.l2magic.content.engine.particle.ParticleInstance;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
@@ -25,6 +27,8 @@ import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
 import dev.xkmc.l2magic.content.entity.engine.CustomProjectileShoot;
 import dev.xkmc.l2magic.content.entity.motion.SimpleMotion;
+import dev.xkmc.l2magic.content.particle.engine.CustomParticleInstance;
+import dev.xkmc.l2magic.content.particle.engine.ParticleRenderData;
 import dev.xkmc.l2magic.init.registrate.EngineRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -55,7 +59,7 @@ public class DarkRain {
 	private static ProjectileConfig proj(NatureSpellBuilder ctx) {
 		return ProjectileConfig.builder(SelectionType.ENEMY_NO_FAMILY)
 				.motion(SimpleMotion.ZERO)
-				.tick(new SimpleParticleInstance(ParticleTypes.BUBBLE_POP, DoubleVariable.ZERO))
+				.tick(new SimpleParticleInstance(GTParticles.DARK_RAIN.get(), DoubleVariable.ZERO))
 				.hit(new DamageProcessor(ctx.damage(), DMG, true, false))
 				.hit(new EffectProcessor(LCEffects.CURSE, IntVariable.of("600"), IntVariable.of("0"), false, false))
 				.size(DoubleVariable.of("0.5"))
