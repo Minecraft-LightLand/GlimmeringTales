@@ -3,14 +3,11 @@ package dev.xkmc.glimmeringtales.init.data.spell;
 import dev.xkmc.glimmeringtales.init.data.spell.earth.*;
 import dev.xkmc.glimmeringtales.init.data.spell.flame.*;
 import dev.xkmc.glimmeringtales.init.data.spell.life.*;
-import dev.xkmc.glimmeringtales.init.data.spell.ocean.CoralReefSpell;
-import dev.xkmc.glimmeringtales.init.data.spell.ocean.IllusoryField;
-import dev.xkmc.glimmeringtales.init.data.spell.ocean.OceanShelter;
-import dev.xkmc.glimmeringtales.init.data.spell.ocean.SpongeSpell;
+import dev.xkmc.glimmeringtales.init.data.spell.ocean.*;
 import dev.xkmc.glimmeringtales.init.data.spell.snow.*;
 import dev.xkmc.glimmeringtales.init.data.spell.thunder.ChargeBurst;
-import dev.xkmc.glimmeringtales.init.data.spell.thunder.ThunderSurge;
 import dev.xkmc.glimmeringtales.init.data.spell.thunder.ThunderSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.thunder.ThunderSurge;
 import dev.xkmc.glimmeringtales.init.data.spell.thunder.Thunderstorm;
 
 import java.util.ArrayList;
@@ -76,6 +73,7 @@ public class NatureSpellGenRegistry {
 				Meteor.BUILDER,
 				OceanShelter.BUILDER,
 				IllusoryField.BUILDER,
+				DarkRain.BUILDER,
 				Thunderstorm.BUILDER,
 				ChargeBurst.BUILDER,
 				ThunderSurge.BUILDER

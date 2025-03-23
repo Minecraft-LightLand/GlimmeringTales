@@ -39,9 +39,16 @@ public class GTHostilityGen extends ConfigDataProvider {
 				of(GTItems.ENDER_WAND, GTItems.SNOW_TORNADO)
 		)), 250, 50);
 		var lv3 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
+				of(GTItems.NETHER_WAND, GTItems.SPARK_BURST),
+				of(GTItems.NETHER_WAND, GTItems.SOUL_BURST),
+				of(GTItems.OCEAN_WAND, GTItems.ILLUSORY_FIELD),
+				of(GTItems.OCEAN_WAND, GTItems.DARK_RAIN)
+		)), 300, 50);
+		var lv4 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
 				of(GTItems.THUNDER_WAND, GTItems.THUNDERSTORM),
 				of(GTItems.THUNDER_WAND, GTItems.CHARGE_BURST),
-				of(GTItems.THUNDER_WAND, GTItems.RUNE_THUNDER)
+				of(GTItems.THUNDER_WAND, GTItems.RUNE_THUNDER),
+				of(GTItems.THUNDER_WAND, GTItems.THUNDER_SURGE)
 		)), 350, 50);
 		config.special_weapons.put(HolderSet.direct(
 				EntityType.ZOMBIE.builtInRegistryHolder(),
@@ -51,7 +58,7 @@ public class GTHostilityGen extends ConfigDataProvider {
 				EntityType.STRAY.builtInRegistryHolder(),
 				EntityType.BOGGED.builtInRegistryHolder(),
 				EntityType.WITHER_SKELETON.builtInRegistryHolder()
-		), new ArrayList<>(List.of(empty, lv1, lv2, lv3)));
+		), new ArrayList<>(List.of(empty, lv1, lv2, lv3, lv4)));
 		collector.add(L2Hostility.WEAPON, GlimmeringTales.loc("spells"), config);
 	}
 

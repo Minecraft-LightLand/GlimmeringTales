@@ -1,0 +1,35 @@
+{
+  "filter": "ENEMY_NO_FAMILY",
+  "hit": [
+    {
+      "type": "l2magic:damage",
+      "damage": "4",
+      "damage_type": "glimmeringtales:dark_rain",
+      "indirect": true,
+      "positioned": false
+    },
+    {
+      "type": "l2magic:effect",
+      "duration": "600",
+      "ambient": false,
+      "amplifier": "0",
+      "effect": "l2complements:curse",
+      "visible": false
+    }
+  ],
+  "motion": {
+    "type": "l2magic:simple",
+    "friction": "0",
+    "gravity": "0"
+  },
+  "params": [],
+  "size": {
+    "fullBlockCollision": false,
+    "size": "0.5"
+  },
+  "tick": {
+    "type": "l2magic:particle",
+    "particle": "minecraft:bubble_pop",
+    "speed": "0"
+  }
+}

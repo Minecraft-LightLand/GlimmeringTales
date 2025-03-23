@@ -105,6 +105,7 @@
   "item.glimmeringtales.thunder_surge": "符石: 闪电喷流",
   "item.glimmeringtales.spark_burst": "符石: 火焰射流",
   "item.glimmeringtales.soul_burst": "符石: 焚魂射流",
+  "item.glimmeringtales.dark_rain": "符石: 黑雨",
 
   "block.glimmeringtales.struck_log": "雷焰木",
   "block.glimmeringtales.struck_leaves": "雷焰树叶",
@@ -225,6 +226,7 @@
   "spell_action.glimmeringtales.thunder_surge": "闪电喷流",
   "spell_action.glimmeringtales.spark_burst": "火焰射流",
   "spell_action.glimmeringtales.soul_burst": "焚魂射流",
+  "spell_action.glimmeringtales.dark_rain": "黑雨",
 
   "glimmeringtales.configuration.title": "微光纪事 - 配置",
   "glimmeringtales.configuration.section.l2configs.glimmeringtales.client.toml": "微光纪事 - 客户端配置",
@@ -276,6 +278,8 @@
   "death.attack.glimmeringtales.illusory_field.player": "%s被%s用魔法泡泡淹没",
   "death.attack.glimmeringtales.charge_burst": "%s被电荷爆发电死了",
   "death.attack.glimmeringtales.charge_burst.player": "%s被%s的电荷爆发电死了",
+  "death.attack.glimmeringtales.dark_rain": "%s被黑雨淹没了",
+  "death.attack.glimmeringtales.dark_rain.player": "%s被%s的黑雨淹没了",
 
   "nature_spell.glimmeringtales.amethyst.brief": "[方块] 溅射紫水晶碎片",
   "nature_spell.glimmeringtales.amethyst.detail": "生成一个由紫水晶碎片组成的半球形向周围发射，造成%s并叠加%s",
@@ -357,6 +361,8 @@
   "nature_spell.glimmeringtales.spark_burst.detail": "向前方喷射火花，对敌人造成%s并点燃",
   "nature_spell.glimmeringtales.soul_burst.brief": "[持续] 喷射灵魂火花，伤害并点燃敌人",
   "nature_spell.glimmeringtales.soul_burst.detail":  "向前方喷射灵魂火花，对敌人造成%s并施加%s",
+  "nature_spell.glimmeringtales.dark_rain.brief": "[持续] 创造一片诅咒之雨，伤害并诅咒敌人",
+  "nature_spell.glimmeringtales.dark_rain.detail": "创造空中滴落的水滴，造成%s并施加%s",
 
   "patchouli.glimmeringtales.landing": "欢迎来到以自然为主题的魔法模组$(9)《微光纪事》$()$(br2)“许多人相信自然是伴随着电闪雷鸣诞生的，在空无一物的寰宇当中绽放出靛青的光芒，需予以古树火种，使青金再次夺目。”",
   "patchouli.glimmeringtales.title": "微光纪事指南",
