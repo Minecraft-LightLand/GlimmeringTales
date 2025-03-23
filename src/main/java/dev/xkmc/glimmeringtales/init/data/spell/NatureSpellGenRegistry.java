@@ -65,6 +65,8 @@ public class NatureSpellGenRegistry {
 				FlamePentagram.HELL_MARK,
 				FlamePentagram.LAVA_BURST,
 				FlameDash.BUILDER,
+				SparkBurst.BUILDER,
+				SoulBurst.BUILDER,
 				SnowStorm.WINTER_STORM,
 				SnowStorm.SNOW_TORNADO,
 				IcyFlash.BUILDER,

@@ -98,7 +98,7 @@ public class GTItems {
 			RUNE_THUNDER;
 
 	public static final VarHolder<SpellRuneItem>
-			HELL_MARK, LAVA_BURST, FLAME_DASH,
+			HELL_MARK, LAVA_BURST, FLAME_DASH, SPARK_BURST,SOUL_BURST,
 			WINTER_STORM, SNOW_TORNADO, ICY_FLASH,
 			STONE_BRIDGE, AMETHYST_PENETRATION, EARTHQUAKE, METEOR,
 			OCEAN_SHELTER, ILLUSORY_FIELD,
@@ -441,6 +441,8 @@ public class GTItems {
 			HELL_MARK = spell("hell_mark");
 			LAVA_BURST = spell("lava_burst");
 			FLAME_DASH = spell("flame_dash");
+			SPARK_BURST = spell("spark_burst");
+			SOUL_BURST = spell("soul_burst");
 			WINTER_STORM = spell("winter_storm");
 			SNOW_TORNADO = spell("snow_tornado");
 			ICY_FLASH = spell("icy_flash");

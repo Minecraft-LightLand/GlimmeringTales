@@ -67,8 +67,8 @@ public record NatureSpell(
 
 	public SpellCost manaCost(@Nullable LivingEntity le, double affinity) {
 		if (affinity < MIN_AFFINITY) affinity = MIN_AFFINITY;
-		int mana = (int) Math.round(cost / affinity);
-		int focus = focus();
+		double mana = cost / affinity;
+		double focus = focus();
 		if (le instanceof Player player && graph != null) {
 			var g = graph.value();
 			SpellResearch research = PlayerResearch.of(player).get(graph.unwrapKey().orElseThrow().location());

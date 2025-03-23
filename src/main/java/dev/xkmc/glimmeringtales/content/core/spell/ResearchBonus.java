@@ -58,12 +58,12 @@ public record ResearchBonus(
 		return simple2(36, c4, 0.8, 0.5);
 	}
 
-	public int modifyMana(int mana) {
-		return (int) (mana * manaBonus);
+	public double modifyMana(double mana) {
+		return mana * manaBonus;
 	}
 
-	public int modifyFocus(int focus) {
-		return (int) (focus * focusBonus);
+	public double modifyFocus(double focus) {
+		return focus * focusBonus;
 	}
 
 	public MutableComponent desc() {

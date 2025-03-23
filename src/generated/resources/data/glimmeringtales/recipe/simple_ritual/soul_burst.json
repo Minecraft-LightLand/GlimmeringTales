@@ -1,0 +1,55 @@
+{
+  "type": "glimmeringtales:simple_ritual",
+  "core": {
+    "ingredient": {
+      "item": "glimmeringtales:crystal_of_flame"
+    },
+    "remainder": {
+      "count": 1,
+      "id": "glimmeringtales:soul_burst"
+    }
+  },
+  "list": [
+    {
+      "ingredient": {
+        "item": "glimmeringtales:amethyst"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:coral_reef"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:soul_sand"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:soul_sand"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:soul_flame"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:soul_flame"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:soul_flame"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "l2complements:soul_flame"
+      }
+    }
+  ],
+  "time": 100
+}

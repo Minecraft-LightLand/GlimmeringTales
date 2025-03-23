@@ -53,7 +53,7 @@ public class FlamePentagram {
 					"[Ranged] Form a flame circle",
 					"Create a pentagram on target position and inflict %s to enemies within",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small4(21), "E->SF", "L->OT", "SO->E", "FT->L");
+			).graph(ResearchBonus.small4(22), "E->SF", "L->OT", "SO->E", "FT->L");
 
 	public static final NatureSpellBuilder LAVA_BURST = GTRegistries.FLAME
 			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(5, 20, 30)

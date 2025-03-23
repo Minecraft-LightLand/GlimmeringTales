@@ -1,0 +1,55 @@
+{
+  "type": "glimmeringtales:simple_ritual",
+  "core": {
+    "ingredient": {
+      "item": "glimmeringtales:crystal_of_flame"
+    },
+    "remainder": {
+      "count": 1,
+      "id": "glimmeringtales:spark_burst"
+    }
+  },
+  "list": [
+    {
+      "ingredient": {
+        "item": "glimmeringtales:dripstone"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:cactus"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:netherrack"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:netherrack"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "minecraft:blaze_powder"
+      }
+    }
+  ],
+  "time": 100
+}

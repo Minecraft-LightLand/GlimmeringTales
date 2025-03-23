@@ -103,6 +103,8 @@
   "item.glimmeringtales.meteor": "符石: 陨星",
   "item.glimmeringtales.illusory_field": "符石: 梦幻泡影",
   "item.glimmeringtales.thunder_surge": "符石: 闪电喷流",
+  "item.glimmeringtales.spark_burst": "符石: 火焰射流",
+  "item.glimmeringtales.soul_burst": "符石: 焚魂射流",
 
   "block.glimmeringtales.struck_log": "雷焰木",
   "block.glimmeringtales.struck_leaves": "雷焰树叶",
@@ -221,6 +223,8 @@
   "spell_action.glimmeringtales.meteor": "陨星",
   "spell_action.glimmeringtales.illusory_field": "梦幻泡影",
   "spell_action.glimmeringtales.thunder_surge": "闪电喷流",
+  "spell_action.glimmeringtales.spark_burst": "火焰射流",
+  "spell_action.glimmeringtales.soul_burst": "焚魂射流",
 
   "glimmeringtales.configuration.title": "微光纪事 - 配置",
   "glimmeringtales.configuration.section.l2configs.glimmeringtales.client.toml": "微光纪事 - 客户端配置",
@@ -258,6 +262,8 @@
   "death.attack.glimmeringtales.vine.player": "%s被%s的缠绕藤蔓扼紧咽喉",
   "death.attack.glimmeringtales.soul_sand": "%s被冥火烧死了",
   "death.attack.glimmeringtales.soul_sand.player": "%s被%s的冥火烧死了",
+  "death.attack.glimmeringtales.soul_burst": "%s被冥火烧死了",
+  "death.attack.glimmeringtales.soul_burst.player": "%s被%s的冥火烧死了",
   "death.attack.glimmeringtales.amethyst_penetration": "%s被紫水晶碎片刺穿",
   "death.attack.glimmeringtales.amethyst_penetration.player": "%s被%s用紫水晶碎片刺穿",
   "death.attack.glimmeringtales.coral_reef": "%s被珊瑚魔法淹没",
@@ -347,6 +353,10 @@
   "nature_spell.glimmeringtales.illusory_field.detail": "在目标周围地上生成持续5秒的泡泡。对敌人：造成%s，施加%s。对友方：%s，给予%s",
   "nature_spell.glimmeringtales.thunder_surge.brief": "[远程] 生成密集的雷击",
   "nature_spell.glimmeringtales.thunder_surge.detail": "在目标范围生成多道闪电造成多段%s",
+  "nature_spell.glimmeringtales.spark_burst.brief": "[持续] 喷射火花，伤害并点燃敌人",
+  "nature_spell.glimmeringtales.spark_burst.detail": "向前方喷射火花，对敌人造成%s并点燃",
+  "nature_spell.glimmeringtales.soul_burst.brief": "[持续] 喷射灵魂火花，伤害并点燃敌人",
+  "nature_spell.glimmeringtales.soul_burst.detail":  "向前方喷射灵魂火花，对敌人造成%s并施加%s",
 
   "patchouli.glimmeringtales.landing": "欢迎来到以自然为主题的魔法模组$(9)《微光纪事》$()$(br2)“许多人相信自然是伴随着电闪雷鸣诞生的，在空无一物的寰宇当中绽放出靛青的光芒，需予以古树火种，使青金再次夺目。”",
   "patchouli.glimmeringtales.title": "微光纪事指南",

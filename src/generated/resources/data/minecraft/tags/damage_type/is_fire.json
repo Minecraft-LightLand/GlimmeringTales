@@ -4,6 +4,8 @@
     "glimmeringtales:soul_sand",
     "glimmeringtales:hell_mark",
     "glimmeringtales:flame_dash",
+    "glimmeringtales:spark_burst",
+    "glimmeringtales:soul_burst",
     "glimmeringtales:flame_dash-bypass_magic",
     "glimmeringtales:flame_dash-bypass_cooldown",
     "glimmeringtales:flame_dash-bypass_cooldown-bypass_magic",
@@ -13,8 +15,14 @@
     "glimmeringtales:netherrack-bypass_magic",
     "glimmeringtales:netherrack-bypass_cooldown",
     "glimmeringtales:netherrack-bypass_cooldown-bypass_magic",
+    "glimmeringtales:soul_burst-bypass_magic",
+    "glimmeringtales:soul_burst-bypass_cooldown",
+    "glimmeringtales:soul_burst-bypass_cooldown-bypass_magic",
     "glimmeringtales:soul_sand-bypass_magic",
     "glimmeringtales:soul_sand-bypass_cooldown",
-    "glimmeringtales:soul_sand-bypass_cooldown-bypass_magic"
+    "glimmeringtales:soul_sand-bypass_cooldown-bypass_magic",
+    "glimmeringtales:spark_burst-bypass_magic",
+    "glimmeringtales:spark_burst-bypass_cooldown",
+    "glimmeringtales:spark_burst-bypass_cooldown-bypass_magic"
   ]
 }
