@@ -3,6 +3,6 @@
   "render_type": "minecraft:cutout",
   "textures": {
     "all": "glimmeringtales:block/crop/pop_fruit_0",
-    "particle": "glimmeringtales:block/crop/pop_fruit_0"
+    "particle": "glimmeringtales:block/crop/pop_fruit_particle"
   }
 }

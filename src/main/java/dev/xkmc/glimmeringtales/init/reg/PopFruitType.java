@@ -4,6 +4,7 @@ import com.tterrag.registrate.providers.RegistrateLangProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import dev.xkmc.glimmeringtales.content.block.crop.BlossomPopFruit;
+import dev.xkmc.glimmeringtales.content.block.crop.OceanPopFruit;
 import dev.xkmc.glimmeringtales.content.block.crop.PopFruit;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import net.minecraft.tags.BlockTags;
@@ -18,7 +19,8 @@ import java.util.Locale;
 
 public enum PopFruitType {
 	POP_FRUIT(PopFruit::new),
-	BLOSSOM_POP_FRUIT(BlossomPopFruit::new);
+	BLOSSOM_POP_FRUIT(BlossomPopFruit::new),
+	OCEAN_POP_FRUIT(OceanPopFruit::new);
 
 	public final BlockEntry<? extends PopFruit> block;
 

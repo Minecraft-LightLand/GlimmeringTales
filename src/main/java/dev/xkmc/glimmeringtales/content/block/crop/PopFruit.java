@@ -10,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -134,6 +135,10 @@ public class PopFruit extends CropBlock {
 		return SHAPE_BY_AGE[getAge(state)];
 	}
 
+	protected int getBonemealAgeIncrease(Level level) {
+		return 1;
+	}
+
 	public void buildState(DataGenContext<Block, ? extends PopFruit> ctx, RegistrateBlockstateProvider pvd) {
 		pvd.getVariantBuilder(ctx.get()).forAllStates(state -> {
 			int age = state.getValue(AGE);
@@ -141,7 +146,7 @@ public class PopFruit extends CropBlock {
 			return ConfiguredModel.builder().modelFile(pvd.models()
 					.withExistingParent(id, pvd.modLoc("custom/crop/" + id))
 					.texture("all", "block/crop/" + id)
-					.texture("particle", "block/crop/" + id)
+					.texture("particle", "block/crop/" + ctx.getName() + "_particle")
 					.renderType("cutout")).build();
 		});
 	}
