@@ -233,6 +233,8 @@ public class GTItems {
 							CRYSTAL_WINTERSTORM::get, () -> SoundEvents.BUCKET_FILL_POWDER_SNOW)
 			).register();
 
+			PopFruitType.register();
+
 			CRYSTAL_VINE = GlimmeringTales.REGISTRATE.block("crystal_vine", LifeCrystalCrop::new)
 					.properties(p -> p.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak()
 							.sound(SoundType.CROP).pushReaction(PushReaction.DESTROY))

@@ -1,0 +1,45 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:item",
+              "conditions": [
+                {
+                  "block": "glimmeringtales:pop_fruit",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "age": "3"
+                  }
+                }
+              ],
+              "functions": [
+                {
+                  "add": false,
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 2.0,
+                    "max": 4.0
+                  },
+                  "function": "minecraft:set_count"
+                }
+              ],
+              "name": "glimmeringtales:pop_fruit"
+            },
+            {
+              "type": "minecraft:item",
+              "name": "glimmeringtales:pop_fruit"
+            }
+          ]
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "glimmeringtales:blocks/pop_fruit"
+}
