@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#glimmeringtales:has_feature/ocean_pop_fruit",
+  "features": "glimmeringtales:ocean_pop_fruit",
+  "step": "vegetal_decoration"
+}

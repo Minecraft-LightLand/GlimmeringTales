@@ -22,6 +22,7 @@ import dev.xkmc.glimmeringtales.init.data.GTConfigs;
 import dev.xkmc.glimmeringtales.init.data.GTDamageStates;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
+import dev.xkmc.glimmeringtales.init.data.world.GTWorldGen;
 import dev.xkmc.l2backpack.init.L2Backpack;
 import dev.xkmc.l2core.init.reg.registrate.SimpleEntry;
 import dev.xkmc.l2core.init.reg.simple.DCReg;

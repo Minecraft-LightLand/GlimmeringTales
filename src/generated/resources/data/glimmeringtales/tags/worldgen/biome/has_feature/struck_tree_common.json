@@ -3,6 +3,7 @@
     "minecraft:swamp",
     "minecraft:forest",
     "minecraft:flower_forest",
-    "minecraft:windswept_forest"
+    "minecraft:windswept_forest",
+    "#c:is_forest"
   ]
 }

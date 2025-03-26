@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#glimmeringtales:struck_tree_sparse",
+  "biomes": "#glimmeringtales:has_feature/struck_tree_sparse",
   "features": "glimmeringtales:struck_tree_sparse",
   "step": "vegetal_decoration"
 }

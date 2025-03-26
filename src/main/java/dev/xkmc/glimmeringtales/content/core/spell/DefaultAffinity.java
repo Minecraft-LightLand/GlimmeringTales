@@ -6,7 +6,7 @@ public record DefaultAffinity() implements IAffinityProvider {
 
 	@Override
 	public double get(SpellElement elem) {
-		return 1;
+		return 0;
 	}
 
 }

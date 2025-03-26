@@ -10,10 +10,13 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -52,7 +55,7 @@ public class PopFruit extends CropBlock {
 		super(properties);
 	}
 
-	protected IntegerProperty getAgeProperty() {
+	public IntegerProperty getAgeProperty() {
 		return AGE;
 	}
 
@@ -117,6 +120,14 @@ public class PopFruit extends CropBlock {
 	}
 
 	protected boolean onExplosionAffecting(Entity entity) {
+		if (entity instanceof Pig pig && pig.level() instanceof ServerLevel sl) {
+			Creeper e = pig.convertTo(EntityType.CREEPER, false);
+			if (e != null) {
+				e.finalizeSpawn(sl, sl.getCurrentDifficultyAt(e.blockPosition()), MobSpawnType.CONVERSION, null);
+				net.neoforged.neoforge.event.EventHooks.onLivingConvert(pig, e);
+			}
+			return false;
+		}
 		return entity instanceof LivingEntity;
 	}
 

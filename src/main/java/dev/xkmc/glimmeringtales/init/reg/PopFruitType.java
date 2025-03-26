@@ -9,7 +9,9 @@ import dev.xkmc.glimmeringtales.content.block.crop.PopFruit;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -17,7 +19,7 @@ import net.minecraft.world.level.material.PushReaction;
 
 import java.util.Locale;
 
-public enum PopFruitType {
+public enum PopFruitType implements ItemLike {
 	POP_FRUIT(PopFruit::new),
 	BLOSSOM_POP_FRUIT(BlossomPopFruit::new),
 	OCEAN_POP_FRUIT(OceanPopFruit::new);
@@ -40,6 +42,15 @@ public enum PopFruitType {
 				.loot((pvd, block) -> block.builtLoot(pvd, block))
 				.tag(BlockTags.CROPS)
 				.register();
+	}
+
+	public PopFruit get() {
+		return block.get();
+	}
+
+	@Override
+	public Item asItem() {
+		return block.asItem();
 	}
 
 	public static void register() {

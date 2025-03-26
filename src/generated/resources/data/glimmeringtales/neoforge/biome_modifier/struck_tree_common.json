@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#glimmeringtales:struck_tree_common",
+  "biomes": "#glimmeringtales:has_feature/struck_tree_common",
   "features": "glimmeringtales:struck_tree_common",
   "step": "vegetal_decoration"
 }

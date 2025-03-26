@@ -5,7 +5,10 @@ import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -24,6 +27,10 @@ import org.jetbrains.annotations.Nullable;
 
 public class OceanPopFruit extends PopFruit implements LiquidBlockContainer {
 
+	private static int getLight(BlockState state) {
+		return state.getValue(AGE) * 3;
+	}
+
 	public static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
 			Block.box(6, 0, 6, 10, 3, 10),
 			Block.box(4, 0, 4, 12, 5, 12),
@@ -32,12 +39,15 @@ public class OceanPopFruit extends PopFruit implements LiquidBlockContainer {
 	};
 
 	public OceanPopFruit(Properties properties) {
-		super(properties);
+		super(properties.lightLevel(OceanPopFruit::getLight));
 	}
 
 	@Override
 	protected boolean onExplosionAffecting(Entity entity) {
-		return super.onExplosionAffecting(entity);
+		if (entity instanceof LivingEntity le) {
+			le.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0));
+		}
+		return false;
 	}
 
 	@Override
