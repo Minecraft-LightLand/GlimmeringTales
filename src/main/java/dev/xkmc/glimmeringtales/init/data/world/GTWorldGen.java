@@ -25,16 +25,18 @@ import java.util.OptionalInt;
 public class GTWorldGen {
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CF_TREE = ResourceKey.create(Registries.CONFIGURED_FEATURE, GlimmeringTales.loc("struck_tree"));
-	private static final TreePlacement PF_SPARSE = new TreePlacement("struck_tree_sparse", 32, GTItems.STRUCK_SAPLING::get);
+	private static final TreePlacement PF_SPARSE = new TreePlacement("struck_tree_sparse", 40, GTItems.STRUCK_SAPLING::get);
 	private static final TreePlacement PF_COMMON = new TreePlacement("struck_tree_common", 16, GTItems.STRUCK_SAPLING::get);
 	private static final TreePlacement PF_DENSE = new TreePlacement("struck_tree_dense", 8, GTItems.STRUCK_SAPLING::get);
 
-	private static final FeaturePlacement POP = new PopPlacement("pop_fruit", PopFruitType.POP_FRUIT::get, 24, 7);
-	private static final FeaturePlacement BLOSSOM_POP = new PopPlacement("blossom_pop_fruit", PopFruitType.BLOSSOM_POP_FRUIT::get, 8, 4);
-	private static final FeaturePlacement OCEAN_POP = new WaterPopPlacement("ocean_pop_fruit", PopFruitType.OCEAN_POP_FRUIT::get, 16, 6);
+	private static final FeaturePlacement LARGE = new LargeTreePlacement("struck_large_tree");
+	private static final FeaturePlacement POP = new PopPlacement("pop_fruit", PopFruitType.POP_FRUIT::get, 8, 96);
+	private static final FeaturePlacement BLOSSOM_POP = new PopPlacement("blossom_pop_fruit", PopFruitType.BLOSSOM_POP_FRUIT::get, 2, 64);
+	private static final FeaturePlacement OCEAN_POP = new WaterPopPlacement("ocean_pop_fruit", PopFruitType.OCEAN_POP_FRUIT::get, 16, 96);
 
 	public static void genFeatures(DataProviderInitializer init) {
 		init.add(Registries.CONFIGURED_FEATURE, ctx -> {
+
 			ctx.register(CF_TREE, new ConfiguredFeature<>(Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
 					BlockStateProvider.simple(GTItems.STRUCK_LOG.getDefaultState()),
 					new StraightTrunkPlacer(5, 2, 0),
@@ -42,6 +44,8 @@ public class GTWorldGen {
 					new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
 					new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4))
 			).ignoreVines().build()));
+
+			LARGE.feature(ctx);
 			POP.feature(ctx);
 			BLOSSOM_POP.feature(ctx);
 			OCEAN_POP.feature(ctx);
@@ -51,6 +55,7 @@ public class GTWorldGen {
 			PF_SPARSE.placed(ctx, cf);
 			PF_COMMON.placed(ctx, cf);
 			PF_DENSE.placed(ctx, cf);
+			LARGE.placed(ctx);
 			POP.placed(ctx);
 			BLOSSOM_POP.placed(ctx);
 			OCEAN_POP.placed(ctx);
@@ -59,6 +64,7 @@ public class GTWorldGen {
 			PF_SPARSE.biome(ctx);
 			PF_COMMON.biome(ctx);
 			PF_DENSE.biome(ctx);
+			LARGE.biome(ctx);
 			POP.biome(ctx);
 			BLOSSOM_POP.biome(ctx);
 			OCEAN_POP.biome(ctx);
@@ -73,12 +79,14 @@ public class GTWorldGen {
 		pvd.addTag(PF_DENSE.biomeTag).add(Biomes.JUNGLE, Biomes.DARK_FOREST)
 				.addTag(Tags.Biomes.IS_JUNGLE);
 
+		pvd.addTag(LARGE.biomeTag).add(Biomes.JUNGLE)
+				.addTag(Tags.Biomes.IS_JUNGLE);
 		pvd.addTag(POP.biomeTag).add(Biomes.PLAINS, Biomes.SNOWY_PLAINS, Biomes.GROVE, Biomes.TAIGA, Biomes.SNOWY_TAIGA)
 				.addTag(Tags.Biomes.IS_PLAINS);
 		pvd.addTag(BLOSSOM_POP.biomeTag).add(Biomes.FLOWER_FOREST, Biomes.SUNFLOWER_PLAINS, Biomes.CHERRY_GROVE, Biomes.MEADOW)
 				.addTag(Tags.Biomes.IS_FLORAL);
 		pvd.addTag(OCEAN_POP.biomeTag).add(Biomes.DEEP_OCEAN)
-				.addTag(Tags.Biomes.IS_DEEP_OCEAN);
+				.addTag(Tags.Biomes.IS_OCEAN);
 	}
 
 

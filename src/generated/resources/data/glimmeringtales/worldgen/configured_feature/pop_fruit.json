@@ -36,24 +36,21 @@
                 "blocks": "minecraft:air"
               },
               {
-                "type": "minecraft:not",
-                "predicate": {
-                  "type": "minecraft:matching_blocks",
-                  "blocks": "minecraft:grass_block",
-                  "offset": [
-                    0,
-                    -1,
-                    0
-                  ]
-                }
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:grass_block",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ]
               }
             ]
           }
         }
       ]
     },
-    "tries": 7,
-    "xz_spread": 7,
+    "tries": 96,
+    "xz_spread": 4,
     "y_spread": 3
   }
 }

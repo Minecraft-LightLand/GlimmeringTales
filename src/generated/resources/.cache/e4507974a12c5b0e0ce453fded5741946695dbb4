@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-26T22:11:17.049848	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (worldgen/biome), Tags (trait), Custom Registrate Provider]
+// 1.21.1	2025-03-27T00:36:51.248001	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Custom Registrate Provider]
 f628b87d75a2e2a6c5157d17ef22b26cb8b260eb assets/glimmeringtales/blockstates/bamboo.json
 ce8cfd4e2bab2eed8783654db155ae082f8b8aa8 assets/glimmeringtales/blockstates/blossom_pop_fruit.json
 4132de47f0c0e042aadf759876c94ea0a1d95cd2 assets/glimmeringtales/blockstates/clay_carpet.json
@@ -685,6 +685,7 @@ af921c28e8bb301e3b41628c1fb06c2469483676 data/glimmeringtales/loot_table/glimmer
 4638a9be1d4a4191b7054a29e54b987862599cc9 data/glimmeringtales/neoforge/biome_modifier/blossom_pop_fruit.json
 e7011753008d22f0226fb8b246f2edfc8351d549 data/glimmeringtales/neoforge/biome_modifier/ocean_pop_fruit.json
 3fab03071dcdf80157a4c62cfaa8621f2e7daff5 data/glimmeringtales/neoforge/biome_modifier/pop_fruit.json
+acbaf17f45ef4b779cd0de2effd845bc40de711a data/glimmeringtales/neoforge/biome_modifier/struck_large_tree.json
 6abe2ad2187276a840d7e9103fc9b724d5db0cf4 data/glimmeringtales/neoforge/biome_modifier/struck_tree_common.json
 333486bb722b321ab842cc16ba2a6430f8db4a77 data/glimmeringtales/neoforge/biome_modifier/struck_tree_dense.json
 351cacf3523d63ba0ac676d259835aa2a4d1db23 data/glimmeringtales/neoforge/biome_modifier/struck_tree_sparse.json
@@ -794,21 +795,24 @@ eced048a016d9b23fed1e1535f5bb79c0a9e5645 data/glimmeringtales/tags/item/rune.jso
 73d6335a4da0f04f022fc5a5bd978e4016a03a0e data/glimmeringtales/tags/item/spell.json
 82e14be4b8a9a14d6c3b0c02e94b3acd19310b9f data/glimmeringtales/tags/item/unique_curios.json
 c25ae7c51f1480a025ab84e5d2fb301c84e13d47 data/glimmeringtales/tags/worldgen/biome/has_feature/blossom_pop_fruit.json
-ffd3aa0cc14a8f725091ce57039a7cf808eb9747 data/glimmeringtales/tags/worldgen/biome/has_feature/ocean_pop_fruit.json
+ef6e5c0926124ba0a7d59f022264ea4c89d43b8d data/glimmeringtales/tags/worldgen/biome/has_feature/ocean_pop_fruit.json
 b4429792587e58e73fe4f184bd861e84bcf5e510 data/glimmeringtales/tags/worldgen/biome/has_feature/pop_fruit.json
+126e281d66a3532d588bc0d4dea30feef4ac18fc data/glimmeringtales/tags/worldgen/biome/has_feature/struck_large_tree.json
 04c32358be7e0aabb25816b01ad4d9caff3413a5 data/glimmeringtales/tags/worldgen/biome/has_feature/struck_tree_common.json
 3c4aea023b9393c7e3061981e635114ce78fbe97 data/glimmeringtales/tags/worldgen/biome/has_feature/struck_tree_dense.json
 b4429792587e58e73fe4f184bd861e84bcf5e510 data/glimmeringtales/tags/worldgen/biome/has_feature/struck_tree_sparse.json
-e84e32d8e69166ba8ec45b3aec47fd9caf9a8332 data/glimmeringtales/worldgen/configured_feature/blossom_pop_fruit.json
-92b69120a2d5c96c52fb87372d05084d4c79a522 data/glimmeringtales/worldgen/configured_feature/ocean_pop_fruit.json
-7820499f3b2dc3e66adbf1f883f1f05bac227908 data/glimmeringtales/worldgen/configured_feature/pop_fruit.json
+8e7ac5ac9025f5fb730ed93e6fc0fb398c6e20b5 data/glimmeringtales/worldgen/configured_feature/blossom_pop_fruit.json
+274b325c3622dfa436ffdeb8b3d4f21ee392bc58 data/glimmeringtales/worldgen/configured_feature/ocean_pop_fruit.json
+76eb72195d1422dbff92bba01ab46341704d665e data/glimmeringtales/worldgen/configured_feature/pop_fruit.json
+0b78653210df782fe9bb9c17cf98e410423202ae data/glimmeringtales/worldgen/configured_feature/struck_large_tree.json
 64fcc15348dbe0e92478fcd04cd36283a148d59a data/glimmeringtales/worldgen/configured_feature/struck_tree.json
-850a1c3a02c1e9ac99f0da49581fb39a7766d003 data/glimmeringtales/worldgen/placed_feature/blossom_pop_fruit.json
-ca3bea039f5f6971cbe3815b2d2f4d373dd8dff4 data/glimmeringtales/worldgen/placed_feature/ocean_pop_fruit.json
-7652f520527c3dda334e93de4e8bc9ae4148f374 data/glimmeringtales/worldgen/placed_feature/pop_fruit.json
+a61df6c6298d3003e8b868ddd276200dc7513286 data/glimmeringtales/worldgen/placed_feature/blossom_pop_fruit.json
+45f771eefd7a09c8c41970f5ced8c8de4731a966 data/glimmeringtales/worldgen/placed_feature/ocean_pop_fruit.json
+03aa15785746dbfb089a4fb6a93ae82b40c0bce8 data/glimmeringtales/worldgen/placed_feature/pop_fruit.json
+1a0ec526d9e21305bf5d4fbe4672287a21b67a87 data/glimmeringtales/worldgen/placed_feature/struck_large_tree.json
 7170c87b812acbe6b08616754d1b8e428ef5a65d data/glimmeringtales/worldgen/placed_feature/struck_tree_common.json
 1b1d7b9ec3e7365baf7d049f6191938af7ff75df data/glimmeringtales/worldgen/placed_feature/struck_tree_dense.json
-93f28a953182c8e3860d18d9951293909f2f0c8e data/glimmeringtales/worldgen/placed_feature/struck_tree_sparse.json
+244b60f5d06edf9d1ecb8ba86babe1b2e6109f3c data/glimmeringtales/worldgen/placed_feature/struck_tree_sparse.json
 bd3bcaf9bd66a367cc034769b248744853fc6c68 data/l2menustacker/tags/item/quick_access.json
 1eed49ed129995e86bb35c19918c1cccc4cdd418 data/l2tabs/data_maps/attribute/attribute_entry.json
 57d4d94453693ecac577a00b14bf7c25c099cfef data/minecraft/tags/block/crops.json

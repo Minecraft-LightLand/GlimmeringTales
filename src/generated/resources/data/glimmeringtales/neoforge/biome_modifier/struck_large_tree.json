@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#glimmeringtales:has_feature/struck_large_tree",
+  "features": "glimmeringtales:struck_large_tree",
+  "step": "vegetal_decoration"
+}
