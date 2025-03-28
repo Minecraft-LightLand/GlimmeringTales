@@ -56,7 +56,7 @@ public class SoulBurst {
 		return ProjectileConfig.builder(SelectionType.ENEMY_NO_FAMILY)
 				.tick(new SimpleParticleInstance(ParticleTypes.SOUL_FIRE_FLAME, DoubleVariable.ZERO))
 				.hit(new DamageProcessor(ctx.damage(), DMG, true, true))
-				.hit(new EffectProcessor(LCEffects.FLAME, IntVariable.of("60"), IntVariable.of("1"), false, false))
+				.hit(new EffectProcessor(LCEffects.FLAME, IntVariable.of("100"), IntVariable.of("1"), false, false))
 				.size(DoubleVariable.of("0.25"))
 				.motion(new SimpleMotion(DoubleVariable.of("0.01"), DoubleVariable.ZERO))
 				.build();

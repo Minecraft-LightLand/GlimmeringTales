@@ -10,7 +10,7 @@
     },
     {
       "type": "l2magic:effect",
-      "duration": "60",
+      "duration": "100",
       "ambient": false,
       "amplifier": "1",
       "effect": "l2complements:soul_burning",

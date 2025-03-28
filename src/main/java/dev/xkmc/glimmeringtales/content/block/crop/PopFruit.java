@@ -15,8 +15,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.vehicle.VehicleEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -39,6 +43,21 @@ import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import java.util.List;
 
 public class PopFruit extends CropBlock {
+
+	private static boolean sensitiveTo(Entity e) {
+		if (e instanceof LivingEntity) {
+			if (e instanceof Animal)
+				return false;
+			return true;
+		}
+		if (e instanceof Projectile)
+			return true;
+		if (e instanceof FallingBlockEntity)
+			return true;
+		if (e instanceof VehicleEntity)
+			return true;
+		return false;
+	}
 
 	public static final MapCodec<PopFruit> CODEC = simpleCodec(PopFruit::new);
 	public static final IntegerProperty AGE = BlockStateProperties.AGE_3;
@@ -81,15 +100,12 @@ public class PopFruit extends CropBlock {
 	@Override
 	protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
 		if (!level.isAreaLoaded(pos, 1)) return;
-		if (level.getRawBrightness(pos, 0) >= 9) {
-			int i = this.getAge(state);
-			if (i < this.getMaxAge()) {
-				float f = getGrowthSpeed(state, level, pos);
-				if (net.neoforged.neoforge.common.CommonHooks.canCropGrow(level, pos, state, random.nextInt((int) (25F / f) + 1) == 0)) {
-					level.setBlock(pos, this.getStateForAge(i + 1), 2);
-					net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(level, pos, state);
-				}
-			}
+		int i = getAge(state);
+		if (i >= getMaxAge()) return;
+		float f = getGrowthSpeed(state, level, pos);
+		if (net.neoforged.neoforge.common.CommonHooks.canCropGrow(level, pos, state, random.nextInt((int) (25F / f) + 1) == 0)) {
+			level.setBlock(pos, getStateForAge(i + 1), 2);
+			net.neoforged.neoforge.common.CommonHooks.fireCropGrowPost(level, pos, state);
 		}
 	}
 
@@ -98,13 +114,9 @@ public class PopFruit extends CropBlock {
 	}
 
 	@Override
-	public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> list, TooltipFlag flag) {
-
-	}
-
-	@Override
 	protected void entityInside(BlockState state, Level level, BlockPos pos, Entity entity) {
 		if (level.isClientSide()) return;
+		if (!sensitiveTo(entity)) return;
 		var aabb = state.getShape(level, pos).bounds().move(pos);
 		if (aabb.intersects(entity.getBoundingBox())) {
 			level.removeBlock(pos, false);

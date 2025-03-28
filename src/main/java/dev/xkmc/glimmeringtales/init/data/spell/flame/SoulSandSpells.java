@@ -10,6 +10,7 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
+import dev.xkmc.l2magic.content.engine.iterator.RingRandomIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
@@ -45,7 +46,7 @@ public class SoulSandSpells {
 					SpellTooltipData.damage()
 			).graph(NetherrackSpells.BUILDER);
 
-	private static final DoubleVariable DMG = DoubleVariable.of("4");
+	private static final DoubleVariable DMG = DoubleVariable.of("6");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
@@ -61,18 +62,23 @@ public class SoulSandSpells {
 				),
 				new ProcessorEngine(
 						SelectionType.ENEMY_NO_FAMILY,
-						new BoxSelector(DoubleVariable.of("2"), DoubleVariable.of("2"), false),
+						new BoxSelector(DoubleVariable.of("3"), DoubleVariable.of("2"), false),
 						List.of(new DamageProcessor(ctx.damage(), DMG, true, false))
 				),
 				new DelayedIterator(
 						IntVariable.of("10"),
 						IntVariable.of("1"),
-						new SimpleParticleInstance(
-								ParticleTypes.SOUL_FIRE_FLAME,
-								DoubleVariable.of("0.3")
-						).move(
-								SetDirectionModifier.of("rand(-0.2,0.2)", "1", "rand(-0.2,0.2)"),
-								OffsetModifier.of("rand(-0.4,0.4)", "0", "rand(-0.4,0.4)")
+						new RingRandomIterator(
+								DoubleVariable.ZERO,
+								DoubleVariable.of("2.5"),
+								DoubleVariable.ZERO,
+								DoubleVariable.of("360"),
+								IntVariable.of("3"),
+								new SimpleParticleInstance(
+										ParticleTypes.SOUL_FIRE_FLAME,
+										DoubleVariable.of("0.3")
+								).move(SetDirectionModifier.of("rand(-0.2,0.2)", "1", "rand(-0.2,0.2)")),
+								null
 						),
 						null
 				)

@@ -5,6 +5,7 @@ import dev.xkmc.glimmeringtales.content.research.core.ResearchState;
 import dev.xkmc.glimmeringtales.content.research.logic.HexDirection;
 import dev.xkmc.glimmeringtales.content.research.render.HexStatus;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
@@ -27,6 +28,8 @@ public enum GTLang {
 	TOOLTIP_RITUAL_FORM("tooltip.ritual_form", "Links to [%s] within 3 blocks", 1),
 	TOOLTIP_RITUAL_START("tooltip.ritual_start", "Right click with wand to start ritual", 0),
 	TOOLTIP_SELECTED("tooltip.selected", "Selected: %s", 1),
+	CHANCE_EFFECT("tooltip.chance", "%1$s with %2$s%% chance", 2),
+	CHANCE_EXPLODE("tooltip.explode", "%s%% to explode on consumption", 1),
 
 	TOOLTIP_MAGIC("item.glove_magic", "Convert all spell damage to magic damage", 0),
 	TOOLTIP_ABYSS("item.glove_abyss", "Infuse all spell damage with abyss damage", 0),

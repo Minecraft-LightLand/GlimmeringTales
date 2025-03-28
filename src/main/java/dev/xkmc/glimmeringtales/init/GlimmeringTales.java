@@ -68,6 +68,7 @@ public class GlimmeringTales {
 		GTRecipes.register();
 		GTEngine.register();
 		GTEntities.register();
+		GTEffects.register();
 		GTParticles.register();
 		if (ModList.get().isLoaded(PatchouliAPI.MOD_ID)) {
 			PatchouliCompat.gen();
