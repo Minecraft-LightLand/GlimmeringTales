@@ -1,6 +1,6 @@
 package dev.xkmc.glimmeringtales.content.core.searcher;
 
-import dev.xkmc.glimmeringtales.content.item.materials.IBlockSearcher;
+import dev.xkmc.glimmeringtales.content.item.tool.IBlockSearcher;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;

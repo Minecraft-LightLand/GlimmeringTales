@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.content.item.materials;
+package dev.xkmc.glimmeringtales.content.item.tool;
 
 import dev.xkmc.glimmeringtales.content.core.searcher.BlockSearcher;
 import net.minecraft.resources.ResourceLocation;

@@ -11,7 +11,7 @@ import dev.xkmc.glimmeringtales.content.block.ritual.*;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeCurioItem;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeData;
 import dev.xkmc.glimmeringtales.content.item.curio.DamageTypeCurioItem;
-import dev.xkmc.glimmeringtales.content.item.materials.AmethystResonator;
+import dev.xkmc.glimmeringtales.content.item.tool.AmethystResonator;
 import dev.xkmc.glimmeringtales.content.item.materials.DepletedItem;
 import dev.xkmc.glimmeringtales.content.item.rune.BlockRuneItem;
 import dev.xkmc.glimmeringtales.content.item.rune.SpellCoreItem;
