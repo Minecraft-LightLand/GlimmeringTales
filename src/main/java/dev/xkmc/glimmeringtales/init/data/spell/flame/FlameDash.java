@@ -64,29 +64,18 @@ public class FlameDash {
 								new ProcessorEngine(  // Push
 										SelectionType.ALL,
 										new SelfSelector(),
-										List.of(new PushProcessor(
-												DoubleVariable.of(".2"),
-												DoubleVariable.ZERO,
-												DoubleVariable.ZERO,
-												PushProcessor.Type.UNIFORM
-										))
+										List.of(PushProcessor.Type.UNIFORM.of(".2"))
 								),
 								new ProcessorEngine(  // Damage
 										SelectionType.ENEMY,
 										new ApproxBallSelector(DoubleVariable.of("2")),
 										List.of(
 												new DamageProcessor(ctx.damage(), DoubleVariable.of("4"), true, true),
-												new KnockBackProcessor(
-														DoubleVariable.of("0.2"),
-														DoubleVariable.ZERO,
-														DoubleVariable.ZERO
-												)
+												KnockBackProcessor.of("0.2")
 										)
 								),
 								new RingIterator(
 										DoubleVariable.of("0.5"),
-										DoubleVariable.of("-180"),
-										DoubleVariable.of("180"),
 										IntVariable.of("30"),
 										false,
 										new DustParticleInstance(
@@ -94,8 +83,7 @@ public class FlameDash {
 												DoubleVariable.of(".5"),
 												DoubleVariable.of("0.4"),
 												IntVariable.of("rand(10,20)")
-										),
-										null
+										)
 								).move(
 										ForwardOffsetModifier.of("2"),
 										new Dir2NormalModifier(),
@@ -105,7 +93,7 @@ public class FlameDash {
 								new ToCurrentCasterPosModifier(),
 								OffsetModifier.of("0", "1", "0"),
 								new ToCurrentCasterDirModifier()
-						), null
+						)
 				)
 		);
 	}

@@ -1,81 +1,63 @@
 package dev.xkmc.glimmeringtales.content.core.description;
 
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
-import dev.xkmc.glimmeringtales.init.GlimmeringTales;
-import dev.xkmc.l2magic.content.engine.context.AnalyticContext;
 import dev.xkmc.l2magic.content.engine.core.Verifiable;
-import dev.xkmc.l2magic.content.engine.extension.ExtensionHolder;
-import dev.xkmc.l2magic.content.engine.extension.IExtended;
-import dev.xkmc.l2magic.content.engine.helper.EngineHelper;
-import dev.xkmc.l2magic.content.entity.engine.CustomProjectileShoot;
+import dev.xkmc.l2magic.content.engine.extension.*;
 import dev.xkmc.l2serial.util.Wrappers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.Level;
 
-import javax.annotation.Nullable;
 import java.util.*;
 
-public class SpellTooltip {
+public class SpellTooltip extends ExtensionEntry<SpellTooltip, SpellTooltip.DescHolder> {
 
-	private static final IdentityHashMap<Verifiable, SpellTooltip> CACHE = new IdentityHashMap<>();
+	public record DescHolder(NatureSpell spell) implements ExtensionKey<SpellTooltip, DescHolder> {
 
-	public static SpellTooltip get(Level level, NatureSpell spell) {
-		var action = spell.spell().value().action();
-		var data = spell.tooltip();
-		if (CACHE.containsKey(action)) {
-			var e = CACHE.get(action);
-			if (e.spell != action || e.components != data) {
-				CACHE.clear();
-			} else {
-				return e;
-			}
+		@Override
+		public Verifiable getEntry() {
+			return spell.spell().value().action();
 		}
-		var e = new SpellTooltip(action, data);
-		CACHE.put(action, e);
-		return e;
+
+		@Override
+		public SpellTooltip create() {
+			return new SpellTooltip(getEntry(), spell.tooltip());
+		}
+
 	}
 
-	private final Verifiable spell;
+	private static final ExtensionTypeManager<SpellTooltip, DescHolder> MANAGER = new ExtensionTypeManager<>();
+
+	public static SpellTooltip get(Level level, NatureSpell spell) {
+		return MANAGER.get(new DescHolder(spell));
+	}
+
 	private final SpellTooltipData components;
 	private final LinkedHashMap<ExtensionHolder<?>, List<IExtended<?>>> map = new LinkedHashMap<>();
-	private final Set<Verifiable> iterated = new HashSet<>();
 
 	public SpellTooltip(Verifiable spell, SpellTooltipData components) {
-		this.spell = spell;
+		super(spell);
 		this.components = components;
 		analyze();
 	}
 
-	public void analyze() {
+	@Override
+	public boolean match(DescHolder holder) {
+		return entry == holder.getEntry() && components == holder.spell().tooltip();
+	}
+
+	@Override
+	protected void initAnalysis() {
 		map.clear();
-		iterated.clear();
 		for (var e : components.list()) {
 			map.put(e.type(), new ArrayList<>());
 		}
-		EngineHelper.analyze(spell, new AnalyticContext("", this::check), spell.getClass());
 	}
 
-	private void check(String s, @Nullable Verifiable v) {
-		switch (v) {
-			case CustomProjectileShoot p -> {
-				if (iterated.contains(p)) return;
-				iterated.add(p);
-				var proj = p.config().value();
-				Optional.ofNullable(proj.tick()).ifPresent(e -> EngineHelper.analyze(e, new AnalyticContext("", this::check), e.getClass()));
-				Optional.ofNullable(proj.land()).ifPresent(e -> EngineHelper.analyze(e, new AnalyticContext("", this::check), e.getClass()));
-				Optional.ofNullable(proj.expire()).ifPresent(e -> EngineHelper.analyze(e, new AnalyticContext("", this::check), e.getClass()));
-				for (var hit : proj.hit())
-					EngineHelper.analyze(hit, new AnalyticContext("", this::check), hit.getClass());
-			}
-			case IExtended<?> p -> {
-				if (map.containsKey(p.type())) {
-					map.get(p.type()).add(p);
-				}
-			}
-			case null -> GlimmeringTales.LOGGER.error("Null input not allowed for path {}", s);
-			default -> {
-			}
+	@Override
+	protected void process(IExtended<?> p) {
+		if (map.containsKey(p.type())) {
+			map.get(p.type()).add(p);
 		}
 	}
 

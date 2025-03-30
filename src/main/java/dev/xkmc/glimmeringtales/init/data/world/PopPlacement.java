@@ -4,7 +4,6 @@ import dev.xkmc.glimmeringtales.content.block.crop.PopFruit;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
-import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
@@ -44,7 +43,7 @@ public class PopPlacement extends FeaturePlacement {
 	public void feature(BootstrapContext<ConfiguredFeature<?, ?>> ctx) {
 		var state = new RandomizedIntStateProvider(BlockStateProvider.simple(block.get()),
 				block.get().getAgeProperty(), UniformInt.of(1, 3));
-		ctx.register(featureKey, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(count,4,3,
+		ctx.register(featureKey, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(count, 4, 3,
 				PlacementUtils.filtered(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(state), getSpawnLocation()))));
 	}
 

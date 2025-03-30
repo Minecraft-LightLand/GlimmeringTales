@@ -7,7 +7,6 @@ import com.tterrag.registrate.providers.loot.RegistrateBlockLootTables;
 import dev.xkmc.l2core.serial.loot.LootHelper;
 import dev.xkmc.l2library.content.explosion.*;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
@@ -21,9 +20,6 @@ import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.vehicle.VehicleEntity;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
@@ -40,23 +36,17 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 
-import java.util.List;
-
 public class PopFruit extends CropBlock {
 
 	private static boolean sensitiveTo(Entity e) {
 		if (e instanceof LivingEntity) {
-			if (e instanceof Animal)
-				return false;
-			return true;
+			return !(e instanceof Animal);
 		}
 		if (e instanceof Projectile)
 			return true;
 		if (e instanceof FallingBlockEntity)
 			return true;
-		if (e instanceof VehicleEntity)
-			return true;
-		return false;
+		return e instanceof VehicleEntity;
 	}
 
 	public static final MapCodec<PopFruit> CODEC = simpleCodec(PopFruit::new);

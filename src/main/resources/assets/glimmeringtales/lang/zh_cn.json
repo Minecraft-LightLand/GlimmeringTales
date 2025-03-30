@@ -12,6 +12,7 @@
   "attribute.glimmeringtales.mana_regen": "魔力再生",
   "attribute.glimmeringtales.max_mana": "最大魔力",
   "attribute.glimmeringtales.max_focus": "最大专注",
+  "attribute.glimmeringtales.focus_cool_down": "专注冷却",
   "attribute.glimmeringtales.earth_affinity": "地脉元素亲和",
   "attribute.glimmeringtales.flame_affinity": "蕴炎元素亲和",
   "attribute.glimmeringtales.life_affinity": "生机元素亲和",
@@ -122,6 +123,19 @@
   "block.glimmeringtales.magma_block_for_netherrack": "岩浆块",
   "block.glimmeringtales.magma_block_for_stone": "岩浆块",
   "block.glimmeringtales.meteor": "陨星",
+  "block.glimmeringtales.blossom_pop_fruit": "花爆果",
+  "block.glimmeringtales.ocean_pop_fruit": "水爆果",
+  "block.glimmeringtales.pop_fruit": "爆爆果",
+  "item.glimmeringtales.blossom_pop_fruit": "花爆果",
+  "item.glimmeringtales.ocean_pop_fruit": "水爆果",
+  "item.glimmeringtales.pop_fruit": "爆爆果",
+
+  "effect.glimmeringtales.mana_recovery.desc": "提升魔力回复效率",
+  "effect.glimmeringtales.mana_recovery.description": "提升魔力回复效率",
+  "effect.glimmeringtales.mana_expansion.desc": "提升最大魔力",
+  "effect.glimmeringtales.mana_expansion.description": "提升最大魔力",
+  "effect.glimmeringtales.mana_depletion.desc": "降低魔力回复效率",
+  "effect.glimmeringtales.mana_depletion.description": "降低魔力回复效率",
 
   "glimmeringtales.tooltip.consume_block": "右键[%s]吸收精华",
   "glimmeringtales.tooltip.fill_crystal": "进度: %s / %s",
@@ -140,6 +154,8 @@
   "glimmeringtales.overlay.destroy": "消耗目标方块",
   "glimmeringtales.overlay.mana": "魔力: %s / %s",
   "glimmeringtales.overlay.focus": "专注: %s / %s",
+  "glimmeringtales.tooltip.chance": "%2$s%%概率获得%1$s",
+  "glimmeringtales.tooltip.explode": "食用后%s%%概率爆炸",
   "glimmeringtales.item.glove_magic": "把所有法术的伤害转化为魔法伤害",
   "glimmeringtales.item.glove_abyss": "让所有法术的伤害获得深渊属性",
   "glimmeringtales.item.glove_cooldown": "[%s]法术伤害无视伤害冷却",
@@ -245,10 +261,10 @@
   "glimmeringtales.configuration.crystalOfFlameRequirement.tooltip": "范围: 1 ~ 1000",
   "glimmeringtales.configuration.crystalOfWinterstormRequirement": "风雪宝石：细雪消耗",
   "glimmeringtales.configuration.crystalOfWinterstormRequirement.tooltip": "范围: 1 ~ 1000",
-  "glimmeringtales.configuration.focusCoolDown": "施法后专注回复冷却",
-  "glimmeringtales.configuration.focusCoolDown.tooltip": "范围: 0 ~ 1000",
   "glimmeringtales.configuration.ritualRange": "仪式台搜索范围",
   "glimmeringtales.configuration.ritualRange.tooltip": " 默认: 3\n 范围: 1 ~ 16",
+  "glimmeringtales.configuration.popFruitExplosionChanceOnEaten": "吃爆爆果的爆炸概率",
+  "glimmeringtales.configuration.popFruitExplosionChanceOnEaten.tooltip": " 默认: 0.1\n 范围: 0.0 ~ 1.0",
 
   "death.attack.glimmeringtales.amethyst": "%s被紫水晶碎片刺穿",
   "death.attack.glimmeringtales.amethyst.player": "%s被%s用紫水晶碎片刺穿",
@@ -396,6 +412,7 @@
   "affix.glimmeringtales:wand/attribute/ocean_affinity": "深海同调",
   "affix.glimmeringtales:wand/attribute/ocean_affinity.suffix": "深海同调",
   "affix.glimmeringtales:wand/attribute/thunder_affinity": "雷霆同调",
-  "affix.glimmeringtales:wand/attribute/thunder_affinity.suffix": "雷霆同调"
+  "affix.glimmeringtales:wand/attribute/thunder_affinity.suffix": "雷霆同调",
+
 
 }

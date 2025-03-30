@@ -18,19 +18,19 @@ public class GTEffects {
 				() -> new GTEffect(MobEffectCategory.BENEFICIAL, 0xffffffff)
 						.addAttributeModifier(GTRegistries.MANA_REGEN, GlimmeringTales.loc("mana_recovery"), 20,
 								AttributeModifier.Operation.ADD_VALUE),
-				"Increase mana restoration rate").register());
+				"Increase mana restoration rate").lang(MobEffect::getDescriptionId, "Mana Recovery").register());
 
 		MANA_DEPLETION = new SimpleEntry<>(GlimmeringTales.REGISTRATE.effect("mana_depletion",
 				() -> new GTEffect(MobEffectCategory.HARMFUL, 0xff000000)
 						.addAttributeModifier(GTRegistries.MANA_REGEN, GlimmeringTales.loc("mana_depletion"), -0.25,
 								AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL),
-				"Decrease mana restoration rate").register());
+				"Decrease mana restoration rate").lang(MobEffect::getDescriptionId, "Mana Depletion").register());
 
 		MANA_EXPANSION = new SimpleEntry<>(GlimmeringTales.REGISTRATE.effect("mana_expansion",
 				() -> new GTEffect(MobEffectCategory.BENEFICIAL, 0xffffffff)
 						.addAttributeModifier(GTRegistries.MANA_REGEN, GlimmeringTales.loc("mana_expansion"), 0.25,
 								AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
-				"Increase max mana").register());
+				"Increase max mana").lang(MobEffect::getDescriptionId, "Mana Expansion").register());
 
 
 	}

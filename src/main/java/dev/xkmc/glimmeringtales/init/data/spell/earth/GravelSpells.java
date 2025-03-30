@@ -72,10 +72,7 @@ public class GravelSpells {
 						DoubleVariable.of("3")
 				),
 				List.of(
-						new DamageProcessor(
-								ctx.damage(), DMG,
-								true, true
-						),
+						new DamageProcessor(ctx.damage(), DMG, true, true),
 						SetDeltaProcessor.ZERO,
 						new EffectProcessor(
 								LCEffects.ARMOR_REDUCE,
@@ -132,16 +129,16 @@ public class GravelSpells {
 								SoundEvents.BREEZE_IDLE_GROUND,
 								DoubleVariable.of("1"),
 								DoubleVariable.of("0.7+rand(-0.5,0.2)+rand(-0.5,0.2)")
-						), null),
+						)),
 				new DelayedIterator(IntVariable.of("22"), IntVariable.of("2"),
 						new SoundInstance(
 								SoundEvents.GRAVEL_BREAK,
 								DoubleVariable.of("0.7"),
 								DoubleVariable.of("0.3+rand(-0.1,0.1)+rand(-0.1,0.1)")
-						), null),
+						)),
 
-				new DelayedIterator(IntVariable.of("18"), IntVariable.of("2"), damage, null),
-				new DelayedIterator(IntVariable.of("22"), IntVariable.of("2"), tick, null)
+				new DelayedIterator(IntVariable.of("18"), IntVariable.of("2"), damage),
+				new DelayedIterator(IntVariable.of("22"), IntVariable.of("2"), tick)
 		)).move(OffsetModifier.ABOVE);
 	}
 

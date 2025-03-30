@@ -5,7 +5,6 @@ import dev.xkmc.glimmeringtales.content.research.core.ResearchState;
 import dev.xkmc.glimmeringtales.content.research.logic.HexDirection;
 import dev.xkmc.glimmeringtales.content.research.render.HexStatus;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
-import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 

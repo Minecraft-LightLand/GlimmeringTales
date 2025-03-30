@@ -99,11 +99,11 @@ public class GTItems {
 			RUNE_THUNDER;
 
 	public static final VarHolder<SpellRuneItem>
-			HELL_MARK, LAVA_BURST, FLAME_DASH, SPARK_BURST,SOUL_BURST,
+			HELL_MARK, LAVA_BURST, FLAME_DASH, SPARK_BURST, SOUL_BURST,
 			WINTER_STORM, SNOW_TORNADO, ICY_FLASH,
 			STONE_BRIDGE, AMETHYST_PENETRATION, EARTHQUAKE, METEOR,
 			OCEAN_SHELTER, ILLUSORY_FIELD, DARK_RAIN,
-			THUNDERSTORM, CHARGE_BURST, THUNDER_SURGE;
+			THUNDERSTORM, CHARGE_BURST, THUNDER_SURGE, CHARGE_LINK;
 
 	public static final VarHolder<WandHandleItem>
 			WOOD_WAND, LIFE_WAND, GOLD_WAND, OCEAN_WAND,
@@ -459,6 +459,7 @@ public class GTItems {
 			THUNDERSTORM = spell("thunderstorm");
 			CHARGE_BURST = spell("charge_burst");
 			THUNDER_SURGE = spell("thunder_surge");
+			CHARGE_LINK = spell("charge_link");
 
 			WOOD_WAND = handle("wood_wand", 0.25f, 0.75f, "Wooden");
 			LIFE_WAND = handle("life_wand", 0.25f, 0.87f, "Bamboo");

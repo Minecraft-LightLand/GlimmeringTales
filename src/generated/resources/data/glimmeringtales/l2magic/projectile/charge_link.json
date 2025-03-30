@@ -1,0 +1,225 @@
+{
+  "filter": "ENEMY_NO_FAMILY",
+  "hit": [
+    {
+      "type": "l2magic:damage",
+      "damage": "5",
+      "damage_type": "glimmeringtales:charge_link",
+      "indirect": true,
+      "positioned": false
+    },
+    {
+      "type": "l2magic:cast_at",
+      "child": {
+        "type": "l2magic:variable",
+        "child": {
+          "type": "l2magic:variable",
+          "child": {
+            "type": "l2magic:variable",
+            "child": {
+              "type": "l2magic:delay",
+              "child": {
+                "type": "l2magic:processor",
+                "processors": [
+                  {
+                    "type": "l2magic:filtered",
+                    "action": [
+                      {
+                        "type": "l2magic:cast_at",
+                        "child": {
+                          "type": "l2magic:variable",
+                          "child": {
+                            "type": "l2magic:variable",
+                            "child": {
+                              "type": "l2magic:variable",
+                              "child": {
+                                "type": "l2magic:move",
+                                "child": {
+                                  "type": "l2magic:iterate_linear",
+                                  "alongDir": "step",
+                                  "alongOffset": "0",
+                                  "child": {
+                                    "type": "l2magic:particle",
+                                    "particle": "minecraft:end_rod",
+                                    "speed": "0"
+                                  },
+                                  "offset": [
+                                    0.0,
+                                    0.0,
+                                    0.0
+                                  ],
+                                  "startFromOrigin": false,
+                                  "step": "count"
+                                },
+                                "modifiers": [
+                                  {
+                                    "type": "l2magic:direction",
+                                    "x": "mx-PosX",
+                                    "y": "my-PosY",
+                                    "z": "mz-PosZ"
+                                  }
+                                ]
+                              },
+                              "name": "step",
+                              "variable": "dist/count"
+                            },
+                            "name": "count",
+                            "variable": "floor(dist*4.0)+1"
+                          },
+                          "name": "dist",
+                          "variable": "sqrt((mx-PosX)^2+(my-PosY)^2+(mz-PosZ)^2)"
+                        },
+                        "dir": "UP",
+                        "pos": "CENTER"
+                      },
+                      {
+                        "type": "l2magic:damage",
+                        "damage": "5",
+                        "damage_type": "glimmeringtales:charge_link",
+                        "indirect": true,
+                        "positioned": false
+                      },
+                      {
+                        "type": "l2magic:cast_at",
+                        "child": {
+                          "type": "l2magic:variable",
+                          "child": {
+                            "type": "l2magic:variable",
+                            "child": {
+                              "type": "l2magic:variable",
+                              "child": {
+                                "type": "l2magic:delay",
+                                "child": {
+                                  "type": "l2magic:processor",
+                                  "processors": [
+                                    {
+                                      "type": "l2magic:filtered",
+                                      "action": [
+                                        {
+                                          "type": "l2magic:cast_at",
+                                          "child": {
+                                            "type": "l2magic:variable",
+                                            "child": {
+                                              "type": "l2magic:variable",
+                                              "child": {
+                                                "type": "l2magic:variable",
+                                                "child": {
+                                                  "type": "l2magic:move",
+                                                  "child": {
+                                                    "type": "l2magic:iterate_linear",
+                                                    "alongDir": "step",
+                                                    "alongOffset": "0",
+                                                    "child": {
+                                                      "type": "l2magic:particle",
+                                                      "particle": "minecraft:end_rod",
+                                                      "speed": "0"
+                                                    },
+                                                    "offset": [
+                                                      0.0,
+                                                      0.0,
+                                                      0.0
+                                                    ],
+                                                    "startFromOrigin": false,
+                                                    "step": "count"
+                                                  },
+                                                  "modifiers": [
+                                                    {
+                                                      "type": "l2magic:direction",
+                                                      "x": "mx-PosX",
+                                                      "y": "my-PosY",
+                                                      "z": "mz-PosZ"
+                                                    }
+                                                  ]
+                                                },
+                                                "name": "step",
+                                                "variable": "dist/count"
+                                              },
+                                              "name": "count",
+                                              "variable": "floor(dist*4.0)+1"
+                                            },
+                                            "name": "dist",
+                                            "variable": "sqrt((mx-PosX)^2+(my-PosY)^2+(mz-PosZ)^2)"
+                                          },
+                                          "dir": "UP",
+                                          "pos": "CENTER"
+                                        },
+                                        {
+                                          "type": "l2magic:damage",
+                                          "damage": "5",
+                                          "damage_type": "glimmeringtales:charge_link",
+                                          "indirect": true,
+                                          "positioned": false
+                                        }
+                                      ],
+                                      "fallback": [],
+                                      "filter": {
+                                        "type": "glimmeringtales:invulnerability_frame",
+                                        "frame": "0"
+                                      }
+                                    }
+                                  ],
+                                  "selector": {
+                                    "type": "l2magic:ball",
+                                    "r": "8"
+                                  },
+                                  "target": "ENEMY_NO_FAMILY"
+                                },
+                                "tick": "3"
+                              },
+                              "name": "mz",
+                              "variable": "PosZ"
+                            },
+                            "name": "my",
+                            "variable": "PosY"
+                          },
+                          "name": "mx",
+                          "variable": "PosX"
+                        },
+                        "dir": "UP",
+                        "pos": "CENTER"
+                      }
+                    ],
+                    "fallback": [],
+                    "filter": {
+                      "type": "glimmeringtales:invulnerability_frame",
+                      "frame": "0"
+                    }
+                  }
+                ],
+                "selector": {
+                  "type": "l2magic:ball",
+                  "r": "8"
+                },
+                "target": "ENEMY_NO_FAMILY"
+              },
+              "tick": "2"
+            },
+            "name": "mz",
+            "variable": "PosZ"
+          },
+          "name": "my",
+          "variable": "PosY"
+        },
+        "name": "mx",
+        "variable": "PosX"
+      },
+      "dir": "UP",
+      "pos": "CENTER"
+    }
+  ],
+  "motion": {
+    "type": "l2magic:simple",
+    "friction": "0",
+    "gravity": "0"
+  },
+  "params": [],
+  "size": {
+    "fullBlockCollision": false,
+    "size": "0.5"
+  },
+  "tick": {
+    "type": "l2magic:particle",
+    "particle": "minecraft:end_rod",
+    "speed": "0"
+  }
+}

@@ -61,16 +61,12 @@ public class NetherrackSpells {
 						new RingRandomIterator(
 								DoubleVariable.ZERO,
 								DoubleVariable.of("2.5"),
-								DoubleVariable.ZERO,
-								DoubleVariable.of("360"),
 								IntVariable.of("3"),
 								new SimpleParticleInstance(
 										ParticleTypes.FLAME,
 										DoubleVariable.of("0.3")
-								).move(SetDirectionModifier.of("rand(-0.2,0.2)", "1", "rand(-0.2,0.2)")),
-								null
-						),
-						null
+								).move(SetDirectionModifier.of("rand(-0.2,0.2)", "1", "rand(-0.2,0.2)"))
+						)
 				)
 		)).move(OffsetModifier.of("0", "0.55", "0"));
 	}

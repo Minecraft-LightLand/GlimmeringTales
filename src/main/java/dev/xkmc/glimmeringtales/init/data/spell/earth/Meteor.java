@@ -78,8 +78,6 @@ public class Meteor {
 				new RingRandomIterator(
 						DoubleVariable.of("0"),
 						DoubleVariable.of("2"),
-						DoubleVariable.of("0"),
-						DoubleVariable.of("360"),
 						IntVariable.of("500"),
 						new RandomVariableLogic("r", 2,
 								new DustParticleInstance(
@@ -88,22 +86,15 @@ public class Meteor {
 										DoubleVariable.of("0.2+r1"),
 										IntVariable.of("40")
 								).move(RotationModifier.of("0", "45*r0"))
-						), null
+						)
 				).move(SetDirectionModifier.of("1", "0", "0")),
 				new ProcessorEngine(
 						SelectionType.ENEMY,
 						new ApproxBallSelector(DoubleVariable.of("8")),
 						List.of(
 								new DamageProcessor(ctx.damage(), DoubleVariable.of("20"), true, true),
-								new PropertyProcessor(
-										PropertyProcessor.Type.IGNITE,
-										IntVariable.of("200")
-								),
-								new KnockBackProcessor(
-										DoubleVariable.of("2"),
-										DoubleVariable.of("45"),
-										DoubleVariable.ZERO
-								)
+								PropertyProcessor.Type.IGNITE.of("200"),
+								KnockBackProcessor.of("2", "45", "0")
 						)
 				),
 				new SoundInstance(
@@ -118,15 +109,13 @@ public class Meteor {
 		var shadow = new RingRandomIterator(
 				DoubleVariable.ZERO,
 				DoubleVariable.of("1.5"),
-				DoubleVariable.ZERO,
-				DoubleVariable.of("360"),
 				IntVariable.of("100"),
 				new DustParticleInstance(
 						ColorVariable.Static.of(0x000000),
 						DoubleVariable.of("1"),
 						DoubleVariable.ZERO,
 						IntVariable.of("55")
-				), null
+				)
 		);
 		return new ListLogic(List.of(shadow, new CustomProjectileShoot(DoubleVariable.of("0.4"), ctx.proj,
 				IntVariable.of("200"), false, false, Map.of()

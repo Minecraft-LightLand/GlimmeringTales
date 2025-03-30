@@ -7,7 +7,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 
-public class BlossomPopFruit extends PopFruit{
+public class BlossomPopFruit extends PopFruit {
 
 	public BlossomPopFruit(Properties properties) {
 		super(properties);

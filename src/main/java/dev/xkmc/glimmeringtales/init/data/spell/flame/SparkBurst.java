@@ -52,7 +52,7 @@ public class SparkBurst {
 		return ProjectileConfig.builder(SelectionType.ENEMY_NO_FAMILY)
 				.tick(new SimpleParticleInstance(ParticleTypes.FLAME, DoubleVariable.ZERO))
 				.hit(new DamageProcessor(ctx.damage(), DMG, true, true))
-				.hit(new PropertyProcessor(PropertyProcessor.Type.IGNITE, IntVariable.of("100")))
+				.hit(PropertyProcessor.Type.IGNITE.of("100"))
 				.size(DoubleVariable.of("0.25"))
 				.motion(new SimpleMotion(DoubleVariable.of("0.01"), DoubleVariable.ZERO))
 				.build();

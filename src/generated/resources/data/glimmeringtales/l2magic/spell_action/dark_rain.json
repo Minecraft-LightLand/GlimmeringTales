@@ -37,9 +37,9 @@
           ]
         },
         "count": "20",
-        "maxAngle": "360",
+        "maxAngle": "180",
         "maxRadius": "12",
-        "minAngle": "0",
+        "minAngle": "-180",
         "minRadius": "0"
       }
     ]

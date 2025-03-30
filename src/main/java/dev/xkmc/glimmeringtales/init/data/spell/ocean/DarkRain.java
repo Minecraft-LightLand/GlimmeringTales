@@ -13,7 +13,6 @@ import dev.xkmc.l2magic.content.engine.iterator.RingRandomIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
-import dev.xkmc.l2magic.content.engine.particle.ParticleInstance;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
@@ -27,10 +26,7 @@ import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
 import dev.xkmc.l2magic.content.entity.engine.CustomProjectileShoot;
 import dev.xkmc.l2magic.content.entity.motion.SimpleMotion;
-import dev.xkmc.l2magic.content.particle.engine.CustomParticleInstance;
-import dev.xkmc.l2magic.content.particle.engine.ParticleRenderData;
 import dev.xkmc.l2magic.init.registrate.EngineRegistry;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageEffects;
 import net.minecraft.world.damagesource.DamageType;
@@ -76,8 +72,6 @@ public class DarkRain {
 				new RingRandomIterator(
 						DoubleVariable.ZERO,
 						DoubleVariable.of("12"),
-						DoubleVariable.ZERO,
-						DoubleVariable.of("360"),
 						IntVariable.of("20"),
 						new CustomProjectileShoot(
 								DoubleVariable.of("rand(0.4,0.5)"),
@@ -88,7 +82,7 @@ public class DarkRain {
 						).move(
 								OffsetModifier.of("0", "7", "0"),
 								SetDirectionModifier.of("0", "-1", "0")
-						), null
+						)
 				)
 		));
 

@@ -84,10 +84,8 @@ public class SnowSpells {
 												IntVariable.of("100"),
 												false, false,
 												Map.of()
-										).move(new RotationModifier(
-												DoubleVariable.of(360 / theta + "*j+r0*360"),
-												DoubleVariable.of(90 / phi + "*(i+0.5)")
-										)), "j"
+										).move(RotationModifier.of(360 / theta + "*j+r0*360", 90 / phi + "*(i+0.5)")),
+										"j"
 								)
 						), "i"
 				).move(

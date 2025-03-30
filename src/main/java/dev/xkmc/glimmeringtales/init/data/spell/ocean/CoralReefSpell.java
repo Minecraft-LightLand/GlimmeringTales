@@ -98,7 +98,7 @@ public class CoralReefSpell {
 												new RandomDirModifier(),
 												ForwardOffsetModifier.of("-3")
 										)))
-						), null)
+						))
 		));
 
 	}
