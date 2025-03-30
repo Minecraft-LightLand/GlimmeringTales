@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.flame;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -14,6 +15,7 @@ import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
+import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
@@ -55,14 +57,15 @@ public class SoulBurst {
 	public static ProjectileConfig proj(NatureSpellBuilder ctx) {
 		return ProjectileConfig.builder(SelectionType.ENEMY_NO_FAMILY)
 				.tick(new SimpleParticleInstance(ParticleTypes.SOUL_FIRE_FLAME, DoubleVariable.ZERO))
-				.hit(new DamageProcessor(ctx.damage(), DMG, true, true))
+				.hit(new FilteredProcessor(new InvulFrameFilter(IntVariable.of("5")),
+						List.of(new DamageProcessor(ctx.damage(), DMG, true, true)), List.of()))
 				.hit(new EffectProcessor(LCEffects.FLAME, IntVariable.of("100"), IntVariable.of("1"), false, false))
 				.size(DoubleVariable.of("0.25"))
 				.motion(new SimpleMotion(DoubleVariable.of("0.01"), DoubleVariable.ZERO))
 				.build();
 	}
 
-	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
+	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {//TODO 10 tick delay
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.FIRECHARGE_USE,

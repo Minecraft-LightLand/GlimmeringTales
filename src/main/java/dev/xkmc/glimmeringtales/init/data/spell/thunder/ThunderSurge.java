@@ -23,7 +23,7 @@ import java.util.List;
 public class ThunderSurge {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("thunder_surge")).focusAndCost(180, 1800).mob(16, 1)
+			.build(GlimmeringTales.loc("thunder_surge")).focusAndCost(160, 1280).mob(16, 1)
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.THUNDER_SURGE.get(), 2002,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
 			).lang("Thunder Surge").desc(
@@ -42,7 +42,7 @@ public class ThunderSurge {
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
 				new LightningInstance(STRIKE)
-						.circular(DoubleVariable.of("3"), DoubleVariable.of("7"), false, null,
+						.circular("3", "2", "7", null,
 								BlockTestCondition.Type.BLOCKS_MOTION.get().invert(),
 								BlockTestCondition.Type.BLOCKS_MOTION.get().move(OffsetModifier.BELOW)
 						)

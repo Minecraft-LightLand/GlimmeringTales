@@ -49,7 +49,7 @@ public class PowderSnowSpell {
 					SpellTooltipData.damageAndEffect()
 			).graph(ResearchBonus.small3(21), "S<->LEFO");
 
-	private static final DoubleVariable DMG = DoubleVariable.of("4");
+	private static final DoubleVariable DMG = DoubleVariable.of("2");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		double vsp = 0.5;

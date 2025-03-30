@@ -34,7 +34,7 @@
       }
     },
     "delayPerBlock": "0",
-    "plane": true,
+    "height": "0",
     "range": "3"
   },
   "cast_type": "INSTANT",

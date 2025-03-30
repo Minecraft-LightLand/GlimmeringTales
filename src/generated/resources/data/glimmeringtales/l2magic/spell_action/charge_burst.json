@@ -65,8 +65,8 @@
           }
         },
         "delayPerBlock": "2",
-        "plane": false,
-        "range": "6"
+        "height": "3",
+        "range": "8"
       }
     ]
   },

@@ -1,7 +1,7 @@
 {
-  "cost": 100,
+  "cost": 80,
   "elem": "glimmeringtales:ocean",
-  "focus": 40,
+  "focus": 20,
   "graph": "glimmeringtales:coral_reef",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:sponge",

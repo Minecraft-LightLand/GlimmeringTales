@@ -96,11 +96,8 @@ public class DripstoneSpells {
 						IntVariable.of("20"),
 						false, true,
 						Map.of()
-				).move(OffsetModifier.of("0", "-0.45", "0"),
-						SetDirectionModifier.UP).circular(
-						DoubleVariable.of("2"),
-						DoubleVariable.of("2"),
-						false, null,
+				).move(OffsetModifier.of("0", "-0.45", "0"), SetDirectionModifier.UP
+				).circular("2", "2", "2", null,
 						new OrPredicate(List.of(
 								SurfaceBelowCondition.full(),
 								BlockMatchCondition.of(Blocks.POINTED_DRIPSTONE)

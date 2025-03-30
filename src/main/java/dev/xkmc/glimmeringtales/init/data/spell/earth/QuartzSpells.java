@@ -26,7 +26,7 @@ import java.util.List;
 public class QuartzSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("quartz")).focusAndCost(100, 400)
+			.build(GlimmeringTales.loc("quartz")).focusAndCost(60, 180)
 			.block(QuartzSpells::gen, GTItems.RUNE_QUARTZ, RuneBlock::of,
 					(b, e) -> b.add(GTTagGen.QUARTZ, BlockSpell.of(e)))
 			.lang("Crystalization").desc(
@@ -44,10 +44,7 @@ public class QuartzSpells {
 				),
 				new SetBlock(GTItems.FAKE_GLASS.getDefaultState()),
 				new ScheduleTick(IntVariable.of("rand(180,220)"), GTItems.FAKE_GLASS.get())
-		)).circular(
-				DoubleVariable.of("4"),
-				DoubleVariable.ZERO,
-				false, "i",
+		)).circular("4", "4", "0", "i",
 				BooleanVariable.of("abs(i_r-3)<0.5"),
 				BlockTestCondition.Type.REPLACEABLE.get()
 		).move(OffsetModifier.ABOVE);

@@ -2,11 +2,21 @@
   "filter": "ENEMY_NO_FAMILY",
   "hit": [
     {
-      "type": "l2magic:damage",
-      "damage": "6",
-      "damage_type": "glimmeringtales:soul_burst",
-      "indirect": true,
-      "positioned": true
+      "type": "l2magic:filtered",
+      "action": [
+        {
+          "type": "l2magic:damage",
+          "damage": "6",
+          "damage_type": "glimmeringtales:soul_burst",
+          "indirect": true,
+          "positioned": true
+        }
+      ],
+      "fallback": [],
+      "filter": {
+        "type": "glimmeringtales:invulnerability_frame",
+        "frame": "5"
+      }
     },
     {
       "type": "l2magic:effect",

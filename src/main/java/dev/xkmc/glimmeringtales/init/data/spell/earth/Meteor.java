@@ -41,7 +41,7 @@ import java.util.Map;
 public class Meteor {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("meteor")).focusAndCost(160, 1000)
+			.build(GlimmeringTales.loc("meteor")).focusAndCost(80, 500)
 			.damageExplosion().projectile(Meteor::proj)
 			.spell(e -> new SpellAction(starfall(e), GTItems.METEOR.get(), 2010,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))
@@ -90,9 +90,9 @@ public class Meteor {
 				).move(SetDirectionModifier.of("1", "0", "0")),
 				new ProcessorEngine(
 						SelectionType.ENEMY,
-						new ApproxBallSelector(DoubleVariable.of("8")),
+						new ApproxBallSelector(DoubleVariable.of("12")),
 						List.of(
-								new DamageProcessor(ctx.damage(), DoubleVariable.of("20"), true, true),
+								new DamageProcessor(ctx.damage(), DoubleVariable.of("30"), true, true),
 								PropertyProcessor.Type.IGNITE.of("200"),
 								KnockBackProcessor.of("2", "45", "0")
 						)

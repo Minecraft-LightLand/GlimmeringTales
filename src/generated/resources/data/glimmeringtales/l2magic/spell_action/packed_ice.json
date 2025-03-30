@@ -37,7 +37,7 @@
         },
         "delay": "2",
         "index": "i",
-        "step": "5"
+        "step": "6"
       },
       {
         "type": "l2magic:block_in_range",
@@ -105,8 +105,8 @@
           }
         },
         "delayPerBlock": "2",
-        "plane": false,
-        "range": "5"
+        "height": "3",
+        "range": "6"
       },
       {
         "type": "l2magic:move",

@@ -1,7 +1,7 @@
 {
-  "cost": 1200,
+  "cost": 960,
   "elem": "glimmeringtales:thunder",
-  "focus": 160,
+  "focus": 120,
   "graph": "glimmeringtales:thunderstorm",
   "maxConsumeTick": 0,
   "mob": {

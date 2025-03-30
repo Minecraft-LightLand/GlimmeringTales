@@ -24,7 +24,7 @@ import java.util.List;
 public class StoneSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("stone")).focusAndCost(40, 120)
+			.build(GlimmeringTales.loc("stone")).focusAndCost(20, 60)
 			.block(StoneSpells::gen, GTItems.RUNE_STONE, RuneBlock::self,
 					(b, e) -> b.add(Tags.Blocks.STONES, BlockSpell.of(e)),
 					(b, e) -> b.add(GTItems.FAKE_STONE, BlockSpell.of(e))
@@ -43,8 +43,7 @@ public class StoneSpells {
 				),
 				new SetBlock(GTItems.FAKE_STONE.getDefaultState()),
 				new ScheduleTick(IntVariable.of("rand(180,220)"), GTItems.FAKE_STONE.get())
-		)).circular(
-				DoubleVariable.of("3"), DoubleVariable.ZERO, true, null,
+		)).circular("3", "0", "0", null,
 				BlockTestCondition.Type.REPLACEABLE.get());
 	}
 

@@ -15,7 +15,7 @@
           "processors": [
             {
               "type": "l2magic:damage",
-              "damage": "6",
+              "damage": "8",
               "damage_type": "glimmeringtales:blue_ice",
               "indirect": true,
               "positioned": false
@@ -37,7 +37,7 @@
         },
         "delay": "2",
         "index": "i",
-        "step": "5"
+        "step": "7"
       },
       {
         "type": "l2magic:block_in_range",
@@ -105,8 +105,8 @@
           }
         },
         "delayPerBlock": "2",
-        "plane": false,
-        "range": "5"
+        "height": "3",
+        "range": "7"
       },
       {
         "type": "l2magic:move",

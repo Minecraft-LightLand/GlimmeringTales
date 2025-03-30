@@ -31,7 +31,7 @@ import java.util.List;
 public class NetherrackSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("netherrack")).focusAndCost(40, 100)
+			.build(GlimmeringTales.loc("netherrack")).focusAndCost(30, 90)
 			.damageFire()
 			.block(NetherrackSpells::gen, GTItems.RUNE_NETHERRACK, RuneBlock::of,
 					(b, e) -> b.add(Blocks.NETHERRACK, BlockSpell.of(e)))

@@ -44,12 +44,12 @@ public class IceSpells {
 	private static final DoubleVariable PACK_DMG = DoubleVariable.of("4");
 	private static final IntVariable PACK_DUR = IntVariable.of("200");
 
-	private static final DoubleVariable BLUE_DMG = DoubleVariable.of("6");
+	private static final DoubleVariable BLUE_DMG = DoubleVariable.of("8");
 	private static final IntVariable BLUE_DUR = IntVariable.of("300");
 
 	public static final NatureSpellBuilder ICE = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("ice")).focusAndCost(40, 200).damageFreeze()
-			.block(ctx -> gen(ctx, ICE_DMG, ICE_DUR), GTItems.RUNE_ICE, RuneBlock::liquid,
+			.build(GlimmeringTales.loc("ice")).focusAndCost(20, 100).damageFreeze()
+			.block(ctx -> gen(ctx, ICE_DMG, ICE_DUR, "5", "3"), GTItems.RUNE_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.ICE, BlockSpell.of(e)),
 					(b, e) -> b.add(Blocks.FROSTED_ICE, BlockSpell.of(e))
 			).lang("Freeze").desc(
@@ -59,8 +59,8 @@ public class IceSpells {
 			).graph(ResearchBonus.small3(24), "ST<->LEFO");
 
 	public static final NatureSpellBuilder PACK_ICE = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("packed_ice")).focusAndCost(50, 300).damageFreeze()
-			.block(ctx -> gen(ctx, PACK_DMG, PACK_DUR), GTItems.RUNE_PACKED_ICE, RuneBlock::liquid,
+			.build(GlimmeringTales.loc("packed_ice")).focusAndCost(30, 150).damageFreeze()
+			.block(ctx -> gen(ctx, PACK_DMG, PACK_DUR, "6", "3"), GTItems.RUNE_PACKED_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.PACKED_ICE, BlockSpell.of(e)))
 			.lang("Freeze II").desc(
 					"[Block] Freeze nearby water and entity",
@@ -69,8 +69,8 @@ public class IceSpells {
 			).graph(ICE);
 
 	public static final NatureSpellBuilder BLUE_ICE = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("blue_ice")).focusAndCost(60, 400).damageFreeze()
-			.block(ctx -> gen(ctx, BLUE_DMG, BLUE_DUR), GTItems.RUNE_BLUE_ICE, RuneBlock::liquid,
+			.build(GlimmeringTales.loc("blue_ice")).focusAndCost(40, 200).damageFreeze()
+			.block(ctx -> gen(ctx, BLUE_DMG, BLUE_DUR, "7", "3"), GTItems.RUNE_BLUE_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.BLUE_ICE, BlockSpell.of(e)))
 			.lang("Freeze III").desc(
 					"[Block] Freeze nearby water and entity",
@@ -78,8 +78,7 @@ public class IceSpells {
 					SpellTooltipData.damageAndEffect()
 			).graph(ICE);
 
-	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx, DoubleVariable dmg, IntVariable dur) {
-		var range = "5";
+	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx, DoubleVariable dmg, IntVariable dur, String range, String height) {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.POWDER_SNOW_PLACE,
@@ -102,8 +101,8 @@ public class IceSpells {
 								)
 						), "i"
 				),
-				new SetBlock(Blocks.FROSTED_ICE.defaultBlockState()).circular(
-						DoubleVariable.of(range), DoubleVariable.of("2"), false, null,
+				new SetBlock(Blocks.FROSTED_ICE.defaultBlockState()
+				).circular(range, height, "2", null,
 						new OrPredicate(List.of(
 								BlockMatchCondition.of(Blocks.FROSTED_ICE),
 								new AndPredicate(List.of(

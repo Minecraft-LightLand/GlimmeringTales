@@ -1,7 +1,7 @@
 {
-  "cost": 640,
+  "cost": 480,
   "elem": "glimmeringtales:earth",
-  "focus": 160,
+  "focus": 80,
   "graph": "glimmeringtales:earthquake",
   "maxConsumeTick": 0,
   "mob": {

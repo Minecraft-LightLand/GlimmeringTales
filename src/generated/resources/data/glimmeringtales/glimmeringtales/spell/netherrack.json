@@ -1,7 +1,7 @@
 {
-  "cost": 100,
+  "cost": 90,
   "elem": "glimmeringtales:flame",
-  "focus": 40,
+  "focus": 30,
   "graph": "glimmeringtales:netherrack",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:netherrack",

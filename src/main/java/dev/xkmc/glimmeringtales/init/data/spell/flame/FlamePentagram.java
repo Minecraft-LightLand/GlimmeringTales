@@ -43,7 +43,7 @@ import java.util.List;
 public class FlamePentagram {
 
 	public static final NatureSpellBuilder HELL_MARK = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 400).mob(16, 1)
+			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 500).mob(16, 1)
 			.damageFire()
 			.spell(ctx -> new SpellAction(flameBurst(ctx),
 					GTItems.HELL_MARK.asItem(), 200,

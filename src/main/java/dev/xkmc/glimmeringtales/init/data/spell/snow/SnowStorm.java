@@ -43,7 +43,7 @@ import java.util.List;
 public class SnowStorm {
 
 	public static final NatureSpellBuilder WINTER_STORM = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("winter_storm")).focusAndCost(2, 5).mob(5, 1).damageFreeze()
+			.build(GlimmeringTales.loc("winter_storm")).focusAndCost(2, 6).mob(5, 1).damageFreeze()
 			.spell(ctx -> new SpellAction(winterStorm(ctx, 4, 1.5, 1),
 					GTItems.WINTER_STORM.asItem(), 100,
 					SpellCastType.CONTINUOUS, SpellTriggerType.SELF_POS

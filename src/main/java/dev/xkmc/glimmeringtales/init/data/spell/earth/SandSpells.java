@@ -41,7 +41,7 @@ import java.util.List;
 public class SandSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("sand")).focusAndCost(60, 240)
+			.build(GlimmeringTales.loc("sand")).focusAndCost(60, 24)
 			.damageCustom(s -> new DamageType(s, 0.1f),
 					"%s is buried by sandstorm", "%s is buried by %s's sandstorm",
 					DamageTypeTags.IS_PROJECTILE)
@@ -53,7 +53,7 @@ public class SandSpells {
 					SpellTooltipData.damageAndEffect()
 			).graph(ResearchBonus.small2(7), "E->SF");
 
-	private static final DoubleVariable DMG = DoubleVariable.of("4");
+	private static final DoubleVariable DMG = DoubleVariable.of("2");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		double vsp = 0.5;

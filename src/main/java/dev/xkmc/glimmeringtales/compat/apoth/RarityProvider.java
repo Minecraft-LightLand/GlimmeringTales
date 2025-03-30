@@ -31,7 +31,7 @@ import java.util.function.UnaryOperator;
 
 public class RarityProvider extends DynamicRegistryProvider<LootRarity> {
 	public RarityProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-		super(new PackOutput(output.getOutputFolder().getParent().getParent().getParent().resolve("ignored/")),
+		super(new PackOutput(output.getOutputFolder().resolve("../../../ignored/")),
 				registries, RarityRegistry.INSTANCE);
 	}
 

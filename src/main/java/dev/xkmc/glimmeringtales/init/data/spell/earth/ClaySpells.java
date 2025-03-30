@@ -24,7 +24,7 @@ import java.util.List;
 public class ClaySpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("clay")).focusAndCost(60, 240)
+			.build(GlimmeringTales.loc("clay")).focusAndCost(60, 180)
 			.block(ClaySpells::gen, GTItems.RUNE_CLAY, RuneBlock::of,
 					(b, e) -> b.add(Blocks.CLAY, BlockSpell.of(e)),
 					(b, e) -> b.add(GTItems.CLAY_CARPET, BlockSpell.of(e))
@@ -43,10 +43,7 @@ public class ClaySpells {
 				),
 				new SetBlock(GTItems.CLAY_CARPET.getDefaultState()),
 				new ScheduleTick(IntVariable.of("rand(80,120)"), GTItems.CLAY_CARPET.get())
-		)).circular(
-				DoubleVariable.of("4"),
-				DoubleVariable.of("2"),
-				false, null,
+		)).circular("4", "2", "2", null,
 				SurfaceBelowCondition.full(),
 				BlockTestCondition.Type.REPLACEABLE.get()
 		);

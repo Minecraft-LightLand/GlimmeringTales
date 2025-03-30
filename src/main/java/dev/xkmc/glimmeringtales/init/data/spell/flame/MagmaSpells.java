@@ -24,7 +24,7 @@ import java.util.List;
 public class MagmaSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("magma")).focusAndCost(40, 160)
+			.build(GlimmeringTales.loc("magma")).focusAndCost(40, 120)
 			.block(MagmaSpells::gen, GTItems.RUNE_MAGMA, RuneBlock::of,
 					(b, e) -> b.add(Blocks.MAGMA_BLOCK, BlockSpell.of(e)),
 					(b, e) -> b.add(GTTagGen.FAKE_MAGMA, BlockSpell.of(e))
@@ -41,8 +41,8 @@ public class MagmaSpells {
 						DoubleVariable.of("1"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
-				new MeltBlockInstance(IntVariable.of("rand(180,220)")).circular(
-						DoubleVariable.of("6"), DoubleVariable.of("2"), false, null,
+				new MeltBlockInstance(IntVariable.of("rand(180,220)")
+				).circular("6", "3", "2", null,
 						BlockTestCondition.Type.REPLACEABLE.get().move(OffsetModifier.ABOVE))
 		));
 
