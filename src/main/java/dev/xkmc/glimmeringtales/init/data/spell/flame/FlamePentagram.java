@@ -55,7 +55,7 @@ public class FlamePentagram {
 			).graph(ResearchBonus.small4(22), "E->SF", "L->OT", "SO->E", "FT->L");
 
 	public static final NatureSpellBuilder LAVA_BURST = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(5, 20, 30)
+			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(4, 20, 30)
 			.damageExplosion()
 			.spell(ctx -> new SpellAction(earthquake(ctx),
 					GTItems.LAVA_BURST.asItem(), 300,

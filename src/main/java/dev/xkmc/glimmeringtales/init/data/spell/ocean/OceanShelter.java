@@ -42,7 +42,7 @@ import java.util.Map;
 public class OceanShelter {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.OCEAN
-			.build(GlimmeringTales.loc("ocean_shelter")).focusAndCost(2, 10).mob(6, 1)
+			.build(GlimmeringTales.loc("ocean_shelter")).focusAndCost(2, 12).mob(6, 1)
 			.damageCustom(msg -> new DamageType(msg, 0.1f, DamageEffects.DROWNING),
 					"%s is drowned by magical bubbles",
 					"%s is drowned by %s with magical bubbles",
@@ -88,7 +88,7 @@ public class OceanShelter {
 				.build();
 	}
 
-	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {//TODO 10 tick delay
+	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.BUBBLE_COLUMN_BUBBLE_POP,

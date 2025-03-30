@@ -8,6 +8,9 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
+import dev.xkmc.l2magic.content.engine.logic.PredicateLogic;
+import dev.xkmc.l2magic.content.engine.modifier.Dir2NormalModifier;
+import dev.xkmc.l2magic.content.engine.modifier.ForwardOffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
@@ -19,11 +22,15 @@ import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
+import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
 import dev.xkmc.l2magic.content.entity.engine.CustomProjectileShoot;
 import dev.xkmc.l2magic.content.entity.motion.SimpleMotion;
+import dev.xkmc.l2magic.content.particle.engine.CustomParticleInstance;
+import dev.xkmc.l2magic.content.particle.engine.RenderTypePreset;
+import dev.xkmc.l2magic.content.particle.engine.SimpleParticleData;
 import dev.xkmc.l2magic.init.registrate.EngineRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -37,7 +44,7 @@ import java.util.Map;
 public class SparkBurst {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("spark_burst")).focusAndCost(2, 10).mob(12, 1)
+			.build(GlimmeringTales.loc("spark_burst")).focusAndCost(2, 12).mob(12, 1)
 			.damageVanilla(() -> new DamageType("onFire", 0, DamageEffects.BURNING), DamageTypeTags.IS_FIRE, DamageTypeTags.BYPASSES_COOLDOWN)
 			.projectile(SparkBurst::proj)
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.SPARK_BURST.get(),
@@ -61,7 +68,32 @@ public class SparkBurst {
 				.build();
 	}
 
-	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {//TODO 10 tick delay
+	public static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
+		return new ListLogic(List.of(
+				new CustomParticleInstance(
+						DoubleVariable.of("-0.1"),
+						DoubleVariable.of("0.05"),
+						IntVariable.of("10"),
+						false,
+						SimpleMotion.ZERO,
+						new SimpleParticleData(
+								RenderTypePreset.LIT,
+								ParticleTypes.FLAME
+						)
+				).move(
+						new Dir2NormalModifier(),
+						RotationModifier.of("TickUsing*122"),
+						ForwardOffsetModifier.of("1")
+				),
+				new PredicateLogic(
+						BooleanVariable.of("TickUsing>=10"),
+						actual(ctx),
+						null
+				)
+		)).move(OffsetModifier.of("0", "-0.2", "0"));
+	}
+
+	public static ConfiguredEngine<?> actual(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
 				new SoundInstance(
 						SoundEvents.FIRECHARGE_USE,
