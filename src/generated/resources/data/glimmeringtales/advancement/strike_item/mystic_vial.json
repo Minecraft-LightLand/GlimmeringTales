@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mystic_pop_fruit": {
+      "conditions": {
+        "items": [
+          {
+            "items": "glimmeringtales:mystic_pop_fruit"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "glimmeringtales:mystic_vial"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mystic_pop_fruit"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "glimmeringtales:mystic_vial"
+    ]
+  }
+}

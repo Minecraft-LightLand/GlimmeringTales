@@ -18,7 +18,7 @@ public class GTEffects {
 	public static final SimpleEntry<MobEffect> MANA_DEPLETION;
 	public static final SimpleEntry<MobEffect> MANA_EXPANSION;
 	public static final PotionBuilder BUILDER;
-	public static final Holder<Potion> BASE, LONG, STRONG;
+	public static final Holder<Potion> BASE, LONG, STRONG, MYSTIC;
 
 	static {
 		MANA_RECOVERY = new SimpleEntry<>(GlimmeringTales.REGISTRATE.effect("mana_recovery",
@@ -46,6 +46,7 @@ public class GTEffects {
 		BASE = BUILDER.regPotion("mana_recovery", "mana_recovery", MANA_RECOVERY, Potions.AWKWARD, PopFruitType.POP_FRUIT, 500, 0);
 		LONG = BUILDER.regPotion("long_mana_recovery", "mana_recovery", MANA_RECOVERY, BASE, PopFruitType.BLOSSOM_POP_FRUIT, 1000, 0);
 		STRONG = BUILDER.regPotion("strong_mana_recovery", "mana_recovery", MANA_RECOVERY, BASE, PopFruitType.OCEAN_POP_FRUIT, 500, 1);
+		MYSTIC = BUILDER.regPotion("mystic_mana_recovery", "mana_recovery", MANA_RECOVERY, STRONG, PopFruitType.MYSTIC_POP_FRUIT, 500, 2);
 		GlimmeringTales.REGISTRATE.addRegisterCallback(Registries.ITEM, () -> BUILDER.regTab(GTItems.TAB.key()));
 	}
 

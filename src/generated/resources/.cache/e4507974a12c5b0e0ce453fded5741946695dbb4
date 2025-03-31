@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-31T22:00:02.005521	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Custom Registrate Provider]
+// 1.21.1	2025-03-31T23:16:05.682371	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Custom Registrate Provider]
 f628b87d75a2e2a6c5157d17ef22b26cb8b260eb assets/glimmeringtales/blockstates/bamboo.json
 ce8cfd4e2bab2eed8783654db155ae082f8b8aa8 assets/glimmeringtales/blockstates/blossom_pop_fruit.json
 4132de47f0c0e042aadf759876c94ea0a1d95cd2 assets/glimmeringtales/blockstates/clay_carpet.json
@@ -8,6 +8,7 @@ dd5961b34518b83da6777b460a9272a73e5bbd2a assets/glimmeringtales/blockstates/crys
 832212eea00793a748089abd232b3a058c68515c assets/glimmeringtales/blockstates/magma_block_for_netherrack.json
 ddfce448f766edb3356cc5dd2284a9a7cfc6a3f5 assets/glimmeringtales/blockstates/magma_block_for_stone.json
 9eed7beff346500eaa4cbd3a53e6b3e7032ee85b assets/glimmeringtales/blockstates/meteor.json
+ad95f776d4d1a5189016728c4753ee0788facdd7 assets/glimmeringtales/blockstates/mystic_pop_fruit.json
 65fa743f5fd361206cd99cb6d2df555f8413a609 assets/glimmeringtales/blockstates/ocean_pop_fruit.json
 661fd2e456e6f94f4540b96cce138fa65fc53a8a assets/glimmeringtales/blockstates/pop_fruit.json
 8bdb4aaf1601a44f0f95e05ccb2f415d9b50b6c0 assets/glimmeringtales/blockstates/ritual_altar.json
@@ -16,8 +17,8 @@ fdbebae44714d98419aec779d5098b1c641a6e87 assets/glimmeringtales/blockstates/ritu
 829f2932a3b6a596774b14a6e51a27c45e17fc4b assets/glimmeringtales/blockstates/struck_leaves.json
 9d9680dcac3f408484cc24fce5ff36d4e2670ce5 assets/glimmeringtales/blockstates/struck_log.json
 036df3f7ec015fa7ef10d874f61140a24008c2ae assets/glimmeringtales/blockstates/struck_sapling.json
-ede49b91f57a58f3645e312aba0b144aa52cc209 assets/glimmeringtales/lang/en_ud.json
-9daf6682c91edf013a1ec94239b49bd8f82f9f81 assets/glimmeringtales/lang/en_us.json
+0df02ff9ca92264bf8d782256ecbc933c2ada6bc assets/glimmeringtales/lang/en_ud.json
+dfd33ef1944c059513dccbcb438fce5fde26c037 assets/glimmeringtales/lang/en_us.json
 15f496a19c47d83933b652959371e73ad2143d9c assets/glimmeringtales/models/block/bamboo.json
 7d7429b27b786a3d73db3a0e927d746bb37580bf assets/glimmeringtales/models/block/blossom_pop_fruit_0.json
 f0b10f2273a6976a697b57cb9d09fff0de8696fb assets/glimmeringtales/models/block/blossom_pop_fruit_1.json
@@ -37,6 +38,10 @@ fcb7bc1fb239502ef48f4db345d50891a2941b31 assets/glimmeringtales/models/block/cry
 01f2186301943c779d1d3fa620e406f18e568ab9 assets/glimmeringtales/models/block/magma_block_for_netherrack.json
 01f2186301943c779d1d3fa620e406f18e568ab9 assets/glimmeringtales/models/block/magma_block_for_stone.json
 5c03a70fa38ba18255214f3d5d7ccc5c3a89ae78 assets/glimmeringtales/models/block/meteor.json
+af18ea15c7c9ad7b7441a071f1beb705f35ef15d assets/glimmeringtales/models/block/mystic_pop_fruit_0.json
+06ca07236bf01fbd72a99261688d57d8c1973adf assets/glimmeringtales/models/block/mystic_pop_fruit_1.json
+984dd16bf48fc0b0c4eb3f695f8365e39f382913 assets/glimmeringtales/models/block/mystic_pop_fruit_2.json
+b3d2b4659b48b93542dd62afa1ad50875b5d031e assets/glimmeringtales/models/block/mystic_pop_fruit_3.json
 2135c2367987a8d00411465920fda5c4c650ffb1 assets/glimmeringtales/models/block/ocean_pop_fruit_0.json
 c7ff863044046c6d4d7ed153a6349dd9cb7ed484 assets/glimmeringtales/models/block/ocean_pop_fruit_1.json
 881e202845c6a3a91a4045859bc4b219a633fb68 assets/glimmeringtales/models/block/ocean_pop_fruit_2.json
@@ -142,6 +147,7 @@ bcfc899df8fd1b61b35bf475d2533c2812c52828 assets/glimmeringtales/models/item/magm
 34d63b51e15c4f365cb2f7fce11d7b99279c1db1 assets/glimmeringtales/models/item/magma_core.json
 44bf3b8052c22d3db7b38fea0ba9aed0cc16e0c8 assets/glimmeringtales/models/item/meteor.json
 3cbc618646dee3642e8f81fee305ba9950115029 assets/glimmeringtales/models/item/meteor_core.json
+019692b3d6dde230ce5f02a211cee74bb5103f89 assets/glimmeringtales/models/item/mystic_pop_fruit.json
 1c7c215d9072f61c50936ead871db56e20b9f12c assets/glimmeringtales/models/item/mystic_vial.json
 dec10fbf66a846b6eab56331ef5907aa8f6e82a6 assets/glimmeringtales/models/item/nether_wand.json
 6b99db1d8f7f70f6848c17525ca040f355b5c8b3 assets/glimmeringtales/models/item/nether_wand_handle.json
@@ -268,6 +274,7 @@ aa012c65978c658ae46e3777c4f4d0cf07bc9878 data/glimmeringtales/advancement/simple
 f35066451fc6fc51c2b7850394ace4d74dea11f8 data/glimmeringtales/advancement/simple_ritual/lava_burst.json
 e4d1b2a4d10fa20bb07d08e469f9ff7c97055d22 data/glimmeringtales/advancement/simple_ritual/magma.json
 759964b901734d9687e753f5190671dc02b07480 data/glimmeringtales/advancement/simple_ritual/meteor.json
+f2ed21f3511aef5cba3d87a74282404f67c62a7d data/glimmeringtales/advancement/simple_ritual/mystic_pop_fruit.json
 419834aa72bef02be8bd20dd86753242be825c50 data/glimmeringtales/advancement/simple_ritual/netherrack.json
 3c4064c6a1990dd1bb2f035879f8932555b44dea data/glimmeringtales/advancement/simple_ritual/ocean_shelter.json
 ba18ddb015b911b599b94d1338d1b237fade889b data/glimmeringtales/advancement/simple_ritual/packed_ice.json
@@ -298,6 +305,7 @@ ccf028c6053e881659d689d086618823904893fb data/glimmeringtales/advancement/simple
 34bc0c3d4262c8c6ce57b9727528ae6cd2a0f05f data/glimmeringtales/advancement/strike_block/crystal_of_earth.json
 2e2030ddf94e09355fbe32f0835ca2fd35b1e2ac data/glimmeringtales/advancement/strike_block/struck_log.json
 6063ac52cd3d4de4ca3d50844b4d54749da3a86d data/glimmeringtales/advancement/strike_item/crystal_of_nature.json
+96f52c9cabc6ad7b704b39c858e2c8be97c0a942 data/glimmeringtales/advancement/strike_item/mystic_vial.json
 89293faa7fc73d897789f97ca3533e9c1eb8b565 data/glimmeringtales/advancement/strike_item/vial_of_blossom.json
 19c5c60894294563fae7c43c39c5b97ba073a6a0 data/glimmeringtales/advancement/strike_item/vial_of_nature.json
 cec4d8b10c37181534cc35b207bdb9dc08b79535 data/glimmeringtales/advancement/strike_item/vial_of_ocean.json
@@ -694,6 +702,7 @@ c9f7fbe6069946181dd51fc6f0abdd7873f3caa4 data/glimmeringtales/l2magic/spell_acti
 d2278a3ac43bbda2dfef1040bddfcd4544e41f66 data/glimmeringtales/l2magic/spell_action/winter_storm.json
 19ed2ee5f0899a2fbb67b565f18201b54669078c data/glimmeringtales/loot_table/blocks/blossom_pop_fruit.json
 efa083ada4cd89b6750ff95ff0ecede3a59fa965 data/glimmeringtales/loot_table/blocks/crystal_vine.json
+3c243d9bf4a02807d54040720f71a2e7229a739d data/glimmeringtales/loot_table/blocks/mystic_pop_fruit.json
 b27505ea2486a9525e061d8601a71c80417b0e7e data/glimmeringtales/loot_table/blocks/ocean_pop_fruit.json
 5a1ec35fd5a8b52296ef33e4397de22b6be5d002 data/glimmeringtales/loot_table/blocks/pop_fruit.json
 54e06087fcf8da4353a7f57814f4ac512a4454b0 data/glimmeringtales/loot_table/blocks/ritual_altar.json
@@ -761,6 +770,7 @@ ac97da81f1ed646febf85d1f7b47185c8baba35c data/glimmeringtales/recipe/simple_ritu
 7f7cb11fc20ee360bc2e027b51dd63b73379afdd data/glimmeringtales/recipe/simple_ritual/lava_burst.json
 0677311260e4e332c8219065cc993c383b47611c data/glimmeringtales/recipe/simple_ritual/magma.json
 be5b345584f93f1d0701e89a980883eeaeb329fa data/glimmeringtales/recipe/simple_ritual/meteor.json
+57d84b97f31fedfdbdb406041e474cf425666b7c data/glimmeringtales/recipe/simple_ritual/mystic_pop_fruit.json
 64b768f2f8234b5960e5b3533111402d8a286911 data/glimmeringtales/recipe/simple_ritual/netherrack.json
 a03b0539e909d70c0eb53f8ff42bd024ba6fc6e5 data/glimmeringtales/recipe/simple_ritual/ocean_shelter.json
 b65bf08949b864abee1d4fd1622a790e5cd04bc6 data/glimmeringtales/recipe/simple_ritual/packed_ice.json
@@ -791,6 +801,7 @@ d5edb5de7903ff68e95d5b65ad5b67d7b1a0ee1d data/glimmeringtales/recipe/simple_ritu
 5175413b44465145dd5e38a47f72180737030cd4 data/glimmeringtales/recipe/strike_block/crystal_of_earth.json
 0e7d6e48f71f66f91c3a958607451e226f6dbfe1 data/glimmeringtales/recipe/strike_block/struck_log.json
 aa68edff554424efcc5baccef2840a0d8c155fe6 data/glimmeringtales/recipe/strike_item/crystal_of_nature.json
+afb0b1bf900f88ad3074e2e1dedc79178c54856c data/glimmeringtales/recipe/strike_item/mystic_vial.json
 b74e4f67fa4615efa2848569d64938fb2e8c1b96 data/glimmeringtales/recipe/strike_item/vial_of_blossom.json
 d0924063e7a1ec46771edb34fc2ad73dad6bdfef data/glimmeringtales/recipe/strike_item/vial_of_nature.json
 4540e806ea66ce8c132301300e5e6a6654693812 data/glimmeringtales/recipe/strike_item/vial_of_ocean.json
@@ -799,7 +810,7 @@ ebb14c6914390ee1c868b405d25063c0d4f2c4b4 data/glimmeringtales/recipe/wood_wand.j
 6f1a5738017d87de886c4bbcdd0ca15c7bc61d7d data/glimmeringtales/tags/block/amethyst.json
 ca60c4345d1ee25145f3909858d2878c0249e32b data/glimmeringtales/tags/block/bamboo.json
 50928ddea10bfbf061ca636c1ef6a6ccc3b4cf5a data/glimmeringtales/tags/block/fake_magma.json
-467e0c8d3a160f80b609ed87f453ffc82421e324 data/glimmeringtales/tags/block/pop_fruit.json
+6b6295805ee578b3971faee0b17678c03b176c8c data/glimmeringtales/tags/block/pop_fruit.json
 01b8a21a3c8217d84cc132f4607bd9b27a1997ba data/glimmeringtales/tags/block/quartz.json
 d26af9ec7297152205c325b24d4ec433f0b7e6d1 data/glimmeringtales/tags/block/snow.json
 eefb8b26df5cbb778776e856d2c817526bb2b457 data/glimmeringtales/tags/block/vine.json
@@ -814,7 +825,7 @@ d4416c07e4ff32d0f6414968de3ade150a225eb5 data/glimmeringtales/tags/item/charm.js
 392295cb9e8abfa17f20af9bad4d42719d8426db data/glimmeringtales/tags/item/core.json
 d8b58e10ba2bbc42f36abcc5983c44b87f4f7566 data/glimmeringtales/tags/item/crystal.json
 d153da2ed60f9637f77e8fe40bb7bbe149bcf0af data/glimmeringtales/tags/item/glove.json
-467e0c8d3a160f80b609ed87f453ffc82421e324 data/glimmeringtales/tags/item/pop_fruit.json
+6b6295805ee578b3971faee0b17678c03b176c8c data/glimmeringtales/tags/item/pop_fruit.json
 f650deb643d3ad79bbe8a722c24f5b9f3ca13057 data/glimmeringtales/tags/item/ring.json
 eced048a016d9b23fed1e1535f5bb79c0a9e5645 data/glimmeringtales/tags/item/rune.json
 a438bb9cf93565d75a1d5549ad0856436734bf23 data/glimmeringtales/tags/item/spell.json
@@ -840,7 +851,7 @@ a61df6c6298d3003e8b868ddd276200dc7513286 data/glimmeringtales/worldgen/placed_fe
 244b60f5d06edf9d1ecb8ba86babe1b2e6109f3c data/glimmeringtales/worldgen/placed_feature/struck_tree_sparse.json
 bd3bcaf9bd66a367cc034769b248744853fc6c68 data/l2menustacker/tags/item/quick_access.json
 1eed49ed129995e86bb35c19918c1cccc4cdd418 data/l2tabs/data_maps/attribute/attribute_entry.json
-e92d8cf35169a7a14cabc433db9996b3b67218dd data/minecraft/tags/block/crops.json
+b3f2802a9d1f3a0f3af93d9f4c6e6066fce2d93f data/minecraft/tags/block/crops.json
 0214bc6a2ec870ecce27885d48674cfcce9b8b59 data/minecraft/tags/block/leaves.json
 01e188932772855becc360e42d9ddfad4332de28 data/minecraft/tags/block/logs_that_burn.json
 01e188932772855becc360e42d9ddfad4332de28 data/minecraft/tags/block/mineable/axe.json

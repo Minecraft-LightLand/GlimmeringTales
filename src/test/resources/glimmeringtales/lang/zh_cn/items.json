@@ -52,7 +52,8 @@
 				{
 					"blossom_pop_fruit": "花爆果",
 					"ocean_pop_fruit": "水爆果",
-					"pop_fruit": "爆爆果"
+					"pop_fruit": "爆爆果",
+					"mystic_pop_fruit": "魔爆果"
 				}
 			]
 		},
@@ -62,7 +63,8 @@
 				{
 					"mana_recovery": "魔力滋润",
 					"long_mana_recovery": "魔力滋润",
-					"strong_mana_recovery": "魔力滋润"
+					"strong_mana_recovery": "魔力滋润",
+					"mystic_mana_recovery": "魔力滋润"
 				},
 				{
 					"potion.effect.*": "*药水",

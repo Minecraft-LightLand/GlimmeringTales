@@ -30,6 +30,8 @@ public enum PopFruitType implements ItemLike {
 	OCEAN_POP_FRUIT(OceanPopFruit::new, b -> b.nutrition(4).saturationModifier(0.6f)
 			.effect(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 500, 0), 1)
 			.effect(() -> new MobEffectInstance(MobEffects.CONDUIT_POWER, 500, 0), 1)),
+	MYSTIC_POP_FRUIT(MysticPopFruit::new, b -> b.nutrition(4).saturationModifier(0.6f)
+			.effect(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 500, 1), 1)),
 	;
 
 	public final BlockEntry<? extends AbstractPopFruit> block;

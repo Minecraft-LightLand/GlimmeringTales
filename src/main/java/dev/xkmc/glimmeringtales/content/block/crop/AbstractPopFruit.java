@@ -36,6 +36,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.common.util.TriState;
 
 import java.util.List;
 
@@ -89,9 +90,17 @@ public class AbstractPopFruit extends CropBlock {
 		return List.of(Blocks.GRASS_BLOCK, Blocks.DIRT);
 	}
 
-	@Override
 	protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-		return super.canSurvive(state, level, pos);
+		TriState soil = level.getBlockState(pos.below()).canSustainPlant(level, pos.below(), Direction.UP, state);
+		if (!soil.isDefault()) {
+			return soil.isTrue();
+		} else {
+			return canSurviveLight(level, pos) && mayPlaceOn(level.getBlockState(pos.below()), level, pos);
+		}
+	}
+
+	protected boolean canSurviveLight(LevelReader level, BlockPos pos) {
+		return level.getRawBrightness(pos, 0) >= 8;
 	}
 
 	@Override

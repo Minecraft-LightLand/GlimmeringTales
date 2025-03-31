@@ -585,6 +585,17 @@ public class GTRecipeGen {
 					Vials.VIAL_OF_OCEAN.asStack())::unlockedBy, PopFruitType.OCEAN_POP_FRUIT.asItem())
 					.save(pvd);
 
+			unlock(pvd, new StrikeItemRecipeBuilder(PotionIngredient.of(GTEffects.MYSTIC),
+					Vials.MYSTIC_VIAL.asStack())::unlockedBy, PopFruitType.MYSTIC_POP_FRUIT.asItem())
+					.save(pvd);
+
+			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_LIFE, PopFruitType.MYSTIC_POP_FRUIT)::unlockedBy, GTItems.CRYSTAL_LIFE.get())
+					.side(PopFruitType.POP_FRUIT, 2)
+					.side(PopFruitType.BLOSSOM_POP_FRUIT, 1)
+					.side(PopFruitType.OCEAN_POP_FRUIT, 1)
+					.side(GTItems.STRUCK_LOG, 4)
+					.save(pvd);
+
 /*
 			unlock(pvd, new StrikeItemRecipeBuilder(Ingredient.of(PopFruitType.BLOSSOM_POP_FRUIT),
 					PopFruitType.POP_FRUIT.asStack())::unlockedBy, PopFruitType.BLOSSOM_POP_FRUIT.asItem())
