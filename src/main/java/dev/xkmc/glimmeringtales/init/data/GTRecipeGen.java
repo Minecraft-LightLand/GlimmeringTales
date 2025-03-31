@@ -6,9 +6,10 @@ import dev.xkmc.glimmeringtales.content.recipe.craft.WandRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.ritual.SimpleRitualRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeBlockRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeItemRecipeBuilder;
-import dev.xkmc.glimmeringtales.init.reg.GTItems;
+import dev.xkmc.glimmeringtales.init.reg.*;
 import dev.xkmc.l2complements.init.materials.LCMats;
 import dev.xkmc.l2complements.init.registrate.LCItems;
+import dev.xkmc.l2core.serial.ingredients.PotionIngredient;
 import net.minecraft.advancements.Criterion;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.recipes.RecipeCategory;
@@ -101,55 +102,55 @@ public class GTRecipeGen {
 		// ring
 		{
 
-			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GTItems.Curios.GOLDEN_RING)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AttrCurios.GOLDEN_RING)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
 					.pattern("GGG").pattern("GNG").pattern("GGG")
 					.define('G', Items.GOLD_INGOT)
 					.define('N', GTItems.CRYSTAL_NATURE)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_REGENERATION)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_REGENERATION)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_LIFE, 1)
 					.side(Items.AMETHYST_SHARD, 3)
 					.side(Items.GLOWSTONE_DUST, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_NATURE)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_NATURE)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_NATURE, 1)
 					.side(Items.REDSTONE, 3)
 					.side(Items.LAPIS_LAZULI, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_EARTH)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_EARTH)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_EARTH, 1)
 					.side(GTItems.CRYSTAL_NATURE, 3)
 					.side(Items.DIAMOND, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_LIFE)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_LIFE)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_LIFE, 1)
 					.side(GTItems.CRYSTAL_NATURE, 3)
 					.side(Items.BAMBOO, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_FLAME)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_FLAME)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_FLAME, 1)
 					.side(GTItems.CRYSTAL_NATURE, 3)
 					.side(Items.BLAZE_POWDER, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_SNOW)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_SNOW)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_WINTERSTORM, 1)
 					.side(GTItems.CRYSTAL_NATURE, 3)
 					.side(Items.BLUE_ICE, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_OCEAN)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_OCEAN)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_OCEAN, 1)
 					.side(GTItems.CRYSTAL_NATURE, 3)
 					.side(Items.NAUTILUS_SHELL, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.GOLDEN_RING, GTItems.Curios.RING_OF_THUNDER)::unlockedBy, GTItems.Curios.GOLDEN_RING.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.GOLDEN_RING, AttrCurios.RING_OF_THUNDER)::unlockedBy, AttrCurios.GOLDEN_RING.asItem())
 					.side(GTItems.CRYSTAL_THUNDER, 1)
 					.side(GTItems.CRYSTAL_NATURE, 3)
 					.side(GTItems.STRUCK_LOG, 4)
@@ -159,7 +160,7 @@ public class GTRecipeGen {
 		// elemental charm
 		{
 
-			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GTItems.Curios.CHARM_OF_NATURE)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+			unlock(pvd, ShapedRecipeBuilder.shaped(RecipeCategory.MISC, AttrCurios.CHARM_OF_NATURE)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
 					.pattern("LNS").pattern("NDN").pattern("LNL")
 					.define('S', Items.STRING)
 					.define('D', Items.DIAMOND)
@@ -167,37 +168,37 @@ public class GTRecipeGen {
 					.define('L', Items.LAPIS_LAZULI)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.CHARM_OF_NATURE, GTItems.Curios.CHARM_OF_EARTH)::unlockedBy, GTItems.Curios.CHARM_OF_NATURE.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.CHARM_OF_NATURE, AttrCurios.CHARM_OF_EARTH)::unlockedBy, AttrCurios.CHARM_OF_NATURE.asItem())
 					.side(GTItems.CRYSTAL_EARTH, 1)
 					.side(LCItems.EXPLOSION_SHARD, 3)
 					.side(Items.NETHERITE_SCRAP, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.CHARM_OF_NATURE, GTItems.Curios.CHARM_OF_LIFE)::unlockedBy, GTItems.Curios.CHARM_OF_NATURE.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.CHARM_OF_NATURE, AttrCurios.CHARM_OF_LIFE)::unlockedBy, AttrCurios.CHARM_OF_NATURE.asItem())
 					.side(GTItems.CRYSTAL_LIFE, 1)
 					.side(LCMats.TOTEMIC_GOLD.getIngot(), 3)
 					.side(Items.BAMBOO, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.CHARM_OF_NATURE, GTItems.Curios.CHARM_OF_FLAME)::unlockedBy, GTItems.Curios.CHARM_OF_NATURE.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.CHARM_OF_NATURE, AttrCurios.CHARM_OF_FLAME)::unlockedBy, AttrCurios.CHARM_OF_NATURE.asItem())
 					.side(GTItems.CRYSTAL_FLAME, 1)
 					.side(LCItems.SOUL_FLAME, 3)
 					.side(Items.BLAZE_POWDER, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.CHARM_OF_NATURE, GTItems.Curios.CHARM_OF_SNOW)::unlockedBy, GTItems.Curios.CHARM_OF_NATURE.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.CHARM_OF_NATURE, AttrCurios.CHARM_OF_SNOW)::unlockedBy, AttrCurios.CHARM_OF_NATURE.asItem())
 					.side(GTItems.CRYSTAL_WINTERSTORM, 1)
 					.side(LCItems.HARD_ICE, 3)
 					.side(Items.BLUE_ICE, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.CHARM_OF_NATURE, GTItems.Curios.CHARM_OF_OCEAN)::unlockedBy, GTItems.Curios.CHARM_OF_NATURE.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.CHARM_OF_NATURE, AttrCurios.CHARM_OF_OCEAN)::unlockedBy, AttrCurios.CHARM_OF_NATURE.asItem())
 					.side(GTItems.CRYSTAL_OCEAN, 1)
 					.side(LCMats.POSEIDITE.getIngot(), 3)
 					.side(Items.NAUTILUS_SHELL, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.Curios.CHARM_OF_NATURE, GTItems.Curios.CHARM_OF_THUNDER)::unlockedBy, GTItems.Curios.CHARM_OF_NATURE.asItem())
+			unlock(pvd, new SimpleRitualRecipeBuilder(AttrCurios.CHARM_OF_NATURE, AttrCurios.CHARM_OF_THUNDER)::unlockedBy, AttrCurios.CHARM_OF_NATURE.asItem())
 					.side(GTItems.CRYSTAL_THUNDER, 1)
 					.side(LCItems.STORM_CORE, 3)
 					.side(LCItems.CAPTURED_WIND, 4)
@@ -206,19 +207,19 @@ public class GTRecipeGen {
 
 		// misc curios
 		{
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_OCEAN, GTItems.Curios.CHARM_OF_STRENGTH)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_OCEAN, AttrCurios.CHARM_OF_STRENGTH)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
 					.side(GTItems.CRYSTAL_NATURE, 2)
 					.side(Items.AMETHYST_SHARD, 2)
 					.side(Items.GOLD_INGOT, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_EARTH, GTItems.Curios.CHARM_OF_CAPACITY)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_EARTH, AttrCurios.CHARM_OF_CAPACITY)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
 					.side(GTItems.CRYSTAL_NATURE, 2)
 					.side(Items.AMETHYST_SHARD, 2)
 					.side(Items.GOLD_INGOT, 4)
 					.save(pvd);
 
-			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_LIFE, GTItems.Curios.CHARM_OF_REGENERATION)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
+			unlock(pvd, new SimpleRitualRecipeBuilder(GTItems.CRYSTAL_LIFE, AttrCurios.CHARM_OF_REGENERATION)::unlockedBy, GTItems.CRYSTAL_NATURE.get())
 					.side(GTItems.CRYSTAL_NATURE, 2)
 					.side(Items.AMETHYST_SHARD, 2)
 					.side(Items.GOLD_INGOT, 4)
@@ -571,6 +572,19 @@ public class GTRecipeGen {
 		}
 
 		{
+
+			unlock(pvd, new StrikeItemRecipeBuilder(PotionIngredient.of(GTEffects.BASE),
+					Vials.VIAL_OF_NATURE.asStack())::unlockedBy, PopFruitType.POP_FRUIT.asItem())
+					.save(pvd);
+
+			unlock(pvd, new StrikeItemRecipeBuilder(PotionIngredient.of(GTEffects.LONG),
+					Vials.VIAL_OF_BLOSSOM.asStack())::unlockedBy, PopFruitType.BLOSSOM_POP_FRUIT.asItem())
+					.save(pvd);
+
+			unlock(pvd, new StrikeItemRecipeBuilder(PotionIngredient.of(GTEffects.STRONG),
+					Vials.VIAL_OF_OCEAN.asStack())::unlockedBy, PopFruitType.OCEAN_POP_FRUIT.asItem())
+					.save(pvd);
+
 /*
 			unlock(pvd, new StrikeItemRecipeBuilder(Ingredient.of(PopFruitType.BLOSSOM_POP_FRUIT),
 					PopFruitType.POP_FRUIT.asStack())::unlockedBy, PopFruitType.BLOSSOM_POP_FRUIT.asItem())

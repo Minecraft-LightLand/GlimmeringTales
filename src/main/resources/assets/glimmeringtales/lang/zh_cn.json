@@ -33,6 +33,10 @@
   "item.glimmeringtales.depleted_crystal_of_flame": "匮乏的蕴炎宝石",
   "item.glimmeringtales.depleted_crystal_of_winterstorm": "匮乏的风雪宝石",
   "item.glimmeringtales.amethyst_resonator": "紫晶音叉",
+  "item.glimmeringtales.mystic_vial": "神秘魔力药剂",
+  "item.glimmeringtales.vial_of_blossom": "繁花魔力药剂",
+  "item.glimmeringtales.vial_of_nature": "自然魔力药剂",
+  "item.glimmeringtales.vial_of_ocean": "海洋魔力药剂",
   "item.glimmeringtales.wand": "法杖",
   "item.glimmeringtales.gold_wand": "金杖柄",
   "item.glimmeringtales.wood_wand": "木杖柄",
@@ -422,11 +426,5 @@
   "affix.glimmeringtales:wand/attribute/ocean_affinity": "深海同调",
   "affix.glimmeringtales:wand/attribute/ocean_affinity.suffix": "深海同调",
   "affix.glimmeringtales:wand/attribute/thunder_affinity": "雷霆同调",
-  "affix.glimmeringtales:wand/attribute/thunder_affinity.suffix": "雷霆同调",
-  "death.attack.glimmeringtales.charge_link": "%s is electrocuted by charge link",
-  "death.attack.glimmeringtales.charge_link.player": "%s is electrocuted by %s with charge link",
-  "item.glimmeringtales.charge_link": "Rune: Charge Link",
-  "nature_spell.glimmeringtales.charge_link.brief": "[Ranged] Work in Progress",
-  "nature_spell.glimmeringtales.charge_link.detail": " Work in Progress",
-  "spell_action.glimmeringtales.charge_link": "Charge Link"
+  "affix.glimmeringtales:wand/attribute/thunder_affinity.suffix": "雷霆同调"
 }

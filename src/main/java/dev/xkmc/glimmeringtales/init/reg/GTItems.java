@@ -11,11 +11,11 @@ import dev.xkmc.glimmeringtales.content.block.ritual.*;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeCurioItem;
 import dev.xkmc.glimmeringtales.content.item.curio.AttributeData;
 import dev.xkmc.glimmeringtales.content.item.curio.DamageTypeCurioItem;
-import dev.xkmc.glimmeringtales.content.item.tool.AmethystResonator;
 import dev.xkmc.glimmeringtales.content.item.materials.DepletedItem;
 import dev.xkmc.glimmeringtales.content.item.rune.BlockRuneItem;
 import dev.xkmc.glimmeringtales.content.item.rune.SpellCoreItem;
 import dev.xkmc.glimmeringtales.content.item.rune.SpellRuneItem;
+import dev.xkmc.glimmeringtales.content.item.tool.AmethystResonator;
 import dev.xkmc.glimmeringtales.content.item.wand.*;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTConfigs;
@@ -41,7 +41,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -54,7 +53,6 @@ import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuil
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 
 public class GTItems {
@@ -120,101 +118,6 @@ public class GTItems {
 	public static final DCVal<Integer> PROGRESS = DC.intVal("progress");
 	public static final DCVal<Holder<Item>> WAND_HANDLE = DC.registry("handle", BuiltInRegistries.ITEM);
 
-	public enum Curios implements ItemLike {
-		GOLDEN_RING("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.1)
-		)),
-		RING_OF_REGENERATION("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.1),
-				AttributeData.base(GTRegistries.MANA_REGEN, 0.3)
-		)),
-		RING_OF_NATURE("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.1),
-				AttributeData.add(GTRegistries.EARTH.attr(), 0.1),
-				AttributeData.add(GTRegistries.LIFE.attr(), 0.1),
-				AttributeData.add(GTRegistries.FLAME.attr(), 0.1),
-				AttributeData.add(GTRegistries.SNOW.attr(), 0.1)
-		)),
-		RING_OF_EARTH("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.2),
-				AttributeData.add(GTRegistries.EARTH.attr(), 0.5)
-		)),
-		RING_OF_LIFE("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.2),
-				AttributeData.add(GTRegistries.LIFE.attr(), 0.5)
-		)),
-		RING_OF_FLAME("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.2),
-				AttributeData.add(GTRegistries.FLAME.attr(), 0.5)
-		)),
-		RING_OF_SNOW("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.2),
-				AttributeData.add(GTRegistries.SNOW.attr(), 0.5)
-		)),
-		RING_OF_OCEAN("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.2),
-				AttributeData.add(GTRegistries.OCEAN.attr(), 0.5)
-		)),
-		RING_OF_THUNDER("ring", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.3),
-				AttributeData.add(GTRegistries.THUNDER.attr(), 0.5)
-		)),
-		CHARM_OF_STRENGTH("charm", AttributeData.of(
-				AttributeData.add(L2DamageTracker.MAGIC_FACTOR, 0.5)
-		)),
-		CHARM_OF_CAPACITY("charm", AttributeData.of(
-				AttributeData.base(GTRegistries.MAX_MANA, 0.5)
-		)),
-		CHARM_OF_REGENERATION("charm", AttributeData.of(
-				AttributeData.base(GTRegistries.MANA_REGEN, 0.5)
-		)),
-		CHARM_OF_NATURE("charm", AttributeData.of(
-				AttributeData.base(GTRegistries.MANA_REGEN, 0.1)
-		)),
-		CHARM_OF_EARTH("charm", AttributeData.of(
-				AttributeData.base(GTRegistries.MANA_REGEN, 0.1),
-				AttributeData.add(L2DamageTracker.REDUCTION, -0.2)
-		)),
-		CHARM_OF_LIFE("charm", AttributeData.of(
-				AttributeData.base(GTRegistries.MANA_REGEN, 0.1),
-				AttributeData.add(L2DamageTracker.REGEN, 0.5)
-		)),
-		CHARM_OF_FLAME("charm", AttributeData.of(
-				AttributeData.add(L2DamageTracker.FIRE_FACTOR, 1),
-				AttributeData.add(L2DamageTracker.EXPLOSION_FACTOR, 1)
-		)),
-		CHARM_OF_SNOW("charm", AttributeData.of(
-				AttributeData.add(L2DamageTracker.REDUCTION, -0.1),
-				AttributeData.add(L2DamageTracker.FREEZING_FACTOR, 1)
-		)),
-		CHARM_OF_OCEAN("charm", AttributeData.of(
-				AttributeData.base(GTRegistries.MANA_REGEN, 0.1),
-				AttributeData.add(L2DamageTracker.MAGIC_FACTOR, 0.5)
-		)),
-		CHARM_OF_THUNDER("charm", AttributeData.of(
-				AttributeData.base(GTRegistries.MANA_REGEN, 0.2),
-				AttributeData.add(L2DamageTracker.LIGHTNING_FACTOR, 1)
-		)),
-		;
-
-
-		public final VarHolder<AttributeCurioItem> item;
-
-		Curios(String part, AttributeData data) {
-			item = curio(name().toLowerCase(Locale.ROOT), part, data);
-		}
-
-		@Override
-		public Item asItem() {
-			return item.asItem();
-		}
-
-		private static void register() {
-
-		}
-
-	}
-
 	static {
 
 		{
@@ -234,8 +137,6 @@ public class GTItems {
 							CRYSTAL_WINTERSTORM::get, () -> SoundEvents.BUCKET_FILL_POWDER_SNOW)
 			).register();
 
-			PopFruitType.register();
-
 			CRYSTAL_VINE = GlimmeringTales.REGISTRATE.block("crystal_vine", LifeCrystalCrop::new)
 					.properties(p -> p.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak()
 							.sound(SoundType.CROP).pushReaction(PushReaction.DESTROY))
@@ -247,6 +148,9 @@ public class GTItems {
 					.loot(LifeCrystalCrop::builtLoot)
 					.tag(BlockTags.CROPS)
 					.register();
+
+			PopFruitType.register();
+			Vials.register();
 
 			STRUCK_LOG = GlimmeringTales.REGISTRATE.block("struck_log", p ->
 							new StruckLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)))
@@ -410,7 +314,7 @@ public class GTItems {
 					(rl, b) -> b.removeTab(TAB.key()).onRegister(HANDLES::add)
 			);
 
-			Curios.register();
+			AttrCurios.register();
 
 		}
 
@@ -572,7 +476,7 @@ public class GTItems {
 				.dataMap(GTRegistries.WAND_MODEL.reg(), new WandData(size, offset)).lang(name)));
 	}
 
-	private static VarHolder<AttributeCurioItem> curio(String id, String part, AttributeData data) {
+	public static VarHolder<AttributeCurioItem> curio(String id, String part, AttributeData data) {
 		return CURIOS.add(new VarHolder<>(id, (rl, b) -> b
 				.dataMap(GTRegistries.ITEM_ATTR.reg(), data)
 				.tag(GTTagGen.item(part), GTTagGen.curio(part), GTTagGen.UNIQUE)));

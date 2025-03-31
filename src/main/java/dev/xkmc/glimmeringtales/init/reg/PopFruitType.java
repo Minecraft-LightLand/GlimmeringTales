@@ -3,10 +3,7 @@ package dev.xkmc.glimmeringtales.init.reg;
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 import com.tterrag.registrate.util.entry.BlockEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
-import dev.xkmc.glimmeringtales.content.block.crop.AbstractPopFruit;
-import dev.xkmc.glimmeringtales.content.block.crop.BlossomPopFruit;
-import dev.xkmc.glimmeringtales.content.block.crop.OceanPopFruit;
-import dev.xkmc.glimmeringtales.content.block.crop.PopFruitItem;
+import dev.xkmc.glimmeringtales.content.block.crop.*;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
 import net.minecraft.tags.BlockTags;
@@ -25,7 +22,7 @@ import java.util.Locale;
 import java.util.function.UnaryOperator;
 
 public enum PopFruitType implements ItemLike {
-	POP_FRUIT(AbstractPopFruit::new, b -> b.nutrition(6).saturationModifier(0.6f)
+	POP_FRUIT(PopFruit::new, b -> b.nutrition(6).saturationModifier(0.6f)
 			.effect(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 500, 0), 1)),
 	BLOSSOM_POP_FRUIT(BlossomPopFruit::new, b -> b.nutrition(4).saturationModifier(0.8f)
 			.effect(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 500, 0), 1)

@@ -1,8 +1,8 @@
 {
   "values": [
+    "glimmeringtales:crystal_vine",
     "glimmeringtales:pop_fruit",
     "glimmeringtales:blossom_pop_fruit",
-    "glimmeringtales:ocean_pop_fruit",
-    "glimmeringtales:crystal_vine"
+    "glimmeringtales:ocean_pop_fruit"
   ]
 }

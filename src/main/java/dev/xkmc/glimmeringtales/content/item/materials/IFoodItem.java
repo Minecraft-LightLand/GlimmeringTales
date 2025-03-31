@@ -14,7 +14,7 @@ import java.util.List;
 
 public class IFoodItem {
 
-	private static Component getTooltip(MobEffectInstance eff) {
+	public static Component getTooltip(MobEffectInstance eff) {
 		MutableComponent ans = Component.translatable(eff.getDescriptionId());
 		MobEffect mobeffect = eff.getEffect().value();
 		if (eff.getAmplifier() > 0) {

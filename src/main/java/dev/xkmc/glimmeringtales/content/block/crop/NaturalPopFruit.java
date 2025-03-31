@@ -1,7 +1,6 @@
 package dev.xkmc.glimmeringtales.content.block.crop;
 
 import dev.xkmc.glimmeringtales.init.data.GTConfigs;
-import dev.xkmc.glimmeringtales.init.data.GTLang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -12,7 +11,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class NaturalPopFruit extends AbstractPopFruit{
+public abstract class NaturalPopFruit extends AbstractPopFruit {
 
 	public NaturalPopFruit(Properties properties) {
 		super(properties);
@@ -27,9 +26,7 @@ public class NaturalPopFruit extends AbstractPopFruit{
 		return biomeTag;
 	}
 
-	public MutableComponent getBiomeDesc() {
-		return GTLang.BIOME_PLAINS.get();
-	}
+	public abstract MutableComponent getBiomeDesc();
 
 	@Override
 	protected float getGrowthSpeedBonus(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {

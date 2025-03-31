@@ -1,5 +1,7 @@
 package dev.xkmc.glimmeringtales.content.block.crop;
 
+import dev.xkmc.glimmeringtales.init.data.GTLang;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -24,6 +26,11 @@ public class PopFruit extends NaturalPopFruit {
 			return false;
 		}
 		return entity instanceof LivingEntity;
+	}
+
+
+	public MutableComponent getBiomeDesc() {
+		return GTLang.BIOME_PLAINS.get();
 	}
 
 }

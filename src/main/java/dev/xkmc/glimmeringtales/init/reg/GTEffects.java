@@ -2,13 +2,14 @@ package dev.xkmc.glimmeringtales.init.reg;
 
 import dev.xkmc.glimmeringtales.content.effect.GTEffect;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
-import dev.xkmc.l2complements.init.L2Complements;
 import dev.xkmc.l2core.init.reg.registrate.PotionBuilder;
 import dev.xkmc.l2core.init.reg.registrate.SimpleEntry;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.Potions;
 
 public class GTEffects {
@@ -17,6 +18,7 @@ public class GTEffects {
 	public static final SimpleEntry<MobEffect> MANA_DEPLETION;
 	public static final SimpleEntry<MobEffect> MANA_EXPANSION;
 	public static final PotionBuilder BUILDER;
+	public static final Holder<Potion> BASE, LONG, STRONG;
 
 	static {
 		MANA_RECOVERY = new SimpleEntry<>(GlimmeringTales.REGISTRATE.effect("mana_recovery",
@@ -41,9 +43,9 @@ public class GTEffects {
 
 	static {
 		BUILDER = new PotionBuilder(GlimmeringTales.REGISTRATE);
-		var base = BUILDER.regPotion("mana_recovery", "mana_recovery", MANA_RECOVERY, Potions.AWKWARD, PopFruitType.POP_FRUIT, 500, 0);
-		BUILDER.regPotion("long_mana_recovery", "mana_recovery", MANA_RECOVERY, base, PopFruitType.BLOSSOM_POP_FRUIT, 1000, 0);
-		BUILDER.regPotion("strong_mana_recovery", "mana_recovery", MANA_RECOVERY, base, PopFruitType.OCEAN_POP_FRUIT, 500, 1);
+		BASE = BUILDER.regPotion("mana_recovery", "mana_recovery", MANA_RECOVERY, Potions.AWKWARD, PopFruitType.POP_FRUIT, 500, 0);
+		LONG = BUILDER.regPotion("long_mana_recovery", "mana_recovery", MANA_RECOVERY, BASE, PopFruitType.BLOSSOM_POP_FRUIT, 1000, 0);
+		STRONG = BUILDER.regPotion("strong_mana_recovery", "mana_recovery", MANA_RECOVERY, BASE, PopFruitType.OCEAN_POP_FRUIT, 500, 1);
 		GlimmeringTales.REGISTRATE.addRegisterCallback(Registries.ITEM, () -> BUILDER.regTab(GTItems.TAB.key()));
 	}
 
