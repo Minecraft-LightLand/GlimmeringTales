@@ -2,8 +2,10 @@ package dev.xkmc.glimmeringtales.content.block.crop;
 
 import com.tterrag.registrate.providers.DataGenContext;
 import com.tterrag.registrate.providers.RegistrateBlockstateProvider;
+import dev.xkmc.glimmeringtales.init.data.GTLang;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -27,7 +29,9 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import org.jetbrains.annotations.Nullable;
 
-public class OceanPopFruit extends PopFruit implements LiquidBlockContainer {
+import java.util.List;
+
+public class OceanPopFruit extends NaturalPopFruit implements LiquidBlockContainer {
 
 	private static int getLight(BlockState state) {
 		return state.getValue(AGE) * 3;
@@ -50,6 +54,15 @@ public class OceanPopFruit extends PopFruit implements LiquidBlockContainer {
 	}
 
 	@Override
+	public List<Block> plantableOn() {
+		return List.of(Blocks.DIRT, Blocks.GRAVEL, Blocks.SAND);
+	}
+
+	public MutableComponent getBiomeDesc() {
+		return GTLang.BIOME_OCEAN.get();
+	}
+
+	@Override
 	protected boolean onExplosionAffecting(Entity entity) {
 		if (entity instanceof LivingEntity le) {
 			le.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0));
@@ -62,7 +75,7 @@ public class OceanPopFruit extends PopFruit implements LiquidBlockContainer {
 		super.onExplode(level, pos, r);
 	}
 
-	public void buildState(DataGenContext<Block, ? extends PopFruit> ctx, RegistrateBlockstateProvider pvd) {
+	public void buildState(DataGenContext<Block, ? extends AbstractPopFruit> ctx, RegistrateBlockstateProvider pvd) {
 		pvd.getVariantBuilder(ctx.get()).forAllStates(state -> {
 			int age = state.getValue(AGE);
 			String id = ctx.getName() + "_" + age;

@@ -1,6 +1,6 @@
 package dev.xkmc.glimmeringtales.init.data.world;
 
-import dev.xkmc.glimmeringtales.content.block.crop.PopFruit;
+import dev.xkmc.glimmeringtales.content.block.crop.AbstractPopFruit;
 import net.minecraft.core.Direction;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.world.level.block.Blocks;
@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 public class WaterPopPlacement extends PopPlacement {
 
-	public WaterPopPlacement(String id, Supplier<PopFruit> block, int rarity, int count) {
+	public WaterPopPlacement(String id, Supplier<AbstractPopFruit> block, int rarity, int count) {
 		super(id, block, rarity, count);
 	}
 

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "glimmeringtales:item/blossom_pop_fruit"
+    "layer0": "glimmeringtales:item/crop/blossom_pop_fruit"
   }
 }

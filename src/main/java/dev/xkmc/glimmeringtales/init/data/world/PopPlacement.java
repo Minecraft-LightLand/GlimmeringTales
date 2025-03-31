@@ -1,6 +1,6 @@
 package dev.xkmc.glimmeringtales.init.data.world;
 
-import dev.xkmc.glimmeringtales.content.block.crop.PopFruit;
+import dev.xkmc.glimmeringtales.content.block.crop.AbstractPopFruit;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -21,10 +21,10 @@ import java.util.function.Supplier;
 
 public class PopPlacement extends FeaturePlacement {
 
-	protected final Supplier<PopFruit> block;
+	protected final Supplier<AbstractPopFruit> block;
 	protected final int rarity, count;
 
-	public PopPlacement(String id, Supplier<PopFruit> block, int rarity, int count) {
+	public PopPlacement(String id, Supplier<AbstractPopFruit> block, int rarity, int count) {
 		super(id);
 		this.block = block;
 		this.rarity = rarity;

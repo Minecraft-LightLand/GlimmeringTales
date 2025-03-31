@@ -570,6 +570,31 @@ public class GTRecipeGen {
 
 		}
 
+		{
+/*
+			unlock(pvd, new StrikeItemRecipeBuilder(Ingredient.of(PopFruitType.BLOSSOM_POP_FRUIT),
+					PopFruitType.POP_FRUIT.asStack())::unlockedBy, PopFruitType.BLOSSOM_POP_FRUIT.asItem())
+					.save(pvd);
+
+			unlock(pvd, new StrikeItemRecipeBuilder(Ingredient.of(PopFruitType.OCEAN_POP_FRUIT),
+					PopFruitType.POP_FRUIT.asStack())::unlockedBy, PopFruitType.OCEAN_POP_FRUIT.asItem())
+					.save(pvd);
+
+			unlock(pvd, new SimpleRitualRecipeBuilder(PopFruitType.BLOSSOM_POP_FRUIT, GTItems.CRYSTAL_LIFE)::unlockedBy, GTItems.CRYSTAL_LIFE.get())
+					.side(PopFruitType.POP_FRUIT, 4)
+					.side(ItemTags.FLOWERS, 4)
+					.save(pvd);
+
+			unlock(pvd, new SimpleRitualRecipeBuilder(PopFruitType.OCEAN_POP_FRUIT, GTItems.CRYSTAL_OCEAN)::unlockedBy, GTItems.CRYSTAL_OCEAN.get())
+					.side(PopFruitType.POP_FRUIT, 4)
+					.side(Items.PRISMARINE_CRYSTALS, 4)
+					.save(pvd);
+
+ */
+
+
+		}
+
 	}
 
 	public static <T> T unlock(RegistrateRecipeProvider pvd, BiFunction<String, Criterion<InventoryChangeTrigger.TriggerInstance>, T> func, Item item) {

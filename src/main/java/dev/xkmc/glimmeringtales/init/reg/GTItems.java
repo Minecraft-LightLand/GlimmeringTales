@@ -239,7 +239,9 @@ public class GTItems {
 			CRYSTAL_VINE = GlimmeringTales.REGISTRATE.block("crystal_vine", LifeCrystalCrop::new)
 					.properties(p -> p.mapColor(MapColor.PLANT).noCollission().randomTicks().instabreak()
 							.sound(SoundType.CROP).pushReaction(PushReaction.DESTROY))
-					.item(ItemNameBlockItem::new).model((ctx, pvd) -> pvd.generated(ctx))
+					.item(ItemNameBlockItem::new)
+					.model((ctx, pvd) ->
+							pvd.generated(ctx, pvd.modLoc("item/crop/" + ctx.getName())))
 					.lang("Seed of Nature").build()
 					.blockstate(LifeCrystalCrop::buildState)
 					.loot(LifeCrystalCrop::builtLoot)

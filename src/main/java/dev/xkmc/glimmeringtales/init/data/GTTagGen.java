@@ -24,12 +24,14 @@ public class GTTagGen {
 	public static final TagKey<Item> SPELL = item("spell");
 	public static final TagKey<Item> CORE = item("core");
 	public static final TagKey<Item> UNIQUE = item("unique_curios");
+	public static final TagKey<Item> POP_FRUIT = item("pop_fruit");
 
 	public static final TagKey<Block> AMETHYST = block("amethyst");
 	public static final TagKey<Block> QUARTZ = block("quartz");
 	public static final TagKey<Block> VINE = block("vine");
 	public static final TagKey<Block> BAMBOO = block("bamboo");
 	public static final TagKey<Block> SNOW = block("snow");
+	public static final TagKey<Block> POP_FRUIT_BLOCK = block("pop_fruit");
 
 	public static final TagKey<Block> FAKE_MAGMA = block("fake_magma");
 
