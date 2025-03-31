@@ -1,0 +1,97 @@
+{
+	"glimmeringtales.title": "微光纪事",
+	"itemGroup.l2core.glimmeringtales": "微光纪事",
+	"patchouli.glimmeringtales.landing": "欢迎来到以自然为主题的魔法模组$(9)《微光纪事》$()$(br2)“许多人相信自然是伴随着电闪雷鸣诞生的，在空无一物的寰宇当中绽放出靛青的光芒，需予以古树火种，使青金再次夺目。”",
+	"patchouli.glimmeringtales.title": "微光纪事指南",
+	"entity.glimmeringtales.falling_block": "坠落方块",
+	"entity.glimmeringtales.lightning_bolt": "闪电",
+	"element.glimmeringtales": {
+		"earth": "地脉",
+		"flame": "蕴炎",
+		"life": "生机",
+		"snow": "风雪",
+		"ocean": "深海",
+		"thunder": "雷霆"
+	},
+	"attribute.glimmeringtales": {
+		"mana_regen": "魔力再生",
+		"max_mana": "最大魔力",
+		"max_focus": "最大专注",
+		"focus_cool_down": "专注冷却",
+		"earth_affinity": "地脉元素亲和",
+		"flame_affinity": "蕴炎元素亲和",
+		"life_affinity": "生机元素亲和",
+		"ocean_affinity": "深海元素亲和",
+		"snow_affinity": "风雪元素亲和",
+		"thunder_affinity": "雷霆元素亲和"
+	},
+	"effect.glimmeringtales": {
+		"mana_recovery": "魔力滋润",
+		"mana_recovery.desc": "提升魔力回复效率",
+		"mana_recovery.description": "提升魔力回复效率",
+		"mana_expansion": "魔力扩充",
+		"mana_expansion.desc": "提升最大魔力",
+		"mana_expansion.description": "提升最大魔力",
+		"mana_depletion": "魔力匮乏",
+		"mana_depletion.desc": "降低魔力回复效率",
+		"mana_depletion.description": "降低魔力回复效率"
+	},
+	"glimmeringtales": {
+		"tooltip": {
+			"consume_block": "右键[%s]吸收精华",
+			"fill_crystal": "进度: %s / %s",
+			"nearby_grow": "相邻的作物自然生长至成熟的瞬间才会生长",
+			"affinity": "[%s]亲和度: %s",
+			"cost": "魔力消耗：%s",
+			"cost_cont": "每刻%s",
+			"cost_capped": "每刻%s，上限%s",
+			"spell": "%s - [%s]",
+			"focus": "专注消耗：%s",
+			"mob_use": "其他生物也能使用这个法术",
+			"ritual_form": "自动链接3格以内的[%s]",
+			"ritual_start": "法杖右键开始仪式",
+			"selected": "选中: %s",
+			"struck_log": "点燃召唤闪电",
+			"chance": "%2$s%%概率获得%1$s",
+			"explode": "食用后%s%%概率爆炸",
+			"plantable": "可以种植在：",
+			"plantable_water": "可以于水下种植在：",
+			"spawn": "在%s中自然生成并生长得更快",
+			"biome.flowery": "繁花群系",
+			"biome.ocean": "海洋群系",
+			"biome.plains": "平原群系",
+			"biome.wrong": "在这里生长缓慢",
+			"biome.correct": "在这里生长更快"
+		},
+		"overlay": {
+			"destroy": "消耗目标方块",
+			"mana": "魔力: %s / %s",
+			"focus": "专注: %s / %s"
+		},
+		"item": {
+			"glove_magic": "把所有法术的伤害转化为魔法伤害",
+			"glove_abyss": "让所有法术的伤害获得深渊属性",
+			"glove_cooldown": "[%s]法术伤害无视伤害冷却"
+		},
+		"desc": {
+			"damage": "伤害",
+			"damage_number": "%s点",
+			"heal": "每秒恢复%s",
+			"hp": "血量",
+			"fire": "火焰",
+			"explosion": "爆炸",
+			"freezing": "冰冻",
+			"lightning": "雷电",
+			"magic": "魔法",
+			"projectile": "弹射物",
+			"falling_block": "坠落方块",
+			"space": ""
+		},
+		"jei": {
+			"strike_block": "雷击方块",
+			"strike_item": "雷击物品",
+			"transform": "物品特殊转化",
+			"ritual": "仪式"
+		}
+	}
+}

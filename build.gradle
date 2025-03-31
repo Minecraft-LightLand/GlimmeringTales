@@ -207,6 +207,9 @@ dependencies {
     implementation "curse.maven:apothic-spawners-986583:6148923"
     implementation "curse.maven:apothic-enchanting-1063926:6084297"
     implementation "curse.maven:apotheosis-313970:6302343"
+
+    testImplementation "com.mojang:datafixerupper:8.0.16"
+    testImplementation "com.google.guava:guava:32.1.2-jre"
 }
 
 

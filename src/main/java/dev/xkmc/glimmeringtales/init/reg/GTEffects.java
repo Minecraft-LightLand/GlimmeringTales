@@ -40,10 +40,10 @@ public class GTEffects {
 	}
 
 	static {
-		BUILDER = new PotionBuilder(L2Complements.REGISTRATE);
-		var base = BUILDER.regPotion("mana_recovery", "mana_recovery", MANA_RECOVERY, Potions.AWKWARD, PopFruitType.POP_FRUIT, 1000, 0);
-		BUILDER.regPotion("long_mana_recovery", "mana_recovery", MANA_RECOVERY, base, PopFruitType.BLOSSOM_POP_FRUIT, 2000, 0);
-		BUILDER.regPotion("strong_mana_recovery", "mana_recovery", MANA_RECOVERY, base, PopFruitType.OCEAN_POP_FRUIT, 1000, 1);
+		BUILDER = new PotionBuilder(GlimmeringTales.REGISTRATE);
+		var base = BUILDER.regPotion("mana_recovery", "mana_recovery", MANA_RECOVERY, Potions.AWKWARD, PopFruitType.POP_FRUIT, 500, 0);
+		BUILDER.regPotion("long_mana_recovery", "mana_recovery", MANA_RECOVERY, base, PopFruitType.BLOSSOM_POP_FRUIT, 1000, 0);
+		BUILDER.regPotion("strong_mana_recovery", "mana_recovery", MANA_RECOVERY, base, PopFruitType.OCEAN_POP_FRUIT, 500, 1);
 		GlimmeringTales.REGISTRATE.addRegisterCallback(Registries.ITEM, () -> BUILDER.regTab(GTItems.TAB.key()));
 	}
 

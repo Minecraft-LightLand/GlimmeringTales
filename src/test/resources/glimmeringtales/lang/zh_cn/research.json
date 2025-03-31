@@ -1,0 +1,23 @@
+{
+	"glimmeringtales.compile_status.complete": "魔力开始流动",
+	"glimmeringtales.compile_status.editing": "法阵绘制中",
+	"glimmeringtales.compile_status.error": "魔力堵塞",
+	"glimmeringtales.compile_status.failed": "魔力流动不均",
+	"glimmeringtales.hex.cost": "复杂度:%s",
+	"glimmeringtales.hex.status": "研究进度: %s",
+	"glimmeringtales.hex_direction.left": "从右到左:",
+	"glimmeringtales.hex_direction.lower_left": "从右上到左下:",
+	"glimmeringtales.hex_direction.lower_right": "从左上到右下:",
+	"glimmeringtales.hex_direction.right": "从左到右:",
+	"glimmeringtales.hex_direction.upper_left": "从右下到左上:",
+	"glimmeringtales.hex_direction.upper_right": "从左下到右上:",
+	"glimmeringtales.hex.bonus": "研究奖励:",
+	"glimmeringtales.hex.bonus_both": "- 复杂度 <= %s: -%s%% 魔力消耗, -%s%% 专注消耗",
+	"glimmeringtales.hex.bonus_focus": "- 复杂度 <= %s: -%s%% 专注消耗",
+	"glimmeringtales.hex.bonus_mana": "- 复杂度 <= %s: -%s%% 魔力消耗",
+	"glimmeringtales.research_status.completed": "可使用",
+	"glimmeringtales.research_status.locked": "未解锁",
+	"glimmeringtales.research_status.unlocked": "已解锁",
+	"glimmeringtales.save_status.no": "未保存",
+	"glimmeringtales.save_status.yes": "已保存"
+}
