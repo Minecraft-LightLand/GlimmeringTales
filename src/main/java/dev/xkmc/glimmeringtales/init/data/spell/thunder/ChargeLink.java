@@ -49,8 +49,8 @@ public class ChargeLink {
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.CHARGE_LINK.get(), 2002,
 					SpellCastType.INSTANT, SpellTriggerType.FACING_FRONT)
 			).lang("Charge Link").desc(
-					"[Ranged] Create",//TODO
-					"Create",//TODO
+					"[Ranged] Work in Progress",//TODO
+					" Work in Progress",//TODO
 					SpellTooltipData.of(EngineRegistry.DAMAGE)
 			).graph(ChargeBurst.BUILDER);
 

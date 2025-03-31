@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-30T19:47:36.888154	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Custom Registrate Provider]
+// 1.21.1	2025-03-31T15:06:44.126596	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Custom Registrate Provider]
 f628b87d75a2e2a6c5157d17ef22b26cb8b260eb assets/glimmeringtales/blockstates/bamboo.json
 ce8cfd4e2bab2eed8783654db155ae082f8b8aa8 assets/glimmeringtales/blockstates/blossom_pop_fruit.json
 4132de47f0c0e042aadf759876c94ea0a1d95cd2 assets/glimmeringtales/blockstates/clay_carpet.json
@@ -16,8 +16,8 @@ fdbebae44714d98419aec779d5098b1c641a6e87 assets/glimmeringtales/blockstates/ritu
 829f2932a3b6a596774b14a6e51a27c45e17fc4b assets/glimmeringtales/blockstates/struck_leaves.json
 9d9680dcac3f408484cc24fce5ff36d4e2670ce5 assets/glimmeringtales/blockstates/struck_log.json
 036df3f7ec015fa7ef10d874f61140a24008c2ae assets/glimmeringtales/blockstates/struck_sapling.json
-0d2a9222b292400ab70950954c45053ae8eb092a assets/glimmeringtales/lang/en_ud.json
-725b117db2e12fd63ca0c7826183c9c3137587ad assets/glimmeringtales/lang/en_us.json
+21b0caeac7b7c2c24da59d6701d5b10406689442 assets/glimmeringtales/lang/en_ud.json
+56b1427b4d1dd01dca60754c2a1dbf28d12c488c assets/glimmeringtales/lang/en_us.json
 15f496a19c47d83933b652959371e73ad2143d9c assets/glimmeringtales/models/block/bamboo.json
 7d7429b27b786a3d73db3a0e927d746bb37580bf assets/glimmeringtales/models/block/blossom_pop_fruit_0.json
 f0b10f2273a6976a697b57cb9d09fff0de8696fb assets/glimmeringtales/models/block/blossom_pop_fruit_1.json
@@ -831,6 +831,9 @@ bd3bcaf9bd66a367cc034769b248744853fc6c68 data/l2menustacker/tags/item/quick_acce
 57d4d94453693ecac577a00b14bf7c25c099cfef data/minecraft/tags/block/crops.json
 0214bc6a2ec870ecce27885d48674cfcce9b8b59 data/minecraft/tags/block/leaves.json
 01e188932772855becc360e42d9ddfad4332de28 data/minecraft/tags/block/logs_that_burn.json
+01e188932772855becc360e42d9ddfad4332de28 data/minecraft/tags/block/mineable/axe.json
+0214bc6a2ec870ecce27885d48674cfcce9b8b59 data/minecraft/tags/block/mineable/hoe.json
+18c77d9884f57be3cb086d2a6a2779c1d4a68396 data/minecraft/tags/block/mineable/pickaxe.json
 ca0486ea38b896f2786d2d4fab9ba3c54b03f6ea data/minecraft/tags/block/saplings.json
 f6ced02d2e7590e78c6e588e0fd04ed6e50e088a data/minecraft/tags/damage_type/bypasses_armor.json
 89d7c21d810847f370bbf393a09ff4f71caa8c7a data/minecraft/tags/damage_type/bypasses_cooldown.json

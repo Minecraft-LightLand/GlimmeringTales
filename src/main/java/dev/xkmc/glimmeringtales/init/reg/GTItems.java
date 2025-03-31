@@ -249,13 +249,13 @@ public class GTItems {
 			STRUCK_LOG = GlimmeringTales.REGISTRATE.block("struck_log", p ->
 							new StruckLogBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)))
 					.blockstate((ctx, pvd) -> pvd.logBlock(ctx.get()))
-					.tag(BlockTags.LOGS_THAT_BURN).simpleItem().register();
+					.tag(BlockTags.LOGS_THAT_BURN, BlockTags.MINEABLE_WITH_AXE).simpleItem().register();
 
 			STRUCK_LEAVES = GlimmeringTales.REGISTRATE.block("struck_leaves", p ->
 							new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)))
 					.blockstate((ctx, pvd) -> pvd.simpleBlock(ctx.get(),
 							pvd.models().leaves(ctx.getName(), pvd.modLoc("block/" + ctx.getName()))))
-					.tag(BlockTags.LEAVES)
+					.tag(BlockTags.LEAVES, BlockTags.MINEABLE_WITH_HOE)
 					.loot((pvd, block) -> pvd.add(block, pvd.createLeavesDrops(block, Blocks.OAK_SAPLING, 1 / 20f, 1 / 16f, 1 / 12f, 1 / 10f)))
 					.simpleItem()
 					.register();
@@ -285,6 +285,7 @@ public class GTItems {
 							.texture("particle", pvd.mcLoc("block/deepslate"))
 							.renderType("cutout")))
 					.simpleItem()
+					.tag(BlockTags.MINEABLE_WITH_PICKAXE)
 					.register();
 
 			ALTAR_BE = GlimmeringTales.REGISTRATE.blockEntity("ritual_altar", NatureSideBlockEntity::new)
@@ -301,6 +302,7 @@ public class GTItems {
 							.texture("particle", pvd.mcLoc("block/deepslate"))
 							.renderType("cutout")))
 					.simpleItem()
+					.tag(BlockTags.MINEABLE_WITH_PICKAXE)
 					.register();
 
 			MATRIX_BE = GlimmeringTales.REGISTRATE.blockEntity("ritual_matrix", NatureCoreBlockEntity::new)
