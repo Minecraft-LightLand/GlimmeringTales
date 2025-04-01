@@ -22,7 +22,7 @@ public class BlossomPopFruit extends NaturalPopFruit {
 				return true;
 			le.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 200, 0));
 		}
-		return false;
+		return super.onExplosionAffecting(entity);
 	}
 
 	@Override

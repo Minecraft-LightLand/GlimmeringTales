@@ -1,7 +1,6 @@
 package dev.xkmc.glimmeringtales.init.reg;
 
 import com.tterrag.registrate.util.entry.ItemEntry;
-import dev.shadowsoffire.apothic_attributes.api.ALObjects;
 import dev.xkmc.glimmeringtales.content.item.materials.VialItem;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -17,12 +16,10 @@ import java.util.function.Supplier;
 public enum Vials implements ItemLike {
 	VIAL_OF_NATURE(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 1000, 0)),
 	VIAL_OF_BLOSSOM(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 2000, 0),
-			() -> new MobEffectInstance(ALObjects.MobEffects.REGENERATION, 1000, 0)),
+			() -> new MobEffectInstance(MobEffects.REGENERATION, 1000, 0)),
 	VIAL_OF_OCEAN(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 1000, 1),
 			() -> new MobEffectInstance(MobEffects.CONDUIT_POWER, 1000, 0)),
-	MYSTIC_VIAL(
-			() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 1000, 2)
-	);
+	MYSTIC_VIAL(() -> new MobEffectInstance(GTEffects.MANA_RECOVERY, 1000, 2));
 
 	public final ItemEntry<VialItem> item;
 

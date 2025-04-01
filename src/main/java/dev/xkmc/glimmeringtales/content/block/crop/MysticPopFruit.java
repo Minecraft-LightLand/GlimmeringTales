@@ -17,7 +17,7 @@ public class MysticPopFruit extends AbstractPopFruit {
 		if (entity instanceof LivingEntity le) {
 			le.addEffect(new MobEffectInstance(GTEffects.MANA_RECOVERY, 300, 0));
 		}
-		return entity instanceof Enemy;
+		return super.onExplosionAffecting(entity);
 	}
 
 

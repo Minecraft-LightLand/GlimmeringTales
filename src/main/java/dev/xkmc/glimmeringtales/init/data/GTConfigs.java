@@ -30,8 +30,9 @@ public class GTConfigs {
 		public final ModConfigSpec.IntValue wandInteractionDistance;
 		public final ModConfigSpec.IntValue ritualRange;
 		public final ModConfigSpec.DoubleValue popFruitExplosionChanceOnEaten;
+		public final ModConfigSpec.DoubleValue popFruitExplosionDamageFactor;
 		public final ModConfigSpec.DoubleValue popFruitBonemealGrowChance;
-		public final ModConfigSpec.IntValue popFruitBiomeGrowRarity;
+		public final ModConfigSpec.IntValue popFruitNaturalGrowRarity;
 		public final ModConfigSpec.IntValue popFruitBiomeGrowFactor;
 		public final ModConfigSpec.IntValue popFruitAdjacentCrystalBoost;
 
@@ -51,16 +52,19 @@ public class GTConfigs {
 					.text("Crystal of Winterstorm: Powder Snow consumption")
 					.defineInRange("crystalOfWinterstormRequirement", 64, 1, 1000);
 			builder.pop();
-			builder.push("pop_fruit","Pop Fruit");
+			builder.push("pop_fruit", "Pop Fruit");
 			popFruitExplosionChanceOnEaten = builder
 					.text("Chance for Pop Fruit to explosion on consumed")
 					.defineInRange("popFruitExplosionChanceOnEaten", 0.1, 0, 1);
+			popFruitExplosionDamageFactor = builder
+					.text("Explosion damage factor for pop fruit")
+					.defineInRange("popFruitExplosionDamageFactor", 0.35, 0, 2);
 			popFruitBonemealGrowChance = builder
 					.text("Chance for Pop Fruit to grow on bone meal")
 					.defineInRange("popFruitBonemealGrowChance", 0.05, 0, 1);
-			popFruitBiomeGrowRarity = builder
+			popFruitNaturalGrowRarity = builder
 					.text("Pop Fruit has one in X chance to grow on random tick")
-					.defineInRange("popFruitBiomeGrowRarity", 100, 10, 1000);
+					.defineInRange("popFruitNaturalGrowRarity", 100, 10, 1000);
 			popFruitBiomeGrowFactor = builder
 					.text("Pop Fruit growth speed multiplier in correct biome")
 					.defineInRange("popFruitBiomeGrowFactor", 3, 0, 100);

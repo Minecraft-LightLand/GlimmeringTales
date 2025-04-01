@@ -30,9 +30,9 @@ public class GTWorldGen {
 	private static final TreePlacement PF_DENSE = new TreePlacement("struck_tree_dense", 8, GTItems.STRUCK_SAPLING::get);
 
 	private static final FeaturePlacement LARGE = new LargeTreePlacement("struck_large_tree");
-	private static final FeaturePlacement POP = new PopPlacement("pop_fruit", PopFruitType.POP_FRUIT::get, 8, 96);
-	private static final FeaturePlacement BLOSSOM_POP = new PopPlacement("blossom_pop_fruit", PopFruitType.BLOSSOM_POP_FRUIT::get, 2, 64);
-	private static final FeaturePlacement OCEAN_POP = new WaterPopPlacement("ocean_pop_fruit", PopFruitType.OCEAN_POP_FRUIT::get, 16, 96);
+	private static final FeaturePlacement POP = new PopPlacement("pop_fruit", PopFruitType.POP_FRUIT::get, 4, 64);
+	private static final FeaturePlacement BLOSSOM_POP = new PopPlacement("blossom_pop_fruit", PopFruitType.BLOSSOM_POP_FRUIT::get, 1, 32);
+	private static final FeaturePlacement OCEAN_POP = new WaterPopPlacement("ocean_pop_fruit", PopFruitType.OCEAN_POP_FRUIT::get, 8, 48);
 
 	public static void genFeatures(DataProviderInitializer init) {
 		init.add(Registries.CONFIGURED_FEATURE, ctx -> {

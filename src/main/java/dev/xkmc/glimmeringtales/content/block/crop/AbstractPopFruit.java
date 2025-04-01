@@ -112,10 +112,10 @@ public class AbstractPopFruit extends CropBlock {
 		for (Direction dir : Direction.values()) {
 			if (dir.getAxis() == Direction.Axis.Y) continue;
 			if (level.getBlockState(pos.relative(dir)).is(GTItems.CRYSTAL_VINE)) {
-				f += GTConfigs.SERVER.popFruitBiomeGrowFactor.getAsInt();
+				f += GTConfigs.SERVER.popFruitAdjacentCrystalBoost.getAsInt();
 			}
 		}
-		int def = GTConfigs.SERVER.popFruitBiomeGrowRarity.getAsInt();
+		int def = GTConfigs.SERVER.popFruitNaturalGrowRarity.getAsInt();
 		if (CommonHooks.canCropGrow(level, pos, state, random.nextInt((int) (def / f) + 1) == 0)) {
 			level.setBlock(pos, getStateForAge(i + 1), 2);
 			CommonHooks.fireCropGrowPost(level, pos, state);
@@ -137,8 +137,8 @@ public class AbstractPopFruit extends CropBlock {
 			if (r <= 0) return;
 			ExplosionHandler.explode(new BaseExplosion(
 					new BaseExplosionContext(level, pos.getX() + 0.5, aabb.maxY, pos.getZ() + 0.5, r),
-					new VanillaExplosionContext(null, null, null, false, Explosion.BlockInteraction.KEEP),
-					this::onExplosionAffecting, ParticleExplosionContext.of(r)
+					new VanillaExplosionContext(null, null, new PopFruitCalculator(), false, Explosion.BlockInteraction.KEEP),
+					e -> e instanceof LivingEntity, ParticleExplosionContext.of(r)
 			));
 			onExplode(level, pos, r);
 		}
@@ -187,6 +187,20 @@ public class AbstractPopFruit extends CropBlock {
 						.when(helper.intState(block, AGE, MAX_AGE))
 						.otherwise(LootItem.lootTableItem(block.asItem()))
 		)));
+	}
+
+	private class PopFruitCalculator extends ExplosionDamageCalculator {
+
+		@Override
+		public boolean shouldDamageEntity(Explosion exp, Entity e) {
+			return onExplosionAffecting(e);
+		}
+
+		@Override
+		public float getEntityDamageAmount(Explosion exp, Entity e) {
+			return super.getEntityDamageAmount(exp, e) * GTConfigs.SERVER.popFruitExplosionDamageFactor.get().floatValue();
+		}
+
 	}
 
 }

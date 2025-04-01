@@ -26,12 +26,14 @@
 		"pop_fruit": "爆爆果",
 		"popFruitExplosionChanceOnEaten": "吃爆爆果的爆炸概率",
 		"popFruitExplosionChanceOnEaten.tooltip": " 默认: 0.1\n 范围: 0.0 ~ 1.0",
+		"popFruitExplosionDamageFactor": "爆爆果的爆炸伤害倍率",
+		"popFruitExplosionDamageFactor.tooltip": " 默认: 0.35\n 范围: 0.0 ~ 2.0",
 		"popFruitAdjacentCrystalBoost": "爆爆果在生命之藤旁边的生长速度加成",
 		"popFruitAdjacentCrystalBoost.tooltip": " 默认: 1\n 范围: 0 ~ 10",
 		"popFruitBiomeGrowFactor": "爆爆果在正确群系的生长速度加成",
 		"popFruitBiomeGrowFactor.tooltip": " 默认: 3\n 范围: 0 ~ 100",
-		"popFruitBiomeGrowRarity": "爆爆果平均几个随机刻生长一阶段",
-		"popFruitBiomeGrowRarity.tooltip": " 默认: 100\n 范围: 10 ~ 1000",
+		"popFruitNaturalGrowRarity": "爆爆果平均几个随机刻生长一阶段",
+		"popFruitNaturalGrowRarity.tooltip": " 默认: 100\n 范围: 10 ~ 1000",
 		"popFruitBonemealGrowChance": "对爆爆果使用骨粉的生长概率",
 		"popFruitBonemealGrowChance.tooltip": " 默认: 0.05\n 范围: 0.0 ~ 1.0"
 	}

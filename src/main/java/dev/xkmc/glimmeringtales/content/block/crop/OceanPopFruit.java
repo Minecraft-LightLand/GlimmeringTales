@@ -73,7 +73,7 @@ public class OceanPopFruit extends NaturalPopFruit implements LiquidBlockContain
 		if (entity instanceof LivingEntity le) {
 			le.addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0));
 		}
-		return false;
+		return super.onExplosionAffecting(entity);
 	}
 
 	@Override
