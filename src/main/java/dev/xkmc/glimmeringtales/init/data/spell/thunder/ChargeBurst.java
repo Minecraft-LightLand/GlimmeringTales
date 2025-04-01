@@ -39,7 +39,7 @@ import java.util.Map;
 public class ChargeBurst {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("charge_burst")).focusAndCost(120, 800).mob(16, 1)
+			.build(GlimmeringTales.loc("charge_burst")).focusAndCost(100, 600).mob(16, 1)
 			.damageCustom(msg -> new DamageType(msg, 0.1f),
 					"%s is electrocuted by charge burst",
 					"%s is electrocuted by %s with charge burst",
@@ -81,7 +81,7 @@ public class ChargeBurst {
 				new LightningInstance(STRIKE),
 				new CustomProjectileShoot(DoubleVariable.ZERO, ctx.proj, IntVariable.of("12"), true, true, Map.of())
 						.move(OffsetModifier.of("0", "-0.49", "0"))
-						.circular(DoubleVariable.of("6"), DoubleVariable.of("2"), false, null,
+						.circular("8", "3", "2", null,
 								BlockTestCondition.Type.BLOCKS_MOTION.get().invert(),
 								BlockTestCondition.Type.BLOCKS_MOTION.get().move(OffsetModifier.BELOW)
 						)

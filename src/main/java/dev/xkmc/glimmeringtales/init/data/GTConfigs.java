@@ -28,14 +28,22 @@ public class GTConfigs {
 		public final ModConfigSpec.IntValue crystalOfFlameRequirement;
 		public final ModConfigSpec.IntValue crystalOfWinterstormRequirement;
 		public final ModConfigSpec.IntValue wandInteractionDistance;
-		public final ModConfigSpec.IntValue focusCoolDown;
 		public final ModConfigSpec.IntValue ritualRange;
+		public final ModConfigSpec.DoubleValue popFruitExplosionChanceOnEaten;
+		public final ModConfigSpec.DoubleValue popFruitExplosionDamageFactor;
+		public final ModConfigSpec.DoubleValue popFruitBonemealGrowChance;
+		public final ModConfigSpec.IntValue popFruitNaturalGrowRarity;
+		public final ModConfigSpec.IntValue popFruitBiomeGrowFactor;
+		public final ModConfigSpec.IntValue popFruitAdjacentCrystalBoost;
 
 		public Server(Builder builder) {
 			markL2();
 			wandInteractionDistance = builder
 					.text("Wand interaction range")
 					.defineInRange("wandInteractionDistance", 24, 4, 64);
+			ritualRange = builder
+					.text("Range for ritual blocks to check for each other")
+					.defineInRange("ritualRange", 3, 1, 16);
 			builder.push("materials", "Material properties");
 			crystalOfFlameRequirement = builder
 					.text("Crystal of Flame: Lava consumption")
@@ -43,12 +51,26 @@ public class GTConfigs {
 			crystalOfWinterstormRequirement = builder
 					.text("Crystal of Winterstorm: Powder Snow consumption")
 					.defineInRange("crystalOfWinterstormRequirement", 64, 1, 1000);
-			focusCoolDown = builder
-					.text("Cooldown on focus restoration after casting spell")
-					.defineInRange("focusCoolDown", 40, 0, 1000);
-			ritualRange = builder
-					.text("Range for ritual blocks to check for each other")
-					.defineInRange("ritualRange", 3, 1, 16);
+			builder.pop();
+			builder.push("pop_fruit", "Pop Fruit");
+			popFruitExplosionChanceOnEaten = builder
+					.text("Chance for Pop Fruit to explosion on consumed")
+					.defineInRange("popFruitExplosionChanceOnEaten", 0.1, 0, 1);
+			popFruitExplosionDamageFactor = builder
+					.text("Explosion damage factor for pop fruit")
+					.defineInRange("popFruitExplosionDamageFactor", 0.35, 0, 2);
+			popFruitBonemealGrowChance = builder
+					.text("Chance for Pop Fruit to grow on bone meal")
+					.defineInRange("popFruitBonemealGrowChance", 0.05, 0, 1);
+			popFruitNaturalGrowRarity = builder
+					.text("Pop Fruit has one in X chance to grow on random tick")
+					.defineInRange("popFruitNaturalGrowRarity", 100, 10, 1000);
+			popFruitBiomeGrowFactor = builder
+					.text("Pop Fruit growth speed multiplier in correct biome")
+					.defineInRange("popFruitBiomeGrowFactor", 3, 0, 100);
+			popFruitAdjacentCrystalBoost = builder
+					.text("Pop Fruit growth speed multiplier when there is adjacent crystal vine")
+					.defineInRange("popFruitAdjacentCrystalBoost", 1, 0, 10);
 			builder.pop();
 		}
 	}

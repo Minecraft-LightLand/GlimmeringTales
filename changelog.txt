@@ -1,3 +1,8 @@
+3.0.9
+- Balancing adjustment for spells
+- Add Pop Fruit, potions, and vials
+- Fix the bug that ritual matrix and altar drop nothing
+
 3.0.8
 - Add 5 more spells
 - Add Apotheosis integration

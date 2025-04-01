@@ -67,8 +67,7 @@ public class AmethystSpells {
 						DoubleVariable.ZERO,
 						IntVariable.of("20")
 				).move(ForwardOffsetModifier.of("-0.2")))
-				.hit(new DamageProcessor(
-						ctx.damage(), DMG, true, true
+				.hit(new DamageProcessor(ctx.damage(), DMG, true, true
 				)).hit(new StackingEffectProcessor(
 						LCEffects.BLEED,
 						IntVariable.of("100"),

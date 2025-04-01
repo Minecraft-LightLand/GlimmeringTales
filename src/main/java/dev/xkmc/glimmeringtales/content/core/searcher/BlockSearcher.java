@@ -1,6 +1,6 @@
 package dev.xkmc.glimmeringtales.content.core.searcher;
 
-import dev.xkmc.glimmeringtales.content.item.materials.IBlockSearcher;
+import dev.xkmc.glimmeringtales.content.item.tool.IBlockSearcher;
 import dev.xkmc.l2core.base.effects.api.SimpleIcon;
 import dev.xkmc.l2core.events.ClientEffectRenderEvents;
 import net.minecraft.client.Minecraft;

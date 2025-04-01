@@ -45,7 +45,7 @@ public class GTSpells {
 		for (var e : NatureSpellGenRegistry.LIST) {
 			e.genLang(pvd);
 		}
-		if (ModList.get().isLoaded(Apotheosis.MODID)){
+		if (ModList.get().isLoaded(Apotheosis.MODID)) {
 			ApothCompat.lang(pvd);
 		}
 	}

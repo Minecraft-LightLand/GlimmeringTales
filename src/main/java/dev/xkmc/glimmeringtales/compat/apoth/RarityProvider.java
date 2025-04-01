@@ -18,12 +18,10 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.Unbreakable;
 import org.spongepowered.include.com.google.common.base.Preconditions;
 
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.List;
@@ -33,7 +31,7 @@ import java.util.function.UnaryOperator;
 
 public class RarityProvider extends DynamicRegistryProvider<LootRarity> {
 	public RarityProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-		super(new PackOutput(output.getOutputFolder().getParent().getParent().getParent().resolve("ignored/")),
+		super(new PackOutput(output.getOutputFolder().resolve("../../../ignored/")),
 				registries, RarityRegistry.INSTANCE);
 	}
 
@@ -67,7 +65,7 @@ public class RarityProvider extends DynamicRegistryProvider<LootRarity> {
 	}
 
 	void addRarity(String id, TextColor color, Holder<Item> material, UnaryOperator<RarityBuilder> config) {
-		this.add(Apotheosis.loc(id), ((RarityBuilder) config.apply(builder(color, material))).build());
+		this.add(Apotheosis.loc(id), config.apply(builder(color, material)).build());
 	}
 
 	public static RarityBuilder builder(TextColor color, Holder<Item> material) {

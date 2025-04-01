@@ -20,7 +20,7 @@ public interface ISpellHolder {
 				}
 				double power = charging ? 0 : ctx.power();
 				ctx = new SpellContext(ctx.user(), ctx.origin(), ctx.facing(), ctx.seed(), ctx.tickUsing(), power);
-				spell.spell().value().execute(ctx);
+				spell.spell().value().execute(spell.spell(), ctx);
 			}
 			return true;
 		}

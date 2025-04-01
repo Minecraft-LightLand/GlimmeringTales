@@ -1,7 +1,7 @@
 {
-  "cost": 120,
+  "cost": 60,
   "elem": "glimmeringtales:earth",
-  "focus": 40,
+  "focus": 20,
   "graph": "glimmeringtales:stone",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:stone",

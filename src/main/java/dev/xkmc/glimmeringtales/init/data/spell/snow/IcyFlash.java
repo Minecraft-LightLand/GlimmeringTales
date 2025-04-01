@@ -35,7 +35,7 @@ import java.util.List;
 public class IcyFlash {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("icy_flash")).focusAndCost(100, 400)
+			.build(GlimmeringTales.loc("icy_flash")).focusAndCost(60, 360)
 			.damageExplosion()
 			.spell(e -> new SpellAction(icyFlash(e), GTItems.ICY_FLASH.get(), 2010,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))
@@ -70,13 +70,8 @@ public class IcyFlash {
 								DoubleVariable.of("2")
 						),
 						List.of(
-								new DamageProcessor(ctx.damage(),
-										DoubleVariable.of("4"), true, true),
-								new KnockBackProcessor(
-										DoubleVariable.of("0.1"),
-										DoubleVariable.ZERO,
-										DoubleVariable.ZERO
-								),
+								new DamageProcessor(ctx.damage(), DoubleVariable.of("4"), true, true),
+								KnockBackProcessor.of("0.1"),
 								new EffectProcessor(
 										LCEffects.ICE,
 										IntVariable.of("100"),
@@ -90,17 +85,9 @@ public class IcyFlash {
 						new SimpleParticleInstance(
 								ParticleTypes.SNOWFLAKE,
 								DoubleVariable.of("0.1")
-						).move(new RandomOffsetModifier(
-										RandomOffsetModifier.Type.RECT,
-										DoubleVariable.of("2"),
-										DoubleVariable.of("2"),
-										DoubleVariable.of("2")
-								),
-								new SetDirectionModifier(
-										DoubleVariable.ZERO,
-										DoubleVariable.of("-1"),
-										DoubleVariable.ZERO
-								)
+						).move(
+								RandomOffsetModifier.Type.RECT.of("2", "2", "2"),
+								SetDirectionModifier.of("0", "-1", "0")
 						),
 						null
 				)

@@ -10,6 +10,7 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
+import dev.xkmc.l2magic.content.engine.iterator.RingRandomIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
@@ -30,7 +31,7 @@ import java.util.List;
 public class NetherrackSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("netherrack")).focusAndCost(40, 100)
+			.build(GlimmeringTales.loc("netherrack")).focusAndCost(30, 90)
 			.damageFire()
 			.block(NetherrackSpells::gen, GTItems.RUNE_NETHERRACK, RuneBlock::of,
 					(b, e) -> b.add(Blocks.NETHERRACK, BlockSpell.of(e)))
@@ -40,7 +41,7 @@ public class NetherrackSpells {
 					SpellTooltipData.damage()
 			).graph(ResearchBonus.small3(20), "E->SF", "SF->LO", "LO->E");
 
-	private static final DoubleVariable DMG = DoubleVariable.of("4");
+	private static final DoubleVariable DMG = DoubleVariable.of("6");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
@@ -51,20 +52,21 @@ public class NetherrackSpells {
 				),
 				new ProcessorEngine(
 						SelectionType.ENEMY_NO_FAMILY,
-						new BoxSelector(DoubleVariable.of("2"), DoubleVariable.of("2"), false),
+						new BoxSelector(DoubleVariable.of("3"), DoubleVariable.of("2"), false),
 						List.of(new DamageProcessor(ctx.damage(), DMG, true, false))
 				),
 				new DelayedIterator(
 						IntVariable.of("10"),
 						IntVariable.of("1"),
-						new SimpleParticleInstance(
-								ParticleTypes.FLAME,
-								DoubleVariable.of("0.3")
-						).move(
-								SetDirectionModifier.of("rand(-0.2,0.2)", "1", "rand(-0.2,0.2)"),
-								OffsetModifier.of("rand(-0.4,0.4)", "0", "rand(-0.4,0.4)")
-						),
-						null
+						new RingRandomIterator(
+								DoubleVariable.ZERO,
+								DoubleVariable.of("2.5"),
+								IntVariable.of("3"),
+								new SimpleParticleInstance(
+										ParticleTypes.FLAME,
+										DoubleVariable.of("0.3")
+								).move(SetDirectionModifier.of("rand(-0.2,0.2)", "1", "rand(-0.2,0.2)"))
+						)
 				)
 		)).move(OffsetModifier.of("0", "0.55", "0"));
 	}

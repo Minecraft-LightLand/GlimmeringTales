@@ -1,0 +1,11 @@
+{
+  "type": "glimmeringtales:strike_item",
+  "ingredient": {
+    "type": "l2core:potion",
+    "potion": "glimmeringtales:mana_recovery"
+  },
+  "result": {
+    "count": 1,
+    "id": "glimmeringtales:vial_of_nature"
+  }
+}

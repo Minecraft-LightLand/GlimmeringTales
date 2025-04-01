@@ -15,6 +15,7 @@ import dev.xkmc.glimmeringtales.events.GTAttackListener;
 import dev.xkmc.glimmeringtales.events.GTClickHandler;
 import dev.xkmc.glimmeringtales.init.data.*;
 import dev.xkmc.glimmeringtales.init.data.spell.GTSpells;
+import dev.xkmc.glimmeringtales.init.data.world.GTWorldGen;
 import dev.xkmc.glimmeringtales.init.reg.*;
 import dev.xkmc.l2backpack.content.common.BaseBagItemHandler;
 import dev.xkmc.l2core.init.reg.registrate.L2Registrate;
@@ -29,6 +30,7 @@ import dev.xkmc.l2serial.serialization.codec.CodecAdaptor;
 import dev.xkmc.l2serial.serialization.custom_handler.Handlers;
 import dev.xkmc.l2serial.util.Wrappers;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -67,6 +69,7 @@ public class GlimmeringTales {
 		GTRecipes.register();
 		GTEngine.register();
 		GTEntities.register();
+		GTEffects.register();
 		GTParticles.register();
 		if (ModList.get().isLoaded(PatchouliAPI.MOD_ID)) {
 			PatchouliCompat.gen();
@@ -97,9 +100,10 @@ public class GlimmeringTales {
 		for (var e : event.getTypes()) {
 			event.add(e, GTRegistries.MAX_MANA);
 			event.add(e, GTRegistries.MANA_REGEN);
-			event.add(e, GTRegistries.MAX_FOCUS);
 			GTRegistries.ELEMENT.reg().holders().forEach(x -> event.add(e, x.value().getAffinity()));
 		}
+		event.add(EntityType.PLAYER, GTRegistries.MAX_FOCUS);
+		event.add(EntityType.PLAYER, GTRegistries.FOCUS_CD);
 	}
 
 	@SubscribeEvent

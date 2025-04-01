@@ -45,7 +45,7 @@ import java.util.Map;
 public class IllusoryField {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.OCEAN
-			.build(GlimmeringTales.loc("illusory_field")).focusAndCost(120, 600).mob(16, 1)
+			.build(GlimmeringTales.loc("illusory_field")).focusAndCost(100, 600).mob(16, 1)
 			.damageCustom(msg -> new DamageType(msg, 0.1f, DamageEffects.DROWNING),
 					"%s is drowned by magical bubbles",
 					"%s is drowned by %s with magical bubbles",
@@ -104,8 +104,6 @@ public class IllusoryField {
 						new RingRandomIterator(
 								DoubleVariable.ZERO,
 								DoubleVariable.of("7"),
-								DoubleVariable.ZERO,
-								DoubleVariable.of("360"),
 								IntVariable.of("6"),
 								new CustomProjectileShoot(
 										DoubleVariable.of("rand(0.04,0.09)"),
@@ -113,10 +111,8 @@ public class IllusoryField {
 										IntVariable.of("rand(90,110)"),
 										true, true,
 										Map.of()
-								).move(
-										SetDirectionModifier.of("rand(-3,3)", "100", "rand(-3,3)")
-								), null
-						), null
+								).move(SetDirectionModifier.of("rand(-3,3)", "100", "rand(-3,3)"))
+						)
 				)
 		));
 

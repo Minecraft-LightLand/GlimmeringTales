@@ -41,7 +41,7 @@ import java.util.List;
 public class SandSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("sand")).focusAndCost(60, 240)
+			.build(GlimmeringTales.loc("sand")).focusAndCost(60, 24)
 			.damageCustom(s -> new DamageType(s, 0.1f),
 					"%s is buried by sandstorm", "%s is buried by %s's sandstorm",
 					DamageTypeTags.IS_PROJECTILE)
@@ -53,7 +53,7 @@ public class SandSpells {
 					SpellTooltipData.damageAndEffect()
 			).graph(ResearchBonus.small2(7), "E->SF");
 
-	private static final DoubleVariable DMG = DoubleVariable.of("4");
+	private static final DoubleVariable DMG = DoubleVariable.of("2");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		double vsp = 0.5;
@@ -72,12 +72,7 @@ public class SandSpells {
 				List.of(
 						new DamageProcessor(ctx.damage(), DMG, true, true),
 						SetDeltaProcessor.ZERO,
-						new PushProcessor(
-								DoubleVariable.of("-0.05"),
-								DoubleVariable.ZERO,
-								DoubleVariable.ZERO,
-								PushProcessor.Type.HORIZONTAL
-						),
+						PushProcessor.Type.HORIZONTAL.of("-0.05"),
 						new EffectProcessor(
 								MobEffects.MOVEMENT_SLOWDOWN,
 								IntVariable.of("100"),
@@ -114,12 +109,10 @@ public class SandSpells {
 								new RingRandomIterator(
 										DoubleVariable.of(ir + ""),
 										DoubleVariable.of(ir + ""),
-										DoubleVariable.of("-180"),
-										DoubleVariable.of("180"),
 										IntVariable.of("3"),
-										particle, null
+										particle
 								).move(new Dir2NormalModifier())
-						), null
+						)
 				)
 		));
 		return new ListLogic(List.of(
@@ -128,14 +121,14 @@ public class SandSpells {
 								SoundEvents.BREEZE_IDLE_GROUND,
 								DoubleVariable.of("1"),
 								DoubleVariable.of("1+rand(-0.5,0.2)+rand(-0.5,0.2)")
-						), null),
+						)),
 				new DelayedIterator(IntVariable.of("90"), IntVariable.of("1"),
 						new SoundInstance(
 								SoundEvents.SAND_BREAK,
 								DoubleVariable.of("1"),
 								DoubleVariable.of("1+rand(-0.5,0.2)+rand(-0.5,0.2)")
-						), null),
-				new DelayedIterator(IntVariable.of("90"), IntVariable.of("1"), tick, null)
+						)),
+				new DelayedIterator(IntVariable.of("90"), IntVariable.of("1"), tick)
 						.move(OffsetModifier.ABOVE)
 		));
 

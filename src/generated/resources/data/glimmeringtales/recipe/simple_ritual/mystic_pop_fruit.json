@@ -1,0 +1,55 @@
+{
+  "type": "glimmeringtales:simple_ritual",
+  "core": {
+    "ingredient": {
+      "item": "glimmeringtales:crystal_of_life"
+    },
+    "remainder": {
+      "count": 1,
+      "id": "glimmeringtales:mystic_pop_fruit"
+    }
+  },
+  "list": [
+    {
+      "ingredient": {
+        "item": "glimmeringtales:pop_fruit"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:pop_fruit"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:blossom_pop_fruit"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:ocean_pop_fruit"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:struck_log"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:struck_log"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:struck_log"
+      }
+    },
+    {
+      "ingredient": {
+        "item": "glimmeringtales:struck_log"
+      }
+    }
+  ],
+  "time": 100
+}

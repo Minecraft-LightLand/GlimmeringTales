@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "glimmeringtales:item/crystal_vine"
+    "layer0": "glimmeringtales:item/crop/crystal_vine"
   }
 }

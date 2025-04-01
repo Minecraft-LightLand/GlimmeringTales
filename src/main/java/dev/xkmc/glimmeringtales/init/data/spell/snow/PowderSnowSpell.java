@@ -49,7 +49,7 @@ public class PowderSnowSpell {
 					SpellTooltipData.damageAndEffect()
 			).graph(ResearchBonus.small3(21), "S<->LEFO");
 
-	private static final DoubleVariable DMG = DoubleVariable.of("4");
+	private static final DoubleVariable DMG = DoubleVariable.of("2");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		double vsp = 0.5;
@@ -68,12 +68,7 @@ public class PowderSnowSpell {
 				List.of(
 						new DamageProcessor(ctx.damage(), DMG, true, true),
 						SetDeltaProcessor.ZERO,
-						new PushProcessor(
-								DoubleVariable.of("-0.05"),
-								DoubleVariable.ZERO,
-								DoubleVariable.ZERO,
-								PushProcessor.Type.HORIZONTAL
-						),
+						PushProcessor.Type.HORIZONTAL.of("-0.05"),
 						new EffectProcessor(
 								LCEffects.ICE,
 								IntVariable.of("100"),
@@ -114,16 +109,14 @@ public class PowderSnowSpell {
 								new RingRandomIterator(
 										DoubleVariable.of(ir + ""),
 										DoubleVariable.of(ir + ""),
-										DoubleVariable.of("-180"),
-										DoubleVariable.of("180"),
 										IntVariable.of("3"),
-										particle, null
+										particle
 								).move(new Dir2NormalModifier())
-						), null
+						)
 				)
 		));
 
-		return new DelayedIterator(IntVariable.of("80"), IntVariable.of("1"), tick, null);
+		return new DelayedIterator(IntVariable.of("80"), IntVariable.of("1"), tick);
 	}
 
 

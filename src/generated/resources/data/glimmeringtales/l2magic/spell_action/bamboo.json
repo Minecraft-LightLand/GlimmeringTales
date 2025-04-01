@@ -37,7 +37,7 @@
         }
       },
       "delayPerBlock": "1",
-      "plane": false,
+      "height": "4",
       "range": "4",
       "variable": "i"
     },

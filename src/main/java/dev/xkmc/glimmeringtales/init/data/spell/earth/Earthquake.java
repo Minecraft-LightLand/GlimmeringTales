@@ -32,7 +32,7 @@ import java.util.List;
 public class Earthquake {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("earthquake")).focusAndCost(160, 640).mob(5, 1)
+			.build(GlimmeringTales.loc("earthquake")).focusAndCost(80, 480).mob(5, 1)
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is killed by earthquake", "%s is killed by %s using earthquake",
 					DamageTypeTags.IS_EXPLOSION
@@ -44,7 +44,7 @@ public class Earthquake {
 					SpellTooltipData.damageAndFalling()
 			).graph(ResearchBonus.small4(19), "L->E", "E->F", "F->S", "S->O", "O->T", "T->L");
 
-	private static final DoubleVariable DMG = DoubleVariable.of("2");
+	private static final DoubleVariable DMG = DoubleVariable.of("10");
 	private static final DoubleVariable INIT = DoubleVariable.of("10");
 	private static final DoubleVariable MAX = DoubleVariable.of("30");
 
@@ -64,8 +64,8 @@ public class Earthquake {
 								List.of(new DamageProcessor(ctx.damage(), INIT, true, false))
 						), "i"
 				),
-				new GTKnockBlock(DoubleVariable.of("1"), DMG, MAX).delay(IntVariable.of("i_r*2")).circular(
-						DoubleVariable.of("6"), DoubleVariable.of("0"), false, "i",
+				new GTKnockBlock(DoubleVariable.of("1"), DMG, MAX).delay(IntVariable.of("i_r*2")
+				).circular("8", "3", "0", "i",
 						BooleanVariable.of("i_r>1.5"),
 						BlockTestCondition.Type.BLOCKS_MOTION.get(),
 						BlockTestCondition.Type.PUSHABLE.get(),

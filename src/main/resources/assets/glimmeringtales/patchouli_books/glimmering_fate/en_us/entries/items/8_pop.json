@@ -1,0 +1,15 @@
+{
+  "name": "Pop Fruits",
+  "icon": "glimmeringtales:pop_fruit",
+  "category": "glimmeringtales:items",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "tag:glimmeringtales:pop_fruit",
+      "title": "Pop Fruits",
+      "text": "Pop Fruits are a kind of unstable magical plants. They break when you touch then, and if they are mature or semi-mature, they will explode.$(br2) Pop Fruit explosion effect varies by type. Blossom Pop Fruit explosion does not harm player and grants regeneration effect. Ocean Pop Fruit explosion grants conduit power"
+    },
+    "They grow faster in their native biomes and grow slowly outside of those. You can use bonemeal to accelerate growth but it's quite ineffective. They grows faster when they are adjacent to Crystal Vine, planted from Seed of Nature. $(br2)Eating them grants mana recovery effect but has a chance to explode. It's better to brew them into potions."
+  ]
+}

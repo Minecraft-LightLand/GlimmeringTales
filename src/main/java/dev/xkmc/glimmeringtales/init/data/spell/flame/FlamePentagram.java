@@ -37,14 +37,13 @@ import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 
 public class FlamePentagram {
 
 	public static final NatureSpellBuilder HELL_MARK = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 400).mob(16, 1)
+			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 500).mob(16, 1)
 			.damageFire()
 			.spell(ctx -> new SpellAction(flameBurst(ctx),
 					GTItems.HELL_MARK.asItem(), 200,
@@ -56,7 +55,7 @@ public class FlamePentagram {
 			).graph(ResearchBonus.small4(22), "E->SF", "L->OT", "SO->E", "FT->L");
 
 	public static final NatureSpellBuilder LAVA_BURST = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(5, 20, 30)
+			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(4, 20, 30)
 			.damageExplosion()
 			.spell(ctx -> new SpellAction(earthquake(ctx),
 					GTItems.LAVA_BURST.asItem(), 300,
@@ -79,13 +78,10 @@ public class FlamePentagram {
 								SoundEvents.FIRECHARGE_USE,
 								DoubleVariable.of("1"),
 								DoubleVariable.of("rand(-0.1,0.1)+rand(-0.1,0.1)")
-						), null
+						)
 				),
 				star(4, 0.3).move(
-						new SetDirectionModifier(
-								DoubleVariable.of("1"),
-								DoubleVariable.ZERO,
-								DoubleVariable.ZERO),
+						SetDirectionModifier.of("1", "0", "0"),
 						RotationModifier.of("rand(0,360)")
 				),
 				new DelayedIterator(
@@ -98,16 +94,8 @@ public class FlamePentagram {
 												DoubleVariable.of("6")
 										), List.of(
 										new DamageProcessor(ctx.damage(), HM_DMG, true, false),
-										new PushProcessor(
-												DoubleVariable.of("0.1"),
-												DoubleVariable.ZERO,
-												DoubleVariable.ZERO,
-												PushProcessor.Type.UNIFORM
-										),
-										new PropertyProcessor(
-												PropertyProcessor.Type.IGNITE,
-												IntVariable.of("100")
-										)
+										PushProcessor.Type.UNIFORM.of("0.1"),
+										PropertyProcessor.Type.IGNITE.of("100")
 								)).move(SetDirectionModifier.UP),
 								new RingRandomIterator(
 										DoubleVariable.of("0"),
@@ -133,7 +121,7 @@ public class FlamePentagram {
 														DoubleVariable.of("(r1-0.5)*0.2")
 												))
 										), "i"
-								))), null
+								)))
 				)
 		));
 	}
@@ -150,15 +138,13 @@ public class FlamePentagram {
 						new RingRandomIterator(
 								DoubleVariable.of("0.5"),
 								DoubleVariable.of("1"),
-								DoubleVariable.of("-180"),
-								DoubleVariable.of("180"),
 								IntVariable.of("5*min(TickUsing/10,3)"),
 								new SimpleParticleInstance(
 										ParticleTypes.SMALL_FLAME,
 										DoubleVariable.of("0.3")
 								).move(RotationModifier.of("135", "rand(-15*min(floor(TickUsing/10),3),0)"),
 										ForwardOffsetModifier.of("-4")
-								), null
+								)
 						),
 						earthquakeStart(ctx)
 				)
@@ -190,8 +176,6 @@ public class FlamePentagram {
 										new RingRandomIterator(
 												DoubleVariable.of("0"),
 												DoubleVariable.of("2"),
-												DoubleVariable.of("-180"),
-												DoubleVariable.of("180"),
 												IntVariable.of("100"),
 												new BlockParticleInstance(
 														Blocks.STONE,
@@ -199,20 +183,12 @@ public class FlamePentagram {
 														DoubleVariable.of("0.5"),
 														IntVariable.of("rand(20,40)"),
 														true
-												).move(new SetDirectionModifier(
-														DoubleVariable.ZERO,
-														DoubleVariable.of("1"),
-														DoubleVariable.ZERO)
-												), null
+												).move(SetDirectionModifier.UP)
 										)
-								)).move(RotationModifier.of("180/(3+i*2)*(j+(r0+r1)/2)-90"),
+								)).move(
+										RotationModifier.of("180/(3+i*2)*(j+(r0+r1)/2)-90"),
 										ForwardOffsetModifier.of("6*i+4"),
-										new RandomOffsetModifier(
-												RandomOffsetModifier.Type.SPHERE,
-												DoubleVariable.of("0.1"),
-												DoubleVariable.ZERO,
-												DoubleVariable.of("0.1")
-										)
+										RandomOffsetModifier.Type.SPHERE.of("0.1", "0", "0.1")
 								).delay(IntVariable.of("abs(i+1-j)*1")), "j"
 						)
 				), "i"
@@ -227,15 +203,12 @@ public class FlamePentagram {
 						IntVariable.of("5"),
 						new LinearIterator(
 								DoubleVariable.of(radius * 1.9 / linestep + ""),
-								Vec3.ZERO,
-								DoubleVariable.ZERO,
 								IntVariable.of(linestep + 1 + ""),
 								true,
 								new SimpleParticleInstance(
 										ParticleTypes.FLAME,
 										DoubleVariable.ZERO
-								),
-								null
+								)
 						).move(
 								RotationModifier.of("72*ri"),
 								ForwardOffsetModifier.of(radius + ""),

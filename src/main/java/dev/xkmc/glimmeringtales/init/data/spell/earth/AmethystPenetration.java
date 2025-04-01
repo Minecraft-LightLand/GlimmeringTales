@@ -125,7 +125,7 @@ public class AmethystPenetration {
 								IntVariable.of("60"),
 								false, true,
 								Map.of()
-						), null
+						)
 				).move(ForwardOffsetModifier.of("-1"), OffsetModifier.of("0", "-0.1", "0"))
 		));
 

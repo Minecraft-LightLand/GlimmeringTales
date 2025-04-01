@@ -58,17 +58,8 @@ public class VinesSpell {
 								true
 						),
 						List.of(
-								new DamageProcessor(
-										ctx.damage(),
-										DoubleVariable.of("1"),
-										true, false
-								),
-								new PushProcessor(
-										DoubleVariable.of("-.5"),
-										DoubleVariable.ZERO,
-										DoubleVariable.ZERO,
-										PushProcessor.Type.TO_CENTER
-								)
+								new DamageProcessor(ctx.damage(), DoubleVariable.of("1"), true, false),
+								PushProcessor.Type.TO_CENTER.of("-.5")
 						)
 				),
 				new LoopIterator(
@@ -82,14 +73,9 @@ public class VinesSpell {
 										DoubleVariable.of("1"),
 										IntVariable.of("40"),
 										true
-								),
-								null
-						)
-						,
-						null
-
+								), null
+						), null
 				)
-
 		));
 	}
 

@@ -1,7 +1,7 @@
 {
   "cost": 20,
   "elem": "glimmeringtales:flame",
-  "focus": 5,
+  "focus": 4,
   "graph": "glimmeringtales:lava_burst",
   "maxConsumeTick": 30,
   "spell": "glimmeringtales:lava_burst",

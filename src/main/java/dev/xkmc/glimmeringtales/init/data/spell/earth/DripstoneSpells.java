@@ -67,20 +67,13 @@ public class DripstoneSpells {
 						DoubleVariable.ZERO,
 						IntVariable.of("20")
 				).move(OffsetModifier.of("0", "-0.2", "0")))
-				.hit(new DamageProcessor(
-						ctx.damage(), DMG,
-						true,
-						true
-				)).hit(new StackingEffectProcessor(
+				.hit(new DamageProcessor(ctx.damage(), DMG, true, true))
+				.hit(new StackingEffectProcessor(
 						LCEffects.BLEED,
 						IntVariable.of("100"),
 						IntVariable.of("4")
-				)).hit(new PushProcessor(
-						DoubleVariable.of("1"),
-						DoubleVariable.ZERO,
-						DoubleVariable.ZERO,
-						PushProcessor.Type.UNIFORM
-				)).size(DoubleVariable.of("0.25"))
+				)).hit(PushProcessor.Type.UNIFORM.of("1", "0", "0"))
+				.size(DoubleVariable.of("0.25"))
 				.renderer(new VerticalRenderData(TEX))
 				.build();
 	}
@@ -103,11 +96,8 @@ public class DripstoneSpells {
 						IntVariable.of("20"),
 						false, true,
 						Map.of()
-				).move(OffsetModifier.of("0", "-0.45", "0"),
-						SetDirectionModifier.UP).circular(
-						DoubleVariable.of("2"),
-						DoubleVariable.of("2"),
-						false, null,
+				).move(OffsetModifier.of("0", "-0.45", "0"), SetDirectionModifier.UP
+				).circular("2", "2", "2", null,
 						new OrPredicate(List.of(
 								SurfaceBelowCondition.full(),
 								BlockMatchCondition.of(Blocks.POINTED_DRIPSTONE)

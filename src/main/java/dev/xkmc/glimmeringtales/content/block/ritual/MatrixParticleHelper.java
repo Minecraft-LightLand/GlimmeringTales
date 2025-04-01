@@ -50,7 +50,7 @@ public class MatrixParticleHelper {
 		var build = new BuilderContext(GlimmeringTales.LOGGER, "", Set.of(), false);
 		dust.verify(build);
 		var ctx = new EngineContext(
-				new UserContext(level, player, null),
+				new UserContext(level, player, null, null),
 				new LocationContext(center, LocationContext.UP, Vec3.ZERO),
 				level.random, Map.of());
 		dust.execute(ctx);

@@ -29,7 +29,7 @@ import java.util.List;
 public class HaySpell {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.LIFE
-			.build(GlimmeringTales.loc("procreation")).focusAndCost(60, 300)
+			.build(GlimmeringTales.loc("procreation")).focusAndCost(40, 160)
 			.block(ctx -> procreation(ctx, 4), GTItems.RUNE_HAYBALE, RuneBlock::offset,
 					(b, e) -> b.add(Blocks.HAY_BLOCK, BlockSpell.cost(e)))
 			.lang("Procreation").desc(
@@ -60,7 +60,7 @@ public class HaySpell {
 										DoubleVariable.of("0.5")
 								),
 								null
-						), null
+						)
 				)
 		));
 	}

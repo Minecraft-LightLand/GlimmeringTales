@@ -35,9 +35,9 @@
                   "name": "r"
                 },
                 "count": "500",
-                "maxAngle": "360",
+                "maxAngle": "180",
                 "maxRadius": "2",
-                "minAngle": "0",
+                "minAngle": "-180",
                 "minRadius": "0"
               },
               "modifiers": [
@@ -54,7 +54,7 @@
               "processors": [
                 {
                   "type": "l2magic:damage",
-                  "damage": "20",
+                  "damage": "30",
                   "damage_type": "glimmeringtales:meteor",
                   "indirect": true,
                   "positioned": true
@@ -73,7 +73,7 @@
               ],
               "selector": {
                 "type": "l2magic:ball",
-                "r": "8"
+                "r": "12"
               },
               "target": "ENEMY"
             },
@@ -128,9 +128,9 @@
               "name": "r"
             },
             "count": "500",
-            "maxAngle": "360",
+            "maxAngle": "180",
             "maxRadius": "2",
-            "minAngle": "0",
+            "minAngle": "-180",
             "minRadius": "0"
           },
           "modifiers": [
@@ -147,7 +147,7 @@
           "processors": [
             {
               "type": "l2magic:damage",
-              "damage": "20",
+              "damage": "30",
               "damage_type": "glimmeringtales:meteor",
               "indirect": true,
               "positioned": true
@@ -166,7 +166,7 @@
           ],
           "selector": {
             "type": "l2magic:ball",
-            "r": "8"
+            "r": "12"
           },
           "target": "ENEMY"
         },

@@ -1,0 +1,8 @@
+{
+  "parent": "glimmeringtales:custom/crop/mystic_pop_fruit_2",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "all": "glimmeringtales:block/crop/mystic_pop_fruit_2",
+    "particle": "glimmeringtales:block/crop/mystic_pop_fruit_particle"
+  }
+}

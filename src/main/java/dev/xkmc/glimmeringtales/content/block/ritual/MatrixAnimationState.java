@@ -43,7 +43,7 @@ public class MatrixAnimationState {
 		int col = -1;
 		if (!cachedStacks.isEmpty() && cachedStacks.getFirst().getItem() instanceof SpellCoreItem item) {
 			var aff = item.getAffinity(level);
-			if (aff != null && aff.affinity().entrySet().size() == 1) {
+			if (aff != null && aff.affinity().size() == 1) {
 				var e = new ArrayList<>(aff.affinity().entrySet()).getFirst().getKey();
 				col = e.getColor();
 			}

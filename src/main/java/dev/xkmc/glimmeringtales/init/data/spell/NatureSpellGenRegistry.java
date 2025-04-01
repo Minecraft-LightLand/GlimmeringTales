@@ -5,10 +5,7 @@ import dev.xkmc.glimmeringtales.init.data.spell.flame.*;
 import dev.xkmc.glimmeringtales.init.data.spell.life.*;
 import dev.xkmc.glimmeringtales.init.data.spell.ocean.*;
 import dev.xkmc.glimmeringtales.init.data.spell.snow.*;
-import dev.xkmc.glimmeringtales.init.data.spell.thunder.ChargeBurst;
-import dev.xkmc.glimmeringtales.init.data.spell.thunder.ThunderSpells;
-import dev.xkmc.glimmeringtales.init.data.spell.thunder.ThunderSurge;
-import dev.xkmc.glimmeringtales.init.data.spell.thunder.Thunderstorm;
+import dev.xkmc.glimmeringtales.init.data.spell.thunder.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +73,8 @@ public class NatureSpellGenRegistry {
 				DarkRain.BUILDER,
 				Thunderstorm.BUILDER,
 				ChargeBurst.BUILDER,
-				ThunderSurge.BUILDER
+				ThunderSurge.BUILDER,
+				ChargeLink.BUILDER
 		));
 	}
 

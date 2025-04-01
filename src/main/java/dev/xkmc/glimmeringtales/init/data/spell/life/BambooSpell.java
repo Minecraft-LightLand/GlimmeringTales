@@ -25,7 +25,7 @@ import java.util.List;
 
 public class BambooSpell {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.LIFE
-			.build(GlimmeringTales.loc("bamboo")).focusAndCost(80, 400)
+			.build(GlimmeringTales.loc("bamboo")).focusAndCost(60, 180)
 			.block(BambooSpell::gen, GTItems.RUNE_BAMBOO, RuneBlock::offset,
 					(b, e) -> b.add(GTTagGen.BAMBOO, BlockSpell.of(e)))
 			.lang("Bamboo").desc(
@@ -43,10 +43,7 @@ public class BambooSpell {
 				),
 				new SetBlock(GTItems.FAKE_BAMBOO.getDefaultState()),
 				new ScheduleTick(IntVariable.of("rand(180,220)"), GTItems.FAKE_BAMBOO.get())
-		)).circular(
-				DoubleVariable.of("4"),
-				DoubleVariable.of("1"),//每个方块放置的时间差距，会随着半径变大而倍增
-				false, "i",
+		)).circular("4", "4", "1", "i",
 				BooleanVariable.of("abs(i_r-4)<2"),//放置方块的条件，距离半径差值小于2，可以看成厚度
 				BlockTestCondition.Type.REPLACEABLE.get()
 		).move(OffsetModifier.ABOVE);

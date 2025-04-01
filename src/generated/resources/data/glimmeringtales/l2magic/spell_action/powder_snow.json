@@ -15,7 +15,7 @@
           "processors": [
             {
               "type": "l2magic:damage",
-              "damage": "4",
+              "damage": "2",
               "damage_type": "glimmeringtales:powder_snow",
               "indirect": true,
               "positioned": true

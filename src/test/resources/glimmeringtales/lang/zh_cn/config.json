@@ -1,0 +1,40 @@
+{
+	"glimmeringtales.configuration": {
+		"title": "微光纪事 - 配置",
+		"section.l2configs.glimmeringtales.client.toml": "微光纪事 - 客户端配置",
+		"section.l2configs.glimmeringtales.client.toml.title": "微光纪事 - 客户端配置",
+		"section.l2configs.glimmeringtales.server.toml": "微光纪事 - 服务端配置",
+		"section.l2configs.glimmeringtales.server.toml.title": "微光纪事 - 服务端配置",
+
+		"resonator": "紫晶音叉",
+		"resonatorSearchRadius": "紫晶音叉查找半径",
+		"resonatorSearchRadius.tooltip": "范围: 16 ~ 128",
+		"resonatorSearchTrialsPerTick": "紫晶音叉每刻查找次数",
+		"resonatorSearchTrialsPerTick.tooltip": "范围: 16 ~ 10000",
+
+		"wandInteractionDistance": "法杖交互距离",
+		"wandInteractionDistance.tooltip": "范围: 4 ~ 64",
+		"ritualRange": "仪式台搜索范围",
+		"ritualRange.tooltip": " 默认: 3\n 范围: 1 ~ 16",
+
+		"materials": "材料属性",
+		"crystalOfFlameRequirement": "蕴炎宝石：岩浆消耗",
+		"crystalOfFlameRequirement.tooltip": "范围: 1 ~ 1000",
+		"crystalOfWinterstormRequirement": "风雪宝石：细雪消耗",
+		"crystalOfWinterstormRequirement.tooltip": "范围: 1 ~ 1000",
+
+		"pop_fruit": "爆爆果",
+		"popFruitExplosionChanceOnEaten": "吃爆爆果的爆炸概率",
+		"popFruitExplosionChanceOnEaten.tooltip": " 默认: 0.1\n 范围: 0.0 ~ 1.0",
+		"popFruitExplosionDamageFactor": "爆爆果的爆炸伤害倍率",
+		"popFruitExplosionDamageFactor.tooltip": " 默认: 0.35\n 范围: 0.0 ~ 2.0",
+		"popFruitAdjacentCrystalBoost": "爆爆果在生命之藤旁边的生长速度加成",
+		"popFruitAdjacentCrystalBoost.tooltip": " 默认: 1\n 范围: 0 ~ 10",
+		"popFruitBiomeGrowFactor": "爆爆果在正确群系的生长速度加成",
+		"popFruitBiomeGrowFactor.tooltip": " 默认: 3\n 范围: 0 ~ 100",
+		"popFruitNaturalGrowRarity": "爆爆果平均几个随机刻生长一阶段",
+		"popFruitNaturalGrowRarity.tooltip": " 默认: 100\n 范围: 10 ~ 1000",
+		"popFruitBonemealGrowChance": "对爆爆果使用骨粉的生长概率",
+		"popFruitBonemealGrowChance.tooltip": " 默认: 0.05\n 范围: 0.0 ~ 1.0"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "glimmeringtales:custom/crop/ocean_pop_fruit_3",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "all": "glimmeringtales:block/crop/ocean_pop_fruit_3",
+    "particle": "glimmeringtales:block/crop/ocean_pop_fruit_particle"
+  }
+}

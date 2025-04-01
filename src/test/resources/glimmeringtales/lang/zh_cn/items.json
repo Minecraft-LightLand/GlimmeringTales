@@ -1,0 +1,78 @@
+{
+	"item.glimmeringtales": {
+		"crystal_of_earth": "地脉宝石",
+		"crystal_of_flame": "蕴炎宝石",
+		"crystal_of_life": "生机宝石",
+		"crystal_of_nature": "自然宝石",
+		"crystal_of_winterstorm": "风雪宝石",
+		"crystal_of_ocean": "深海宝石",
+		"crystal_of_thunder": "雷霆宝石",
+		"crystal_vine": "自然之种",
+		"depleted_crystal_of_flame": "匮乏的蕴炎宝石",
+		"depleted_crystal_of_winterstorm": "匮乏的风雪宝石",
+		"amethyst_resonator": "紫晶音叉",
+		"mystic_vial": "神秘魔力药剂",
+		"vial_of_blossom": "繁花魔力药剂",
+		"vial_of_nature": "自然魔力药剂",
+		"vial_of_ocean": "海洋魔力药剂",
+		"wand": "法杖",
+		"gold_wand": "金杖柄",
+		"wood_wand": "木杖柄",
+		"life_wand": "竹杖柄",
+		"ocean_wand": "海神杖柄",
+		"nether_wand": "下界杖柄",
+		"thunder_wand": "雷霆杖柄",
+		"ender_wand": "末影杖柄"
+	},
+	"block.glimmeringtales": {
+		"struck_log": "雷焰木",
+		"struck_leaves": "雷焰树叶",
+		"struck_sapling": "雷焰树苗",
+		"ritual_altar": "仪式祭坛",
+		"ritual_matrix": "仪式矩阵",
+		"crystal_vine": "生命之藤",
+		"clay_carpet": "粘土地毯",
+		"glass": "玻璃",
+		"bamboo": "竹子",
+		"stone": "石头",
+		"magma_block_for_deepslate": "岩浆块",
+		"magma_block_for_netherrack": "岩浆块",
+		"magma_block_for_stone": "岩浆块",
+		"meteor": "陨星"
+	},
+	"-cartesian": {
+		"pop": {
+			"path": "",
+			"use_dot": true,
+			"list": [
+				{
+					"block.glimmeringtales": "",
+					"item.glimmeringtales": ""
+				},
+				{
+					"blossom_pop_fruit": "花爆果",
+					"ocean_pop_fruit": "水爆果",
+					"pop_fruit": "爆爆果",
+					"mystic_pop_fruit": "魔爆果"
+				}
+			]
+		},
+		"potion": {
+			"path": "item.minecraft",
+			"list": [
+				{
+					"mana_recovery": "魔力滋润",
+					"long_mana_recovery": "魔力滋润",
+					"strong_mana_recovery": "魔力滋润",
+					"mystic_mana_recovery": "魔力滋润"
+				},
+				{
+					"potion.effect.*": "*药水",
+					"splash_potion.effect.*": "喷溅型*药水",
+					"lingering_potion.effect.*": "滞留型*药水",
+					"tipped_arrow.effect.*": "*之箭"
+				}
+			]
+		}
+	}
+}

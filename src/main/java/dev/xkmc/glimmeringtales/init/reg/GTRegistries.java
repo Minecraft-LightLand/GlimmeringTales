@@ -60,6 +60,7 @@ public class GTRegistries {
 	public static final SimpleEntry<Attribute> MAX_MANA = reg("max_mana", 2000, 1000000, "Max Mana");
 	public static final SimpleEntry<Attribute> MANA_REGEN = reg("mana_regen", 20, 1000000, "Mana Regen");
 	public static final SimpleEntry<Attribute> MAX_FOCUS = reg("max_focus", 200, 1000000, "Max Focus");
+	public static final SimpleEntry<Attribute> FOCUS_CD = regNeg("focus_cool_down", 1, 40, 200, "Focus Cool Down");
 
 	public static final ElemEntry LIFE = reg("life", ChatFormatting.GREEN);
 	public static final ElemEntry EARTH = reg("earth", ChatFormatting.GOLD);
@@ -84,7 +85,14 @@ public class GTRegistries {
 	}
 
 	public static SimpleEntry<Attribute> reg(String id, double def, double max, String name) {
-		return L2DamageTracker.reg(GlimmeringTales.REGISTRATE, id, e -> new RangedAttribute(e, def, 0, max), name);
+		return L2DamageTracker.reg(GlimmeringTales.REGISTRATE, id,
+				e -> new RangedAttribute(e, def, 0, max), name);
+	}
+
+	public static SimpleEntry<Attribute> regNeg(String id, double min, double def, double max, String name) {
+		return L2DamageTracker.reg(GlimmeringTales.REGISTRATE, id,
+				e -> new RangedAttribute(e, def, min, max)
+						.setSentiment(Attribute.Sentiment.NEGATIVE), name);
 	}
 
 	public static void register() {

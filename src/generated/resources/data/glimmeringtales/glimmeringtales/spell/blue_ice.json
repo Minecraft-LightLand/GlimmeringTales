@@ -1,7 +1,7 @@
 {
-  "cost": 400,
+  "cost": 200,
   "elem": "glimmeringtales:snow",
-  "focus": 60,
+  "focus": 40,
   "graph": "glimmeringtales:ice",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:blue_ice",

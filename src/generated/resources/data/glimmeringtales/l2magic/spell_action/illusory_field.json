@@ -33,9 +33,9 @@
             ]
           },
           "count": "6",
-          "maxAngle": "360",
+          "maxAngle": "180",
           "maxRadius": "7",
-          "minAngle": "0",
+          "minAngle": "-180",
           "minRadius": "0"
         },
         "delay": "1",

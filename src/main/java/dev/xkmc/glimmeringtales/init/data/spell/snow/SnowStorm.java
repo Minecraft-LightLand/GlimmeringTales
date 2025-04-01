@@ -43,7 +43,7 @@ import java.util.List;
 public class SnowStorm {
 
 	public static final NatureSpellBuilder WINTER_STORM = GTRegistries.SNOW
-			.build(GlimmeringTales.loc("winter_storm")).focusAndCost(2, 5).mob(5, 1).damageFreeze()
+			.build(GlimmeringTales.loc("winter_storm")).focusAndCost(2, 6).mob(5, 1).damageFreeze()
 			.spell(ctx -> new SpellAction(winterStorm(ctx, 4, 1.5, 1),
 					GTItems.WINTER_STORM.asItem(), 100,
 					SpellCastType.CONTINUOUS, SpellTriggerType.SELF_POS
@@ -108,16 +108,14 @@ public class SnowStorm {
 						new RingRandomIterator(
 								DoubleVariable.of((r - size) + ""),
 								DoubleVariable.of((r + size) + ""),
-								DoubleVariable.of("-180"),
-								DoubleVariable.of("180"),
 								IntVariable.of("5"),
 								new SimpleParticleInstance(
 										ParticleTypes.SNOWFLAKE,
 										DoubleVariable.of("0.5")
 								).move(RotationModifier.of("75"),
 										OffsetModifier.of("0", "rand(" + (y - size) + "," + (y + size) + ")", "0")
-								), null
-						), null
+								)
+						)
 				)
 		));
 	}
@@ -148,12 +146,7 @@ public class SnowStorm {
 								),
 								List.of(
 										new DamageProcessor(ctx.damage(), ST_DMG, true, true),
-										new PushProcessor(
-												DoubleVariable.of("0.1"),
-												DoubleVariable.ZERO,
-												DoubleVariable.ZERO,
-												PushProcessor.Type.TO_CENTER
-										),
+										PushProcessor.Type.TO_CENTER.of("0.1"),
 										new EffectProcessor(
 												LCEffects.ICE,
 												IntVariable.of("100"),
@@ -168,8 +161,6 @@ public class SnowStorm {
 								new RingRandomIterator(
 										DoubleVariable.of(ir + ""),
 										DoubleVariable.of(ir + ""),
-										DoubleVariable.of("-180"),
-										DoubleVariable.of("180"),
 										IntVariable.of("3"),
 										new RandomVariableLogic("r", 1,
 												new CustomParticleInstance(
@@ -189,9 +180,9 @@ public class SnowStorm {
 																ParticleTypes.SNOWFLAKE
 														), DoubleVariable.of("r0+1"))
 												)
-										).move(NormalOffsetModifier.of("rand(" + (-vsp) + "," + vsp + ")")), null
+										).move(NormalOffsetModifier.of("rand(" + (-vsp) + "," + vsp + ")"))
 								).move(new Dir2NormalModifier())
-						), null
+						)
 				)
 		));
 	}

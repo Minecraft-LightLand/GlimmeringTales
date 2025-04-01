@@ -1,7 +1,7 @@
 {
   "cost": 600,
   "elem": "glimmeringtales:ocean",
-  "focus": 120,
+  "focus": 100,
   "graph": "glimmeringtales:illusory_field",
   "maxConsumeTick": 0,
   "mob": {

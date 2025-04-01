@@ -1,4 +1,3 @@
-
 package dev.xkmc.glimmeringtales.compat.apoth;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;

@@ -1,6 +1,6 @@
 {
   "type": "neoforge:add_features",
-  "biomes": "#glimmeringtales:struck_tree_dense",
+  "biomes": "#glimmeringtales:has_feature/struck_tree_dense",
   "features": "glimmeringtales:struck_tree_dense",
   "step": "vegetal_decoration"
 }
