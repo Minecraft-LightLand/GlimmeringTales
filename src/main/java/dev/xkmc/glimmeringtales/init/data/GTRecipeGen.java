@@ -2,14 +2,13 @@ package dev.xkmc.glimmeringtales.init.data;
 
 import com.tterrag.registrate.providers.RegistrateRecipeProvider;
 import com.tterrag.registrate.util.DataIngredient;
+import dev.xkmc.glimmeringtales.content.block.infuser.SimpleInfuseRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.item.rune.SpellCoreItem;
 import dev.xkmc.glimmeringtales.content.recipe.craft.WandRecipeBuilder;
-import dev.xkmc.glimmeringtales.content.block.infuser.SimpleInfuseRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.ritual.SimpleRitualRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeBlockRecipeBuilder;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeItemRecipeBuilder;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
-import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.*;
 import dev.xkmc.l2complements.init.materials.LCMats;
 import dev.xkmc.l2complements.init.registrate.LCItems;
