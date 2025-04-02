@@ -7,10 +7,7 @@ import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
-import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
-import dev.xkmc.l2magic.content.engine.iterator.LinearIterator;
-import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
-import dev.xkmc.l2magic.content.engine.iterator.RingRandomIterator;
+import dev.xkmc.l2magic.content.engine.iterator.*;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.PredicateLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
@@ -43,7 +40,8 @@ import java.util.List;
 public class FlamePentagram {
 
 	public static final NatureSpellBuilder HELL_MARK = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 500).mob(16, 1)
+			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 500)
+			.mob(16, 0.7, 0, 20)
 			.damageFire()
 			.spell(ctx -> new SpellAction(flameBurst(ctx),
 					GTItems.HELL_MARK.asItem(), 200,
@@ -56,6 +54,7 @@ public class FlamePentagram {
 
 	public static final NatureSpellBuilder LAVA_BURST = GTRegistries.FLAME
 			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(4, 20, 30)
+			.mob(12, 0.5, 20, 0)
 			.damageExplosion()
 			.spell(ctx -> new SpellAction(earthquake(ctx),
 					GTItems.LAVA_BURST.asItem(), 300,
@@ -123,7 +122,9 @@ public class FlamePentagram {
 										), "i"
 								)))
 				)
-		));
+		)).mobCastDelay(new RingIterator(DoubleVariable.of("4"),
+				IntVariable.of((int) Math.round(4 * Math.PI * 2 / 0.3) + ""), false,
+				new SimpleParticleInstance(ParticleTypes.FLAME, DoubleVariable.ZERO)));
 	}
 
 	private static ConfiguredEngine<?> earthquake(NatureSpellBuilder ctx) {
@@ -215,14 +216,8 @@ public class FlamePentagram {
 								RotationModifier.of("162")
 						), "ri"
 				),
-				new LoopIterator(
-						IntVariable.of(circlestep + ""),
-						new SimpleParticleInstance(
-								ParticleTypes.FLAME,
-								DoubleVariable.ZERO
-						).move(RotationModifier.of(360d / circlestep + "*ri"),
-								ForwardOffsetModifier.of(radius + "")
-						), "ri"
+				new RingIterator(DoubleVariable.of(radius + ""), IntVariable.of(circlestep + ""), false,
+						new SimpleParticleInstance(ParticleTypes.FLAME, DoubleVariable.ZERO)
 				)
 		));
 	}

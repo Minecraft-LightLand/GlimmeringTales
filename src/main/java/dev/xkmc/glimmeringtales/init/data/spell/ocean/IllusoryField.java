@@ -45,7 +45,7 @@ import java.util.Map;
 public class IllusoryField {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.OCEAN
-			.build(GlimmeringTales.loc("illusory_field")).focusAndCost(100, 600).mob(16, 1)
+			.build(GlimmeringTales.loc("illusory_field")).focusAndCost(100, 600).mob(16, 1)//TODO mob cast delay
 			.damageCustom(msg -> new DamageType(msg, 0.1f, DamageEffects.DROWNING),
 					"%s is drowned by magical bubbles",
 					"%s is drowned by %s with magical bubbles",

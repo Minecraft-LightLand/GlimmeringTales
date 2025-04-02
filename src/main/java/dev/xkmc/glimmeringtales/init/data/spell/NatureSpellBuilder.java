@@ -13,6 +13,7 @@ import dev.xkmc.l2core.util.MathHelper;
 import dev.xkmc.l2magic.content.engine.context.DataGenContext;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
+import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
 import dev.xkmc.l2magic.init.data.DataGenCachedHolder;
 import net.minecraft.core.Holder;
@@ -133,11 +134,11 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	}
 
 	public NatureSpellBuilder mob(int range, double factor) {
-		return mob(range, factor, 40);
+		return mob(range, factor, 40, 20);
 	}
 
-	public NatureSpellBuilder mob(int range, double factor, int maxTime) {
-		this.mob = new MobCastingData(range, maxTime, factor);
+	public NatureSpellBuilder mob(int range, double factor, int maxTime, int delay) {
+		this.mob = new MobCastingData(range, maxTime, factor, delay);
 		return this;
 	}
 
@@ -222,6 +223,12 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 		} catch (Exception e) {
 			GlimmeringTales.LOGGER.error("Spell {} failed description check", id);
 			GlimmeringTales.LOGGER.throwing(e);
+		}
+		if (nature.value.mob() != null) {
+			var trigger = nature.value.spell().value().triggerType();
+			if (trigger == SpellTriggerType.TARGET_ENTITY || trigger == SpellTriggerType.TARGET_POS) {
+				GlimmeringTales.LOGGER.warn("Spell {} is too dangerous for mobs to cast", id);
+			}
 		}
 	}
 

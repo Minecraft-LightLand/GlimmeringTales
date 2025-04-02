@@ -17,7 +17,7 @@ public record SpellHolder(Holder<NatureSpell> spell, int dist) implements ISpell
 
 	@Override
 	public boolean cast(SpellCastContext user, int useTick, boolean charging) {
-		SpellContext ctx = SpellContext.castSpell(user.user(), spell.value().spell().value(), useTick, 1, dist);
+		SpellContext ctx = SpellContext.castSpell(user.user(), spell.value().spell().value(), useTick, 1, dist, user.delay());
 		if (ctx == null) return false;
 		return execute(spell.value(), ctx, user, DefaultAffinity.INS, useTick, charging);
 	}

@@ -12,6 +12,7 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.iterator.LinearIterator;
 import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
 import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
@@ -47,7 +48,8 @@ import java.util.Map;
 public class AmethystPenetration {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("amethyst_penetration")).focusAndCost(60, 300).mob(16, 1)
+			.build(GlimmeringTales.loc("amethyst_penetration")).focusAndCost(60, 300)
+			.mob(25, 0.7, 0, 20)
 			.damageCustom(msg -> new DamageType(msg, 0.1f),
 					"%s is pierced by amethyst shards",
 					"%s is pierced by %s with amethyst shards",
@@ -127,7 +129,20 @@ public class AmethystPenetration {
 								Map.of()
 						)
 				).move(ForwardOffsetModifier.of("-1"), OffsetModifier.of("0", "-0.1", "0"))
-		));
+		)).mobCastDelay(new RingIterator(
+				DoubleVariable.of("0.5"),
+				DoubleVariable.of("-15"),
+				DoubleVariable.of("15"),
+				IntVariable.of("15"),
+				true,
+				new LinearIterator(DoubleVariable.of("1"), IntVariable.of("20"), false,
+						new DustParticleInstance(
+								ColorVariable.Static.of(0xCFA0F3),
+								DoubleVariable.of("0.5"),
+								DoubleVariable.ZERO,
+								IntVariable.of("20")
+						))
+		).move(ForwardOffsetModifier.of("-1"), OffsetModifier.of("0", "-0.1", "0")));
 
 	}
 

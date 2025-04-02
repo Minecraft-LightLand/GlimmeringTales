@@ -16,6 +16,8 @@ public abstract class StrafingRangedAttackGoal extends Goal {
 	protected long nextAttackTimestamp = 0;
 	protected int seeTime;
 
+	protected int immobileTime;
+
 	private boolean strafingClockwise;
 	private boolean strafingBackwards;
 	private int strafingTime = -1;
@@ -71,52 +73,59 @@ public abstract class StrafingRangedAttackGoal extends Goal {
 		} else {
 			seeTime = 0;
 		}
-		if (distSqr <= sqr && seeTime >= config.stopMovingSeeTime()) {
+
+		if (immobileTime > 0) {
+			immobileTime--;
+			strafingTime = -1;
 			mob.getNavigation().stop();
-			this.strafingTime++;
-		} else {
-			mob.getNavigation().moveTo(target, config.speed());
-			this.strafingTime = -1;
-		}
-
-		if (strafingTime >= config.strafRotateTime()) {
-			if (mob.getRandom().nextFloat() < config.switchRotationChance()) {
-				strafingClockwise = !strafingClockwise;
-			}
-			if (mob.getRandom().nextFloat() < config.switchDirectionChance()) {
-				strafingBackwards = !strafingBackwards;
-			}
-			strafingTime = 0;
-		}
-
-		if (strafingTime > -1) {
-			if (distSqr > sqr * config.stopBackoffRange()) {
-				strafingBackwards = false;
-			} else if (distSqr < sqr * config.startBackoffRange()) {
-				strafingBackwards = true;
-			}
-			mob.getMoveControl().strafe(strafingBackwards ? -1f : 0.5F, strafingClockwise ? 0.5F : -0.5F);
-			if (mob.onGround() && mob.level().getBlockState(mob.blockPosition()).isSolid())
-				mob.getJumpControl().jump();
-			if (mob.getControlledVehicle() instanceof Mob veh) {
-				veh.lookAt(target, 30.0F, 30.0F);
-			}
-			this.mob.lookAt(target, 30.0F, 30.0F);
-		} else {
 			this.mob.getLookControl().setLookAt(target, 30.0F, 30.0F);
+		} else {
+			if (distSqr <= sqr && seeTime >= config.stopMovingSeeTime()) {
+				mob.getNavigation().stop();
+				this.strafingTime++;
+			} else {
+				mob.getNavigation().moveTo(target, config.speed());
+				this.strafingTime = -1;
+			}
+
+			if (strafingTime >= config.strafRotateTime()) {
+				if (mob.getRandom().nextFloat() < config.switchRotationChance()) {
+					strafingClockwise = !strafingClockwise;
+				}
+				if (mob.getRandom().nextFloat() < config.switchDirectionChance()) {
+					strafingBackwards = !strafingBackwards;
+				}
+				strafingTime = 0;
+			}
+
+			if (strafingTime > -1) {
+				if (distSqr > sqr * config.stopBackoffRange()) {
+					strafingBackwards = false;
+				} else if (distSqr < sqr * config.startBackoffRange()) {
+					strafingBackwards = true;
+				}
+				mob.getMoveControl().strafe(strafingBackwards ? -1f : 0.5F, strafingClockwise ? 0.5F : -0.5F);
+				if (mob.onGround() && mob.level().getBlockState(mob.blockPosition()).isSolid())
+					mob.getJumpControl().jump();
+				if (mob.getControlledVehicle() instanceof Mob veh) {
+					veh.lookAt(target, 30.0F, 30.0F);
+				}
+				this.mob.lookAt(target, 30.0F, 30.0F);
+			} else {
+				this.mob.getLookControl().setLookAt(target, 30.0F, 30.0F);
+			}
 		}
 
 		long timestamp = mob.level().getGameTime();
 
 		if (nextAttackTimestamp <= timestamp) {
-			if (!canSee) return;
-			nextAttackTimestamp = timestamp + attack(target, seeTime);
+			nextAttackTimestamp = timestamp + attack(target, distSqr <= sqr && canSee);
 		}
 	}
 
 	protected abstract double getAttackRangeSqr(LivingEntity target);
 
-	protected abstract int attack(LivingEntity target, int seeTime);
+	protected abstract int attack(LivingEntity target, boolean withinRange);
 
 	protected abstract boolean canCastSpell();
 

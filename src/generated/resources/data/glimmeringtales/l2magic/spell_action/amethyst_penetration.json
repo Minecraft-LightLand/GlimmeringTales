@@ -3,48 +3,103 @@
     "type": "l2magic:list",
     "children": [
       {
-        "type": "l2magic:sound",
-        "pitch": "1.8+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:entity.breeze.shoot",
-        "volume": "0.3"
-      },
-      {
-        "type": "l2magic:sound",
-        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:block.amethyst_block.break",
-        "volume": "1"
-      },
-      {
-        "type": "l2magic:move",
-        "child": {
-          "type": "l2magic:iterate_arc",
+        "type": "l2magic:if",
+        "action": {
+          "type": "l2magic:move",
           "child": {
-            "type": "l2magic:custom_projectile",
-            "bypassEntity": true,
-            "bypassWall": false,
-            "config": "glimmeringtales:amethyst_penetration",
-            "life": "60",
-            "params": {},
-            "speed": "1"
+            "type": "l2magic:iterate_arc",
+            "child": {
+              "type": "l2magic:iterate_linear",
+              "alongDir": "1",
+              "alongOffset": "0",
+              "child": {
+                "type": "l2magic:dust_particle",
+                "color": "cfa0f3",
+                "life": "20",
+                "scale": "0.5",
+                "speed": "0"
+              },
+              "offset": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "startFromOrigin": false,
+              "step": "20"
+            },
+            "count": "15",
+            "maxAngle": "15",
+            "maxInclusive": true,
+            "minAngle": "-15",
+            "radius": "0.5"
           },
-          "count": "15",
-          "maxAngle": "15",
-          "maxInclusive": true,
-          "minAngle": "-15",
-          "radius": "0.5"
+          "modifiers": [
+            {
+              "type": "l2magic:forward",
+              "distance": "-1"
+            },
+            {
+              "type": "l2magic:offset",
+              "x": "0",
+              "y": "-0.1",
+              "z": "0"
+            }
+          ]
         },
-        "modifiers": [
-          {
-            "type": "l2magic:forward",
-            "distance": "-1"
-          },
-          {
-            "type": "l2magic:offset",
-            "x": "0",
-            "y": "-0.1",
-            "z": "0"
-          }
-        ]
+        "predicate": "MobCastDelay>0"
+      },
+      {
+        "type": "l2magic:delay",
+        "child": {
+          "type": "l2magic:list",
+          "children": [
+            {
+              "type": "l2magic:sound",
+              "pitch": "1.8+rand(-0.1,0.1)+rand(-0.1,0.1)",
+              "sound": "minecraft:entity.breeze.shoot",
+              "volume": "0.3"
+            },
+            {
+              "type": "l2magic:sound",
+              "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+              "sound": "minecraft:block.amethyst_block.break",
+              "volume": "1"
+            },
+            {
+              "type": "l2magic:move",
+              "child": {
+                "type": "l2magic:iterate_arc",
+                "child": {
+                  "type": "l2magic:custom_projectile",
+                  "bypassEntity": true,
+                  "bypassWall": false,
+                  "config": "glimmeringtales:amethyst_penetration",
+                  "life": "60",
+                  "params": {},
+                  "speed": "1"
+                },
+                "count": "15",
+                "maxAngle": "15",
+                "maxInclusive": true,
+                "minAngle": "-15",
+                "radius": "0.5"
+              },
+              "modifiers": [
+                {
+                  "type": "l2magic:forward",
+                  "distance": "-1"
+                },
+                {
+                  "type": "l2magic:offset",
+                  "x": "0",
+                  "y": "-0.1",
+                  "z": "0"
+                }
+              ]
+            }
+          ]
+        },
+        "tick": "MobCastDelay"
       }
     ]
   },

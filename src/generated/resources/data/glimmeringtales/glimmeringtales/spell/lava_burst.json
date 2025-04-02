@@ -4,6 +4,12 @@
   "focus": 4,
   "graph": "glimmeringtales:lava_burst",
   "maxConsumeTick": 30,
+  "mob": {
+    "idealRange": 12.0,
+    "maxUseTick": 20,
+    "standardDelay": 0,
+    "timeFactor": 0.5
+  },
   "spell": "glimmeringtales:lava_burst",
   "tooltip": {
     "list": [

@@ -4,6 +4,12 @@
   "focus": 50,
   "graph": "glimmeringtales:amethyst",
   "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 16.0,
+    "maxUseTick": 0,
+    "standardDelay": 20,
+    "timeFactor": 1.0
+  },
   "spell": "glimmeringtales:amethyst",
   "tooltip": {
     "list": [

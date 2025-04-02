@@ -23,7 +23,7 @@ import java.util.List;
 public class ThunderSurge {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("thunder_surge")).focusAndCost(160, 1280).mob(16, 1)
+			.build(GlimmeringTales.loc("thunder_surge")).focusAndCost(160, 1280).mob(16, 1)//TODO mob cast delay
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.THUNDER_SURGE.get(), 2002,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
 			).lang("Thunder Surge").desc(

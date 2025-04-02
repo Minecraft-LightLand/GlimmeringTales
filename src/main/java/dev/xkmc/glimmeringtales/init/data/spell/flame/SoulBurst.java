@@ -46,7 +46,8 @@ import java.util.Map;
 public class SoulBurst {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("soul_burst")).focusAndCost(2, 16).mob(12, 1)
+			.build(GlimmeringTales.loc("soul_burst")).focusAndCost(2, 16)
+			.mob(12, 0.7, 40, 0)
 			.damageCustom(e -> new DamageType(e, 0, DamageEffects.BURNING),
 					"%s is blazed by ghosts", "%s is blazed by ghosts summoned by %s",
 					GTDamageTypeGen.magic(DamageTypeTags.IS_FIRE, DamageTypeTags.BYPASSES_COOLDOWN))

@@ -10,6 +10,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nullable;
@@ -26,7 +27,10 @@ public class SpellCastGoal extends StrafingRangedAttackGoal {
 	protected double getAttackRangeSqr(LivingEntity target) {
 		var spell = getSpell();
 		if (spell == null) return 256;
-		return spell.mob().idealRange() * spell.mob().idealRange();
+		double range = spell.mob().idealRange();
+		var ins = target.getAttribute(Attributes.FOLLOW_RANGE);
+		if (ins != null) range = Math.min(range, ins.getValue());
+		return range * range;
 	}
 
 	@Override
@@ -51,34 +55,42 @@ public class SpellCastGoal extends StrafingRangedAttackGoal {
 	}
 
 	@Override
-	protected int attack(LivingEntity target, int seeTime) {
-		var spell = getSpell();
-		if (spell == null) return 20;
-		var action = spell.spell().spell().value();
-		var ctx = SpellCastContext.of(mob.level(), mob, spell.wand());
+	protected int attack(LivingEntity target, boolean withinRange) {
+		var mobData = getSpell();
+		if (mobData == null) return 20;
+		if (!withinRange) {
+			if (useTick <= 0) return 0;
+			int cost = useTick;
+			mob.stopUsingItem();
+			useTick = 0;
+			return mobData.getCooldown(cost);
+		}
+		var action = mobData.spell().spell().value();
+		int delay = mobData.mob().standardDelay();//TODO modify delay
+		var ctx = SpellCastContext.of(mob.level(), mob, delay, mobData.wand());
 		int cost;
 		if (action.castType() == SpellCastType.INSTANT) {
-			spell.holder().cast(ctx, 0, false);
+			mobData.holder().cast(ctx, 0, false);
 			cost = 1;
+			immobileTime = delay;
 		} else {
 			if (useTick == 0) {
 				mob.startUsingItem(InteractionHand.MAIN_HAND);
 			}
-			if (useTick < spell.mob().maxUseTick()) {
-				spell.holder().cast(ctx, useTick, action.castType() == SpellCastType.CHARGE);
+			if (useTick < mobData.mob().maxUseTick() + delay) {
+				mobData.holder().cast(ctx, useTick, action.castType() == SpellCastType.CHARGE);
 				useTick++;
 				return 0;
 			} else {
 				if (action.castType() == SpellCastType.CHARGE) {
-					spell.holder().cast(ctx, useTick, false);
+					mobData.holder().cast(ctx, useTick, false);
 				}
-				int maxTick = spell.spell().maxConsumeTick();
-				cost = useTick;
+				cost = useTick - delay;
 				mob.stopUsingItem();
 				useTick = 0;
 			}
 		}
-		return spell.getCooldown(cost);
+		return mobData.getCooldown(cost);
 	}
 
 	@Override

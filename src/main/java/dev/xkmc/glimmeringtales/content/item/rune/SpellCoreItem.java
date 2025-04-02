@@ -50,7 +50,7 @@ public class SpellCoreItem extends LightningImmuneItem implements IBlockSpellIte
 
 	@Override
 	public SpellInfo getSpellInfo(Player player) {
-		var ctx = BlockSpellContext.blockSpellContext(player, range());
+		var ctx = BlockSpellContext.blockSpellContext(player, range(), 0);
 		if (ctx == null) return SpellInfo.EMPTY;
 		var spell = GTRegistries.BLOCK.get(player.level().registryAccess(), ctx.state().getBlockHolder());
 		if (spell == null) return SpellInfo.EMPTY;
@@ -61,7 +61,7 @@ public class SpellCoreItem extends LightningImmuneItem implements IBlockSpellIte
 	}
 
 	public boolean castSpell(SpellCastContext user) {
-		var ctx = BlockSpellContext.blockSpellContext(user.user(), range());
+		var ctx = BlockSpellContext.blockSpellContext(user.user(), range(), user.delay());
 		if (ctx == null) return false;
 		var spell = GTRegistries.BLOCK.get(user.level().registryAccess(), ctx.state().getBlockHolder());
 		if (spell == null) return false;

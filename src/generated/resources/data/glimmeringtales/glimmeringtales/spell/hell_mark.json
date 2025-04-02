@@ -6,8 +6,9 @@
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 16.0,
-    "maxUseTick": 40,
-    "timeFactor": 1.0
+    "maxUseTick": 0,
+    "standardDelay": 20,
+    "timeFactor": 0.7
   },
   "spell": "glimmeringtales:hell_mark",
   "tooltip": {

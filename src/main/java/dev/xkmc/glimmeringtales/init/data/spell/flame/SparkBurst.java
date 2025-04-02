@@ -44,7 +44,8 @@ import java.util.Map;
 public class SparkBurst {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
-			.build(GlimmeringTales.loc("spark_burst")).focusAndCost(2, 12).mob(12, 1)
+			.build(GlimmeringTales.loc("spark_burst")).focusAndCost(2, 12)
+			.mob(12, 0.7, 40, 0)
 			.damageVanilla(() -> new DamageType("onFire", 0, DamageEffects.BURNING), DamageTypeTags.IS_FIRE, DamageTypeTags.BYPASSES_COOLDOWN)
 			.projectile(SparkBurst::proj)
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.SPARK_BURST.get(),

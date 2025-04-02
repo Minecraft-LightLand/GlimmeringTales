@@ -13,7 +13,7 @@ public record MobSpellData(
 		int maxTick = spell().maxConsumeTick();
 		int cost = maxTick > 0 ? Math.min(useTick, maxTick) : Math.max(1, useTick);
 		double totalCost = cost * Math.max(cost().mana() * 20 / regen(), cost().focus());
-		return Math.max(20, (int) totalCost);
+		return Math.max(20, (int) (totalCost * mob.timeFactor()));
 	}
 
 }

@@ -22,7 +22,7 @@ import java.util.List;
 public class ThunderSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("thunder")).focusAndCost(60, 300).mob(16, 1)
+			.build(GlimmeringTales.loc("thunder")).focusAndCost(60, 300).mob(16, 1)//TODO mob cast delay
 			.block(ThunderSpells::gen, GTItems.RUNE_THUNDER, RuneBlock::offset,
 					(b, e) -> b.add(GTItems.STRUCK_LOG, BlockSpell.of(e)),
 					(b, e) -> b.add(Blocks.LIGHTNING_ROD, BlockSpell.of(e))

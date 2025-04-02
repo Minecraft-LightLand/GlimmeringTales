@@ -3,191 +3,206 @@
     "type": "l2magic:list",
     "children": [
       {
-        "type": "l2magic:iterate_delayed",
-        "child": {
-          "type": "l2magic:sound",
-          "pitch": "rand(-0.1,0.1)+rand(-0.1,0.1)",
-          "sound": "minecraft:item.firecharge.use",
-          "volume": "1"
+        "type": "l2magic:if",
+        "action": {
+          "type": "l2magic:iterate_arc",
+          "child": {
+            "type": "l2magic:particle",
+            "particle": "minecraft:flame",
+            "speed": "0"
+          },
+          "count": "84",
+          "maxAngle": "180",
+          "maxInclusive": false,
+          "minAngle": "-180",
+          "radius": "4"
         },
-        "delay": "8",
-        "step": "5"
+        "predicate": "MobCastDelay>0"
       },
       {
-        "type": "l2magic:move",
+        "type": "l2magic:delay",
         "child": {
           "type": "l2magic:list",
           "children": [
             {
-              "type": "l2magic:iterate",
+              "type": "l2magic:iterate_delayed",
               "child": {
-                "type": "l2magic:move",
-                "child": {
-                  "type": "l2magic:iterate_linear",
-                  "alongDir": "0.304",
-                  "alongOffset": "0",
-                  "child": {
-                    "type": "l2magic:particle",
-                    "particle": "minecraft:flame",
-                    "speed": "0"
-                  },
-                  "offset": [
-                    0.0,
-                    0.0,
-                    0.0
-                  ],
-                  "startFromOrigin": true,
-                  "step": "26"
-                },
-                "modifiers": [
-                  {
-                    "type": "l2magic:rotate",
-                    "degree": "72*ri",
-                    "vertical": "0"
-                  },
-                  {
-                    "type": "l2magic:forward",
-                    "distance": "4.0"
-                  },
-                  {
-                    "type": "l2magic:rotate",
-                    "degree": "162",
-                    "vertical": "0"
-                  }
-                ]
+                "type": "l2magic:sound",
+                "pitch": "rand(-0.1,0.1)+rand(-0.1,0.1)",
+                "sound": "minecraft:item.firecharge.use",
+                "volume": "1"
               },
-              "index": "ri",
+              "delay": "8",
               "step": "5"
             },
             {
-              "type": "l2magic:iterate",
-              "child": {
-                "type": "l2magic:move",
-                "child": {
-                  "type": "l2magic:particle",
-                  "particle": "minecraft:flame",
-                  "speed": "0"
-                },
-                "modifiers": [
-                  {
-                    "type": "l2magic:rotate",
-                    "degree": "4.285714285714286*ri",
-                    "vertical": "0"
-                  },
-                  {
-                    "type": "l2magic:forward",
-                    "distance": "4.0"
-                  }
-                ]
-              },
-              "index": "ri",
-              "step": "84"
-            }
-          ]
-        },
-        "modifiers": [
-          {
-            "type": "l2magic:direction",
-            "x": "1",
-            "y": "0",
-            "z": "0"
-          },
-          {
-            "type": "l2magic:rotate",
-            "degree": "rand(0,360)",
-            "vertical": "0"
-          }
-        ]
-      },
-      {
-        "type": "l2magic:iterate_delayed",
-        "child": {
-          "type": "l2magic:list",
-          "children": [
-            {
               "type": "l2magic:move",
               "child": {
-                "type": "l2magic:processor",
-                "processors": [
+                "type": "l2magic:list",
+                "children": [
                   {
-                    "type": "l2magic:damage",
-                    "damage": "8",
-                    "damage_type": "glimmeringtales:hell_mark",
-                    "indirect": true,
-                    "positioned": false
+                    "type": "l2magic:iterate",
+                    "child": {
+                      "type": "l2magic:move",
+                      "child": {
+                        "type": "l2magic:iterate_linear",
+                        "alongDir": "0.304",
+                        "alongOffset": "0",
+                        "child": {
+                          "type": "l2magic:particle",
+                          "particle": "minecraft:flame",
+                          "speed": "0"
+                        },
+                        "offset": [
+                          0.0,
+                          0.0,
+                          0.0
+                        ],
+                        "startFromOrigin": true,
+                        "step": "26"
+                      },
+                      "modifiers": [
+                        {
+                          "type": "l2magic:rotate",
+                          "degree": "72*ri",
+                          "vertical": "0"
+                        },
+                        {
+                          "type": "l2magic:forward",
+                          "distance": "4.0"
+                        },
+                        {
+                          "type": "l2magic:rotate",
+                          "degree": "162",
+                          "vertical": "0"
+                        }
+                      ]
+                    },
+                    "index": "ri",
+                    "step": "5"
                   },
                   {
-                    "type": "l2magic:push",
-                    "angle": "0",
-                    "from_center": "UNIFORM",
-                    "speed": "0.1",
-                    "tilt": "0"
-                  },
-                  {
-                    "type": "l2magic:property",
-                    "duration": "100",
-                    "property": "IGNITE"
+                    "type": "l2magic:iterate_arc",
+                    "child": {
+                      "type": "l2magic:particle",
+                      "particle": "minecraft:flame",
+                      "speed": "0"
+                    },
+                    "count": "84",
+                    "maxAngle": "180",
+                    "maxInclusive": false,
+                    "minAngle": "-180",
+                    "radius": "4.0"
                   }
-                ],
-                "selector": {
-                  "type": "l2magic:cylinder",
-                  "r": "4",
-                  "y": "6"
-                },
-                "target": "ENEMY"
+                ]
               },
               "modifiers": [
                 {
                   "type": "l2magic:direction",
-                  "x": "0",
-                  "y": "1",
+                  "x": "1",
+                  "y": "0",
                   "z": "0"
+                },
+                {
+                  "type": "l2magic:rotate",
+                  "degree": "rand(0,360)",
+                  "vertical": "0"
                 }
               ]
             },
             {
-              "type": "l2magic:random_pos_fan",
+              "type": "l2magic:iterate_delayed",
               "child": {
-                "type": "l2magic:random",
-                "child": {
-                  "type": "l2magic:move",
-                  "child": {
-                    "type": "l2magic:if",
-                    "action": {
-                      "type": "l2magic:particle",
-                      "particle": "minecraft:soul",
-                      "speed": "0.5+r3*0.2"
+                "type": "l2magic:list",
+                "children": [
+                  {
+                    "type": "l2magic:move",
+                    "child": {
+                      "type": "l2magic:processor",
+                      "processors": [
+                        {
+                          "type": "l2magic:damage",
+                          "damage": "8",
+                          "damage_type": "glimmeringtales:hell_mark",
+                          "indirect": true,
+                          "positioned": false
+                        },
+                        {
+                          "type": "l2magic:push",
+                          "angle": "0",
+                          "from_center": "UNIFORM",
+                          "speed": "0.1",
+                          "tilt": "0"
+                        },
+                        {
+                          "type": "l2magic:property",
+                          "duration": "100",
+                          "property": "IGNITE"
+                        }
+                      ],
+                      "selector": {
+                        "type": "l2magic:cylinder",
+                        "r": "4",
+                        "y": "6"
+                      },
+                      "target": "ENEMY"
                     },
-                    "fallback": {
-                      "type": "l2magic:particle",
-                      "particle": "minecraft:flame",
-                      "speed": "0.5+r3*0.2"
-                    },
-                    "predicate": "r2<0.25"
+                    "modifiers": [
+                      {
+                        "type": "l2magic:direction",
+                        "x": "0",
+                        "y": "1",
+                        "z": "0"
+                      }
+                    ]
                   },
-                  "modifiers": [
-                    {
-                      "type": "l2magic:direction",
-                      "x": "(r0-0.5)*0.2",
-                      "y": "1",
-                      "z": "(r1-0.5)*0.2"
-                    }
-                  ]
-                },
-                "count": 4,
-                "name": "r"
+                  {
+                    "type": "l2magic:random_pos_fan",
+                    "child": {
+                      "type": "l2magic:random",
+                      "child": {
+                        "type": "l2magic:move",
+                        "child": {
+                          "type": "l2magic:if",
+                          "action": {
+                            "type": "l2magic:particle",
+                            "particle": "minecraft:soul",
+                            "speed": "0.5+r3*0.2"
+                          },
+                          "fallback": {
+                            "type": "l2magic:particle",
+                            "particle": "minecraft:flame",
+                            "speed": "0.5+r3*0.2"
+                          },
+                          "predicate": "r2<0.25"
+                        },
+                        "modifiers": [
+                          {
+                            "type": "l2magic:direction",
+                            "x": "(r0-0.5)*0.2",
+                            "y": "1",
+                            "z": "(r1-0.5)*0.2"
+                          }
+                        ]
+                      },
+                      "count": 4,
+                      "name": "r"
+                    },
+                    "count": "10",
+                    "index": "i",
+                    "maxAngle": "180",
+                    "maxRadius": "4",
+                    "minAngle": "-180",
+                    "minRadius": "0"
+                  }
+                ]
               },
-              "count": "10",
-              "index": "i",
-              "maxAngle": "180",
-              "maxRadius": "4",
-              "minAngle": "-180",
-              "minRadius": "0"
+              "delay": "1",
+              "step": "40"
             }
           ]
         },
-        "delay": "1",
-        "step": "40"
+        "tick": "MobCastDelay"
       }
     ]
   },

@@ -103,28 +103,17 @@
                               "step": "5"
                             },
                             {
-                              "type": "l2magic:iterate",
+                              "type": "l2magic:iterate_arc",
                               "child": {
-                                "type": "l2magic:move",
-                                "child": {
-                                  "type": "l2magic:particle",
-                                  "particle": "minecraft:flame",
-                                  "speed": "0"
-                                },
-                                "modifiers": [
-                                  {
-                                    "type": "l2magic:rotate",
-                                    "degree": "5.714285714285714*ri",
-                                    "vertical": "0"
-                                  },
-                                  {
-                                    "type": "l2magic:forward",
-                                    "distance": "2.0"
-                                  }
-                                ]
+                                "type": "l2magic:particle",
+                                "particle": "minecraft:flame",
+                                "speed": "0"
                               },
-                              "index": "ri",
-                              "step": "63"
+                              "count": "63",
+                              "maxAngle": "180",
+                              "maxInclusive": false,
+                              "minAngle": "-180",
+                              "radius": "2.0"
                             }
                           ]
                         },

@@ -5,9 +5,10 @@
   "graph": "glimmeringtales:earthquake",
   "maxConsumeTick": 0,
   "mob": {
-    "idealRange": 5.0,
-    "maxUseTick": 40,
-    "timeFactor": 1.0
+    "idealRange": 7.0,
+    "maxUseTick": 0,
+    "standardDelay": 20,
+    "timeFactor": 0.5
   },
   "spell": "glimmeringtales:earthquake",
   "tooltip": {

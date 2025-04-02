@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 public record BlockSpellContext(SpellContext ctx, BlockState state, BlockPos pos) {
 
 	@Nullable
-	public static BlockSpellContext blockSpellContext(LivingEntity user, int distance) {
+	public static BlockSpellContext blockSpellContext(LivingEntity user, int distance, int delay) {
 		Level level = user.level();
 		Vec3 start = user.getEyePosition();
 		Vec3 forward = SpellContext.getForward(user);
@@ -33,13 +33,13 @@ public record BlockSpellContext(SpellContext ctx, BlockState state, BlockPos pos
 		if (!level.isClientSide()) {
 			seed = ThreadLocalRandom.current().nextLong();
 		}
-		var ctx = new SpellContext(user, pos.getCenter(), ori, seed, 0, 1);
+		var ctx = new SpellContext(user, pos.getCenter(), ori, seed, 0, 1, delay);
 		return new BlockSpellContext(ctx, level.getBlockState(pos), pos);
 	}
 
 
 	@Nullable
-	public static BlockSpellContext entitySpellContext(LivingEntity user, int distance, RuneBlock spell) {
+	public static BlockSpellContext entitySpellContext(LivingEntity user, int distance, RuneBlock spell, int delay) {
 		Level level = user.level();
 		Vec3 start = user.getEyePosition();
 		Vec3 forward = SpellContext.getForward(user);
@@ -61,7 +61,7 @@ public record BlockSpellContext(SpellContext ctx, BlockState state, BlockPos pos
 		if (!level.isClientSide()) {
 			seed = ThreadLocalRandom.current().nextLong();
 		}
-		var ctx = new SpellContext(user, pos.getCenter(), ori, seed, 0, 1);
+		var ctx = new SpellContext(user, pos.getCenter(), ori, seed, 0, 1, delay);
 		return new BlockSpellContext(ctx, level.getBlockState(pos), pos);
 	}
 

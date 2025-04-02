@@ -42,6 +42,7 @@ public class Meteor {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("meteor")).focusAndCost(80, 500)
+			.mob(16, 0.5, 0, 0)
 			.damageExplosion().projectile(Meteor::proj)
 			.spell(e -> new SpellAction(starfall(e), GTItems.METEOR.get(), 2010,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))

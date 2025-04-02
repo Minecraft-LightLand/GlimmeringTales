@@ -4,6 +4,12 @@
   "focus": 80,
   "graph": "glimmeringtales:meteor",
   "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 16.0,
+    "maxUseTick": 0,
+    "standardDelay": 0,
+    "timeFactor": 0.5
+  },
   "spell": "glimmeringtales:meteor",
   "tooltip": {
     "list": [

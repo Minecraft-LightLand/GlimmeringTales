@@ -9,9 +9,12 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
+import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
+import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
+import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
@@ -21,6 +24,7 @@ import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
+import dev.xkmc.l2magic.content.engine.variable.ColorVariable;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import net.minecraft.sounds.SoundEvents;
@@ -32,7 +36,8 @@ import java.util.List;
 public class Earthquake {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
-			.build(GlimmeringTales.loc("earthquake")).focusAndCost(80, 480).mob(5, 1)
+			.build(GlimmeringTales.loc("earthquake")).focusAndCost(80, 480)
+			.mob(7, 0.5, 0, 20)
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is killed by earthquake", "%s is killed by %s using earthquake",
 					DamageTypeTags.IS_EXPLOSION
@@ -70,7 +75,10 @@ public class Earthquake {
 						BlockTestCondition.Type.BLOCKS_MOTION.get(),
 						BlockTestCondition.Type.PUSHABLE.get(),
 						BlockTestCondition.Type.REPLACEABLE.get().move(OffsetModifier.ABOVE))
-		));
+		)).mobCastDelay(new LoopIterator(IntVariable.of("3"), new RingIterator(
+				DoubleVariable.of("i+6"), IntVariable.of("64+32*i"), false, new DustParticleInstance(
+				ColorVariable.Static.of(0x4f4f4f), DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of("20")
+		)), "i").move(OffsetModifier.ABOVE));
 
 	}
 
