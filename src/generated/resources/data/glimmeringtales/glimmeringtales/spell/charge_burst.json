@@ -5,10 +5,10 @@
   "graph": "glimmeringtales:charge_burst",
   "maxConsumeTick": 0,
   "mob": {
-    "idealRange": 16.0,
-    "maxUseTick": 40,
+    "idealRange": 32.0,
+    "maxUseTick": 0,
     "standardDelay": 20,
-    "timeFactor": 1.0
+    "timeFactor": 0.4
   },
   "spell": "glimmeringtales:charge_burst",
   "tooltip": {

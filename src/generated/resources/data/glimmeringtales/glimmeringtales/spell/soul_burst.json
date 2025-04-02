@@ -7,8 +7,8 @@
   "mob": {
     "idealRange": 12.0,
     "maxUseTick": 40,
-    "standardDelay": 20,
-    "timeFactor": 1.0
+    "standardDelay": 0,
+    "timeFactor": 0.7
   },
   "spell": "glimmeringtales:soul_burst",
   "tooltip": {

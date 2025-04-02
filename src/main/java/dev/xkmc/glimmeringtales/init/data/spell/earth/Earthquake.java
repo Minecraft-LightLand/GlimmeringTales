@@ -9,7 +9,6 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
-import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
 import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
@@ -37,7 +36,7 @@ public class Earthquake {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("earthquake")).focusAndCost(80, 480)
-			.mob(7, 0.5, 0, 20)
+			.mob(7, 0.5, 0, 30)
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is killed by earthquake", "%s is killed by %s using earthquake",
 					DamageTypeTags.IS_EXPLOSION
@@ -75,7 +74,7 @@ public class Earthquake {
 						BlockTestCondition.Type.BLOCKS_MOTION.get(),
 						BlockTestCondition.Type.PUSHABLE.get(),
 						BlockTestCondition.Type.REPLACEABLE.get().move(OffsetModifier.ABOVE))
-		)).mobCastDelay(new LoopIterator(IntVariable.of("3"), new RingIterator(
+		)).mobCastDelay(new DelayedIterator(IntVariable.of("3"), IntVariable.of("5"), new RingIterator(
 				DoubleVariable.of("i+6"), IntVariable.of("64+32*i"), false, new DustParticleInstance(
 				ColorVariable.Static.of(0x4f4f4f), DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of("20")
 		)), "i").move(OffsetModifier.ABOVE));

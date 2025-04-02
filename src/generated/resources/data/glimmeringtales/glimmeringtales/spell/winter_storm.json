@@ -6,9 +6,9 @@
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 5.0,
-    "maxUseTick": 40,
+    "maxUseTick": 100,
     "standardDelay": 0,
-    "timeFactor": 0.7
+    "timeFactor": 0.5
   },
   "spell": "glimmeringtales:winter_storm",
   "tooltip": {

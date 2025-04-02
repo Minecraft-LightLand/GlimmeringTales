@@ -7,8 +7,8 @@
   "mob": {
     "idealRange": 16.0,
     "maxUseTick": 0,
-    "standardDelay": 20,
-    "timeFactor": 1.0
+    "standardDelay": 35,
+    "timeFactor": 0.7
   },
   "spell": "glimmeringtales:amethyst",
   "tooltip": {

@@ -11,9 +11,9 @@ import net.minecraft.world.entity.player.Player;
 
 import java.util.List;
 
-public record SpellCost(double focus, double mana) {
+public record SpellCost(double focus, double mana, boolean researchable) {
 
-	public static final SpellCost ZERO = new SpellCost(0, 0);
+	public static final SpellCost ZERO = new SpellCost(0, 0, false);
 
 	public MutableComponent manaText(double factor) {
 		return Component.literal(Math.round(mana() * factor) + "");

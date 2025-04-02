@@ -3,14 +3,40 @@
     "type": "l2magic:list",
     "children": [
       {
-        "type": "l2magic:sound",
-        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:item.trident.thunder",
-        "volume": "1"
+        "type": "l2magic:if",
+        "action": {
+          "type": "l2magic:iterate_arc",
+          "child": {
+            "type": "l2magic:particle",
+            "particle": "minecraft:end_rod",
+            "speed": "0"
+          },
+          "count": "20",
+          "maxAngle": "180",
+          "maxInclusive": false,
+          "minAngle": "-180",
+          "radius": "3"
+        },
+        "predicate": "MobCastDelay>0"
       },
       {
-        "type": "glimmeringtales:thunder",
-        "damage": "5"
+        "type": "l2magic:delay",
+        "child": {
+          "type": "l2magic:list",
+          "children": [
+            {
+              "type": "l2magic:sound",
+              "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+              "sound": "minecraft:item.trident.thunder",
+              "volume": "1"
+            },
+            {
+              "type": "glimmeringtales:thunder",
+              "damage": "5"
+            }
+          ]
+        },
+        "tick": "MobCastDelay"
       }
     ]
   },

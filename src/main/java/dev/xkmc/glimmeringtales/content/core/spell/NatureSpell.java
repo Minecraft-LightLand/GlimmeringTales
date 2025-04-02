@@ -15,6 +15,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.OwnableEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
@@ -69,7 +70,10 @@ public record NatureSpell(
 		if (affinity < MIN_AFFINITY) affinity = MIN_AFFINITY;
 		double mana = cost / affinity;
 		double focus = focus();
+		if (le instanceof OwnableEntity own) le = own.getOwner();
+		boolean researchable = false;
 		if (le instanceof Player player && graph != null) {
+			researchable = true;
 			var g = graph.value();
 			SpellResearch research = PlayerResearch.of(player).get(graph.unwrapKey().orElseThrow().location());
 			if (research != null && research.getState() == ResearchState.COMPLETED) {
@@ -82,7 +86,7 @@ public record NatureSpell(
 				}
 			}
 		}
-		return new SpellCost(focus, Math.max(MIN_MANA_COST, mana));
+		return new SpellCost(focus, Math.max(MIN_MANA_COST, mana), researchable);
 	}
 
 	void addDescription(List<Component> list, SpellCost consume, boolean advanced) {

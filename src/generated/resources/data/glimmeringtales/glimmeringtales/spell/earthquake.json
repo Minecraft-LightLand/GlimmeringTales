@@ -7,7 +7,7 @@
   "mob": {
     "idealRange": 7.0,
     "maxUseTick": 0,
-    "standardDelay": 20,
+    "standardDelay": 30,
     "timeFactor": 0.5
   },
   "spell": "glimmeringtales:earthquake",

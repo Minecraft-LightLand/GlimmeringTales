@@ -14,10 +14,14 @@ import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
+import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.iterator.RingRandomIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
+import dev.xkmc.l2magic.content.engine.logic.PredicateLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
+import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
+import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
@@ -27,6 +31,8 @@ import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
+import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
+import dev.xkmc.l2magic.content.engine.variable.ColorVariable;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
@@ -45,7 +51,8 @@ import java.util.Map;
 public class IllusoryField {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.OCEAN
-			.build(GlimmeringTales.loc("illusory_field")).focusAndCost(100, 600).mob(16, 1)//TODO mob cast delay
+			.build(GlimmeringTales.loc("illusory_field")).focusAndCost(100, 600)
+			.mob(16, 0.7, 0, 20)
 			.damageCustom(msg -> new DamageType(msg, 0.1f, DamageEffects.DROWNING),
 					"%s is drowned by magical bubbles",
 					"%s is drowned by %s with magical bubbles",
@@ -114,7 +121,14 @@ public class IllusoryField {
 								).move(SetDirectionModifier.of("rand(-3,3)", "100", "rand(-3,3)"))
 						)
 				)
-		));
+		)).mobCastDelay(new RingIterator(DoubleVariable.of("7"), IntVariable.of("256"), false,
+				new PredicateLogic(BooleanVariable.of("rand()>0.5"),
+						new DustParticleInstance(ColorVariable.Static.of(0xF3D7FF),
+								DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of("20")),
+						new DustParticleInstance(ColorVariable.Static.of(0xBCECFF),
+								DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of("20"))
+				)
+		).move(OffsetModifier.ABOVE));
 
 	}
 

@@ -31,14 +31,16 @@ public class GTHostilityGen extends ConfigDataProvider {
 		var lv1 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
 				of(GTItems.GOLD_WAND, GTItems.EARTHQUAKE),
 				of(GTItems.ENDER_WAND, GTItems.WINTER_STORM),
+				of(GTItems.GOLD_WAND, GTItems.AMETHYST_PENETRATION),
 				of(GTItems.OCEAN_WAND, GTItems.OCEAN_SHELTER)
 		)), 150, 100);
 		var lv2 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
-				of(GTItems.GOLD_WAND, GTItems.AMETHYST_PENETRATION),
+				of(GTItems.GOLD_WAND, GTItems.RUNE_AMETHYST),
 				of(GTItems.NETHER_WAND, GTItems.HELL_MARK),
 				of(GTItems.ENDER_WAND, GTItems.SNOW_TORNADO)
 		)), 250, 50);
 		var lv3 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
+				of(GTItems.GOLD_WAND, GTItems.METEOR),
 				of(GTItems.NETHER_WAND, GTItems.SPARK_BURST),
 				of(GTItems.NETHER_WAND, GTItems.SOUL_BURST),
 				of(GTItems.OCEAN_WAND, GTItems.ILLUSORY_FIELD),

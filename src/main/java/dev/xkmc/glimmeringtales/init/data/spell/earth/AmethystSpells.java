@@ -14,6 +14,7 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
 import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
 import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
@@ -41,7 +42,7 @@ public class AmethystSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("amethyst")).focusAndCost(50, 200)
-			.mob(16, 1, 0, 20)
+			.mob(16, 0.7, 0, 35)
 			.damageCustom(msg -> new DamageType(msg, 0.1f),
 					"%s is pierced by amethyst shards",
 					"%s is pierced by %s with amethyst shards",
@@ -109,7 +110,7 @@ public class AmethystSpells {
 						OffsetModifier.of("0", "0.55", "0"),
 						SetDirectionModifier.of("1", "0", "0")
 				)
-		)).mobCastDelay(new LoopIterator(IntVariable.of("4"), new RingIterator(
+		)).mobCastDelay(new DelayedIterator(IntVariable.of("4"), IntVariable.of("5"), new RingIterator(
 				DoubleVariable.of("2*i+2"), IntVariable.of("32+32*i"), false, new DustParticleInstance(
 				ColorVariable.Static.of(0xCFA0F3), DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of("20")
 		)), "i").move(OffsetModifier.ABOVE, new Dir2NormalModifier()));

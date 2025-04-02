@@ -44,7 +44,7 @@ public class SnowStorm {
 
 	public static final NatureSpellBuilder WINTER_STORM = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("winter_storm")).focusAndCost(2, 6).damageFreeze()
-			.mob(5, 0.7, 40, 0)
+			.mob(5, 0.5, 100, 0)
 			.spell(ctx -> new SpellAction(winterStorm(ctx, 4, 1.5, 1),
 					GTItems.WINTER_STORM.asItem(), 100,
 					SpellCastType.CONTINUOUS, SpellTriggerType.SELF_POS
@@ -56,7 +56,7 @@ public class SnowStorm {
 
 	public static final NatureSpellBuilder SNOW_TORNADO = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("snow_tornado")).focusAndCost(1, 5).damageFreeze()
-			.mob(6, 0.7, 40, 0)
+			.mob(6, 0.5, 100, 0)
 			.spell(ctx -> new SpellAction(tornado(ctx),
 					GTItems.SNOW_TORNADO.asItem(), 100,
 					SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT

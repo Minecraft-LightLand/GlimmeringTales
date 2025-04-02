@@ -37,7 +37,8 @@ import java.util.Map;
 public class DarkRain {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.OCEAN
-			.build(GlimmeringTales.loc("dark_rain")).focusAndCost(2, 16).mob(16, 1)//TODO mob cast delay
+			.build(GlimmeringTales.loc("dark_rain")).focusAndCost(2, 16)
+			.mob(25, 0.7, 20, 0)
 			.damageCustom(e -> new DamageType(e, 0.1f, DamageEffects.DROWNING),
 					"%s is cursed by dark rain", "%s is cursed by %s's dark rain",
 					GTDamageTypeGen.magic())

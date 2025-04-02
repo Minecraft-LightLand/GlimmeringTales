@@ -9,12 +9,9 @@ import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
-import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
+import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
-import dev.xkmc.l2magic.content.engine.modifier.ForwardOffsetModifier;
-import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
-import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.CastAtProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxCylinderSelector;
@@ -33,7 +30,8 @@ import java.util.List;
 public class Thunderstorm {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("thunderstorm")).focusAndCost(120, 960).mob(16, 1)//TODO mob cast delay
+			.build(GlimmeringTales.loc("thunderstorm")).focusAndCost(120, 960)
+			.mob(32, 0.3, 0, 20)
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.THUNDERSTORM.get(), 2002,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
 			).lang("Thunderstorm").desc(
@@ -49,16 +47,9 @@ public class Thunderstorm {
 						DoubleVariable.of("1"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
-				new LoopIterator(
-						IntVariable.of("60"),
-						new SimpleParticleInstance(
-								ParticleTypes.END_ROD,
-								DoubleVariable.ZERO
-						).move(
-								SetDirectionModifier.of("1", "0", "0"),
-								RotationModifier.of("i*6", "10"),
-								ForwardOffsetModifier.of("6")
-						), "i"
+				new RingIterator(
+						DoubleVariable.of("6"), IntVariable.of("60"), false,
+						new SimpleParticleInstance(ParticleTypes.END_ROD, DoubleVariable.ZERO)
 				),
 				new ProcessorEngine(
 						SelectionType.ENEMY_NO_FAMILY,
@@ -67,7 +58,10 @@ public class Thunderstorm {
 								CastAtProcessor.PosType.BOTTOM, CastAtProcessor.DirType.UP,
 								new LightningInstance(DoubleVariable.of("5"))
 						))
-				)));
+				))).mobCastDelay(new RingIterator(
+				DoubleVariable.of("6"), IntVariable.of("40"), false,
+				new SimpleParticleInstance(ParticleTypes.END_ROD, DoubleVariable.ZERO)
+		));
 
 	}
 

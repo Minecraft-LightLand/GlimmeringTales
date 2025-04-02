@@ -3,60 +3,69 @@
     "type": "l2magic:list",
     "children": [
       {
-        "type": "l2magic:sound",
-        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:item.trident.thunder",
-        "volume": "1"
-      },
-      {
-        "type": "l2magic:iterate",
-        "child": {
-          "type": "l2magic:move",
+        "type": "l2magic:if",
+        "action": {
+          "type": "l2magic:iterate_arc",
           "child": {
             "type": "l2magic:particle",
             "particle": "minecraft:end_rod",
             "speed": "0"
           },
-          "modifiers": [
+          "count": "40",
+          "maxAngle": "180",
+          "maxInclusive": false,
+          "minAngle": "-180",
+          "radius": "6"
+        },
+        "predicate": "MobCastDelay>0"
+      },
+      {
+        "type": "l2magic:delay",
+        "child": {
+          "type": "l2magic:list",
+          "children": [
             {
-              "type": "l2magic:direction",
-              "x": "1",
-              "y": "0",
-              "z": "0"
+              "type": "l2magic:sound",
+              "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+              "sound": "minecraft:item.trident.thunder",
+              "volume": "1"
             },
             {
-              "type": "l2magic:rotate",
-              "degree": "i*6",
-              "vertical": "10"
+              "type": "l2magic:iterate_arc",
+              "child": {
+                "type": "l2magic:particle",
+                "particle": "minecraft:end_rod",
+                "speed": "0"
+              },
+              "count": "60",
+              "maxAngle": "180",
+              "maxInclusive": false,
+              "minAngle": "-180",
+              "radius": "6"
             },
             {
-              "type": "l2magic:forward",
-              "distance": "6"
+              "type": "l2magic:processor",
+              "processors": [
+                {
+                  "type": "l2magic:cast_at",
+                  "child": {
+                    "type": "glimmeringtales:thunder",
+                    "damage": "5"
+                  },
+                  "dir": "UP",
+                  "pos": "BOTTOM"
+                }
+              ],
+              "selector": {
+                "type": "l2magic:cylinder",
+                "r": "6",
+                "y": "3"
+              },
+              "target": "ENEMY_NO_FAMILY"
             }
           ]
         },
-        "index": "i",
-        "step": "60"
-      },
-      {
-        "type": "l2magic:processor",
-        "processors": [
-          {
-            "type": "l2magic:cast_at",
-            "child": {
-              "type": "glimmeringtales:thunder",
-              "damage": "5"
-            },
-            "dir": "UP",
-            "pos": "BOTTOM"
-          }
-        ],
-        "selector": {
-          "type": "l2magic:cylinder",
-          "r": "6",
-          "y": "3"
-        },
-        "target": "ENEMY_NO_FAMILY"
+        "tick": "MobCastDelay"
       }
     ]
   },

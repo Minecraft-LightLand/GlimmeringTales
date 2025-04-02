@@ -6,9 +6,9 @@
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 6.0,
-    "maxUseTick": 40,
+    "maxUseTick": 100,
     "standardDelay": 0,
-    "timeFactor": 0.7
+    "timeFactor": 0.5
   },
   "spell": "glimmeringtales:snow_tornado",
   "tooltip": {

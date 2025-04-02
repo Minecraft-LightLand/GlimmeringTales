@@ -133,10 +133,6 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 		return this;
 	}
 
-	public NatureSpellBuilder mob(int range, double factor) {
-		return mob(range, factor, 40, 20);
-	}
-
 	public NatureSpellBuilder mob(int range, double factor, int maxTime, int delay) {
 		this.mob = new MobCastingData(range, maxTime, factor, delay);
 		return this;
@@ -224,10 +220,10 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 			GlimmeringTales.LOGGER.error("Spell {} failed description check", id);
 			GlimmeringTales.LOGGER.throwing(e);
 		}
-		if (nature.value.mob() != null) {
+		if (nature.value.mob() == null) {
 			var trigger = nature.value.spell().value().triggerType();
 			if (trigger == SpellTriggerType.TARGET_ENTITY || trigger == SpellTriggerType.TARGET_POS) {
-				GlimmeringTales.LOGGER.warn("Spell {} is too dangerous for mobs to cast", id);
+				GlimmeringTales.LOGGER.warn("Spell {} is not available for mobs to cast", id);
 			}
 		}
 	}

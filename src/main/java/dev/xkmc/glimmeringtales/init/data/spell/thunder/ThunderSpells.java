@@ -11,9 +11,13 @@ import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
+import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
+import dev.xkmc.l2magic.content.engine.variable.IntVariable;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Blocks;
 
@@ -22,7 +26,8 @@ import java.util.List;
 public class ThunderSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("thunder")).focusAndCost(60, 300).mob(16, 1)//TODO mob cast delay
+			.build(GlimmeringTales.loc("thunder")).focusAndCost(60, 300)
+			.mob(32, 0.6, 0, 20)
 			.block(ThunderSpells::gen, GTItems.RUNE_THUNDER, RuneBlock::offset,
 					(b, e) -> b.add(GTItems.STRUCK_LOG, BlockSpell.of(e)),
 					(b, e) -> b.add(Blocks.LIGHTNING_ROD, BlockSpell.of(e))
@@ -39,7 +44,11 @@ public class ThunderSpells {
 						DoubleVariable.of("1"),
 						DoubleVariable.of("1+rand(-0.1,0.1)+rand(-0.1,0.1)")
 				),
-				new LightningInstance(DoubleVariable.of("5"))));
+				new LightningInstance(DoubleVariable.of("5"))
+		)).mobCastDelay(new RingIterator(
+				DoubleVariable.of("3"), IntVariable.of("20"), false,
+				new SimpleParticleInstance(ParticleTypes.END_ROD, DoubleVariable.ZERO)
+		));
 
 	}
 

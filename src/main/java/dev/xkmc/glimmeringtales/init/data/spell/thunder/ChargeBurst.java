@@ -11,9 +11,11 @@ import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
+import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
@@ -28,6 +30,7 @@ import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
 import dev.xkmc.l2magic.content.entity.engine.CustomProjectileShoot;
 import dev.xkmc.l2magic.init.registrate.EngineRegistry;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -39,7 +42,8 @@ import java.util.Map;
 public class ChargeBurst {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
-			.build(GlimmeringTales.loc("charge_burst")).focusAndCost(100, 600).mob(16, 1)//TODO mob cast delay
+			.build(GlimmeringTales.loc("charge_burst")).focusAndCost(100, 600)
+			.mob(32, 0.4, 0, 20)
 			.damageCustom(msg -> new DamageType(msg, 0.1f),
 					"%s is electrocuted by charge burst",
 					"%s is electrocuted by %s with charge burst",
@@ -85,8 +89,10 @@ public class ChargeBurst {
 								BlockTestCondition.Type.BLOCKS_MOTION.get().invert(),
 								BlockTestCondition.Type.BLOCKS_MOTION.get().move(OffsetModifier.BELOW)
 						)
+		)).mobCastDelay(new RingIterator(
+				DoubleVariable.of("8"), IntVariable.of("50"), false,
+				new SimpleParticleInstance(ParticleTypes.END_ROD, DoubleVariable.ZERO)
 		));
-
 	}
 
 

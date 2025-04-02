@@ -7,7 +7,7 @@
         "action": {
           "type": "l2magic:move",
           "child": {
-            "type": "l2magic:iterate",
+            "type": "l2magic:iterate_delayed",
             "child": {
               "type": "l2magic:iterate_arc",
               "child": {
@@ -23,6 +23,7 @@
               "minAngle": "-180",
               "radius": "2*i+2"
             },
+            "delay": "5",
             "index": "i",
             "step": "4"
           },

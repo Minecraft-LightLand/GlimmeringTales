@@ -3,70 +3,96 @@
     "type": "l2magic:list",
     "children": [
       {
-        "type": "l2magic:sound",
-        "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
-        "sound": "minecraft:item.trident.thunder",
-        "volume": "1"
-      },
-      {
-        "type": "glimmeringtales:thunder",
-        "damage": "5"
-      },
-      {
-        "type": "l2magic:block_in_range",
-        "child": {
-          "type": "l2magic:if",
-          "action": {
-            "type": "l2magic:move",
-            "child": {
-              "type": "l2magic:custom_projectile",
-              "bypassEntity": true,
-              "bypassWall": true,
-              "config": "glimmeringtales:charge_burst",
-              "life": "12",
-              "params": {},
-              "speed": "0"
-            },
-            "modifiers": [
-              {
-                "type": "l2magic:offset",
-                "x": "0",
-                "y": "-0.49",
-                "z": "0"
-              }
-            ]
+        "type": "l2magic:if",
+        "action": {
+          "type": "l2magic:iterate_arc",
+          "child": {
+            "type": "l2magic:particle",
+            "particle": "minecraft:end_rod",
+            "speed": "0"
           },
-          "predicate": {
-            "type": "l2magic:and",
-            "list": [
-              {
-                "type": "l2magic:not",
-                "child": {
-                  "type": "l2magic:block_test",
-                  "test": "BLOCKS_MOTION"
+          "count": "50",
+          "maxAngle": "180",
+          "maxInclusive": false,
+          "minAngle": "-180",
+          "radius": "8"
+        },
+        "predicate": "MobCastDelay>0"
+      },
+      {
+        "type": "l2magic:delay",
+        "child": {
+          "type": "l2magic:list",
+          "children": [
+            {
+              "type": "l2magic:sound",
+              "pitch": "1+rand(-0.1,0.1)+rand(-0.1,0.1)",
+              "sound": "minecraft:item.trident.thunder",
+              "volume": "1"
+            },
+            {
+              "type": "glimmeringtales:thunder",
+              "damage": "5"
+            },
+            {
+              "type": "l2magic:block_in_range",
+              "child": {
+                "type": "l2magic:if",
+                "action": {
+                  "type": "l2magic:move",
+                  "child": {
+                    "type": "l2magic:custom_projectile",
+                    "bypassEntity": true,
+                    "bypassWall": true,
+                    "config": "glimmeringtales:charge_burst",
+                    "life": "12",
+                    "params": {},
+                    "speed": "0"
+                  },
+                  "modifiers": [
+                    {
+                      "type": "l2magic:offset",
+                      "x": "0",
+                      "y": "-0.49",
+                      "z": "0"
+                    }
+                  ]
+                },
+                "predicate": {
+                  "type": "l2magic:and",
+                  "list": [
+                    {
+                      "type": "l2magic:not",
+                      "child": {
+                        "type": "l2magic:block_test",
+                        "test": "BLOCKS_MOTION"
+                      }
+                    },
+                    {
+                      "type": "l2magic:move",
+                      "child": {
+                        "type": "l2magic:block_test",
+                        "test": "BLOCKS_MOTION"
+                      },
+                      "modifiers": [
+                        {
+                          "type": "l2magic:offset",
+                          "x": "0",
+                          "y": "-1",
+                          "z": "0"
+                        }
+                      ]
+                    }
+                  ]
                 }
               },
-              {
-                "type": "l2magic:move",
-                "child": {
-                  "type": "l2magic:block_test",
-                  "test": "BLOCKS_MOTION"
-                },
-                "modifiers": [
-                  {
-                    "type": "l2magic:offset",
-                    "x": "0",
-                    "y": "-1",
-                    "z": "0"
-                  }
-                ]
-              }
-            ]
-          }
+              "delayPerBlock": "2",
+              "height": "3",
+              "range": "8"
+            }
+          ]
         },
-        "delayPerBlock": "2",
-        "height": "3",
-        "range": "8"
+        "tick": "MobCastDelay"
       }
     ]
   },

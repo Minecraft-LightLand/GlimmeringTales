@@ -6,9 +6,9 @@
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 16.0,
-    "maxUseTick": 40,
+    "maxUseTick": 0,
     "standardDelay": 20,
-    "timeFactor": 1.0
+    "timeFactor": 0.7
   },
   "spell": "glimmeringtales:illusory_field",
   "tooltip": {
