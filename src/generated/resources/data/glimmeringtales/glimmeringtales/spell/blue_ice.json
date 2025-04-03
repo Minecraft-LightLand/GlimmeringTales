@@ -4,6 +4,12 @@
   "focus": 40,
   "graph": "glimmeringtales:ice",
   "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 25.0,
+    "maxUseTick": 0,
+    "standardDelay": 30,
+    "timeFactor": 1.0
+  },
   "spell": "glimmeringtales:blue_ice",
   "tooltip": {
     "list": [

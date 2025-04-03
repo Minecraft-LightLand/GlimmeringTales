@@ -4,6 +4,12 @@
   "focus": 60,
   "graph": "glimmeringtales:powder_snow",
   "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 25.0,
+    "maxUseTick": 0,
+    "standardDelay": 10,
+    "timeFactor": 1.0
+  },
   "spell": "glimmeringtales:powder_snow",
   "tooltip": {
     "list": [

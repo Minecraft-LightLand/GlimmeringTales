@@ -12,14 +12,12 @@ import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
 import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
-import dev.xkmc.l2magic.content.engine.predicate.BlockMatchCondition;
-import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
-import dev.xkmc.l2magic.content.engine.predicate.OrPredicate;
-import dev.xkmc.l2magic.content.engine.predicate.SurfaceBelowCondition;
+import dev.xkmc.l2magic.content.engine.predicate.*;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PushProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
@@ -43,11 +41,12 @@ public class DripstoneSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("dripstone")).focusAndCost(40, 160)
+			.grounded()
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is pierced by stalagmite", "%s is pierced by %s's stalagmite",
 					DamageTypeTags.IS_PROJECTILE)
 			.projectile(DripstoneSpells::proj)
-			.block(DripstoneSpells::gen, GTItems.RUNE_DRIPSTONE, RuneBlock::of,
+			.block(DripstoneSpells::gen, DripstoneSpells::cond, GTItems.RUNE_DRIPSTONE, RuneBlock::of,
 					(b, e) -> b.add(Blocks.DRIPSTONE_BLOCK, BlockSpell.of(e)),
 					(b, e) -> b.add(Blocks.POINTED_DRIPSTONE, BlockSpell.cost(e))
 			).lang("Stalactite Burst").desc(
@@ -106,6 +105,17 @@ public class DripstoneSpells {
 						BlockTestCondition.Type.BLOCKS_MOTION.get().invert()
 				)));
 
+	}
+
+	private static IPredicate cond(NatureSpellBuilder ctx) {
+		return BlockInRangePredicate.circular("2", "2", "2", null,
+				new OrPredicate(List.of(
+						SurfaceBelowCondition.full(),
+						BlockMatchCondition.of(Blocks.POINTED_DRIPSTONE)
+								.move(OffsetModifier.BELOW)
+				)),
+				BlockTestCondition.Type.BLOCKS_MOTION.get().invert()
+		);
 	}
 
 }

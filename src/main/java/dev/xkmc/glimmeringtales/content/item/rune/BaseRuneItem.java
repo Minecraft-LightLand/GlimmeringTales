@@ -36,7 +36,7 @@ public abstract class BaseRuneItem extends Item implements IWandCoreItem {
 	public void appendHoverText(ItemStack stack, TooltipContext ctx, List<Component> list, TooltipFlag flag) {
 		var level = ctx.level();
 		if (level == null) return;
-		getSpellInfo(level.registryAccess()).runeItemDesc(level, list);
+		getSpellInfo(level.registryAccess()).runeItemDesc(level, list, flag.hasShiftDown());
 	}
 
 	public ModelResourceLocation model() {

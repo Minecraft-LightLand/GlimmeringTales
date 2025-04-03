@@ -3,6 +3,7 @@ package dev.xkmc.glimmeringtales.content.core.spell;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltip;
 import dev.xkmc.glimmeringtales.content.research.core.PlayerResearch;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
+import dev.xkmc.glimmeringtales.init.data.GTTagGen;
 import dev.xkmc.l2core.util.Proxy;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.Holder;
@@ -50,6 +51,9 @@ public record SpellInfo(@Nullable Holder<NatureSpell> spell,
 		var cost = getCost(player, wand);
 		ns.addDescription(list, cost, advanced());
 		SpellTooltip.get(player.level(), ns).brief(id, list);
+		if (spell.is(GTTagGen.GROUNDED)) {
+			list.add(GTLang.DESC_GROUND.get().withStyle(ChatFormatting.RED));
+		}
 		cost.addCostInfo(list, player);
 		if (consume) {
 			list.add(GTLang.OVERLAY_DESTROY.get().withStyle(ChatFormatting.RED));
@@ -57,21 +61,30 @@ public record SpellInfo(@Nullable Holder<NatureSpell> spell,
 		return list;
 	}
 
-	public void runeItemDesc(Level level, List<Component> list) {
+	public void runeItemDesc(Level level, List<Component> list, boolean shift) {
 		if (spell == null) return;
 		var ns = spell.value();
 		var id = spell.unwrapKey().orElseThrow();
-		ns.addDescription(list, ns.manaCost(null, 1), advanced());
+		var pl = Proxy.getPlayer();
+		ns.addDescription(list, ns.manaCost(shift ? null : pl, 1), !shift && advanced());
 		list.add(SpellTooltip.get(level, ns).format(id));
-		if (ns.mob() != null) {
-			list.add(GTLang.TOOLTIP_MOB_USE.get().withStyle(ChatFormatting.RED));
+		if (!shift) {
+			if (spell.is(GTTagGen.GROUNDED)) {
+				list.add(GTLang.DESC_GROUND.get().withStyle(ChatFormatting.RED));
+			}
+			if (ns.mob() != null) {
+				list.add(GTLang.TOOLTIP_MOB_USE.get().withStyle(ChatFormatting.RED));
+			}
 		}
 		if (ns.graph() == null) return;
-		var pl = Proxy.getPlayer();
 		if (pl == null) return;
 		var research = PlayerResearch.of(pl).get(ns.graph().unwrapKey().orElseThrow().location());
 		if (research == null) return;
-		research.getFullDesc(list, ns.graph().value().bonuses());
+		if (!shift) {
+			list.add(GTLang.DESC_SHIFT.get().withStyle(ChatFormatting.GRAY));
+		} else {
+			research.getFullDesc(list, ns.graph().value().bonuses());
+		}
 	}
 
 }

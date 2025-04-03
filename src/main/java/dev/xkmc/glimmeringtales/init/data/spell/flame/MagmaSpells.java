@@ -4,14 +4,17 @@ import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.instance.MeltBlockInstance;
+import dev.xkmc.glimmeringtales.content.engine.predicate.MeltBlockPredicate;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
+import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -25,7 +28,8 @@ public class MagmaSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
 			.build(GlimmeringTales.loc("magma")).focusAndCost(40, 120)
-			.block(MagmaSpells::gen, GTItems.RUNE_MAGMA, RuneBlock::of,
+			.grounded()
+			.block(MagmaSpells::gen, MagmaSpells::cond, GTItems.RUNE_MAGMA, RuneBlock::of,
 					(b, e) -> b.add(Blocks.MAGMA_BLOCK, BlockSpell.of(e)),
 					(b, e) -> b.add(GTTagGen.FAKE_MAGMA, BlockSpell.of(e))
 			).lang("Meltdown").desc(
@@ -45,6 +49,14 @@ public class MagmaSpells {
 				).circular("6", "3", "2", null,
 						BlockTestCondition.Type.REPLACEABLE.get().move(OffsetModifier.ABOVE))
 		));
+
+	}
+
+	private static IPredicate cond(NatureSpellBuilder ctx) {
+		return BlockInRangePredicate.circular("4", "3", "8", null,
+				new MeltBlockPredicate(),
+				BlockTestCondition.Type.REPLACEABLE.get().move(OffsetModifier.ABOVE)
+		);
 
 	}
 

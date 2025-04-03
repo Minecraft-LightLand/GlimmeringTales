@@ -4,6 +4,12 @@
   "focus": 60,
   "graph": "glimmeringtales:sand",
   "maxConsumeTick": 0,
+  "mob": {
+    "idealRange": 25.0,
+    "maxUseTick": 0,
+    "standardDelay": 10,
+    "timeFactor": 1.0
+  },
   "spell": "glimmeringtales:sand",
   "tooltip": {
     "list": [

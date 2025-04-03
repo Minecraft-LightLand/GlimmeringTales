@@ -10,7 +10,10 @@ import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.block.ScheduleTick;
 import dev.xkmc.l2magic.content.engine.block.SetBlock;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.ContextPredicate;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
+import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.predicate.SurfaceBelowCondition;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
@@ -25,7 +28,8 @@ public class ClaySpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("clay")).focusAndCost(60, 180)
-			.block(ClaySpells::gen, GTItems.RUNE_CLAY, RuneBlock::of,
+			.grounded()
+			.block(ClaySpells::gen, ClaySpells::cond, GTItems.RUNE_CLAY, RuneBlock::of,
 					(b, e) -> b.add(Blocks.CLAY, BlockSpell.of(e)),
 					(b, e) -> b.add(GTItems.CLAY_CARPET, BlockSpell.of(e))
 			).lang("Clay Overflow").desc(
@@ -44,6 +48,13 @@ public class ClaySpells {
 				new SetBlock(GTItems.CLAY_CARPET.getDefaultState()),
 				new ScheduleTick(IntVariable.of("rand(80,120)"), GTItems.CLAY_CARPET.get())
 		)).circular("4", "2", "2", null,
+				SurfaceBelowCondition.full(),
+				BlockTestCondition.Type.REPLACEABLE.get()
+		);
+	}
+
+	private static IPredicate cond(NatureSpellBuilder ctx) {
+		return BlockInRangePredicate.circular("4", "2", "8", null,
 				SurfaceBelowCondition.full(),
 				BlockTestCondition.Type.REPLACEABLE.get()
 		);

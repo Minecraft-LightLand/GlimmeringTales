@@ -88,6 +88,48 @@
     ]
   },
   "cast_type": "INSTANT",
+  "condition": {
+    "type": "l2magic:ranged_test",
+    "child": {
+      "type": "l2magic:and",
+      "list": [
+        {
+          "type": "l2magic:or",
+          "list": [
+            {
+              "type": "l2magic:surface_below",
+              "face": "FULL"
+            },
+            {
+              "type": "l2magic:move",
+              "child": {
+                "type": "l2magic:block",
+                "block": "minecraft:pointed_dripstone"
+              },
+              "modifiers": [
+                {
+                  "type": "l2magic:offset",
+                  "x": "0",
+                  "y": "-1",
+                  "z": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "l2magic:not",
+          "child": {
+            "type": "l2magic:block_test",
+            "test": "BLOCKS_MOTION"
+          }
+        }
+      ]
+    },
+    "height": "2",
+    "min_count": "2",
+    "range": "2"
+  },
   "icon": "glimmeringtales:dripstone",
   "order": 1001,
   "trigger_type": "TARGET_POS"

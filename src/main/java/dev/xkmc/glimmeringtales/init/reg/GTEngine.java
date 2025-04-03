@@ -3,6 +3,7 @@ package dev.xkmc.glimmeringtales.init.reg;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
 import dev.xkmc.glimmeringtales.content.engine.instance.*;
 import dev.xkmc.glimmeringtales.content.engine.particle.FarParticleRenderData;
+import dev.xkmc.glimmeringtales.content.engine.predicate.MeltBlockPredicate;
 import dev.xkmc.glimmeringtales.content.engine.processor.PassiveHealProcessor;
 import dev.xkmc.glimmeringtales.content.engine.processor.ProcreationProcessor;
 import dev.xkmc.glimmeringtales.content.engine.processor.StackingEffectProcessor;
@@ -11,6 +12,7 @@ import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.l2core.init.reg.simple.Val;
 import dev.xkmc.l2magic.content.engine.core.EngineType;
 import dev.xkmc.l2magic.content.engine.core.FilterType;
+import dev.xkmc.l2magic.content.engine.core.PredicateType;
 import dev.xkmc.l2magic.content.engine.core.ProcessorType;
 import dev.xkmc.l2magic.content.entity.renderer.ProjectileRenderType;
 import dev.xkmc.l2magic.content.particle.engine.ParticleRenderType;
@@ -26,6 +28,8 @@ public class GTEngine {
 	public static final Val<EngineType<LightningInstance>> THUNDER = REG.reg("thunder", () -> LightningInstance.CODEC);
 	public static final Val<EngineType<RemoveLiquidInstance>> SPONGE = REG.reg("remove_liquid", () -> RemoveLiquidInstance.CODEC);
 	public static final Val<EngineType<GTKnockBlock>> KNOCK = REG.reg("knock_block", () -> GTKnockBlock.CODEC);
+
+	public static final Val<PredicateType<MeltBlockPredicate>> MELT_TEST = REG.reg("melt_test", () -> MeltBlockPredicate.CODEC);
 
 	public static final Val<ProcessorType<StackingEffectProcessor>> EP_STACK = REG.reg("stacking", () -> StackingEffectProcessor.CODEC);
 	public static final Val<ProcessorType<ProcreationProcessor>> PROCREATION = REG.reg("procreation", () -> ProcreationProcessor.CODEC);

@@ -1,4 +1,9 @@
-3.0.9
+3.0.10
+- Add spell resolving delay and impact area visualization for spells casted from mobs
+- Stop invalid spell casting from consuming mana and focus
+- Improve spell description
+
+3.0.9s
 - Balancing adjustment for spells
 - Add Pop Fruit, potions, and vials
 - Fix the bug that ritual matrix and altar drop nothing

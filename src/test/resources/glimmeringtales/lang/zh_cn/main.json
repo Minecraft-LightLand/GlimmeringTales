@@ -85,6 +85,8 @@
 			"magic": "魔法",
 			"projectile": "弹射物",
 			"falling_block": "坠落方块",
+			"ground": "只能在地面结算",
+			"shift": "按[SHIFT]显示法术研究",
 			"space": ""
 		},
 		"jei": {

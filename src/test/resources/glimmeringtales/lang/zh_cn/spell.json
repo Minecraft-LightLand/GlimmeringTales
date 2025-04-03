@@ -187,7 +187,7 @@
 	"death.attack.glimmeringtales.charge_burst": "%s被电荷爆发电死了",
 	"death.attack.glimmeringtales.charge_burst.player": "%s被%s的电荷爆发电死了",
 	"nature_spell.glimmeringtales.charge_burst.brief": "[范围] 生成一道闪电，并在周围产生电荷爆发",
-	"nature_spell.glimmeringtales.charge_burst.detail": "在目标位置生成一道闪电造成多段%s。然后在周围产生电荷爆发，造成%s",
+	"nature_spell.glimmeringtales.charge_burst.detail": "在目标位置生成一道闪电造成多段%s。然后在周围地面产生电荷爆发，造成%s",
 
 	"item.glimmeringtales.flame_dash": "符石: 烈焰冲刺",
 	"spell_action.glimmeringtales.flame_dash": "烈焰冲刺",
@@ -214,7 +214,7 @@
 	"item.glimmeringtales.thunder_surge": "符石: 闪电喷流",
 	"spell_action.glimmeringtales.thunder_surge": "闪电喷流",
 	"nature_spell.glimmeringtales.thunder_surge.brief": "[远程] 生成密集的雷击",
-	"nature_spell.glimmeringtales.thunder_surge.detail": "在目标范围生成多道闪电造成多段%s",
+	"nature_spell.glimmeringtales.thunder_surge.detail": "在目标范围地面生成多道闪电造成多段%s",
 
 	"item.glimmeringtales.spark_burst": "符石: 火焰射流",
 	"spell_action.glimmeringtales.spark_burst": "火焰射流",

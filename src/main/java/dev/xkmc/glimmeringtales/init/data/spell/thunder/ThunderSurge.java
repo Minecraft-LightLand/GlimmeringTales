@@ -8,10 +8,12 @@ import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
+import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
@@ -29,11 +31,12 @@ public class ThunderSurge {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
 			.build(GlimmeringTales.loc("thunder_surge")).focusAndCost(160, 1280)
 			.mob(32, 0.3, 0, 20)
+			.grounded()
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.THUNDER_SURGE.get(), 2002,
-					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS, cond(ctx))
 			).lang("Thunder Surge").desc(
 					"[Ranged] Create dense lightning strikes",
-					"Create a series of lightning strikes around target position, inflicting %s multiple times",
+					"Create a series of lightning strikes on ground around target position, inflicting %s multiple times",
 					SpellTooltipData.of(GTEngine.THUNDER)
 			).graph(Thunderstorm.BUILDER);
 
@@ -56,6 +59,13 @@ public class ThunderSurge {
 				new SimpleParticleInstance(ParticleTypes.END_ROD, DoubleVariable.ZERO)
 		));
 
+	}
+
+	private static IPredicate cond(NatureSpellBuilder ctx) {
+		return BlockInRangePredicate.circular("3", "2", "3", null,
+				BlockTestCondition.Type.BLOCKS_MOTION.get().invert(),
+				BlockTestCondition.Type.BLOCKS_MOTION.get().move(OffsetModifier.BELOW)
+		);
 	}
 
 

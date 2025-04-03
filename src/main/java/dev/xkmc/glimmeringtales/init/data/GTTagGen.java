@@ -3,7 +3,9 @@ package dev.xkmc.glimmeringtales.init.data;
 import com.tterrag.registrate.providers.ProviderType;
 import com.tterrag.registrate.providers.RegistrateItemTagsProvider;
 import com.tterrag.registrate.providers.RegistrateTagsProvider;
+import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
+import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2core.init.L2TagGen;
 import dev.xkmc.l2menustacker.init.L2MSTagGen;
 import net.minecraft.core.registries.Registries;
@@ -18,6 +20,7 @@ import top.theillusivec4.curios.api.CuriosApi;
 public class GTTagGen {
 
 	public static final ProviderType<RegistrateTagsProvider.Impl<Biome>> BIOME = L2TagGen.getProvider(Registries.BIOME);
+	public static final ProviderType<RegistrateTagsProvider.Impl<NatureSpell>> NATURE_SPELL = L2TagGen.getProvider(GTRegistries.SPELL);
 
 	public static final TagKey<Item> CRYSTAL = item("crystal");
 	public static final TagKey<Item> RUNE = item("rune");
@@ -34,6 +37,8 @@ public class GTTagGen {
 	public static final TagKey<Block> POP_FRUIT_BLOCK = block("pop_fruit");
 
 	public static final TagKey<Block> FAKE_MAGMA = block("fake_magma");
+
+	public static final TagKey<NatureSpell> GROUNDED = TagKey.create(GTRegistries.SPELL, GlimmeringTales.loc("grounded_spells"));
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
 		pvd.addTag(CORE).addTags(CRYSTAL, RUNE, SPELL);

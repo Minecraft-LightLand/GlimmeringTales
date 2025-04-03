@@ -15,6 +15,7 @@ import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.logic.RandomVariableLogic;
 import dev.xkmc.l2magic.content.engine.modifier.*;
+import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PushProcessor;
@@ -42,6 +43,7 @@ public class SandSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("sand")).focusAndCost(60, 24)
+			.mob(25, 1, 0, 10)
 			.damageCustom(s -> new DamageType(s, 0.1f),
 					"%s is buried by sandstorm", "%s is buried by %s's sandstorm",
 					DamageTypeTags.IS_PROJECTILE)
@@ -95,7 +97,7 @@ public class SandSpells {
 				)),
 				new DustParticleData(
 						RenderTypePreset.NORMAL,
-						ColorVariable.Static.of(14406560)
+						ColorVariable.Static.of(0xDBD3A0)
 				)
 		).move(NormalOffsetModifier.of("rand(" + (-vsp) + "," + vsp + ")"));
 
@@ -130,7 +132,16 @@ public class SandSpells {
 						)),
 				new DelayedIterator(IntVariable.of("90"), IntVariable.of("1"), tick)
 						.move(OffsetModifier.ABOVE)
-		));
+		)).mobCastDelay(new RingRandomIterator(
+				DoubleVariable.ZERO, DoubleVariable.of("1"),
+				IntVariable.of("128"),
+				new DustParticleInstance(
+						ColorVariable.Static.of(0xDBD3A0),
+						DoubleVariable.of("0.5"),
+						DoubleVariable.ZERO,
+						IntVariable.of("20")
+				)
+		).move(OffsetModifier.of("0", "0.7", "0"), new Dir2NormalModifier()));
 
 	}
 

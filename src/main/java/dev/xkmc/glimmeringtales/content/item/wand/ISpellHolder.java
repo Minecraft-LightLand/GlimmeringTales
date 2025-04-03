@@ -12,6 +12,8 @@ public interface ISpellHolder {
 	boolean cast(SpellCastContext user, int useTick, boolean charging);
 
 	default boolean execute(NatureSpell spell, SpellContext ctx, SpellCastContext user, IAffinityProvider aff, int useTick, boolean charging) {
+		if (!spell.spell().value().test(spell.spell(), ctx))
+			return false;
 		double val = aff.getFinalAffinity(spell.elem(), user.user(), user.wand());
 		if (spell.consumeMana(user.user(), user.wand(), val, useTick, charging, user.simulate())) {
 			if (!user.level().isClientSide() && !user.simulate()) {

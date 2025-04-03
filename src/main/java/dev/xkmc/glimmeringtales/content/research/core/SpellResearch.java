@@ -81,7 +81,10 @@ public class SpellResearch {
 	}
 
 	public void getFullDesc(List<Component> list, List<ResearchBonus> bonuses) {
-		list.add(GTLang.HEX_STATUS.get(getState().getDesc()).withStyle(ChatFormatting.GRAY));
+		list.add(GTLang.HEX_STATUS.get(getState().getDesc()
+						.withStyle(getState() == ResearchState.UNLOCKED ?
+								ChatFormatting.LIGHT_PURPLE : ChatFormatting.GRAY))
+				.withStyle(ChatFormatting.GRAY));
 		if (!usable()) return;
 		var cost = Component.literal("" + getCost()).withStyle(ChatFormatting.AQUA);
 		list.add(GTLang.HEX_COST.get(cost).withStyle(ChatFormatting.GRAY));

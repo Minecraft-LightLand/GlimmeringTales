@@ -97,6 +97,39 @@
     ]
   },
   "cast_type": "INSTANT",
+  "condition": {
+    "type": "l2magic:ranged_test",
+    "child": {
+      "type": "l2magic:and",
+      "list": [
+        {
+          "type": "l2magic:not",
+          "child": {
+            "type": "l2magic:block_test",
+            "test": "BLOCKS_MOTION"
+          }
+        },
+        {
+          "type": "l2magic:move",
+          "child": {
+            "type": "l2magic:block_test",
+            "test": "BLOCKS_MOTION"
+          },
+          "modifiers": [
+            {
+              "type": "l2magic:offset",
+              "x": "0",
+              "y": "-1",
+              "z": "0"
+            }
+          ]
+        }
+      ]
+    },
+    "height": "3",
+    "min_count": "8",
+    "range": "3"
+  },
   "icon": "glimmeringtales:charge_burst",
   "order": 2002,
   "trigger_type": "TARGET_POS"

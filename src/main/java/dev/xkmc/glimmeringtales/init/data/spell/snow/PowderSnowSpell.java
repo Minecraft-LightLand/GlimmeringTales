@@ -16,6 +16,8 @@ import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.logic.RandomVariableLogic;
 import dev.xkmc.l2magic.content.engine.modifier.*;
+import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
+import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PushProcessor;
@@ -23,6 +25,7 @@ import dev.xkmc.l2magic.content.engine.processor.SetDeltaProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxCylinderSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
+import dev.xkmc.l2magic.content.engine.variable.ColorVariable;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import dev.xkmc.l2magic.content.entity.motion.MovePosMotion;
@@ -41,6 +44,7 @@ public class PowderSnowSpell {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("powder_snow")).focusAndCost(60, 300)
 			.damageFreeze()
+			.mob(25, 1, 0, 10)
 			.block(PowderSnowSpell::gen, GTItems.RUNE_POWDER_SNOW, RuneBlock::offset,
 					(b, e) -> b.add(Blocks.POWDER_SNOW, BlockSpell.cost(e)))
 			.lang("Snow Storm").desc(
@@ -116,7 +120,12 @@ public class PowderSnowSpell {
 				)
 		));
 
-		return new DelayedIterator(IntVariable.of("80"), IntVariable.of("1"), tick);
+		return new DelayedIterator(IntVariable.of("80"), IntVariable.of("1"), tick)
+				.mobCastDelay(new RingRandomIterator(
+						DoubleVariable.ZERO, DoubleVariable.of("1"),
+						IntVariable.of("128"),
+						new DustParticleInstance(ColorVariable.Static.of(0xFFFFFF), DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of("20"))
+				).move(OffsetModifier.of("0", "0.7", "0"), new Dir2NormalModifier()));
 	}
 
 

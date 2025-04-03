@@ -58,6 +58,8 @@ public enum GTLang {
 	DESC_FALLING_BLOCK("desc.falling_block", "Falling Block", 0),
 	DESC_SPACE("desc.space", " ", 0),
 	DESC_DMG("desc.damage_number", "%s", 1),
+	DESC_GROUND("desc.ground", "Only Resolvable on ground", 0),
+	DESC_SHIFT("desc.shift", "Press [Shift] for research info", 0),
 
 	JEI_STRIKE_ITEM("jei.strike_item", "Lightning Strikes Item", 0),
 	JEI_STRIKE_BLOCK("jei.strike_block", "Lightning Strikes Block", 0),

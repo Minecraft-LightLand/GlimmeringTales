@@ -29,15 +29,20 @@ public class GTHostilityGen extends ConfigDataProvider {
 		var config = new WeaponConfig();
 		var empty = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(ItemStack.EMPTY)), 0, 1000);
 		var lv1 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
-				of(GTItems.GOLD_WAND, GTItems.EARTHQUAKE),
-				of(GTItems.ENDER_WAND, GTItems.WINTER_STORM),
+				of(GTItems.GOLD_WAND, GTItems.RUNE_SAND),
+				of(GTItems.GOLD_WAND, GTItems.RUNE_GRAVEL),
 				of(GTItems.GOLD_WAND, GTItems.AMETHYST_PENETRATION),
-				of(GTItems.OCEAN_WAND, GTItems.OCEAN_SHELTER)
+				of(GTItems.ENDER_WAND, GTItems.RUNE_POWDER_SNOW),
+				of(GTItems.ENDER_WAND, GTItems.RUNE_PACKED_ICE),
+				of(GTItems.ENDER_WAND, GTItems.WINTER_STORM)
 		)), 150, 100);
 		var lv2 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
 				of(GTItems.GOLD_WAND, GTItems.RUNE_AMETHYST),
+				of(GTItems.GOLD_WAND, GTItems.EARTHQUAKE),
 				of(GTItems.NETHER_WAND, GTItems.HELL_MARK),
-				of(GTItems.ENDER_WAND, GTItems.SNOW_TORNADO)
+				of(GTItems.ENDER_WAND, GTItems.RUNE_BLUE_ICE),
+				of(GTItems.ENDER_WAND, GTItems.SNOW_TORNADO),
+				of(GTItems.OCEAN_WAND, GTItems.OCEAN_SHELTER)
 		)), 250, 50);
 		var lv3 = new WeaponConfig.ItemConfig(new ArrayList<>(List.of(
 				of(GTItems.GOLD_WAND, GTItems.METEOR),

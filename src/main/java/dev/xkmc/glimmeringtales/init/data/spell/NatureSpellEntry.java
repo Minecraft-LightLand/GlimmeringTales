@@ -1,5 +1,6 @@
 package dev.xkmc.glimmeringtales.init.data.spell;
 
+import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
@@ -7,6 +8,8 @@ import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.ContextPredicate;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
@@ -50,6 +53,10 @@ public abstract class NatureSpellEntry extends SpellDataGenEntry {
 		return new SpellAction(action, item.asItem(), order, SpellCastType.INSTANT, SpellTriggerType.TARGET_POS);
 	}
 
+	public static SpellAction ofBlock(ConfiguredEngine<?> action, IPredicate cond, ItemLike item, int order) {
+		return new SpellAction(action, item.asItem(), order, SpellCastType.INSTANT, SpellTriggerType.TARGET_POS, cond);
+	}
+
 	public abstract void regNature(BootstrapContext<NatureSpell> ctx);
 
 	public abstract void regBlock(DataMapProvider.Builder<BlockSpell, Block> builder);
@@ -63,6 +70,10 @@ public abstract class NatureSpellEntry extends SpellDataGenEntry {
 	}
 
 	public void regGraph(BootstrapContext<HexGraphData> ctx) {
+
+	}
+
+	public void regTag(RegistrateTagsProvider.Impl<NatureSpell> pvd) {
 
 	}
 

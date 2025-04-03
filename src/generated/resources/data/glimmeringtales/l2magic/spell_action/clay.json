@@ -42,6 +42,25 @@
     "range": "4"
   },
   "cast_type": "INSTANT",
+  "condition": {
+    "type": "l2magic:ranged_test",
+    "child": {
+      "type": "l2magic:and",
+      "list": [
+        {
+          "type": "l2magic:surface_below",
+          "face": "FULL"
+        },
+        {
+          "type": "l2magic:block_test",
+          "test": "REPLACEABLE"
+        }
+      ]
+    },
+    "height": "2",
+    "min_count": "8",
+    "range": "4"
+  },
   "icon": "glimmeringtales:clay",
   "order": 1003,
   "trigger_type": "TARGET_POS"

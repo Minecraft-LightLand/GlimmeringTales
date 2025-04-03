@@ -8,12 +8,14 @@ import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
 import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
+import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
@@ -37,11 +39,12 @@ public class Earthquake {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("earthquake")).focusAndCost(80, 480)
 			.mob(7, 0.5, 0, 30)
+			.grounded()
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is killed by earthquake", "%s is killed by %s using earthquake",
 					DamageTypeTags.IS_EXPLOSION
 			).spell(ctx -> new SpellAction(gen(ctx), GTItems.EARTHQUAKE.get(),
-					2000, SpellCastType.INSTANT, SpellTriggerType.SELF_POS)
+					2000, SpellCastType.INSTANT, SpellTriggerType.SELF_POS, cond(ctx))
 			).lang("Earthquake").desc(
 					"[Surrounding] Shake the ground and throw blocks into air",
 					"Create earthquake dealing dealing %s, then throw blocks around you into the air that deals %s on fall",
@@ -79,6 +82,15 @@ public class Earthquake {
 				ColorVariable.Static.of(0x4f4f4f), DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of("20")
 		)), "i").move(OffsetModifier.ABOVE));
 
+	}
+
+	private static IPredicate cond(NatureSpellBuilder ctx) {
+		return BlockInRangePredicate.circular("5", "3", "8", "i",
+				BooleanVariable.of("i_r>1.5"),
+				BlockTestCondition.Type.BLOCKS_MOTION.get(),
+				BlockTestCondition.Type.PUSHABLE.get(),
+				BlockTestCondition.Type.REPLACEABLE.get().move(OffsetModifier.ABOVE)
+		);
 	}
 
 

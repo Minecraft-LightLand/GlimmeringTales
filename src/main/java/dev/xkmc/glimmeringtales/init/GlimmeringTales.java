@@ -137,6 +137,7 @@ public class GlimmeringTales {
 		REGISTRATE.addDataGenerator(ProviderType.LANG, GTSpells::addLang);
 		REGISTRATE.addDataGenerator(ProviderType.DATA_MAP, GTSpells::genMap);
 		REGISTRATE.addDataGenerator(GTTagGen.BIOME, GTWorldGen::genBiomeTags);
+		REGISTRATE.addDataGenerator(GTTagGen.NATURE_SPELL, GTSpells::addTag);
 		var init = REGISTRATE.getDataGenInitializer();
 		DMG_GEN.generate();
 		init.add(EngineRegistry.PROJECTILE, GTSpells::genProjectiles);
@@ -146,6 +147,7 @@ public class GlimmeringTales {
 		GTWorldGen.genFeatures(init);
 		init.addDependency(ProviderType.DATA_MAP, ProviderType.DYNAMIC);
 		init.addDependency(GTTagGen.BIOME, ProviderType.DYNAMIC);
+		init.addDependency(GTTagGen.NATURE_SPELL, ProviderType.DYNAMIC);
 
 		var gen = event.getGenerator();
 		var run = event.includeServer();

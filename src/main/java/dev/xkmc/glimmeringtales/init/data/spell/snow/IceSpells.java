@@ -13,11 +13,14 @@ import dev.xkmc.l2magic.content.engine.block.SetBlock;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.iterator.DelayedIterator;
 import dev.xkmc.l2magic.content.engine.iterator.LoopIterator;
+import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
+import dev.xkmc.l2magic.content.engine.modifier.Dir2NormalModifier;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
+import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.predicate.AndPredicate;
 import dev.xkmc.l2magic.content.engine.predicate.BlockMatchCondition;
@@ -28,6 +31,7 @@ import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
+import dev.xkmc.l2magic.content.engine.variable.ColorVariable;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import net.minecraft.core.particles.ParticleTypes;
@@ -49,6 +53,7 @@ public class IceSpells {
 
 	public static final NatureSpellBuilder ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("ice")).focusAndCost(20, 100).damageFreeze()
+			.mob(25, 1, 0, 20)
 			.block(ctx -> gen(ctx, ICE_DMG, ICE_DUR, "5", "3"), GTItems.RUNE_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.ICE, BlockSpell.of(e)),
 					(b, e) -> b.add(Blocks.FROSTED_ICE, BlockSpell.of(e))
@@ -60,6 +65,7 @@ public class IceSpells {
 
 	public static final NatureSpellBuilder PACK_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("packed_ice")).focusAndCost(30, 150).damageFreeze()
+			.mob(25, 1, 0, 25)
 			.block(ctx -> gen(ctx, PACK_DMG, PACK_DUR, "6", "3"), GTItems.RUNE_PACKED_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.PACKED_ICE, BlockSpell.of(e)))
 			.lang("Freeze II").desc(
@@ -70,6 +76,7 @@ public class IceSpells {
 
 	public static final NatureSpellBuilder BLUE_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("blue_ice")).focusAndCost(40, 200).damageFreeze()
+			.mob(25, 1, 0, 30)
 			.block(ctx -> gen(ctx, BLUE_DMG, BLUE_DUR, "7", "3"), GTItems.RUNE_BLUE_ICE, RuneBlock::liquid,
 					(b, e) -> b.add(Blocks.BLUE_ICE, BlockSpell.of(e)))
 			.lang("Freeze III").desc(
@@ -122,7 +129,9 @@ public class IceSpells {
 								RotationModifier.of("i*6", "10")
 						), "i"
 				).move(OffsetModifier.ABOVE)
-		));
+		)).mobCastDelay(new RingIterator(DoubleVariable.of(range), IntVariable.of(range + "*32"), false,
+				new DustParticleInstance(ColorVariable.Static.of(0xFFFFFF), DoubleVariable.of("0.5"), DoubleVariable.ZERO, IntVariable.of(range + "*5-5"))
+		).move(OffsetModifier.of("0", "0.7", "0"), new Dir2NormalModifier()));
 	}
 
 

@@ -17,6 +17,7 @@ import dev.xkmc.l2magic.content.engine.logic.PredicateLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.logic.RandomVariableLogic;
 import dev.xkmc.l2magic.content.engine.modifier.*;
+import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.processor.SetDeltaProcessor;
@@ -44,6 +45,7 @@ public class GravelSpells {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("gravel")).focusAndCost(60, 300)
+			.mob(25, 1, 0, 15)
 			.damageCustom(s -> new DamageType(s, 0.1f),
 					"%s is scratched to death by flint", "%s is scratched to death by %s with flint",
 					DamageTypeTags.IS_PROJECTILE)
@@ -100,7 +102,7 @@ public class GravelSpells {
 				BooleanVariable.of("rand(0,1)>0.05"),
 				pf.apply(new DustParticleData(
 						RenderTypePreset.NORMAL,
-						ColorVariable.Static.of(-8356741)), 0.15),
+						ColorVariable.Static.of(0x807C7A)), 0.15),
 				pf.apply(new ItemParticleData(
 						RenderTypePreset.BLOCK,
 						Items.FLINT,
@@ -139,7 +141,17 @@ public class GravelSpells {
 
 				new DelayedIterator(IntVariable.of("18"), IntVariable.of("2"), damage),
 				new DelayedIterator(IntVariable.of("22"), IntVariable.of("2"), tick)
-		)).move(OffsetModifier.ABOVE);
+		)).move(OffsetModifier.ABOVE)
+				.mobCastDelay(new RingRandomIterator(
+				DoubleVariable.ZERO, DoubleVariable.of("3"),
+				IntVariable.of("256"),
+				new DustParticleInstance(
+						ColorVariable.Static.of(0x807C7A),
+						DoubleVariable.of("0.5"),
+						DoubleVariable.ZERO,
+						IntVariable.of("20")
+				)
+		).move(OffsetModifier.of("0", "0.7", "0"), new Dir2NormalModifier()));
 	}
 
 

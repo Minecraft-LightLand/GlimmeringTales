@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
+import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltip;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.*;
@@ -8,10 +9,12 @@ import dev.xkmc.glimmeringtales.content.entity.hostile.MobCastingData;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
+import dev.xkmc.glimmeringtales.init.data.GTTagGen;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2core.util.MathHelper;
 import dev.xkmc.l2magic.content.engine.context.DataGenContext;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
@@ -64,6 +67,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	private SpellDesc desc;
 	private ItemLike icon;
 	private MobCastingData mob;
+	private boolean grounded;
 
 	private DataGenContext cache;
 
@@ -152,6 +156,21 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 		return this;
 	}
 
+	@SafeVarargs
+	public final NatureSpellBuilder block(
+			Function<NatureSpellBuilder, ConfiguredEngine<?>> action,
+			Function<NatureSpellBuilder, IPredicate> cond, ItemLike icon,
+			Function<Holder<NatureSpell>, RuneBlock> item,
+			BiConsumer<BlockSpellBuilder, Holder<NatureSpell>>... cons
+	) {
+		spell = spell(id);
+		this.icon = icon;
+		this.spellFactory = ctx -> ofBlock(action.apply(ctx), cond.apply(ctx), icon, getOrder());
+		this.runeFactory = item;
+		this.blockFactories.addAll(List.of(cons));
+		return this;
+	}
+
 	public NatureSpellBuilder graph(NatureSpellBuilder other) {
 		graph = other.graph;
 		return this;
@@ -198,6 +217,11 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 
 	public NatureSpellBuilder desc(String brief, String detail, SpellTooltipData data) {
 		desc = new SpellDesc(brief, detail, data);
+		return this;
+	}
+
+	public NatureSpellBuilder grounded() {
+		grounded = true;
 		return this;
 	}
 
@@ -285,6 +309,13 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 			cache = new DataGenContext(ctx);
 			projectileFactory.apply(this).verifyOnBuild(ctx, proj);
 			cache = null;
+		}
+	}
+
+	@Override
+	public void regTag(RegistrateTagsProvider.Impl<NatureSpell> pvd) {
+		if (grounded) {
+			pvd.addTag(GTTagGen.GROUNDED).add(nature.key);
 		}
 	}
 

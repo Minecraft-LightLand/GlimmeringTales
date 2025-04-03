@@ -11,11 +11,13 @@ import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.iterator.RingIterator;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.logic.ProcessorEngine;
 import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
+import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
@@ -44,13 +46,14 @@ public class ChargeBurst {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
 			.build(GlimmeringTales.loc("charge_burst")).focusAndCost(100, 600)
 			.mob(32, 0.4, 0, 20)
+			.grounded()
 			.damageCustom(msg -> new DamageType(msg, 0.1f),
 					"%s is electrocuted by charge burst",
 					"%s is electrocuted by %s with charge burst",
 					DamageTypeTags.IS_LIGHTNING)
 			.projectile(ChargeBurst::proj)
 			.spell(ctx -> new SpellAction(gen(ctx), GTItems.CHARGE_BURST.get(), 2002,
-					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS, cond(ctx))
 			).lang("Charge Burst").desc(
 					"[Ranged] Create a lightning strike and charge spikes around it",
 					"Create a lightning strike on target position, inflicting %s multiple times, then create charge spikes on the ground around it, inflicting %s",
@@ -95,5 +98,11 @@ public class ChargeBurst {
 		));
 	}
 
+	private static IPredicate cond(NatureSpellBuilder ctx) {
+		return BlockInRangePredicate.circular("3", "3", "8", null,
+				BlockTestCondition.Type.BLOCKS_MOTION.get().invert(),
+				BlockTestCondition.Type.BLOCKS_MOTION.get().move(OffsetModifier.BELOW)
+		);
+	}
 
 }

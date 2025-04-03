@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell;
 
 import com.tterrag.registrate.providers.RegistrateDataMapProvider;
 import com.tterrag.registrate.providers.RegistrateLangProvider;
+import com.tterrag.registrate.providers.RegistrateTagsProvider;
 import dev.shadowsoffire.apotheosis.Apotheosis;
 import dev.xkmc.glimmeringtales.compat.apoth.ApothCompat;
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
@@ -53,6 +54,12 @@ public class GTSpells {
 	public static void genGraph(BootstrapContext<HexGraphData> ctx) {
 		for (var e : NatureSpellGenRegistry.LIST) {
 			e.regGraph(ctx);
+		}
+	}
+
+	public static void addTag(RegistrateTagsProvider.Impl<NatureSpell> pvd) {
+		for (var e : NatureSpellGenRegistry.LIST) {
+			e.regTag(pvd);
 		}
 	}
 
