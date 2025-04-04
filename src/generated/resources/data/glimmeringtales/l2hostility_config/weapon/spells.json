@@ -3,387 +3,376 @@
   "armors": [],
   "melee_weapons": [],
   "ranged_weapons": [],
-  "special_weapons": [
-    {
-      "_key": [
-        "minecraft:zombie",
-        "minecraft:husk",
-        "minecraft:skeleton",
-        "minecraft:zombified_piglin",
-        "minecraft:stray",
-        "minecraft:bogged",
-        "minecraft:wither_skeleton"
-      ],
-      "_val": [
-        {
-          "level": 0,
-          "stack": [
-            null
-          ],
-          "weight": 1000
-        },
-        {
-          "level": 150,
-          "stack": [
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:gold_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:sand"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+  "special_weapons": {
+    "#glimmeringtales:spell_caster": [
+      {
+        "level": 0,
+        "stack": [
+          null
+        ],
+        "weight": 1000
+      },
+      {
+        "level": 150,
+        "stack": [
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:gold_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:sand"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:gold_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:gravel"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:gold_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:gravel"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:gold_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:amethyst_penetration"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:gold_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:amethyst_penetration"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ender_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:powder_snow"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ender_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:powder_snow"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ender_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:packed_ice"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ender_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:packed_ice"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ender_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:winter_storm"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
-            }
-          ],
-          "weight": 100
-        },
-        {
-          "level": 250,
-          "stack": [
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:gold_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:amethyst"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ender_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:winter_storm"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:gold_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:earthquake"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          }
+        ],
+        "weight": 100
+      },
+      {
+        "level": 250,
+        "stack": [
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:gold_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:amethyst"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:nether_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:hell_mark"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:gold_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:earthquake"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ender_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:blue_ice"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:nether_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:hell_mark"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ender_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:snow_tornado"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ender_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:blue_ice"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ocean_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:ocean_shelter"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
-            }
-          ],
-          "weight": 50
-        },
-        {
-          "level": 300,
-          "stack": [
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:gold_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:meteor"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ender_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:snow_tornado"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:nether_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:spark_burst"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ocean_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:ocean_shelter"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:nether_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:soul_burst"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          }
+        ],
+        "weight": 50
+      },
+      {
+        "level": 300,
+        "stack": [
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:gold_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:meteor"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ocean_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:illusory_field"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:nether_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:spark_burst"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:ocean_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:dark_rain"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
-            }
-          ],
-          "weight": 50
-        },
-        {
-          "level": 350,
-          "stack": [
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:thunder_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:thunderstorm"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:nether_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:soul_burst"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:thunder_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:charge_burst"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ocean_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:illusory_field"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:thunder_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:thunder"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:ocean_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:dark_rain"
+                  },
+                  "slot": 0
+                }
+              ]
             },
-            {
-              "components": {
-                "glimmeringtales:handle": "glimmeringtales:thunder_wand",
-                "l2backpack:backpack_content": [
-                  {
-                    "item": {
-                      "count": 1,
-                      "id": "glimmeringtales:thunder_surge"
-                    },
-                    "slot": 0
-                  }
-                ]
-              },
-              "count": 1,
-              "id": "glimmeringtales:wand"
-            }
-          ],
-          "weight": 50
-        }
-      ]
-    }
-  ],
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          }
+        ],
+        "weight": 50
+      },
+      {
+        "level": 350,
+        "stack": [
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:thunder_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:thunderstorm"
+                  },
+                  "slot": 0
+                }
+              ]
+            },
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:thunder_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:charge_burst"
+                  },
+                  "slot": 0
+                }
+              ]
+            },
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:thunder_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:thunder"
+                  },
+                  "slot": 0
+                }
+              ]
+            },
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          },
+          {
+            "components": {
+              "glimmeringtales:handle": "glimmeringtales:thunder_wand",
+              "l2backpack:backpack_content": [
+                {
+                  "item": {
+                    "count": 1,
+                    "id": "glimmeringtales:thunder_surge"
+                  },
+                  "slot": 0
+                }
+              ]
+            },
+            "count": 1,
+            "id": "glimmeringtales:wand"
+          }
+        ],
+        "weight": 50
+      }
+    ]
+  },
   "weapon_enchantments": []
 }

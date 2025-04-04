@@ -3,6 +3,7 @@ package dev.xkmc.glimmeringtales.init;
 import com.tterrag.registrate.providers.ProviderType;
 import dev.shadowsoffire.apotheosis.Apotheosis;
 import dev.xkmc.glimmeringtales.compat.apoth.ApothCompat;
+import dev.xkmc.glimmeringtales.compat.golem.GolemCompat;
 import dev.xkmc.glimmeringtales.compat.misc.PatchouliCompat;
 import dev.xkmc.glimmeringtales.content.block.altar.BaseRitualBlockEntity;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipRegistry;
@@ -28,6 +29,7 @@ import dev.xkmc.l2serial.network.PacketHandler;
 import dev.xkmc.l2serial.serialization.codec.CodecAdaptor;
 import dev.xkmc.l2serial.serialization.custom_handler.Handlers;
 import dev.xkmc.l2serial.util.Wrappers;
+import dev.xkmc.modulargolems.init.ModularGolems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.neoforged.bus.api.EventPriority;
@@ -90,8 +92,13 @@ public class GlimmeringTales {
 
 	@SubscribeEvent
 	public static void setup(final FMLCommonSetupEvent event) {
-		event.enqueueWork(GlimmeringTales::initHandlers);
-		AttackEventHandler.register(3943, new GTAttackListener());
+		event.enqueueWork(() -> {
+			GlimmeringTales.initHandlers();
+			if (ModList.get().isLoaded(ModularGolems.MODID)) {
+				GolemCompat.init();
+			}
+			AttackEventHandler.register(3943, new GTAttackListener());
+		});
 	}
 
 	@SubscribeEvent
@@ -131,6 +138,7 @@ public class GlimmeringTales {
 		REGISTRATE.addDataGenerator(ProviderType.RECIPE, GTRecipeGen::onRecipeGen);
 		REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, GTTagGen::genItemTag);
 		REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, GTTagGen::genBlockTag);
+		REGISTRATE.addDataGenerator(ProviderType.ENTITY_TAGS, GTTagGen::genEntityTag);
 		REGISTRATE.addDataGenerator(ProviderType.LANG, GTLang::addTranslations);
 		REGISTRATE.addDataGenerator(ProviderType.DATA_MAP, GTDataMapGen::genMap);
 		REGISTRATE.addDataGenerator(ProviderType.ADVANCEMENT, GTAdvGen::genAdvancements);

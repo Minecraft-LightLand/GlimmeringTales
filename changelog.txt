@@ -1,3 +1,10 @@
+3.0.11
+- Fix golem spell casting
+- Tag-ify default spell casting mobs
+- Player share research bonus with golem
+- Golem will switch between wand and other weapons to utilize mana recovery time
+- Fix crash when golem attempts to attack Llama
+
 3.0.10
 - Add spell resolving delay and impact area visualization for spells casted from mobs
 - Stop invalid spell casting from consuming mana and focus

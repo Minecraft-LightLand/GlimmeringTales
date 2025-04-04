@@ -11,6 +11,7 @@ import dev.xkmc.l2menustacker.init.L2MSTagGen;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
@@ -38,11 +39,26 @@ public class GTTagGen {
 
 	public static final TagKey<Block> FAKE_MAGMA = block("fake_magma");
 
+	public static final TagKey<EntityType<?>> CASTER = TagKey.create(Registries.ENTITY_TYPE, GlimmeringTales.loc("spell_caster"));
+
 	public static final TagKey<NatureSpell> GROUNDED = TagKey.create(GTRegistries.SPELL, GlimmeringTales.loc("grounded_spells"));
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
 		pvd.addTag(CORE).addTags(CRYSTAL, RUNE, SPELL);
 		pvd.addTag(L2MSTagGen.QUICK_ACCESS).addTags(RUNE, SPELL);
+
+	}
+
+	public static void genEntityTag(RegistrateTagsProvider.IntrinsicImpl<EntityType<?>> pvd) {
+		pvd.addTag(CASTER).add(
+				EntityType.ZOMBIE,
+				EntityType.HUSK,
+				EntityType.SKELETON,
+				EntityType.ZOMBIFIED_PIGLIN,
+				EntityType.STRAY,
+				EntityType.BOGGED,
+				EntityType.WITHER_SKELETON
+		);
 	}
 
 	public static void genBlockTag(RegistrateTagsProvider.IntrinsicImpl<Block> pvd) {

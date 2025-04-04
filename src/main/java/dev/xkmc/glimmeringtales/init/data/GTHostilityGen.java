@@ -9,9 +9,8 @@ import dev.xkmc.l2core.serial.config.ConfigDataProvider;
 import dev.xkmc.l2hostility.content.config.WeaponConfig;
 import dev.xkmc.l2hostility.init.L2Hostility;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.HolderSet;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -57,15 +56,9 @@ public class GTHostilityGen extends ConfigDataProvider {
 				of(GTItems.THUNDER_WAND, GTItems.RUNE_THUNDER),
 				of(GTItems.THUNDER_WAND, GTItems.THUNDER_SURGE)
 		)), 350, 50);
-		config.special_weapons.put(HolderSet.direct(
-				EntityType.ZOMBIE.builtInRegistryHolder(),
-				EntityType.HUSK.builtInRegistryHolder(),
-				EntityType.SKELETON.builtInRegistryHolder(),
-				EntityType.ZOMBIFIED_PIGLIN.builtInRegistryHolder(),
-				EntityType.STRAY.builtInRegistryHolder(),
-				EntityType.BOGGED.builtInRegistryHolder(),
-				EntityType.WITHER_SKELETON.builtInRegistryHolder()
-		), new ArrayList<>(List.of(empty, lv1, lv2, lv3, lv4)));
+		config.special_weapons.put(
+				BuiltInRegistries.ENTITY_TYPE.getOrCreateTag(GTTagGen.CASTER),
+				new ArrayList<>(List.of(empty, lv1, lv2, lv3, lv4)));
 		collector.add(L2Hostility.WEAPON, GlimmeringTales.loc("spells"), config);
 	}
 

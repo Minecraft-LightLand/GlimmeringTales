@@ -5,6 +5,7 @@ import dev.xkmc.glimmeringtales.content.entity.hostile.MobCastingConfig;
 import dev.xkmc.glimmeringtales.content.entity.hostile.SpellCastGoal;
 import dev.xkmc.glimmeringtales.content.recipe.thunder.StrikeBlockRecipe;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
+import dev.xkmc.glimmeringtales.init.data.GTTagGen;
 import dev.xkmc.glimmeringtales.init.reg.GTRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -61,7 +62,7 @@ public class GTServerEventHandler {
 		if (level.isClientSide()) return;
 		if (event.getEntity() instanceof LightningBolt ie)
 			onThunder(level, ie);
-		if (event.getEntity() instanceof Mob mob) {
+		if (event.getEntity() instanceof Mob mob && mob.getType().is(GTTagGen.CASTER)) {
 			for (var e : mob.goalSelector.getAvailableGoals()) {
 				if (e.getGoal() instanceof RangedAttackGoal ||
 						e.getGoal() instanceof MeleeAttackGoal ||
