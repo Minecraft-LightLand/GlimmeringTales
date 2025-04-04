@@ -3,7 +3,7 @@
 - Stop invalid spell casting from consuming mana and focus
 - Improve spell description
 
-3.0.9s
+3.0.9
 - Balancing adjustment for spells
 - Add Pop Fruit, potions, and vials
 - Fix the bug that ritual matrix and altar drop nothing
