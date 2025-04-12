@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -10,6 +11,7 @@ import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.block.ScheduleTick;
 import dev.xkmc.l2magic.content.engine.block.SetBlock;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
+import dev.xkmc.l2magic.content.engine.core.ContextPredicate;
 import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;
@@ -35,7 +37,7 @@ public class ClaySpells {
 					"[Block] Form a circular carpet to trap entities",
 					"Create a circular field of clay carpet lasting 5 seconds to immobilize entities",
 					SpellTooltipData.of()
-			).graph(QuartzSpells.BUILDER);
+			).graph(ResearchBonus.small3(15), "EO->SF", "S->E", "F->O");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

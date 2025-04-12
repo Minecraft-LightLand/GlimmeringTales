@@ -2,7 +2,7 @@
   "cost": 120,
   "elem": "glimmeringtales:flame",
   "focus": 30,
-  "graph": "glimmeringtales:netherrack",
+  "graph": "glimmeringtales:soul_sand",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:soul_sand",
   "tooltip": {

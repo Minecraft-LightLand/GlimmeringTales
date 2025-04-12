@@ -39,7 +39,7 @@ public class NetherrackSpells {
 					"[Block] burn enemies in a small area",
 					"Create flame sparks and inflict %s",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small3(19), "E->SF", "SF->LO", "LO->E");
+			).graph(ResearchBonus.small3(18), "E->SF", "SF->LO", "LO->E");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("6");
 

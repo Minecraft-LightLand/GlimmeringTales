@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.flame;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
@@ -44,7 +45,7 @@ public class SoulSandSpells {
 					"[Block] burn enemies in a small area",
 					"Create ghost sparks and inflict %s",
 					SpellTooltipData.damage()
-			).graph(NetherrackSpells.BUILDER);
+			).graph(ResearchBonus.small3(24), "SF->LO", "LO->ET", "E->S", "T->F");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("6");
 

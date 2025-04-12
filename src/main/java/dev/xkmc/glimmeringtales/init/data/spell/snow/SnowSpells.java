@@ -46,7 +46,7 @@ public class SnowSpells {
 					"[Block] Splash snowballs everywhere",
 					"Create a semisphere of snowballs, dealing %s",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small3(13), "S->LEFO");
+			).graph(ResearchBonus.small3(10), "S->LEFO");
 
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/snowball.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("2");

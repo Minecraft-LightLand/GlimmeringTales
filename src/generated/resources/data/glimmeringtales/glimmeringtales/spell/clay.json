@@ -2,7 +2,7 @@
   "cost": 180,
   "elem": "glimmeringtales:earth",
   "focus": 60,
-  "graph": "glimmeringtales:quartz",
+  "graph": "glimmeringtales:clay",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:clay",
   "tooltip": {
