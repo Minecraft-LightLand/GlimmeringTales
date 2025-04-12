@@ -27,8 +27,8 @@ A<->BCDE        Powder Snow                         D2              21
 (AB)(CD)(EF)&   Snow Storm                          D2-1            21
 AB<->CDEF       Ice 3                               D3              24
 
-A->BCD          Sponge / Coral                      E1              12
-A->BCD, BC->D   Sponge / Coral                      E1-1            18
+A->BCD          Coral                               E1              12
+A->BCD, BC->D   Sponge                              E1-1            18
 A<->BCD         Thunder                             E2              18
 AB<->CDE        Ocean Shelter                       E2-1            21
 A(BC)(DEF)&     Snow Tornado                        E3              23
@@ -37,8 +37,9 @@ ABC<->DEF       Icy Flash                           E3-2            42
 A<->BCDEF       Meteor                              E4              35
 
 ABCDE|          Charge Burst                        F1              47
-ABCD|           Spark Burst / Soul Burst            F1-1            39
-ABCDEF|         Thunderstorm                        F2              121
+ABCD|           Spark Burst                         F2              39
+hexstar         Soul Burst                          F3.             71
+ABCDEF|         Thunderstorm                        F4              121
 
 
 

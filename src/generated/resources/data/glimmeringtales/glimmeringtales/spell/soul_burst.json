@@ -2,7 +2,7 @@
   "cost": 16,
   "elem": "glimmeringtales:flame",
   "focus": 2,
-  "graph": "glimmeringtales:spark_burst",
+  "graph": "glimmeringtales:soul_burst",
   "maxConsumeTick": 0,
   "mob": {
     "idealRange": 12.0,

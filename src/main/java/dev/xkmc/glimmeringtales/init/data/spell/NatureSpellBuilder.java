@@ -178,6 +178,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 
 	/**
 	 * L - life, E - earth, F - flame, S - snow, O - ocean, T - thunder
+	 * Order: EFLOST
 	 */
 	public NatureSpellBuilder graph(ArrayList<ResearchBonus> bonus, String... strs) {
 		this.graph = graph(id);
