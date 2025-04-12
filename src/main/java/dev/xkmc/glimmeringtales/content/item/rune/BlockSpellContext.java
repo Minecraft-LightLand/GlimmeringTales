@@ -50,7 +50,7 @@ public record BlockSpellContext(SpellContext ctx, BlockState state, BlockPos pos
 		var ehit = ProjectileUtil.getEntityHitResult(level, user, start, end, box, e -> true);
 		BlockPos pos;
 		if (ehit != null && ehit.getType() != HitResult.Type.MISS) {
-			pos = ehit.getEntity().blockPosition().below();
+			pos = ehit.getEntity().blockPosition().below().offset(0, spell.noBlockOffset(), 0);
 		} else if (bhit.getType() != HitResult.Type.MISS) {
 			pos = bhit.getBlockPos().relative(bhit.getDirection(), spell.noBlockOffset());
 		} else if (spell.allowSelf()) {

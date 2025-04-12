@@ -1,9 +1,15 @@
+3.0.12
+- Allow spells to hit multi-part entities such as ender dragon
+- Allow spell projectiles to hit some non-living entities
+- Fix some simple spells triggering underground
+
 3.0.11
 - Fix golem spell casting
 - Tag-ify default spell casting mobs
 - Player share research bonus with golem
 - Golem will switch between wand and other weapons to utilize mana recovery time
 - Fix crash when golem attempts to attack Llama
+
 
 3.0.10
 - Add spell resolving delay and impact area visualization for spells casted from mobs

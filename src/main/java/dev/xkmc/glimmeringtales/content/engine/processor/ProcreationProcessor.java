@@ -7,6 +7,7 @@ import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.l2magic.content.engine.context.EngineContext;
 import dev.xkmc.l2magic.content.engine.core.ProcessorType;
 import dev.xkmc.l2magic.content.engine.processor.SimpleServerProcessor;
+import dev.xkmc.l2magic.content.engine.selector.SelectedEntities;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
@@ -31,9 +32,9 @@ public record ProcreationProcessor(
 	}
 
 	@Override
-	public void process(Collection<LivingEntity> le, EngineContext ctx) {
+	public void process(SelectedEntities le, EngineContext ctx) {
 		if (!(ctx.user().level() instanceof ServerLevel sl)) return;
-		for (var e : le) {
+		for (var e : le.living()) {
 			if (!(e instanceof Animal animal)) continue;
 			Player player = ctx.user().user() instanceof Player pl ? pl : null;
 			if (!animal.isBaby()) {

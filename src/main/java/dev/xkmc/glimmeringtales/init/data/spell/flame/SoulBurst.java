@@ -19,6 +19,7 @@ import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
+import dev.xkmc.l2magic.content.engine.processor.ProjectileHitEntityProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
@@ -65,6 +66,7 @@ public class SoulBurst {
 	public static ProjectileConfig proj(NatureSpellBuilder ctx) {
 		return ProjectileConfig.builder(SelectionType.ENEMY_NO_FAMILY)
 				.tick(new SimpleParticleInstance(ParticleTypes.SOUL_FIRE_FLAME, DoubleVariable.ZERO))
+				.hit(new ProjectileHitEntityProcessor())
 				.hit(new FilteredProcessor(new InvulFrameFilter(IntVariable.of("5")),
 						List.of(new DamageProcessor(ctx.damage(), DMG, true, true)), List.of()))
 				.hit(new EffectProcessor(LCEffects.FLAME, IntVariable.of("100"), IntVariable.of("1"), false, false))

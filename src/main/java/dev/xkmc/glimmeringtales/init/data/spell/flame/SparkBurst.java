@@ -16,6 +16,7 @@ import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
+import dev.xkmc.l2magic.content.engine.processor.ProjectileHitEntityProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PropertyProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
@@ -61,6 +62,7 @@ public class SparkBurst {
 	public static ProjectileConfig proj(NatureSpellBuilder ctx) {
 		return ProjectileConfig.builder(SelectionType.ENEMY_NO_FAMILY)
 				.tick(new SimpleParticleInstance(ParticleTypes.FLAME, DoubleVariable.ZERO))
+				.hit(new ProjectileHitEntityProcessor())
 				.hit(new FilteredProcessor(new InvulFrameFilter(IntVariable.of("5")),
 						List.of(new DamageProcessor(ctx.damage(), DMG, true, true)), List.of()))
 				.hit(PropertyProcessor.Type.IGNITE.of("100"))

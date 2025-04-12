@@ -24,6 +24,7 @@ import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
 import dev.xkmc.l2magic.content.engine.processor.CastAtProcessor;
 import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
+import dev.xkmc.l2magic.content.engine.processor.ProjectileHitEntityProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
@@ -74,6 +75,7 @@ public class AmethystPenetration {
 						DoubleVariable.ZERO,
 						IntVariable.of("20")
 				).move(ForwardOffsetModifier.of("-0.2")))
+				.hit(new ProjectileHitEntityProcessor())
 				.hit(new FilteredProcessor(new InvulFrameFilter(IntVariable.of("5")), List.of(
 						new DamageProcessor(ctx.damage(), DMG, true, true),
 						new CastAtProcessor(CastAtProcessor.PosType.CENTER, CastAtProcessor.DirType.UP,

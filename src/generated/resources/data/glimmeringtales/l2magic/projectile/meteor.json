@@ -2,6 +2,9 @@
   "filter": "ALL",
   "hit": [
     {
+      "type": "l2magic:projectile_hit"
+    },
+    {
       "type": "l2magic:cast_at",
       "child": {
         "type": "l2magic:move",

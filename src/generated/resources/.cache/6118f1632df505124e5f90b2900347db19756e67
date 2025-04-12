@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-05T01:19:06.160981	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (trait), Tags (worldgen/biome), Tags (spell), Custom Registrate Provider]
+// 1.21.1	2025-04-11T22:35:36.141123	Registrate Provider for glimmeringtales [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (enchantments), Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider, Patchouli Provider, Tags (mob_effect), Tags (attribute), Tags (damage_type), Tags (worldgen/biome), Tags (spell), Tags (trait), Custom Registrate Provider]
 f628b87d75a2e2a6c5157d17ef22b26cb8b260eb assets/glimmeringtales/blockstates/bamboo.json
 ce8cfd4e2bab2eed8783654db155ae082f8b8aa8 assets/glimmeringtales/blockstates/blossom_pop_fruit.json
 4132de47f0c0e042aadf759876c94ea0a1d95cd2 assets/glimmeringtales/blockstates/clay_carpet.json
@@ -645,7 +645,7 @@ e749c40e0107fe803d7d1d0e174e6be468214963 data/glimmeringtales/glimmeringtales/sp
 bba53596ee7deba3ad402b237e2557a9fead1afb data/glimmeringtales/glimmeringtales/spell/vine.json
 ca4258c0f11d43f23a759eb0e31ec9ac6eac99b9 data/glimmeringtales/glimmeringtales/spell/winter_storm.json
 a7fd189c5d66f25b9147b15cdef6bf8e31a7d57d data/glimmeringtales/l2magic/projectile/amethyst.json
-32e8a54f31b6b89a4dfe7a81a361eed6f2cd943f data/glimmeringtales/l2magic/projectile/amethyst_penetration.json
+0132b26427c7fce87221d432899c778e568d1b70 data/glimmeringtales/l2magic/projectile/amethyst_penetration.json
 447c87d4a7133c82e298137af08c029e208691f6 data/glimmeringtales/l2magic/projectile/cactus.json
 2d4353bff17e5048433d9f8d665a12ad1baedba5 data/glimmeringtales/l2magic/projectile/charge_burst.json
 48c643a0ba4ed7076d8db234b0924a87f1c65109 data/glimmeringtales/l2magic/projectile/charge_link.json
@@ -653,16 +653,16 @@ a7fd189c5d66f25b9147b15cdef6bf8e31a7d57d data/glimmeringtales/l2magic/projectile
 7b4438671ced82e4d656a983ed4d3ee4cc5a73e3 data/glimmeringtales/l2magic/projectile/dark_rain.json
 aa32b2ecbb55bd0a6b42c451968de35f1f69271d data/glimmeringtales/l2magic/projectile/dripstone.json
 0be296cc8148947622cddffe0668c431f62318af data/glimmeringtales/l2magic/projectile/illusory_field.json
-2f3afbe031e150d0cc973882ae373ae94d2af499 data/glimmeringtales/l2magic/projectile/meteor.json
+58ac7104e3bb571c7cd09c7d4c5096a3947d213b data/glimmeringtales/l2magic/projectile/meteor.json
 e5fa0040badc7a06204104587a6e93083286ffa5 data/glimmeringtales/l2magic/projectile/ocean_shelter.json
 a88f537cab148f4a1d4879c46ba9f810362e6f09 data/glimmeringtales/l2magic/projectile/snow.json
-6b14a08f1febb6aaaddf326962cee00d6f6688d4 data/glimmeringtales/l2magic/projectile/soul_burst.json
-7e57b94ce70b087ec61747647310c8fdce0bd02d data/glimmeringtales/l2magic/projectile/spark_burst.json
+bcd98402681cb76479f8eee6d923656a1e89ce9d data/glimmeringtales/l2magic/projectile/soul_burst.json
+670b686b507963beb5c109413d1a31f03902794b data/glimmeringtales/l2magic/projectile/spark_burst.json
 107ec953f129ac538e8396dfa69547422173d1d2 data/glimmeringtales/l2magic/spell_action/amethyst.json
 ac85e99ffb0b0b4b4d22ab29f0a00534118c66f8 data/glimmeringtales/l2magic/spell_action/amethyst_penetration.json
 cff4e5adc6a673baa000d69bd2764a5627fea1c3 data/glimmeringtales/l2magic/spell_action/bamboo.json
 fa4c2a95f2005f7a9e3b31bb17ce9aadc55c3f1c data/glimmeringtales/l2magic/spell_action/blue_ice.json
-e31097685cb024a58d3fe14485b28fa08884e189 data/glimmeringtales/l2magic/spell_action/cactus.json
+f1551db42eb55f5e19a49e53d20fc960aebb0d1c data/glimmeringtales/l2magic/spell_action/cactus.json
 752c564cb04a8b6eb7f9dcdc2185f1a3b8070b15 data/glimmeringtales/l2magic/spell_action/charge_burst.json
 e039fb8340bf26e5769d2deec9e82cf41a37c078 data/glimmeringtales/l2magic/spell_action/charge_link.json
 a0d315a55334ef8c84d8fb91551310c90102ba08 data/glimmeringtales/l2magic/spell_action/clay.json

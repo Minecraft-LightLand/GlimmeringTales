@@ -76,7 +76,7 @@ public class CactusSpell {
 								DoubleVariable.ZERO
 						)), "j"
 				).move(
-						OffsetModifier.of("0", "0.55", "0"),
+						OffsetModifier.of("0", "0.05", "0"),
 						SetDirectionModifier.of("1", "0", "0")
 				)));
 

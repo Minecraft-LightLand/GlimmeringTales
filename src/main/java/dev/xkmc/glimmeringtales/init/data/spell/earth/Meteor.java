@@ -17,10 +17,7 @@ import dev.xkmc.l2magic.content.engine.modifier.ForwardOffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.modifier.SetDirectionModifier;
 import dev.xkmc.l2magic.content.engine.particle.DustParticleInstance;
-import dev.xkmc.l2magic.content.engine.processor.CastAtProcessor;
-import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
-import dev.xkmc.l2magic.content.engine.processor.KnockBackProcessor;
-import dev.xkmc.l2magic.content.engine.processor.PropertyProcessor;
+import dev.xkmc.l2magic.content.engine.processor.*;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
@@ -56,6 +53,7 @@ public class Meteor {
 		return ProjectileConfig.builder(SelectionType.ALL)
 				.tick(tick())
 				.land(land(ctx)).size(new BoundingData(DoubleVariable.of("1"), true))
+				.hit(new ProjectileHitEntityProcessor())
 				.hit(new CastAtProcessor(CastAtProcessor.PosType.ORIGINAL, CastAtProcessor.DirType.ORIGINAL, land(ctx)))
 				.renderer(new FakeBlockRenderData(GTItems.DUMMY_METEOR.getDefaultState(), DoubleVariable.of("2")))
 				.build();

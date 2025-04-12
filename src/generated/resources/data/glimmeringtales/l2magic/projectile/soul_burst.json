@@ -2,6 +2,9 @@
   "filter": "ENEMY_NO_FAMILY",
   "hit": [
     {
+      "type": "l2magic:projectile_hit"
+    },
+    {
       "type": "l2magic:filtered",
       "action": [
         {
