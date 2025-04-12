@@ -7,12 +7,20 @@ import dev.xkmc.glimmeringtales.content.item.wand.SpellCastContext;
 import dev.xkmc.l2magic.content.engine.context.SpellContext;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import net.minecraft.core.Holder;
+import net.minecraft.world.level.Level;
 
 public record SpellHolder(Holder<NatureSpell> spell, int dist) implements ISpellHolder {
 
 	@Override
 	public SpellCastType castType() {
 		return spell.value().spell().value().castType();
+	}
+
+	@Override
+	public int getStandardDelay(Level level) {
+		var mob = spell.value().mob();
+		if (mob == null) return 0;
+		return mob.standardDelay();
 	}
 
 	@Override

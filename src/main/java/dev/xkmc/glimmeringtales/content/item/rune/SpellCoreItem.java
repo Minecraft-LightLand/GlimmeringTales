@@ -49,6 +49,11 @@ public class SpellCoreItem extends LightningImmuneItem implements IBlockSpellIte
 	}
 
 	@Override
+	public int getStandardDelay(Level level) {
+		return 0;
+	}
+
+	@Override
 	public SpellInfo getSpellInfo(Player player) {
 		var ctx = BlockSpellContext.blockSpellContext(player, range(), 0);
 		if (ctx == null) return SpellInfo.EMPTY;

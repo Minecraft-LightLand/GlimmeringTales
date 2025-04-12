@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.content.item.wand;
 
 import com.tterrag.registrate.util.CreativeModeTabModifier;
+import dev.xkmc.glimmeringtales.init.data.GTConfigs;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
@@ -137,7 +138,8 @@ public class RuneWandItem extends SingleSwapItem implements IGlowingTarget, Fast
 	}
 
 	private boolean castSpell(ItemStack stack, Level level, LivingEntity user, ISpellHolder spell, int useTick, boolean charging) {
-		return spell.cast(SpellCastContext.of(level, user, 0, stack), useTick, charging);
+		var delay = (int) Math.round(spell.getStandardDelay(level) * GTConfigs.SERVER.playerCastingDelayFactor.get());
+		return spell.cast(SpellCastContext.of(level, user, delay, stack), useTick, charging);
 	}
 
 	private boolean checkMana(ItemStack stack, Level level, LivingEntity user, ISpellHolder spell, int useTick, boolean charging) {

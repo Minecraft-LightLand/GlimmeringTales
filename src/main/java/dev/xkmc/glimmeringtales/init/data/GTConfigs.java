@@ -29,6 +29,7 @@ public class GTConfigs {
 		public final ModConfigSpec.IntValue crystalOfWinterstormRequirement;
 		public final ModConfigSpec.IntValue wandInteractionDistance;
 		public final ModConfigSpec.IntValue ritualRange;
+		public final ModConfigSpec.DoubleValue playerCastingDelayFactor;
 		public final ModConfigSpec.DoubleValue popFruitExplosionChanceOnEaten;
 		public final ModConfigSpec.DoubleValue popFruitExplosionDamageFactor;
 		public final ModConfigSpec.DoubleValue popFruitBonemealGrowChance;
@@ -41,6 +42,9 @@ public class GTConfigs {
 			wandInteractionDistance = builder
 					.text("Wand interaction range")
 					.defineInRange("wandInteractionDistance", 24, 4, 64);
+			playerCastingDelayFactor = builder
+					.text("Player Spell Casting Delay Factor")
+					.defineInRange("playerCastingDelayFactor", 0d, 0, 2);
 			ritualRange = builder
 					.text("Range for ritual blocks to check for each other")
 					.defineInRange("ritualRange", 3, 1, 16);

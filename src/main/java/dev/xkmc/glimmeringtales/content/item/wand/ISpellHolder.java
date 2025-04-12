@@ -4,12 +4,15 @@ import dev.xkmc.glimmeringtales.content.core.spell.IAffinityProvider;
 import dev.xkmc.glimmeringtales.content.core.spell.NatureSpell;
 import dev.xkmc.l2magic.content.engine.context.SpellContext;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
+import net.minecraft.world.level.Level;
 
 public interface ISpellHolder {
 
 	SpellCastType castType();
 
 	boolean cast(SpellCastContext user, int useTick, boolean charging);
+
+	int getStandardDelay(Level level);
 
 	default boolean execute(NatureSpell spell, SpellContext ctx, SpellCastContext user, IAffinityProvider aff, int useTick, boolean charging) {
 		if (!spell.spell().value().test(spell.spell(), ctx))

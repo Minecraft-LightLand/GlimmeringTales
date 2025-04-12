@@ -6,6 +6,7 @@ import dev.xkmc.glimmeringtales.content.core.spell.SpellInfo;
 import dev.xkmc.glimmeringtales.content.item.wand.SpellCastContext;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import net.minecraft.core.RegistryAccess;
+import net.minecraft.world.level.Level;
 
 import java.util.Optional;
 
@@ -21,6 +22,15 @@ public class BlockRuneItem extends BaseRuneItem implements IBlockSpellItem {
 
 	public SpellInfo getSpellInfo(RegistryAccess access) {
 		return SpellInfo.ofRune(getSpell(access).orElse(null));
+	}
+
+	@Override
+	public int getStandardDelay(Level level) {
+		var spell = getSpell(level.registryAccess());
+		if (spell.isEmpty()) return 0;
+		var mob = spell.get().spell().value().mob();
+		if (mob == null) return 0;
+		return mob.standardDelay();
 	}
 
 	@Override
