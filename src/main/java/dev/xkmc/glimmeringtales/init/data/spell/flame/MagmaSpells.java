@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.flame;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.instance.MeltBlockInstance;
 import dev.xkmc.glimmeringtales.content.engine.predicate.MeltBlockPredicate;
@@ -36,7 +37,7 @@ public class MagmaSpells {
 					"[Block] Melts stones into magma temporarily",
 					"Melts stone, deep slate, and netherrack in a circular area for 10 seconds",
 					SpellTooltipData.of()
-			).graph(NetherrackSpells.BUILDER);
+			).graph(ResearchBonus.small3(21), "E->SF", "SF->LO", "LO->T", "T->E");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

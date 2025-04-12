@@ -2,7 +2,7 @@
   "cost": 120,
   "elem": "glimmeringtales:flame",
   "focus": 40,
-  "graph": "glimmeringtales:netherrack",
+  "graph": "glimmeringtales:magma",
   "maxConsumeTick": 0,
   "spell": "glimmeringtales:magma",
   "tooltip": {

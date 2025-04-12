@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.ocean;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.instance.RemoveLiquidInstance;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
@@ -30,7 +31,7 @@ public class SpongeSpell {
 					"[Block] Absorb water nearby",
 					"Absorb water nearby, equivalent to range of water",
 					SpellTooltipData.of()
-			).graph(CoralReefSpell.BUILDER);
+			).graph(ResearchBonus.small3(18), "O->LSF","LS->F");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
