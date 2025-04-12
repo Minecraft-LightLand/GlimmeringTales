@@ -54,7 +54,7 @@ public class AmethystSpells {
 					"[Block] Splash amethyst shards",
 					"Create a semisphere of amethyst shards, dealing %s and stack %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, GTEngine.EP_STACK)
-			).graph(ResearchBonus.small3(16), "E->SF", "SF->L", "L->E");
+			).graph(ResearchBonus.small3(14), "E->SF", "SF->L", "L->E");
 
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/amethyst.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("4");

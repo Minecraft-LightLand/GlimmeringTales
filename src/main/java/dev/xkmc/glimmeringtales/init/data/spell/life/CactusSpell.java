@@ -49,7 +49,7 @@ public class CactusSpell {
 					"[Block] Splash cactus spikes",
 					"Shoot cactus spikes forming a circle, dealing %s ",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small2(10), "O->E", "E->LS");
+			).graph(ResearchBonus.small2(9), "O->E", "E->LS");
 
 	public static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/cactus.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("1");

@@ -1,6 +1,7 @@
 package dev.xkmc.glimmeringtales.init.data.spell.flame;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
@@ -55,7 +56,7 @@ public class SparkBurst {
 					"[Continuous] Shoot sparks that hurts and ignite enemies",
 					"Continuously shoot fire sparks forward, deal %s and ignite",
 					SpellTooltipData.of(EngineRegistry.DAMAGE)
-			).graph(FlamePentagram.HELL_MARK);
+			).graph(ResearchBonus.mid4(39), "EFST|");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("6");
 

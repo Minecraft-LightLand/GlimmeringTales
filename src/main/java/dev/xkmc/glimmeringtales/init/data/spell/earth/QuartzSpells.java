@@ -33,7 +33,7 @@ public class QuartzSpells {
 					"[Block] Create a temorary glass shell",
 					"Create a spherical glass shell lasting for 10 seconds",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small2(10), "E<->SF");
+			).graph(ResearchBonus.small3(9), "E<->SF");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

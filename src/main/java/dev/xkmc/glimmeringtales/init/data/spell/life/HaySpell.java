@@ -36,7 +36,7 @@ public class HaySpell {
 					"[Block] Breed nearby animals",
 					"Feed all nearby animals",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.adv2(11), "O->EF", "EF->L");
+			).graph(ResearchBonus.adv2(9), "O->EF", "EF->L");
 
 	private static ConfiguredEngine<?> procreation(NatureSpellBuilder ctx, double r) {
 		return new ListLogic(List.of(

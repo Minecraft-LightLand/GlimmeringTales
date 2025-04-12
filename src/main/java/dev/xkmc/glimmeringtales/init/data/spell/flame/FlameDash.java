@@ -42,7 +42,7 @@ public class FlameDash {
 					"[Charge] Charge and launch yourself as a rolling flame ball",
 					"Charge, and then enter flame dashing mode for the same duration as you charged, move forward and knock off enemies, dealing %s",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small4(24), "F->OT", "OT->S", "S->LE", "LE->F");
+			).graph(ResearchBonus.small4(22), "F->OT", "OT->S", "S->LE", "LE->F");
 
 	private static ConfiguredEngine<?> flameCharge(NatureSpellBuilder ctx) {
 		return new PredicateLogic(BooleanVariable.of("Power==0"),

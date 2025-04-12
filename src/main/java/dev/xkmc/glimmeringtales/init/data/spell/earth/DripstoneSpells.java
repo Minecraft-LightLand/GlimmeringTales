@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
+import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.processor.StackingEffectProcessor;
 import dev.xkmc.glimmeringtales.content.engine.render.VerticalRenderData;
@@ -53,7 +54,7 @@ public class DripstoneSpells {
 					"[Block] Shoot stalagmite spikes from ground",
 					"Shoot stalagmite spikes from ground to pierce entities, dealing %s and inflict %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, GTEngine.EP_STACK)
-			).graph(AmethystSpells.BUILDER);
+			).graph(ResearchBonus.adv2(16), "E->SF", "SF->L","L->O","O->T");
 
 	public static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/pointed_dripstone_up_tip.png");
 	public static final DoubleVariable DMG = DoubleVariable.of("4");

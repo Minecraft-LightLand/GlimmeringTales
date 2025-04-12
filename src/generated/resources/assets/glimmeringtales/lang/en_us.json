@@ -113,6 +113,8 @@
   "glimmeringtales.configuration.crystalOfWinterstormRequirement": "Crystal of Winterstorm: Powder Snow consumption",
   "glimmeringtales.configuration.crystalOfWinterstormRequirement.tooltip": " Default: 64\n Range: 1 ~ 1000",
   "glimmeringtales.configuration.materials": "Material properties",
+  "glimmeringtales.configuration.playerCastingDelayFactor": "Player Spell Casting Delay Factor",
+  "glimmeringtales.configuration.playerCastingDelayFactor.tooltip": " Default: 0.0\n Range: 0.0 ~ 2.0",
   "glimmeringtales.configuration.popFruitAdjacentCrystalBoost": "Pop Fruit growth speed multiplier when there is adjacent crystal vine",
   "glimmeringtales.configuration.popFruitAdjacentCrystalBoost.tooltip": " Default: 1\n Range: 0 ~ 10",
   "glimmeringtales.configuration.popFruitBiomeGrowFactor": "Pop Fruit growth speed multiplier in correct biome",

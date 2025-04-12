@@ -32,7 +32,7 @@ public class BambooSpell {
 					"[Block] Generate a bamboo cage",
 					"Generate a spherical cage of bamboo lasting 10 seconds",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small2(8), "O->E", "E->L");
+			).graph(ResearchBonus.small2(6), "O->E", "E->L");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

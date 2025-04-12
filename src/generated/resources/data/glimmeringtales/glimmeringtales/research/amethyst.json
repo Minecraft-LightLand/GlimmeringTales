@@ -17,12 +17,12 @@
       "manaBonus": 0.8
     },
     {
-      "cost": 20,
+      "cost": 18,
       "focusBonus": 1.0,
       "manaBonus": 0.8
     },
     {
-      "cost": 16,
+      "cost": 14,
       "focusBonus": 0.5,
       "manaBonus": 1.0
     }

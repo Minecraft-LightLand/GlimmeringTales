@@ -59,7 +59,7 @@ public class SoulBurst {
 					"[Continuous] Shoot soul sparks that hurts and ignite enemies",
 					"Continuously shoot soul sparks forward, deal %s and inflict %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, EngineRegistry.EFFECT)
-			).graph(FlamePentagram.HELL_MARK);
+			).graph(SparkBurst.BUILDER);
 
 	private static final DoubleVariable DMG = DoubleVariable.of("6");
 

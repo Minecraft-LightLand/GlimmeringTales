@@ -52,7 +52,7 @@ public class SnowStorm {
 					"[Continuous] Create a circle of storm",
 					"Continuous Attack: Create a circle of storm, dealing %s, inflict %s, and push enemies away",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.small4(24), "SF->LE", "LE->OT", "OT->SF");
+			).graph(ResearchBonus.small4(21), "SF->LE", "LE->OT", "OT->SF");
 
 	public static final NatureSpellBuilder SNOW_TORNADO = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("snow_tornado")).focusAndCost(1, 5).damageFreeze()

@@ -1,31 +1,31 @@
 {
   "flows": [
-    "EF<->LS"
+    "EFST|"
   ],
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",
-    "L": "glimmeringtales:life",
-    "S": "glimmeringtales:snow"
+    "S": "glimmeringtales:snow",
+    "T": "glimmeringtales:thunder"
   },
   "bonuses": [
     {
-      "cost": 100,
+      "cost": 300,
       "focusBonus": 1.0,
       "manaBonus": 0.7
     },
     {
-      "cost": 36,
+      "cost": 150,
       "focusBonus": 1.0,
       "manaBonus": 0.7
     },
     {
-      "cost": 19,
+      "cost": 80,
       "focusBonus": 0.5,
       "manaBonus": 1.0
     },
     {
-      "cost": 15,
+      "cost": 39,
       "focusBonus": 0.5,
       "manaBonus": 1.0
     }

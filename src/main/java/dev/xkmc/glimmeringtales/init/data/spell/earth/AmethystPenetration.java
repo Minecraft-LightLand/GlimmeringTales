@@ -62,7 +62,7 @@ public class AmethystPenetration {
 					"[Forward] Shoot several amethyst shards forward",
 					"Shoot amethyst shards in a fan area in front of you, dealing %s and stack %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, GTEngine.EP_STACK)
-			).graph(ResearchBonus.small4(16), "EF<->LS");
+			).graph(ResearchBonus.small4(15), "EF<->LS");
 
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/infused_amethyst.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("12");

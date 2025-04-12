@@ -1,0 +1,44 @@
+A->B            Stone                               A1              3
+A->B->C         Bamboo                              A2              6
+ABC&            Gravel                              A3              8
+ABCD&           Flower                              A3-1            11
+ABC&, DEF&      Vine                                A3-2            18
+ABCDEF&         Earthquake                          A3-3            23
+
+A->BC           Sand                                B1              6
+A->B->CD        Cactus                              B2              9
+A->BC->D        Hay                                 B2-1            9
+A->BC->D->E->F  Dripstone                           B2-2            16
+A<->BC          Quartz / Clay                       B3              9
+ABC|            Stone Bridge                        B3-1            6
+A(BC)D&         Amethyst                            B4              14
+AB<->CD         Amethyst Penetration                B4-1            15
+A(BC)(DE)&      Magma / Netherrack / Soul Sand      B5              19
+A(BC)D(EF)&     Flame Dash                          B5-1            22
+
+A->BCDE         Snow                                C1              13      *
+A<->BCDE        Powder Snow                         C2              21      *
+(AB)(CD)(EF)&   Snow Storm                          C2-1            21
+AB<->CDEF       Ice 3                               C3              24      *
+ABxCDEF         Fire Pent                           C4              22      *
+A=BC=DE=F       Lava Melt                           C4-1            26      *
+
+A->BCD          Sponge / Coral                      D1              12      *
+A<->BCD         Thunder                             D2              18      *
+AB<->CDE        Ocean Shelter                       D2-1            21      *
+A(BC)(DEF)&     Snow Tornado                        D3              23      *
+A(BCD)(EF)&     Illusory Field                      D3-1            27      *
+ABC<->DEF       Icy Flash                           D3-2            42
+A<->BCDEF       Meteor                              D4              35
+
+ABCDE|          Charge Burst                        E1              47
+ABCD|           Spark Burst/Soul Burst              E1-1            39
+ABCDEF|         Thunderstorm                        E2              121
+
+
+
+
+ooo-oo2o3-oo3x-2oxx-xx
+  o  oxxx  x x  xx  x
+  o  o           x
+  x

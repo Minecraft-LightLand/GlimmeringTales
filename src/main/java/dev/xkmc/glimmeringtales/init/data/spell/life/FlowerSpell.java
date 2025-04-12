@@ -29,7 +29,7 @@ public class FlowerSpell {
 					"[Block] Create a healing cloud",
 					"Create a lingering effect cloud of instant healing",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small2(15), "O->E", "E->L", "L->F", "F->O");
+			).graph(ResearchBonus.small3(11), "O->E", "E->L", "L->F", "F->O");
 
 	private static ConfiguredEngine<?> flower(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(
