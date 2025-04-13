@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "MAIN",
+    "parent": "glimmeringtales:thunder"
+  },
   "flows": [
     "S->OT",
     "OT->LEF",

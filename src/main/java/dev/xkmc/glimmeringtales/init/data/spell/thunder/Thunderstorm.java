@@ -3,8 +3,10 @@ package dev.xkmc.glimmeringtales.init.data.spell.thunder;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.instance.LightningInstance;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.flame.SoulBurst;
 import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
@@ -37,7 +39,8 @@ public class Thunderstorm {
 					"[Ranged] Create a thunderstorm striking entities",
 					"Create a lightning strike on all entities in target area, inflicting %s multiple times",
 					SpellTooltipData.of(GTEngine.THUNDER)
-			).graph(ResearchBonus.base4(800, 400, 200, 121), "LEFSOT|");
+			).graph(SoulBurst.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.base4(800, 400, 200, 121), "LEFSOT|");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

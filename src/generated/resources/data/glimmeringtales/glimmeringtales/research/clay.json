@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "MAIN",
+    "parent": "glimmeringtales:amethyst"
+  },
   "flows": [
     "EO->SF",
     "S->E",

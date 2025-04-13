@@ -3,8 +3,10 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.instance.GTKnockBlock;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.life.VinesSpell;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -48,7 +50,8 @@ public class Earthquake {
 					"[Surrounding] Shake the ground and throw blocks into air",
 					"Create earthquake dealing dealing %s, then throw blocks around you into the air that deals %s on fall",
 					SpellTooltipData.damageAndFalling()
-			).graph(ResearchBonus.small4(19), "L->E", "E->F", "F->S", "S->O", "O->T", "T->L");
+			).graph(VinesSpell.BUILDER.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small4(19), "L->E", "E->F", "F->S", "S->O", "O->T", "T->L");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("10");
 	private static final DoubleVariable INIT = DoubleVariable.of("10");

@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "BRANCH",
+    "parent": "glimmeringtales:quartz"
+  },
   "flows": [
     "LEF|"
   ],

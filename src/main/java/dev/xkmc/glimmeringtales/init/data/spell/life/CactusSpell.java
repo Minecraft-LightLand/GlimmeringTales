@@ -5,8 +5,11 @@ import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.render.OrientedCrossRenderData;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.SandSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -49,7 +52,8 @@ public class CactusSpell {
 					"[Block] Splash cactus spikes",
 					"Shoot cactus spikes forming a circle, dealing %s ",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small2(9), "O->E", "E->LS");
+			).graph(SandSpells.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.small2(9), "O->E", "E->LS");
 
 	public static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/cactus.png");
 	private static final DoubleVariable DMG = DoubleVariable.of("1");

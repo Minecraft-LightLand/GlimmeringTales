@@ -7,6 +7,7 @@ import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.*;
 import dev.xkmc.glimmeringtales.content.entity.hostile.MobCastingData;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.data.GTTagGen;
@@ -197,7 +198,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	 * L - life, E - earth, F - flame, S - snow, O - ocean, T - thunder
 	 * Order: EFLOST
 	 */
-	public NatureSpellBuilder graph(ArrayList<ResearchBonus> bonus, String... strs) {
+	public NatureSpellBuilder graph(@Nullable ResearchDependency dep, ArrayList<ResearchBonus> bonus, String... strs) {
 		this.graph = graph(id);
 		int prev = Integer.MAX_VALUE;
 		for (var e : bonus) {
@@ -224,9 +225,13 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 					}
 				}
 			}
-			return new HexGraphData(icon.asItem(), map, new ArrayList<>(List.of(strs)), bonus);
+			return new HexGraphData(icon.asItem(), dep, map, new ArrayList<>(List.of(strs)), bonus);
 		};
 		return this;
+	}
+
+	public ResearchDependency asParent(ResearchDependency.Type type) {
+		return new ResearchDependency(graph, type);
 	}
 
 	public NatureSpellBuilder lang(String name) {

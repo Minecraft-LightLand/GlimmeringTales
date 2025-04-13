@@ -3,8 +3,10 @@ package dev.xkmc.glimmeringtales.init.data.spell.flame;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.thunder.ChargeBurst;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -55,7 +57,8 @@ public class SparkBurst {
 					"[Continuous] Shoot sparks that hurts and ignite enemies",
 					"Continuously shoot fire sparks forward, deal %s and ignite",
 					SpellTooltipData.of(EngineRegistry.DAMAGE)
-			).graph(ResearchBonus.mid4(39), "EFST|");
+			).graph(ChargeBurst.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.mid4(39), "EFST|");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("6");
 

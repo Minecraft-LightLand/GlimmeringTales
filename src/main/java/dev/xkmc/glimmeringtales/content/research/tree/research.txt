@@ -16,7 +16,7 @@ A(BC)D&         Amethyst                            C1              14
 AB<->CD         Amethyst Penetration                C1-1            15
 AB->CDxAB       Clay                                C2              15
 (AB)(CD)EF&     Magma                               C2-1            21
-A(BC)(DE)&      Netherrack / Magma                  C3              18
+A(BC)(DE)&      Netherrack                          C3              18
 A(BC)D(EF)&     Flame Dash                          C3-1            22
 (AB)x(CD)(EF)&  Soul Sand                           C4              24
 ABxCDEF         Fire Pent                           C4-1            22
@@ -34,19 +34,19 @@ A->BCD, BC->D   Sponge                              E1-1            18
 A<->BCD         Thunder                             E2              18
 AB<->CDE        Ocean Shelter                       E2-1            21
 A(BC)(DEF)&     Snow Tornado                        E3              23
-A(BCD)(EF)&     Illusory Field                      E3-1            27
+A(BCD)(EF)&     Illusory Field / Dark Rain          E3-1            27
 ABC<->DEF       Icy Flash                           E3-2            38
 A<->BCDEF       Meteor                              E4              35
 
 ABCDE|          Charge Burst                        F1              47
 ABCD|           Spark Burst                         F2              39
-hexstar         Soul Burst                          F3.             71
-ABCDEF|         Thunderstorm                        F4              121
+hexstar         Soul Burst                          F3              71
+ABCDEF|         Thunderstorm / Thunder Surge        F4              121
 
 
 
 
-ooo-ooo-oooo-ooo-ooxx-xxxx
-  o  ox xoxx  xo oxx
+ooo-ooo-oooo-ooo-ooxx-xxx2
+  o  ox xoxx  xo ox2
   o  o     x   o   x
   x

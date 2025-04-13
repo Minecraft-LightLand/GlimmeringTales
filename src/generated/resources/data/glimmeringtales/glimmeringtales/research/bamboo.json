@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "MAIN",
+    "parent": "glimmeringtales:stone"
+  },
   "flows": [
     "O->E",
     "E->L"

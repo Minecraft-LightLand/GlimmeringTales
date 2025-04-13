@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "NEXT",
+    "parent": "glimmeringtales:ice"
+  },
   "flows": [
     "O->LSF"
   ],

@@ -4,8 +4,10 @@ import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.life.BambooSpell;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -53,7 +55,8 @@ public class SandSpells {
 					"[Block] Create sandstorm trapping enemies",
 					"Create a sand tornado, trapping enemies touched, dealing %s, and inflict %s",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.small2(6), "E->SF");
+			).graph(BambooSpell.BUILDER.asParent(ResearchDependency.Type.NEXT),
+					ResearchBonus.small2(6), "E->SF");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("2");
 

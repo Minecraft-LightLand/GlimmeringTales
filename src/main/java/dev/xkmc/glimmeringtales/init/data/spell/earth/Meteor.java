@@ -3,8 +3,10 @@ package dev.xkmc.glimmeringtales.init.data.spell.earth;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.render.FakeBlockRenderData;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.snow.SnowStorm;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -46,7 +48,8 @@ public class Meteor {
 					"[Ranged] Create a meteor falling at target",
 					"Create a meteor falling slowly, dealing %s on impact",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.base4(150, 80, 60, 35), "T<->LEFSO");
+			).graph(SnowStorm.SNOW_TORNADO.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.base4(150, 80, 60, 35), "T<->LEFSO");
 
 	private static ProjectileConfig proj(NatureSpellBuilder ctx) {
 		return ProjectileConfig.builder(SelectionType.ALL)

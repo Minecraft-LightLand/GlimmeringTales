@@ -5,8 +5,11 @@ import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.instance.EffectCloudInstance;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.StoneSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -29,7 +32,8 @@ public class FlowerSpell {
 					"[Block] Create a healing cloud",
 					"Create a lingering effect cloud of instant healing",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small3(11), "O->E", "E->L", "L->F", "F->O");
+			).graph(GravelSpells.BUILDER.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small3(11), "O->E", "E->L", "L->F", "F->O");
 
 	private static ConfiguredEngine<?> flower(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

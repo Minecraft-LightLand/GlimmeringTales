@@ -3,9 +3,12 @@ package dev.xkmc.glimmeringtales.init.data.spell.flame;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.thunder.ChargeBurst;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
@@ -59,7 +62,8 @@ public class SoulBurst {
 					"[Continuous] Shoot soul sparks that hurts and ignite enemies",
 					"Continuously shoot soul sparks forward, deal %s and inflict %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, EngineRegistry.EFFECT)
-			).graph(ResearchBonus.mid4(71), "ELS|", "FOT|", "E<->O", "F<->S", "L<->T");
+			).graph(SparkBurst.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.mid4(71), "ELS|", "FOT|", "E<->O", "F<->S", "L<->T");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("6");
 

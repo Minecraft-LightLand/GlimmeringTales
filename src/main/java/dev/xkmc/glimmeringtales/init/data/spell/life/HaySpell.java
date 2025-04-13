@@ -5,8 +5,10 @@ import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.processor.ProcreationProcessor;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -36,7 +38,8 @@ public class HaySpell {
 					"[Block] Breed nearby animals",
 					"Feed all nearby animals",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.adv2(9), "O->EF", "EF->L");
+			).graph(CactusSpell.BUILDER.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.adv2(9), "O->EF", "EF->L");
 
 	private static ConfiguredEngine<?> procreation(NatureSpellBuilder ctx, double r) {
 		return new ListLogic(List.of(

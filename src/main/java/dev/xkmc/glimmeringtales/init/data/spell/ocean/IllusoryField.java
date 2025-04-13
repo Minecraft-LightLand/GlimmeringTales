@@ -5,9 +5,12 @@ import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.filter.InvulFrameFilter;
 import dev.xkmc.glimmeringtales.content.engine.processor.PassiveHealProcessor;
 import dev.xkmc.glimmeringtales.content.engine.render.InflatingRenderData;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.snow.SnowStorm;
 import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
@@ -63,7 +66,8 @@ public class IllusoryField {
 					"[Ranged] Create bubbles that hurt enemies and heal allies",
 					"Create bubbles emerging from ground lasting 5 seconds. To enemies, deals %s and inflicts %s. To allies, %s and gives %s",
 					SpellTooltipData.of(EngineRegistry.DAMAGE, EngineRegistry.EFFECT, GTEngine.HEAL, EngineRegistry.EFFECT)
-			).graph(ResearchBonus.small4(27), "O->LET", "LET->FS", "FS->O");
+			).graph(SnowStorm.SNOW_TORNADO.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small4(27), "O->LET", "LET->FS", "FS->O");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 	private static final ResourceLocation TEX = GlimmeringTales.loc("textures/spell/bubble.png");

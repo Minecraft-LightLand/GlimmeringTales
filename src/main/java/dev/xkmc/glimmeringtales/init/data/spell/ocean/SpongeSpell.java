@@ -5,8 +5,10 @@ import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.instance.RemoveLiquidInstance;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -31,7 +33,8 @@ public class SpongeSpell {
 					"[Block] Absorb water nearby",
 					"Absorb water nearby, equivalent to range of water",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small3(18), "O->LSF", "LS->F");
+			).graph(CoralReefSpell.BUILDER.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small3(18), "O->LSF", "LS->F");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

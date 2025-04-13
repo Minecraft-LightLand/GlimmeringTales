@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "BRANCH",
+    "parent": "glimmeringtales:packed_ice"
+  },
   "flows": [
     "ST->LEFO",
     "LE->STFO",

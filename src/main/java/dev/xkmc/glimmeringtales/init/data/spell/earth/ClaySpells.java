@@ -4,6 +4,7 @@ import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
@@ -36,7 +37,8 @@ public class ClaySpells {
 					"[Block] Form a circular carpet to trap entities",
 					"Create a circular field of clay carpet lasting 5 seconds to immobilize entities",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small3(15), "EO->SF", "S->E", "F->O");
+			).graph(AmethystSpells.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.small3(15), "EO->SF", "S->E", "F->O");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

@@ -4,8 +4,10 @@ import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.life.BambooSpell;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
@@ -55,7 +57,8 @@ public class GravelSpells {
 					"[Block] Create flint storm",
 					"Create a flint storm, dealing %s, and inflict %s",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.small2(8), "E->S", "S->F", "F->E");
+			).graph(BambooSpell.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.small2(8), "E->S", "S->F", "F->E");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 

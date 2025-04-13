@@ -2,8 +2,10 @@ package dev.xkmc.glimmeringtales.init.data.spell.flame;
 
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -48,7 +50,8 @@ public class FlamePentagram {
 					"[Ranged] Form a flame circle",
 					"Create a pentagram on target position and inflict %s to enemies within",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small4(22), "E->SF", "L->OT", "SO->E", "FT->L");
+			).graph(SoulSandSpells.BUILDER.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small4(22), "E->SF", "L->OT", "SO->E", "FT->L");
 
 	public static final NatureSpellBuilder LAVA_BURST = GTRegistries.FLAME
 			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(4, 20, 30)
@@ -60,7 +63,8 @@ public class FlamePentagram {
 					"[Charge] Cause several bursts in the front",
 					"Charge attack: create up to 3 arcs of pentagram marks in front of you and inflict %s to enemies within.",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small4(26), "E<->SF", "SF<->OT", "OT<->L");
+			).graph(HELL_MARK.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small4(26), "E<->SF", "SF<->OT", "OT<->L");
 
 	private static final DoubleVariable HM_DMG = DoubleVariable.of("8");
 	private static final DoubleVariable LB_DMG = DoubleVariable.of("10");

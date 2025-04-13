@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "BRANCH",
+    "parent": "glimmeringtales:snow_tornado"
+  },
   "flows": [
     "O->LET",
     "LET->FS",

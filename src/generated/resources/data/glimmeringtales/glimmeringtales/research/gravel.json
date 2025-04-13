@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "MAIN",
+    "parent": "glimmeringtales:bamboo"
+  },
   "flows": [
     "E->S",
     "S->F",

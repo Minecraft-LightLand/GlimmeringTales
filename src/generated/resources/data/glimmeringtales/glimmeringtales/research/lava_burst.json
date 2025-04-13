@@ -1,4 +1,8 @@
 {
+  "parent": {
+    "type": "BRANCH",
+    "parent": "glimmeringtales:hell_mark"
+  },
   "flows": [
     "E<->SF",
     "SF<->OT",

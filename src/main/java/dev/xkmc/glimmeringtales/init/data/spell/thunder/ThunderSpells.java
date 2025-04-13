@@ -5,8 +5,11 @@ import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
 import dev.xkmc.glimmeringtales.content.engine.instance.LightningInstance;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.ocean.CoralReefSpell;
 import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
@@ -35,7 +38,8 @@ public class ThunderSpells {
 					"[Block] Create a lightning strike",
 					"Create a lightning strike in target position, inflicting %s multiple times",
 					SpellTooltipData.of(GTEngine.THUNDER)
-			).graph(ResearchBonus.small3(18), "T<->SFO");
+			).graph(CoralReefSpell.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.small3(18), "T<->SFO");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

@@ -4,6 +4,7 @@ import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
@@ -61,7 +62,8 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.small3(24), "ST<->LEFO");
+			).graph(PowderSnowSpell.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.small3(24), "ST<->LEFO");
 
 	public static final NatureSpellBuilder PACK_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("packed_ice")).focusAndCost(30, 150).damageFreeze()
@@ -72,7 +74,8 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.small3(24), "ST->LEFO", "LE<->FO");
+			).graph(ICE.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small3(24), "ST->LEFO", "LE<->FO");
 
 	public static final NatureSpellBuilder BLUE_ICE = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("blue_ice")).focusAndCost(40, 200).damageFreeze()
@@ -83,7 +86,8 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.base4(100, 50, 36, 31), "ST->LEFO", "LE->STFO", "FO->STLE");
+			).graph(PACK_ICE.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.base4(100, 50, 36, 31), "ST->LEFO", "LE->STFO", "FO->STLE");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx, DoubleVariable dmg, IntVariable dur, String range, String height) {
 		return new ListLogic(List.of(

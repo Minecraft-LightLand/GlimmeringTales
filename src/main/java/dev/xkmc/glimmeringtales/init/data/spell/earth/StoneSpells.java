@@ -32,7 +32,7 @@ public class StoneSpells {
 					"[Block] Create temporary stone floor",
 					"Create a circular stone floor lasting 10 seconds",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small2(3), "E->F");
+			).graph(null, ResearchBonus.small2(3), "E->F");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

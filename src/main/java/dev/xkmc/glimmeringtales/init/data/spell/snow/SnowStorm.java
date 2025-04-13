@@ -3,8 +3,11 @@ package dev.xkmc.glimmeringtales.init.data.spell.snow;
 import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.engine.particle.FarParticleRenderData;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.thunder.ThunderSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2complements.init.registrate.LCEffects;
@@ -50,7 +53,8 @@ public class SnowStorm {
 					"[Continuous] Create a circle of storm",
 					"Continuous Attack: Create a circle of storm, dealing %s, inflict %s, and push enemies away",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.small4(21), "SF->LE", "LE->OT", "OT->SF");
+			).graph(PowderSnowSpell.BUILDER.asParent(ResearchDependency.Type.BRANCH),
+					ResearchBonus.small4(21), "SF->LE", "LE->OT", "OT->SF");
 
 	public static final NatureSpellBuilder SNOW_TORNADO = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("snow_tornado")).focusAndCost(1, 5).damageFreeze()
@@ -61,7 +65,8 @@ public class SnowStorm {
 					"[Continuous] Create a circle of storm",
 					"Continuous Attack: Create snow tornado in front of you, dealing %s and inflict %s",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.small4(23), "S->OT", "OT->LEF", "LEF->S");
+			).graph(ThunderSpells.BUILDER.asParent(ResearchDependency.Type.MAIN),
+					ResearchBonus.small4(23), "S->OT", "OT->LEF", "LEF->S");
 
 	private static final DoubleVariable WS_DMG = DoubleVariable.of("4");
 	private static final DoubleVariable ST_DMG = DoubleVariable.of("4");

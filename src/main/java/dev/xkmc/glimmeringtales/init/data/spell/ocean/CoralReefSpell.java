@@ -4,9 +4,12 @@ import dev.xkmc.glimmeringtales.content.core.description.SpellTooltipData;
 import dev.xkmc.glimmeringtales.content.core.spell.BlockSpell;
 import dev.xkmc.glimmeringtales.content.core.spell.ResearchBonus;
 import dev.xkmc.glimmeringtales.content.core.spell.RuneBlock;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
+import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
+import dev.xkmc.glimmeringtales.init.data.spell.snow.IceSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
@@ -51,7 +54,8 @@ public class CoralReefSpell {
 					"[Block] Create bubbles to attack nearby entities",
 					"For all entities in range, create bubble attack dealing %s",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small3(12), "O->LSF");
+			).graph(IceSpells.ICE.asParent(ResearchDependency.Type.NEXT),
+					ResearchBonus.small3(12), "O->LSF");
 
 	private static final DoubleVariable DMG = DoubleVariable.of("4");
 
