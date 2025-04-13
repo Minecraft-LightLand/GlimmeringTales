@@ -12,32 +12,24 @@ import java.util.List;
 
 public class SpellResearch {
 
-	public static final int LOCKED = -2, UNLOCKED = -1;
+	public static final int UNLOCKED = -1;
 
 	private final PlayerResearch player;
 	private final ResourceLocation id;
 	private final ResearchData data;
 	private final HexGraph graph;
+	private final HexGraphData def;
 
-	public SpellResearch(PlayerResearch player, ResourceLocation id, ResearchData data, HexGraph graph) {
+	public SpellResearch(PlayerResearch player, HexGraphData def, ResourceLocation id, ResearchData data, HexGraph graph) {
 		this.player = player;
 		this.id = id;
 		this.data = data;
 		this.graph = graph;
-	}
-
-	public final boolean unlocked() {
-		return data.cost() > LOCKED;
+		this.def = def;
 	}
 
 	public final int getCost() {
 		return data.cost();
-	}
-
-	public final void setUnlock() {
-		if (!unlocked()) {
-			data.setCost(UNLOCKED);
-		}
 	}
 
 	public void updateBestSolution(HexHandler hex, HexOrder data, int cost) {
@@ -53,11 +45,15 @@ public class SpellResearch {
 	}
 
 	public ResearchState getState() {
-		return switch (data.cost()) {
-			case LOCKED -> ResearchState.LOCKED;
-			case UNLOCKED -> ResearchState.UNLOCKED;
-			default -> ResearchState.COMPLETED;
-		};
+		if (usable()) return ResearchState.COMPLETED;
+		var par = def.parent();
+		if (par != null) {
+			var parent = player.get(par.getId());
+			if (parent == null || !parent.usable()) {
+				return ResearchState.LOCKED;
+			}
+		}
+		return ResearchState.UNLOCKED;
 	}
 
 	public boolean visible() {

@@ -5,9 +5,9 @@ import javax.annotation.Nullable;
 public class CellResult extends LocateResult {
 
 	private final int row, cell;
-	private final HexHandler hex;
+	private final AbstractHex hex;
 
-	CellResult(int row, int cell, HexHandler hex) {
+	CellResult(int row, int cell, AbstractHex hex) {
 		this.row = row;
 		this.cell = cell;
 		this.hex = hex;

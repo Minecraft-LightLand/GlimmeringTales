@@ -28,7 +28,7 @@ public class HexRenderUtil {
 	static int offset;
 	static boolean focus = false;
 
-	static void common_end() {
+	public static void common_end() {
 		var ans = builder.build();
 		if (ans != null) BufferUploader.drawWithShader(ans);
 		ca = 1;
@@ -113,7 +113,7 @@ public class HexRenderUtil {
 
 	//--- path ---
 
-	static void path_start(GuiGraphics g, double w, double l, double radius, float t) {
+	public static void path_start(GuiGraphics g, double w, double l, double radius, float t) {
 		if (op != null) throw new RuntimeException("op is " + op + ", expected null");
 		op = Op.PATH;
 		last = g.pose().last().pose();
@@ -140,7 +140,7 @@ public class HexRenderUtil {
 		}
 	}
 
-	static void path(double x, double y, int dire, int color) {
+	public static void path(double x, double y, int dire, int color) {
 		if (op != Op.PATH) throw new RuntimeException("op is " + op + ", expected PATH");
 		double a = dire * Math.PI / 3;
 		cx = (float) (x + r * Math.cos(a) / 2);
@@ -199,7 +199,7 @@ public class HexRenderUtil {
 
 	// --- hex ---
 
-	static void hex_start(GuiGraphics g) {
+	public static void hex_start(GuiGraphics g) {
 		if (op != null) throw new RuntimeException("op is " + op + ", expected null");
 		op = Op.HEX;
 		last = g.pose().last().pose();
@@ -207,7 +207,7 @@ public class HexRenderUtil {
 		builder = Tesselator.getInstance().begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
 	}
 
-	static void hex(double xpos, double ypos, double radius, int color) {
+	public static void hex(double xpos, double ypos, double radius, int color) {
 		if (op != Op.HEX) throw new RuntimeException("op is " + op + ", expected HEX");
 		cr = (float) (color >> 16 & 255) / 255.0F;
 		cg = (float) (color >> 8 & 255) / 255.0F;

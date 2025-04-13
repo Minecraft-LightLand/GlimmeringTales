@@ -1,10 +1,14 @@
 package dev.xkmc.glimmeringtales.content.research.render;
 
+import com.mojang.blaze3d.platform.Lighting;
+import com.mojang.blaze3d.systems.RenderSystem;
 import dev.xkmc.l2itemselector.overlay.OverlayUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.renderer.block.model.BlockModel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 
 import java.util.List;
 
@@ -15,6 +19,14 @@ public class AbstractHexGui {
 		g.pose().translate(x, y, 0);
 		g.pose().scale(scale, scale, 0);
 		g.blitSprite(id, -8, -8, 16, 16);
+		g.pose().popPose();
+	}
+
+	public static void drawItem(GuiGraphics g, Item item, double x, double y, float scale) {
+		g.pose().pushPose();
+		g.pose().translate(x, y, 0);
+		g.pose().scale(scale, scale, 1);
+		g.renderItem(item.getDefaultInstance(), -8, -8);
 		g.pose().popPose();
 	}
 

@@ -3,17 +3,13 @@ package dev.xkmc.glimmeringtales.content.research.logic;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 
-public class HexHandler {
+public class HexHandler extends AbstractHex {
 
 	public record Data(byte[] data, byte[] subs, ArrayList<Data> cores) {
 
 	}
 
-	private record HalfResult(int row, int cell) {
-	}
-
 	public static final int CORE_LIMIT = 6;
-	public static final double WIDTH = 2, HEIGHT = Math.sqrt(3);
 	public final int radius;
 	public final SubHex[] subhex;
 	public final SubHexCore[] cores;
@@ -64,7 +60,7 @@ public class HexHandler {
 			}
 	}
 
-	private static HalfResult getCoordinate(double x, double y) {
+	private static HexHalfResult getCoordinate(double x, double y) {
 		// row number relative to center in rectangular grid
 		int row = (int) Math.floor(y / HEIGHT + 0.5);
 		// relative y coordinate of the point in rectangular grid
@@ -87,8 +83,9 @@ public class HexHandler {
 			cell += dire.getCellOffset(0, row, cell);
 			row += dire.getRowOffset();
 		}
-		return new HalfResult(row, cell);
+		return new HexHalfResult(row, cell);
 	}
+
 
 	/**
 	 * get the total cell count of the hexagon
@@ -103,13 +100,13 @@ public class HexHandler {
 
 	@Nullable
 	public CellResult getCellOnHex(double x, double y) {
-		HalfResult pos = getCoordinate(x, y);
+		HexHalfResult pos = getCoordinate(x, y);
 		return CellResult.get(pos.row() + radius, pos.cell() + radius, this);
 	}
 
 	@Nullable
 	public LocateResult getElementOnHex(double x, double y) {
-		HalfResult pos = getCoordinate(x * 2, y * 2);
+		HexHalfResult pos = getCoordinate(x * 2, y * 2);
 		int trow = Math.floorDiv(pos.row(), 2) + radius;
 		int tcel = Math.floorDiv(pos.cell(), 2) + radius;
 		if (pos.row() % 2 == 0 && pos.cell() % 2 == 0)

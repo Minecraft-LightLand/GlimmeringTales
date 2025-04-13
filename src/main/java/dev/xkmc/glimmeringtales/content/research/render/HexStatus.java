@@ -1,6 +1,8 @@
 package dev.xkmc.glimmeringtales.content.research.render;
 
 import dev.xkmc.glimmeringtales.content.research.core.PlayerResearch;
+import dev.xkmc.glimmeringtales.content.research.tree.ResearchTree;
+import dev.xkmc.glimmeringtales.content.research.tree.ResearchTreeScreen;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -55,7 +57,10 @@ public class HexStatus {
 	public static void openEditor(Player player, ResourceLocation id) {
 		var data = PlayerResearch.of(player);
 		var research = data.get(id);
-		if (research == null) return;
+		if (research == null) {
+			Minecraft.getInstance().setScreen(new ResearchTreeScreen(new ResearchTree(player, data)));
+			return;
+		}
 		Minecraft.getInstance().setScreen(new MagicHexScreen(research));
 	}
 
