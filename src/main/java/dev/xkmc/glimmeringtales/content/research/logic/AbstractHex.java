@@ -7,7 +7,7 @@ public abstract class AbstractHex {
 	/**
 	 * get the X position of a cell relative to the center
 	 */
-	public abstract double getX(int row, int cell) ;
+	public abstract double getX(int row, int cell);
 
 	/**
 	 * get the Y position of a cell relative to the center

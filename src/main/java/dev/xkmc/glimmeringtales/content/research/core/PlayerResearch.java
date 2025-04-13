@@ -57,7 +57,7 @@ public class PlayerResearch {
 		if (graph == null) return null;
 		if (dat == null) dat = ResearchData.create(graph.map().size());
 		var map = HexGraph.create(id, graph.map(), graph.flows());
-		SpellResearch ans = new SpellResearch(this, graph,id, dat, map);
+		SpellResearch ans = new SpellResearch(this, graph, id, dat, map);
 		cache.put(id, ans);
 		return ans;
 	}

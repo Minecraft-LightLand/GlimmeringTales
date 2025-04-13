@@ -8,7 +8,6 @@ import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.GTDamageTypeGen;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
-import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
 import dev.xkmc.glimmeringtales.init.data.spell.snow.IceSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;

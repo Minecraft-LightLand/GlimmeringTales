@@ -6,7 +6,6 @@ import dev.xkmc.glimmeringtales.content.engine.particle.FarParticleRenderData;
 import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.glimmeringtales.init.data.spell.NatureSpellBuilder;
-import dev.xkmc.glimmeringtales.init.data.spell.earth.GravelSpells;
 import dev.xkmc.glimmeringtales.init.data.spell.thunder.ThunderSpells;
 import dev.xkmc.glimmeringtales.init.reg.GTItems;
 import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
