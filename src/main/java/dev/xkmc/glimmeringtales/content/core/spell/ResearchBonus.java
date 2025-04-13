@@ -35,7 +35,7 @@ public record ResearchBonus(
 	}
 
 	public static ArrayList<ResearchBonus> mid4(int c4) {
-		return simple4(300, 150, 80, c4, 0.7, 0.7, 0.5, 0.5);
+		return simple4(300, 150, c4 + 16, c4, 0.7, 0.7, 0.5, 0.5);
 	}
 
 	public static ArrayList<ResearchBonus> small4(int c4) {

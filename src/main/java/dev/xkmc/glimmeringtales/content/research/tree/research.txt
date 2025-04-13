@@ -33,7 +33,7 @@ A<->BCD         Thunder                             E2              18
 AB<->CDE        Ocean Shelter                       E2-1            21
 A(BC)(DEF)&     Snow Tornado                        E3              23
 A(BCD)(EF)&     Illusory Field                      E3-1            27
-ABC<->DEF       Icy Flash                           E3-2            42
+ABC<->DEF       Icy Flash                           E3-2            38
 A<->BCDEF       Meteor                              E4              35
 
 ABCDE|          Charge Burst                        F1              47
@@ -44,7 +44,7 @@ ABCDEF|         Thunderstorm                        F4              121
 
 
 
-ooo-ooo-oooo-oo3-ooxx-xx
-  o  ox xoxx  x  oxx  2
+ooo-ooo-oooo-oo3-ooxx-xxxx
+  o  ox xoxx  x  oxx
   o  o     x       x
   x
