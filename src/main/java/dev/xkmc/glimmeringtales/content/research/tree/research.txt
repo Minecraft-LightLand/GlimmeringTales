@@ -25,7 +25,9 @@ A=BC=DE=F       Lava Melt                           C4-2            26
 A->BCDE         Snow                                D1              10
 A<->BCDE        Powder Snow                         D2              21
 (AB)(CD)(EF)&   Snow Storm                          D2-1            21
-AB<->CDEF       Ice 3                               D3              24
+AB<->CDEF       Ice                                 D3              24
+AB->(CD<->EF)   Packed Ice                          D3-1            24
+(AB)(CD)(EF)|   Blue Ice                            D3-2            31
 
 A->BCD          Coral                               E1              12
 A->BCD, BC->D   Sponge                              E1-1            18
@@ -44,7 +46,7 @@ ABCDEF|         Thunderstorm                        F4              121
 
 
 
-ooo-ooo-oooo-oo3-ooxx-xxxx
-  o  ox xoxx  x  oxx
-  o  o     x       x
+ooo-ooo-oooo-ooo-ooxx-xxxx
+  o  ox xoxx  xo oxx
+  o  o     x   o   x
   x

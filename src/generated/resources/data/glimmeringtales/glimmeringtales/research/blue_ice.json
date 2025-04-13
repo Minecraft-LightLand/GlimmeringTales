@@ -1,6 +1,8 @@
 {
   "flows": [
-    "T<->LEFSO"
+    "ST->LEFO",
+    "LE->STFO",
+    "FO->STLE"
   ],
   "map": {
     "E": "glimmeringtales:earth",
@@ -12,22 +14,22 @@
   },
   "bonuses": [
     {
-      "cost": 150,
+      "cost": 100,
       "focusBonus": 1.0,
       "manaBonus": 0.7
     },
     {
-      "cost": 80,
+      "cost": 50,
       "focusBonus": 1.0,
       "manaBonus": 0.7
     },
     {
-      "cost": 60,
+      "cost": 36,
       "focusBonus": 0.5,
       "manaBonus": 1.0
     },
     {
-      "cost": 35,
+      "cost": 31,
       "focusBonus": 0.5,
       "manaBonus": 1.0
     }

@@ -182,6 +182,11 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 	 */
 	public NatureSpellBuilder graph(ArrayList<ResearchBonus> bonus, String... strs) {
 		this.graph = graph(id);
+		int prev = Integer.MAX_VALUE;
+		for (var e : bonus) {
+			if (e.cost() > prev) throw new IllegalArgumentException("Illegal cost for " + id);
+			prev = e.cost();
+		}
 		this.graphFactory = () -> {
 			LinkedHashMap<String, SpellElement> map = new LinkedHashMap<>();
 			for (var s : strs) {

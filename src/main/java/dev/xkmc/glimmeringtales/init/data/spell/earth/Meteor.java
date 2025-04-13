@@ -47,7 +47,7 @@ public class Meteor {
 					"[Ranged] Create a meteor falling at target",
 					"Create a meteor falling slowly, dealing %s on impact",
 					SpellTooltipData.damage()
-			).graph(ResearchBonus.small4(35), "T<->LEFSO");
+			).graph(ResearchBonus.base4(150, 80, 60, 35), "T<->LEFSO");
 
 	private static ProjectileConfig proj(NatureSpellBuilder ctx) {
 		return ProjectileConfig.builder(SelectionType.ALL)
