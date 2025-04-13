@@ -143,15 +143,15 @@ public class GravelSpells {
 				new DelayedIterator(IntVariable.of("22"), IntVariable.of("2"), tick)
 		)).move(OffsetModifier.ABOVE)
 				.mobCastDelay(new RingRandomIterator(
-				DoubleVariable.ZERO, DoubleVariable.of("3"),
-				IntVariable.of("256"),
-				new DustParticleInstance(
-						ColorVariable.Static.of(0x807C7A),
-						DoubleVariable.of("0.5"),
-						DoubleVariable.ZERO,
-						IntVariable.of("20")
-				)
-		).move(OffsetModifier.of("0", "0.7", "0"), new Dir2NormalModifier()));
+						DoubleVariable.ZERO, DoubleVariable.of("3"),
+						IntVariable.of("256"),
+						new DustParticleInstance(
+								ColorVariable.Static.of(0x807C7A),
+								DoubleVariable.of("0.5"),
+								DoubleVariable.ZERO,
+								IntVariable.of("20")
+						)
+				).move(OffsetModifier.of("0", "0.7", "0"), new Dir2NormalModifier()));
 	}
 
 

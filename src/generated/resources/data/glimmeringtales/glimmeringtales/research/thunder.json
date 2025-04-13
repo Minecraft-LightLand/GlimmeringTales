@@ -2,6 +2,7 @@
   "flows": [
     "T<->SFO"
   ],
+  "icon": "glimmeringtales:thunder",
   "map": {
     "F": "glimmeringtales:flame",
     "O": "glimmeringtales:ocean",

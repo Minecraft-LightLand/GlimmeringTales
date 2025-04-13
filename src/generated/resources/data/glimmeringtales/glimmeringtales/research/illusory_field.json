@@ -4,6 +4,7 @@
     "LET->FS",
     "FS->O"
   ],
+  "icon": "glimmeringtales:illusory_field",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

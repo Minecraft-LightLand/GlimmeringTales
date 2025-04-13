@@ -2,6 +2,7 @@
   "flows": [
     "S<->LEFO"
   ],
+  "icon": "glimmeringtales:powder_snow",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

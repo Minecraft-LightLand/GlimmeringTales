@@ -18,7 +18,6 @@ import dev.xkmc.l2magic.content.engine.modifier.OffsetModifier;
 import dev.xkmc.l2magic.content.engine.modifier.RotationModifier;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -32,8 +31,8 @@ public class StoneBridge {
 
 	public static final NatureSpellBuilder BUILDER = GTRegistries.EARTH
 			.build(GlimmeringTales.loc("stone_bridge")).focusAndCost(40, 120)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.STONE_BRIDGE.get(),
-					2000, SpellCastType.INSTANT, SpellTriggerType.HORIZONTAL_FACING)
+			.spell(StoneBridge::gen, GTItems.STONE_BRIDGE,
+					SpellCastType.INSTANT, SpellTriggerType.HORIZONTAL_FACING
 			).lang("Stone Bridge").desc(
 					"[Forward] Create a temporary stone bridge",
 					"Create a stone bridge extending forward lasting for 10 seconds",

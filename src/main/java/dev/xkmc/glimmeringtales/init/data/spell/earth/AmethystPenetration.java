@@ -28,7 +28,6 @@ import dev.xkmc.l2magic.content.engine.processor.ProjectileHitEntityProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.ColorVariable;
@@ -56,8 +55,8 @@ public class AmethystPenetration {
 					"%s is pierced by %s with amethyst shards",
 					DamageTypeTags.IS_PROJECTILE)
 			.projectile(AmethystPenetration::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.AMETHYST_PENETRATION.get(),
-					2000, SpellCastType.INSTANT, SpellTriggerType.FACING_FRONT))
+			.spell(AmethystPenetration::gen, GTItems.AMETHYST_PENETRATION,
+					SpellCastType.INSTANT, SpellTriggerType.FACING_FRONT)
 			.lang("Amethyst Penetration").desc(
 					"[Forward] Shoot several amethyst shards forward",
 					"Shoot amethyst shards in a fan area in front of you, dealing %s and stack %s",

@@ -3,6 +3,7 @@
     "O->EF",
     "EF->L"
   ],
+  "icon": "glimmeringtales:hay_bale",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

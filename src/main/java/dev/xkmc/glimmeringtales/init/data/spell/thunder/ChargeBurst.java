@@ -24,7 +24,6 @@ import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
 import dev.xkmc.l2magic.content.engine.selector.BoxSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -52,8 +51,8 @@ public class ChargeBurst {
 					"%s is electrocuted by %s with charge burst",
 					DamageTypeTags.IS_LIGHTNING)
 			.projectile(ChargeBurst::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.CHARGE_BURST.get(), 2002,
-					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS, cond(ctx))
+			.spell(ChargeBurst::gen, GTItems.CHARGE_BURST,
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS, ChargeBurst::cond
 			).lang("Charge Burst").desc(
 					"[Ranged] Create a lightning strike and charge spikes around it",
 					"Create a lightning strike on target position, inflicting %s multiple times, then create charge spikes on the ground around it, inflicting %s",

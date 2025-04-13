@@ -45,6 +45,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:meteor",
-  "order": 2010,
+  "order": 1026,
   "trigger_type": "TARGET_POS"
 }

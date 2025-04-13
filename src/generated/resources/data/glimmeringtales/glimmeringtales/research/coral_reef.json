@@ -2,6 +2,7 @@
   "flows": [
     "O->LSF"
   ],
+  "icon": "glimmeringtales:coral_reef",
   "map": {
     "F": "glimmeringtales:flame",
     "L": "glimmeringtales:life",

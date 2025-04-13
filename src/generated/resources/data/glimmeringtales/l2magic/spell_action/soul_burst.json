@@ -85,6 +85,6 @@
   },
   "cast_type": "CONTINUOUS",
   "icon": "glimmeringtales:soul_burst",
-  "order": 2000,
+  "order": 1031,
   "trigger_type": "FACING_FRONT"
 }

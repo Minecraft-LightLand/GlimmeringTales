@@ -3,6 +3,7 @@
     "ST->LEFO",
     "LE<->FO"
   ],
+  "icon": "glimmeringtales:packed_ice",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

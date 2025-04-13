@@ -3,6 +3,7 @@
     "O->E",
     "E->L"
   ],
+  "icon": "glimmeringtales:bamboo",
   "map": {
     "E": "glimmeringtales:earth",
     "L": "glimmeringtales:life",

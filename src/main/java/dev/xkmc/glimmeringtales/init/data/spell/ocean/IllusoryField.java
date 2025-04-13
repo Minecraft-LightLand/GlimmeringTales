@@ -28,7 +28,6 @@ import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
 import dev.xkmc.l2magic.content.engine.selector.BoxSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
@@ -58,8 +57,8 @@ public class IllusoryField {
 					"%s is drowned by %s with magical bubbles",
 					GTDamageTypeGen.magic())
 			.projectile(IllusoryField::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.ILLUSORY_FIELD.get(),
-					2000, SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))
+			.spell(IllusoryField::gen, GTItems.ILLUSORY_FIELD,
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
 			.lang("Illusory Field").desc(
 					"[Ranged] Create bubbles that hurt enemies and heal allies",
 					"Create bubbles emerging from ground lasting 5 seconds. To enemies, deals %s and inflicts %s. To allies, %s and gives %s",

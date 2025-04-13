@@ -12,9 +12,6 @@ import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.entity.LivingEntity;
-
-import java.util.Collection;
 
 public record StackingEffectProcessor(
 		Holder<MobEffect> eff,

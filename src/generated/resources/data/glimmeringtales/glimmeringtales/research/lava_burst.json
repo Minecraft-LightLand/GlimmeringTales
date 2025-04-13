@@ -4,6 +4,7 @@
     "SF<->OT",
     "OT<->L"
   ],
+  "icon": "glimmeringtales:lava_burst",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

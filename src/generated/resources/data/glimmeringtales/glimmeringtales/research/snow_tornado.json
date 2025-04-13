@@ -4,6 +4,7 @@
     "OT->LEF",
     "LEF->S"
   ],
+  "icon": "glimmeringtales:snow_tornado",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

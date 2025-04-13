@@ -5,6 +5,7 @@
     "E->S",
     "T->F"
   ],
+  "icon": "glimmeringtales:soul_sand",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

@@ -22,7 +22,6 @@ import dev.xkmc.l2magic.content.engine.selector.ApproxCylinderSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.selector.SelfSelector;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -37,8 +36,8 @@ public class IcyFlash {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("icy_flash")).focusAndCost(60, 360)
 			.damageExplosion()
-			.spell(e -> new SpellAction(icyFlash(e), GTItems.ICY_FLASH.get(), 2010,
-					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))
+			.spell(IcyFlash::icyFlash, GTItems.ICY_FLASH,
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
 			.lang("Icy Flash").desc(
 					"[Range] Teleport to target and deal damage",
 					"Teleport to target position, dealing %s to surrounding enemies, and inflict %s",

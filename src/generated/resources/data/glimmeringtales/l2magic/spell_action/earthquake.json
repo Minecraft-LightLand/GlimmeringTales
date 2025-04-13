@@ -165,6 +165,6 @@
     "variable": "i"
   },
   "icon": "glimmeringtales:earthquake",
-  "order": 2000,
+  "order": 1025,
   "trigger_type": "SELF_POS"
 }

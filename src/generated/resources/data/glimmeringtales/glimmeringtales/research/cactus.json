@@ -3,6 +3,7 @@
     "O->E",
     "E->LS"
   ],
+  "icon": "glimmeringtales:cactus",
   "map": {
     "E": "glimmeringtales:earth",
     "L": "glimmeringtales:life",

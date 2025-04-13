@@ -6,6 +6,7 @@
     "F<->S",
     "L<->T"
   ],
+  "icon": "glimmeringtales:soul_burst",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

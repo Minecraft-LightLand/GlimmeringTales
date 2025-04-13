@@ -2,6 +2,7 @@
   "flows": [
     "LEO<->FST"
   ],
+  "icon": "glimmeringtales:icy_flash",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

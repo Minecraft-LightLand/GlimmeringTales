@@ -21,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.processor.PushProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.selector.SelfSelector;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
@@ -36,8 +35,8 @@ public class FlameDash {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.FLAME
 			.build(GlimmeringTales.loc("flame_dash")).focusAndCost(1, 5)
 			.damageFire()
-			.spell(e -> new SpellAction(flameCharge(e), GTItems.FLAME_DASH.get(), 2010,
-					SpellCastType.CHARGE, SpellTriggerType.FACING_FRONT))
+			.spell(FlameDash::flameCharge, GTItems.FLAME_DASH,
+					SpellCastType.CHARGE, SpellTriggerType.FACING_FRONT)
 			.lang("Flame Dash").desc(
 					"[Charge] Charge and launch yourself as a rolling flame ball",
 					"Charge, and then enter flame dashing mode for the same duration as you charged, move forward and knock off enemies, dealing %s",

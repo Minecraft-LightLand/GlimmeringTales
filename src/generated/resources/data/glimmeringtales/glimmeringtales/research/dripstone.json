@@ -5,6 +5,7 @@
     "L->O",
     "O->T"
   ],
+  "icon": "glimmeringtales:dripstone",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

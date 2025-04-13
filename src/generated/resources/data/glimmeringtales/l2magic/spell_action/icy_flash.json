@@ -86,6 +86,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:icy_flash",
-  "order": 2010,
+  "order": 1034,
   "trigger_type": "TARGET_POS"
 }

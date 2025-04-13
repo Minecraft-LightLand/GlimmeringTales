@@ -23,7 +23,6 @@ import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
 import dev.xkmc.l2magic.content.engine.processor.ProjectileHitEntityProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
@@ -54,8 +53,8 @@ public class SoulBurst {
 					"%s is blazed by ghosts", "%s is blazed by ghosts summoned by %s",
 					GTDamageTypeGen.magic(DamageTypeTags.IS_FIRE, DamageTypeTags.BYPASSES_COOLDOWN))
 			.projectile(SoulBurst::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.SOUL_BURST.get(),
-					2000, SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT))
+			.spell(SoulBurst::gen, GTItems.SOUL_BURST,
+					SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT)
 			.lang("Soul Burst").desc(
 					"[Continuous] Shoot soul sparks that hurts and ignite enemies",
 					"Continuously shoot soul sparks forward, deal %s and inflict %s",

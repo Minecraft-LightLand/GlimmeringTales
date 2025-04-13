@@ -4,6 +4,7 @@
     "SF->LO",
     "LO->E"
   ],
+  "icon": "glimmeringtales:netherrack",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

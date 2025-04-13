@@ -4,6 +4,7 @@
     "S->F",
     "F->E"
   ],
+  "icon": "glimmeringtales:gravel",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

@@ -31,6 +31,6 @@
   },
   "cast_type": "CONTINUOUS",
   "icon": "glimmeringtales:ocean_shelter",
-  "order": 2000,
+  "order": 1035,
   "trigger_type": "FACING_FRONT"
 }

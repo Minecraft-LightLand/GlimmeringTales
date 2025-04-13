@@ -5,6 +5,7 @@
     "S->LE",
     "LE->F"
   ],
+  "icon": "glimmeringtales:flame_dash",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

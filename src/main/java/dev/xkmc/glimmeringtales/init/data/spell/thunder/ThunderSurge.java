@@ -16,7 +16,6 @@ import dev.xkmc.l2magic.content.engine.particle.SimpleParticleInstance;
 import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;
 import dev.xkmc.l2magic.content.engine.predicate.BlockTestCondition;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -32,8 +31,8 @@ public class ThunderSurge {
 			.build(GlimmeringTales.loc("thunder_surge")).focusAndCost(160, 1280)
 			.mob(32, 0.3, 0, 20)
 			.grounded()
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.THUNDER_SURGE.get(), 2002,
-					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS, cond(ctx))
+			.spell(ThunderSurge::gen, GTItems.THUNDER_SURGE,
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS, ThunderSurge::cond
 			).lang("Thunder Surge").desc(
 					"[Ranged] Create dense lightning strikes",
 					"Create a series of lightning strikes on ground around target position, inflicting %s multiple times",

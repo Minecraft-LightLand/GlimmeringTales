@@ -4,6 +4,7 @@
     "LE->OT",
     "OT->SF"
   ],
+  "icon": "glimmeringtales:winter_storm",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

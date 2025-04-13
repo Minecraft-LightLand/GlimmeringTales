@@ -4,6 +4,7 @@
     "LE->STFO",
     "FO->STLE"
   ],
+  "icon": "glimmeringtales:blue_ice",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

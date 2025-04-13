@@ -18,7 +18,6 @@ import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.processor.EffectProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -43,8 +42,8 @@ public class DarkRain {
 					"%s is cursed by dark rain", "%s is cursed by %s's dark rain",
 					GTDamageTypeGen.magic())
 			.projectile(DarkRain::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.DARK_RAIN.get(),
-					2000, SpellCastType.CONTINUOUS, SpellTriggerType.TARGET_POS))
+			.spell(DarkRain::gen, GTItems.DARK_RAIN,
+					SpellCastType.CONTINUOUS, SpellTriggerType.TARGET_POS)
 			.lang("Dark Rain").desc(
 					"[Continuous] Create rain that hurt and curse enemies",
 					"Create droplet falling from sky, dealing %s and inflicts %s",

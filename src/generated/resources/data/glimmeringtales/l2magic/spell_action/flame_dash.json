@@ -133,6 +133,6 @@
   },
   "cast_type": "CHARGE",
   "icon": "glimmeringtales:flame_dash",
-  "order": 2010,
+  "order": 1029,
   "trigger_type": "FACING_FRONT"
 }

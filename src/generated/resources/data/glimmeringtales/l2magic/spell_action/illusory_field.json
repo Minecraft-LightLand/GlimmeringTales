@@ -95,6 +95,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:illusory_field",
-  "order": 2000,
+  "order": 1036,
   "trigger_type": "TARGET_POS"
 }

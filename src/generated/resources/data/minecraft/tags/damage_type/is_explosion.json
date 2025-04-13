@@ -1,9 +1,9 @@
 {
   "values": [
-    "glimmeringtales:lava_burst",
-    "glimmeringtales:icy_flash",
     "glimmeringtales:earthquake",
     "glimmeringtales:meteor",
+    "glimmeringtales:lava_burst",
+    "glimmeringtales:icy_flash",
     "glimmeringtales:earthquake-bypass_magic",
     "glimmeringtales:earthquake-bypass_cooldown",
     "glimmeringtales:earthquake-bypass_cooldown-bypass_magic",

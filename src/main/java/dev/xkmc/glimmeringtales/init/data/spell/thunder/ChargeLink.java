@@ -20,7 +20,6 @@ import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -46,8 +45,8 @@ public class ChargeLink {
 					"%s is electrocuted by %s with charge link",
 					DamageTypeTags.IS_LIGHTNING)
 			.projectile(ChargeLink::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.CHARGE_LINK.get(), 2002,
-					SpellCastType.INSTANT, SpellTriggerType.FACING_FRONT)
+			.spell(ChargeLink::gen, GTItems.CHARGE_LINK,
+					SpellCastType.INSTANT, SpellTriggerType.FACING_FRONT
 			).lang("Charge Link").desc(
 					"[Ranged] Work in Progress",//TODO
 					" Work in Progress",//TODO

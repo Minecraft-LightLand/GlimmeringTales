@@ -71,6 +71,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:thunderstorm",
-  "order": 2002,
+  "order": 1038,
   "trigger_type": "TARGET_POS"
 }

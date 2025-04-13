@@ -56,6 +56,10 @@ public class NatureSpellGenRegistry {
 
 		// advanced
 		LIST.addAll(List.of(
+				StoneBridge.BUILDER,
+				AmethystPenetration.BUILDER,
+				Earthquake.BUILDER,
+				Meteor.BUILDER,
 				FlamePentagram.HELL_MARK,
 				FlamePentagram.LAVA_BURST,
 				FlameDash.BUILDER,
@@ -64,10 +68,6 @@ public class NatureSpellGenRegistry {
 				SnowStorm.WINTER_STORM,
 				SnowStorm.SNOW_TORNADO,
 				IcyFlash.BUILDER,
-				StoneBridge.BUILDER,
-				AmethystPenetration.BUILDER,
-				Earthquake.BUILDER,
-				Meteor.BUILDER,
 				OceanShelter.BUILDER,
 				IllusoryField.BUILDER,
 				DarkRain.BUILDER,

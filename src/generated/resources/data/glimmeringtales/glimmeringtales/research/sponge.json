@@ -3,6 +3,7 @@
     "O->LSF",
     "LS->F"
   ],
+  "icon": "glimmeringtales:sponge",
   "map": {
     "F": "glimmeringtales:flame",
     "L": "glimmeringtales:life",

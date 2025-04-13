@@ -131,6 +131,6 @@
     "range": "3"
   },
   "icon": "glimmeringtales:charge_burst",
-  "order": 2002,
+  "order": 1039,
   "trigger_type": "TARGET_POS"
 }

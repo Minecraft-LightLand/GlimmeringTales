@@ -2,6 +2,7 @@
   "flows": [
     "LEF|"
   ],
+  "icon": "glimmeringtales:stone_bridge",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

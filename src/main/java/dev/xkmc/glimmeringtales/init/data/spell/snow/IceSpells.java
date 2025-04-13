@@ -83,7 +83,7 @@ public class IceSpells {
 					"[Block] Freeze nearby water and entity",
 					"Freeze water / flowing water into frost ice, then inflict %s and %s to enemies in range",
 					SpellTooltipData.damageAndEffect()
-			).graph(ResearchBonus.base4(100, 50, 36, 31), "ST->LEFO", "LE->STFO","FO->STLE");
+			).graph(ResearchBonus.base4(100, 50, 36, 31), "ST->LEFO", "LE->STFO", "FO->STLE");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx, DoubleVariable dmg, IntVariable dur, String range, String height) {
 		return new ListLogic(List.of(

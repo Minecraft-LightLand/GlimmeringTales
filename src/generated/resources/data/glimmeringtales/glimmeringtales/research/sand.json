@@ -2,6 +2,7 @@
   "flows": [
     "E->SF"
   ],
+  "icon": "glimmeringtales:sand",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

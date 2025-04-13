@@ -46,6 +46,6 @@
   },
   "cast_type": "CONTINUOUS",
   "icon": "glimmeringtales:dark_rain",
-  "order": 2000,
+  "order": 1037,
   "trigger_type": "TARGET_POS"
 }

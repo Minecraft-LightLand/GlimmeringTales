@@ -25,7 +25,6 @@ import dev.xkmc.l2magic.content.engine.processor.PushProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxCylinderSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
@@ -43,10 +42,9 @@ public class FlamePentagram {
 			.build(GlimmeringTales.loc("hell_mark")).focusAndCost(100, 500)
 			.mob(16, 0.7, 0, 20)
 			.damageFire()
-			.spell(ctx -> new SpellAction(flameBurst(ctx),
-					GTItems.HELL_MARK.asItem(), 200,
+			.spell(FlamePentagram::flameBurst, GTItems.HELL_MARK,
 					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS
-			)).lang("Hell Mark").desc(
+			).lang("Hell Mark").desc(
 					"[Ranged] Form a flame circle",
 					"Create a pentagram on target position and inflict %s to enemies within",
 					SpellTooltipData.damage()
@@ -56,10 +54,9 @@ public class FlamePentagram {
 			.build(GlimmeringTales.loc("lava_burst")).focusAndCost(4, 20, 30)
 			.mob(12, 0.5, 20, 0)
 			.damageExplosion()
-			.spell(ctx -> new SpellAction(earthquake(ctx),
-					GTItems.LAVA_BURST.asItem(), 300,
+			.spell(FlamePentagram::earthquake, GTItems.LAVA_BURST,
 					SpellCastType.CHARGE, SpellTriggerType.HORIZONTAL_FACING
-			)).lang("Lava Burst").desc(
+			).lang("Lava Burst").desc(
 					"[Charge] Cause several bursts in the front",
 					"Charge attack: create up to 3 arcs of pentagram marks in front of you and inflict %s to enemies within.",
 					SpellTooltipData.damage()

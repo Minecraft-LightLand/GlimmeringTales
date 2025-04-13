@@ -10,11 +10,8 @@ import dev.xkmc.l2magic.content.engine.processor.SimpleServerProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectedEntities;
 import dev.xkmc.l2magic.content.engine.variable.IntVariable;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
-
-import java.util.Collection;
 
 import static net.minecraft.world.entity.AgeableMob.getSpeedUpSecondsWhenFeeding;
 

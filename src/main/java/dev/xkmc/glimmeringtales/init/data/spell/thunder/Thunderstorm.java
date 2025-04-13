@@ -17,7 +17,6 @@ import dev.xkmc.l2magic.content.engine.processor.CastAtProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxCylinderSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -32,8 +31,8 @@ public class Thunderstorm {
 	public static final NatureSpellBuilder BUILDER = GTRegistries.THUNDER
 			.build(GlimmeringTales.loc("thunderstorm")).focusAndCost(120, 960)
 			.mob(32, 0.3, 0, 20)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.THUNDERSTORM.get(), 2002,
-					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
+			.spell(Thunderstorm::gen, GTItems.THUNDERSTORM,
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS
 			).lang("Thunderstorm").desc(
 					"[Ranged] Create a thunderstorm striking entities",
 					"Create a lightning strike on all entities in target area, inflicting %s multiple times",

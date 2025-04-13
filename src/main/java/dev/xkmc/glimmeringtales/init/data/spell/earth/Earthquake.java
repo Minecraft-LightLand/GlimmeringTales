@@ -21,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.processor.DamageProcessor;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
@@ -43,8 +42,8 @@ public class Earthquake {
 			.damageCustom(e -> new DamageType(e, 0.1f),
 					"%s is killed by earthquake", "%s is killed by %s using earthquake",
 					DamageTypeTags.IS_EXPLOSION
-			).spell(ctx -> new SpellAction(gen(ctx), GTItems.EARTHQUAKE.get(),
-					2000, SpellCastType.INSTANT, SpellTriggerType.SELF_POS, cond(ctx))
+			).spell(Earthquake::gen, GTItems.EARTHQUAKE,
+					SpellCastType.INSTANT, SpellTriggerType.SELF_POS, Earthquake::cond
 			).lang("Earthquake").desc(
 					"[Surrounding] Shake the ground and throw blocks into air",
 					"Create earthquake dealing dealing %s, then throw blocks around you into the air that deals %s on fall",

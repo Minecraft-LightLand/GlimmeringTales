@@ -2,6 +2,7 @@
   "flows": [
     "EFST|"
   ],
+  "icon": "glimmeringtales:spark_burst",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

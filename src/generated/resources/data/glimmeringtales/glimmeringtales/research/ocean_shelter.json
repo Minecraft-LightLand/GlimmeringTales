@@ -2,6 +2,7 @@
   "flows": [
     "OS<->LET"
   ],
+  "icon": "glimmeringtales:ocean_shelter",
   "map": {
     "E": "glimmeringtales:earth",
     "L": "glimmeringtales:life",

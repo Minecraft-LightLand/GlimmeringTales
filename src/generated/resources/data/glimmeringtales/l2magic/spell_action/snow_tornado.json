@@ -134,6 +134,6 @@
   },
   "cast_type": "CONTINUOUS",
   "icon": "glimmeringtales:snow_tornado",
-  "order": 100,
+  "order": 1033,
   "trigger_type": "FACING_FRONT"
 }

@@ -24,7 +24,6 @@ import dev.xkmc.l2magic.content.engine.selector.ArcCubeSelector;
 import dev.xkmc.l2magic.content.engine.selector.LinearCubeSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
@@ -45,10 +44,9 @@ public class SnowStorm {
 	public static final NatureSpellBuilder WINTER_STORM = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("winter_storm")).focusAndCost(2, 6).damageFreeze()
 			.mob(5, 0.5, 100, 0)
-			.spell(ctx -> new SpellAction(winterStorm(ctx, 4, 1.5, 1),
-					GTItems.WINTER_STORM.asItem(), 100,
+			.spell(ctx -> winterStorm(ctx, 4, 1.5, 1), GTItems.WINTER_STORM,
 					SpellCastType.CONTINUOUS, SpellTriggerType.SELF_POS
-			)).lang("Winter Storm").desc(
+			).lang("Winter Storm").desc(
 					"[Continuous] Create a circle of storm",
 					"Continuous Attack: Create a circle of storm, dealing %s, inflict %s, and push enemies away",
 					SpellTooltipData.damageAndEffect()
@@ -57,10 +55,9 @@ public class SnowStorm {
 	public static final NatureSpellBuilder SNOW_TORNADO = GTRegistries.SNOW
 			.build(GlimmeringTales.loc("snow_tornado")).focusAndCost(1, 5).damageFreeze()
 			.mob(6, 0.5, 100, 0)
-			.spell(ctx -> new SpellAction(tornado(ctx),
-					GTItems.SNOW_TORNADO.asItem(), 100,
+			.spell(SnowStorm::tornado, GTItems.SNOW_TORNADO,
 					SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT
-			)).lang("Snow Tornado").desc(
+			).lang("Snow Tornado").desc(
 					"[Continuous] Create a circle of storm",
 					"Continuous Attack: Create snow tornado in front of you, dealing %s and inflict %s",
 					SpellTooltipData.damageAndEffect()

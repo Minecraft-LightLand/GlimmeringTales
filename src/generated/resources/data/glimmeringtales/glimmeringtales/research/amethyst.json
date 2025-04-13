@@ -4,6 +4,7 @@
     "SF->L",
     "L->E"
   ],
+  "icon": "glimmeringtales:amethyst",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

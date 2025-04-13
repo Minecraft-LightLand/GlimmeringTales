@@ -16,6 +16,7 @@ import dev.xkmc.l2magic.content.engine.context.DataGenContext;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
 import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.spell.SpellAction;
+import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.entity.core.ProjectileConfig;
 import dev.xkmc.l2magic.init.data.DataGenCachedHolder;
@@ -110,11 +111,27 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 		return this;
 	}
 
-	public NatureSpellBuilder spell(Function<NatureSpellBuilder, SpellAction> factory) {
+	public NatureSpellBuilder spell(
+			Function<NatureSpellBuilder, ConfiguredEngine<?>> factory,
+			ItemLike icon,
+			SpellCastType cast, SpellTriggerType trigger) {
 		spell = spell(id);
-		this.spellFactory = factory;
+		this.icon = icon;
+		this.spellFactory = e -> new SpellAction(factory.apply(e), icon.asItem(), getOrder(), cast, trigger);
 		return this;
 	}
+
+	public NatureSpellBuilder spell(
+			Function<NatureSpellBuilder, ConfiguredEngine<?>> factory,
+			ItemLike icon,
+			SpellCastType cast, SpellTriggerType trigger,
+			Function<NatureSpellBuilder, IPredicate> pred) {
+		spell = spell(id);
+		this.icon = icon;
+		this.spellFactory = e -> new SpellAction(factory.apply(e), icon.asItem(), getOrder(), cast, trigger, pred.apply(e));
+		return this;
+	}
+
 
 	@Deprecated(forRemoval = true)
 	public NatureSpellBuilder cost(int cost) {
@@ -207,7 +224,7 @@ public class NatureSpellBuilder extends NatureSpellEntry {
 					}
 				}
 			}
-			return new HexGraphData(map, new ArrayList<>(List.of(strs)), bonus);
+			return new HexGraphData(icon.asItem(), map, new ArrayList<>(List.of(strs)), bonus);
 		};
 		return this;
 	}

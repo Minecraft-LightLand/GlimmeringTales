@@ -111,6 +111,6 @@
     "range": "3"
   },
   "icon": "glimmeringtales:thunder_surge",
-  "order": 2002,
+  "order": 1040,
   "trigger_type": "TARGET_POS"
 }

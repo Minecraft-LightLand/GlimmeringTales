@@ -105,6 +105,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:amethyst_penetration",
-  "order": 2000,
+  "order": 1024,
   "trigger_type": "FACING_FRONT"
 }

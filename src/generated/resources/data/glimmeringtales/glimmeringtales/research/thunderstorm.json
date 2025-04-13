@@ -2,6 +2,7 @@
   "flows": [
     "LEFSOT|"
   ],
+  "icon": "glimmeringtales:thunderstorm",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

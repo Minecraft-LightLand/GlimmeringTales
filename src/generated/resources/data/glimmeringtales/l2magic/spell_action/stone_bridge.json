@@ -75,6 +75,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:stone_bridge",
-  "order": 2000,
+  "order": 1023,
   "trigger_type": "HORIZONTAL_FACING"
 }

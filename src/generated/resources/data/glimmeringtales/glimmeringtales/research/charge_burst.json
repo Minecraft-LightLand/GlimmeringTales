@@ -2,6 +2,7 @@
   "flows": [
     "EOFST|"
   ],
+  "icon": "glimmeringtales:charge_burst",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

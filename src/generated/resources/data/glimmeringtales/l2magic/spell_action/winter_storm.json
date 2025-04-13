@@ -90,6 +90,6 @@
   },
   "cast_type": "CONTINUOUS",
   "icon": "glimmeringtales:winter_storm",
-  "order": 100,
+  "order": 1032,
   "trigger_type": "SELF_POS"
 }

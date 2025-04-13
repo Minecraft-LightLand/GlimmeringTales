@@ -5,6 +5,7 @@
     "SO->E",
     "FT->L"
   ],
+  "icon": "glimmeringtales:hell_mark",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

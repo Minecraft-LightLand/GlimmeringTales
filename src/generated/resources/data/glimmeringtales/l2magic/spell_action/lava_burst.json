@@ -215,6 +215,6 @@
   },
   "cast_type": "CHARGE",
   "icon": "glimmeringtales:lava_burst",
-  "order": 300,
+  "order": 1028,
   "trigger_type": "HORIZONTAL_FACING"
 }

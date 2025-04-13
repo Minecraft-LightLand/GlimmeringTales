@@ -5,6 +5,7 @@
     "LO->T",
     "T->E"
   ],
+  "icon": "glimmeringtales:magma",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

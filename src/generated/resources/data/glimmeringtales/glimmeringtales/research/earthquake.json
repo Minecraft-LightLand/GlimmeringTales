@@ -7,6 +7,7 @@
     "O->T",
     "T->L"
   ],
+  "icon": "glimmeringtales:earthquake",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

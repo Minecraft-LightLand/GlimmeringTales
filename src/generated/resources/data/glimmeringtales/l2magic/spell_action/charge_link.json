@@ -32,6 +32,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:charge_link",
-  "order": 2002,
+  "order": 1041,
   "trigger_type": "FACING_FRONT"
 }

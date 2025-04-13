@@ -31,7 +31,7 @@ public class SpongeSpell {
 					"[Block] Absorb water nearby",
 					"Absorb water nearby, equivalent to range of water",
 					SpellTooltipData.of()
-			).graph(ResearchBonus.small3(18), "O->LSF","LS->F");
+			).graph(ResearchBonus.small3(18), "O->LSF", "LS->F");
 
 	private static ConfiguredEngine<?> gen(NatureSpellBuilder ctx) {
 		return new ListLogic(List.of(

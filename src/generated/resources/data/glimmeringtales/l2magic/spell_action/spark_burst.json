@@ -91,6 +91,6 @@
   },
   "cast_type": "CONTINUOUS",
   "icon": "glimmeringtales:spark_burst",
-  "order": 2000,
+  "order": 1030,
   "trigger_type": "FACING_FRONT"
 }

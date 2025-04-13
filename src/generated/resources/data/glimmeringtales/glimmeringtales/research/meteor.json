@@ -2,6 +2,7 @@
   "flows": [
     "T<->LEFSO"
   ],
+  "icon": "glimmeringtales:meteor",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",

@@ -21,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.processor.*;
 import dev.xkmc.l2magic.content.engine.selector.ApproxBallSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.ColorVariable;
@@ -41,8 +40,8 @@ public class Meteor {
 			.build(GlimmeringTales.loc("meteor")).focusAndCost(80, 500)
 			.mob(16, 0.5, 0, 0)
 			.damageExplosion().projectile(Meteor::proj)
-			.spell(e -> new SpellAction(starfall(e), GTItems.METEOR.get(), 2010,
-					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS))
+			.spell(Meteor::starfall, GTItems.METEOR,
+					SpellCastType.INSTANT, SpellTriggerType.TARGET_POS)
 			.lang("Meteor").desc(
 					"[Ranged] Create a meteor falling at target",
 					"Create a meteor falling slowly, dealing %s on impact",

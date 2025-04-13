@@ -208,6 +208,6 @@
   },
   "cast_type": "INSTANT",
   "icon": "glimmeringtales:hell_mark",
-  "order": 200,
+  "order": 1027,
   "trigger_type": "TARGET_POS"
 }

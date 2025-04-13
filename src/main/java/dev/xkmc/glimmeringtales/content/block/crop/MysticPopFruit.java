@@ -2,10 +2,8 @@ package dev.xkmc.glimmeringtales.content.block.crop;
 
 import dev.xkmc.glimmeringtales.init.reg.GTEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.monster.Enemy;
 
 public class MysticPopFruit extends AbstractPopFruit {
 

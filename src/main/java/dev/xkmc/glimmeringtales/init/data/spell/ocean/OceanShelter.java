@@ -21,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.processor.FilteredProcessor;
 import dev.xkmc.l2magic.content.engine.selector.BoxSelector;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.DoubleVariable;
@@ -49,8 +48,8 @@ public class OceanShelter {
 					"%s is drowned by %s with magical bubbles",
 					GTDamageTypeGen.magic())
 			.projectile(OceanShelter::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.OCEAN_SHELTER.get(),
-					2000, SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT))
+			.spell(OceanShelter::gen, GTItems.OCEAN_SHELTER,
+					SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT)
 			.lang("Ocean Shelter").desc(
 					"[Continuous] Shoot bubbles that hurt enemies and heal allies",
 					"Continuously shoot bubbles forward lasting 5 seconds. To enemies, deals %s and inflicts %s. To allies, %s and gives %s",

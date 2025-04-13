@@ -21,7 +21,6 @@ import dev.xkmc.l2magic.content.engine.processor.ProjectileHitEntityProcessor;
 import dev.xkmc.l2magic.content.engine.processor.PropertyProcessor;
 import dev.xkmc.l2magic.content.engine.selector.SelectionType;
 import dev.xkmc.l2magic.content.engine.sound.SoundInstance;
-import dev.xkmc.l2magic.content.engine.spell.SpellAction;
 import dev.xkmc.l2magic.content.engine.spell.SpellCastType;
 import dev.xkmc.l2magic.content.engine.spell.SpellTriggerType;
 import dev.xkmc.l2magic.content.engine.variable.BooleanVariable;
@@ -50,8 +49,8 @@ public class SparkBurst {
 			.mob(12, 0.7, 40, 0)
 			.damageVanilla(() -> new DamageType("onFire", 0, DamageEffects.BURNING), DamageTypeTags.IS_FIRE, DamageTypeTags.BYPASSES_COOLDOWN)
 			.projectile(SparkBurst::proj)
-			.spell(ctx -> new SpellAction(gen(ctx), GTItems.SPARK_BURST.get(),
-					2000, SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT))
+			.spell(SparkBurst::gen, GTItems.SPARK_BURST,
+					SpellCastType.CONTINUOUS, SpellTriggerType.FACING_FRONT)
 			.lang("Spark Burst").desc(
 					"[Continuous] Shoot sparks that hurts and ignite enemies",
 					"Continuously shoot fire sparks forward, deal %s and ignite",

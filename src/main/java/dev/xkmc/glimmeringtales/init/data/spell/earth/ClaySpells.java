@@ -11,7 +11,6 @@ import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import dev.xkmc.l2magic.content.engine.block.ScheduleTick;
 import dev.xkmc.l2magic.content.engine.block.SetBlock;
 import dev.xkmc.l2magic.content.engine.core.ConfiguredEngine;
-import dev.xkmc.l2magic.content.engine.core.ContextPredicate;
 import dev.xkmc.l2magic.content.engine.core.IPredicate;
 import dev.xkmc.l2magic.content.engine.logic.ListLogic;
 import dev.xkmc.l2magic.content.engine.predicate.BlockInRangePredicate;

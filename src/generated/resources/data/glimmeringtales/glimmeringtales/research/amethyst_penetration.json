@@ -2,6 +2,7 @@
   "flows": [
     "EF<->LS"
   ],
+  "icon": "glimmeringtales:amethyst_penetration",
   "map": {
     "E": "glimmeringtales:earth",
     "F": "glimmeringtales:flame",
