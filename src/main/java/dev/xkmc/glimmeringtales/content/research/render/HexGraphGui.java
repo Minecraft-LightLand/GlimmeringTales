@@ -154,7 +154,7 @@ public class HexGraphGui {
 	}
 
 	public boolean mouseScrolled(double mx, double my, double amount) {
-		magn = Mth.clamp(magn + (float) amount, 4, 20);
+		magn = Mth.clamp(magn + (float) amount, box.w / 50f, box.w / 10f);
 		return true;
 	}
 

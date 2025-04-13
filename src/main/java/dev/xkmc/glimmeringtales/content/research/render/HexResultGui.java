@@ -13,7 +13,8 @@ import javax.annotation.Nullable;
 public class HexResultGui {
 
 	private static final int FLOW_COUNT = 5, PERIOD = 60;
-	private static final float RADIUS = 30, SCALE_NODE = 1f, SCALE_FLOW = 0.2f;
+	private static final float SCALE_NODE = 1f;
+	private static final float SCALE_FLOW = 0.2f;
 
 	private final Minecraft minecraft = Minecraft.getInstance();
 	private final MagicHexScreen screen;
@@ -35,6 +36,18 @@ public class HexResultGui {
 		data = screen.product.getMiscData();
 	}
 
+	private float getScaleNode() {
+		return box.w / 100f;
+	}
+
+	private float getScaleFlow() {
+		return 0.2f * box.w / 100f;
+	}
+
+	private float radius() {
+		return 30 * box.w / 100f;
+	}
+
 	public void render(GuiGraphics g, double mx, double my, float partial) {
 		float progress = (tick + partial) / PERIOD % 1;
 
@@ -43,10 +56,10 @@ public class HexResultGui {
 		int hover = within(mx, my);
 		for (int i = 0; i < 6; i++) {
 			double ri = i * Math.PI / 3;
-			double xi = x0 + RADIUS * Math.cos(ri);
-			double yi = y0 + RADIUS * Math.sin(ri);
+			double xi = x0 + radius() * Math.cos(ri);
+			double yi = y0 + radius() * Math.sin(ri);
 			int color = i == hover ? 0xFF808080 : 0xFFFFFFFF;
-			HexRenderUtil.renderHex(g, xi, yi, 10, color);
+			HexRenderUtil.renderHex(g, xi, yi, 10 * getScaleNode(), color);
 		}
 
 		for (int i = 0; i < 6; i++) {
@@ -64,7 +77,7 @@ public class HexResultGui {
 					double p = (progress + k * 1.0 / FLOW_COUNT) % 1;
 					double xp = xi + (xj - xi) * p;
 					double yp = yi + (yj - yi) * p;
-					AbstractHexGui.drawIcon(g, elem.getIcon(), xp, yp, SCALE_FLOW);
+					AbstractHexGui.drawIcon(g, elem.getIcon(), xp, yp, getScaleFlow());
 				}
 			}
 		}
@@ -75,7 +88,7 @@ public class HexResultGui {
 				continue;
 			double xi = getX(i);
 			double yi = getY(i);
-			AbstractHexGui.drawIcon(g, elem.getIcon(), xi, yi, SCALE_NODE);
+			AbstractHexGui.drawIcon(g, elem.getIcon(), xi, yi, getScaleNode());
 		}
 		int hi = box.y + box.w + 36;
 		Font font = minecraft.font;
@@ -94,7 +107,7 @@ public class HexResultGui {
 			return sele_x;
 		double ri = i * Math.PI / 3;
 		float x0 = box.x + box.w / 2f;
-		return x0 + RADIUS * Math.cos(ri);
+		return x0 + radius() * Math.cos(ri);
 	}
 
 	private double getY(int i) {
@@ -102,7 +115,7 @@ public class HexResultGui {
 			return sele_y;
 		double ri = i * Math.PI / 3;
 		float y0 = box.y + box.w / 2f;
-		return y0 + RADIUS * Math.sin(ri);
+		return y0 + radius() * Math.sin(ri);
 	}
 
 	public void tick() {
@@ -150,8 +163,8 @@ public class HexResultGui {
 		float y0 = box.y + box.w / 2f;
 		for (int i = 0; i < 6; i++) {
 			double ri = i * Math.PI / 3;
-			double xi = x0 + RADIUS * Math.cos(ri);
-			double yi = y0 + RADIUS * Math.sin(ri);
+			double xi = x0 + radius() * Math.cos(ri);
+			double yi = y0 + radius() * Math.sin(ri);
 			if (mx > xi - 8 && mx < xi + 8 && my > yi - 8 && my < yi + 8) {
 				return i;
 			}

@@ -34,12 +34,12 @@ public class MagicHexScreen extends Screen {
 	public void init() {
 		int sw = this.width;
 		int sh = this.height;
-		int w = 300;
-		int h = 200;
+		int h = (int) (Math.min(sw / 300d, sh / 200d) * 150);
+		int w = (int) (h * 1.5);
 		int x0 = (sw - w) / 2;
 		int y0 = (sh - h) / 2;
-		graph.box.setSize(this, x0, y0, 200, 200, 8);
-		result.box.setSize(this, x0 + 200, y0, 100, 200, 8);
+		graph.box.setSize(this, x0, y0, h, h, 8);
+		result.box.setSize(this, x0 + h, y0, h / 2, h, 8);
 		if (product.usable()) {
 			graph.compile();
 			updated();
