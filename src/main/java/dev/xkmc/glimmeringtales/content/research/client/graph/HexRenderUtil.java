@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.content.research.render;
+package dev.xkmc.glimmeringtales.content.research.client.graph;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;

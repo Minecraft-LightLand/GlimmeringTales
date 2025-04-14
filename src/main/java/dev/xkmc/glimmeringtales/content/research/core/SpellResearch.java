@@ -56,6 +56,15 @@ public class SpellResearch {
 		return ResearchState.UNLOCKED;
 	}
 
+	public boolean bested() {
+		if (!usable()) return false;
+		for (var e : def.bonuses()) {
+			if (data.cost() > e.cost())
+				return false;
+		}
+		return true;
+	}
+
 	public boolean visible() {
 		return true;
 	}
@@ -74,6 +83,10 @@ public class SpellResearch {
 
 	public void save() {
 		player.save(id, data);
+	}
+
+	public ResourceLocation getId() {
+		return id;
 	}
 
 	public void getFullDesc(List<Component> list, List<ResearchBonus> bonuses) {

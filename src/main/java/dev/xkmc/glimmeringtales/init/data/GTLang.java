@@ -1,9 +1,9 @@
 package dev.xkmc.glimmeringtales.init.data;
 
 import com.tterrag.registrate.providers.RegistrateLangProvider;
+import dev.xkmc.glimmeringtales.content.research.client.graph.HexStatus;
 import dev.xkmc.glimmeringtales.content.research.core.ResearchState;
 import dev.xkmc.glimmeringtales.content.research.logic.HexDirection;
-import dev.xkmc.glimmeringtales.content.research.render.HexStatus;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

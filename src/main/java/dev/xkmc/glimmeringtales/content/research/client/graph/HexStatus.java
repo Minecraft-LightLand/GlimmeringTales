@@ -1,8 +1,8 @@
-package dev.xkmc.glimmeringtales.content.research.render;
+package dev.xkmc.glimmeringtales.content.research.client.graph;
 
+import dev.xkmc.glimmeringtales.content.research.client.tree.ResearchTree;
+import dev.xkmc.glimmeringtales.content.research.client.tree.ResearchTreeScreen;
 import dev.xkmc.glimmeringtales.content.research.core.PlayerResearch;
-import dev.xkmc.glimmeringtales.content.research.tree.ResearchTree;
-import dev.xkmc.glimmeringtales.content.research.tree.ResearchTreeScreen;
 import dev.xkmc.glimmeringtales.init.data.GTLang;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -61,7 +61,7 @@ public class HexStatus {
 			Minecraft.getInstance().setScreen(new ResearchTreeScreen(new ResearchTree(player, data)));
 			return;
 		}
-		Minecraft.getInstance().setScreen(new MagicHexScreen(research));
+		Minecraft.getInstance().setScreen(new MagicHexScreen(new ResearchTreeScreen(new ResearchTree(player, data)), research));
 	}
 
 }

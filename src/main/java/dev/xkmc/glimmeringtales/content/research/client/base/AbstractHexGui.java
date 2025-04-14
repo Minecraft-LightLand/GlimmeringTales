@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.content.research.render;
+package dev.xkmc.glimmeringtales.content.research.client.base;
 
 import dev.xkmc.l2itemselector.overlay.OverlayUtil;
 import net.minecraft.client.Minecraft;

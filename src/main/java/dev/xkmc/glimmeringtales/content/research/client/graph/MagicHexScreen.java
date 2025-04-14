@@ -1,9 +1,10 @@
-package dev.xkmc.glimmeringtales.content.research.render;
+package dev.xkmc.glimmeringtales.content.research.client.graph;
 
+import dev.xkmc.glimmeringtales.content.research.client.base.WindowBox;
+import dev.xkmc.glimmeringtales.content.research.client.tree.ResearchTreeScreen;
 import dev.xkmc.glimmeringtales.content.research.core.ResearchState;
 import dev.xkmc.glimmeringtales.content.research.core.SpellResearch;
 import dev.xkmc.glimmeringtales.content.research.logic.HexCell;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -23,9 +24,9 @@ public class MagicHexScreen extends Screen {
 	private double accurate_mouse_x, accurate_mouse_y;
 	private boolean isScrolling = false;
 
-	public MagicHexScreen(SpellResearch product) {
+	public MagicHexScreen(Screen prev, SpellResearch product) {
 		super(TITLE);
-		parent = Minecraft.getInstance().screen;
+		parent = prev;
 		this.product = product;
 		this.graph = new HexGraphGui(this);
 		this.result = new HexResultGui(this);
@@ -39,6 +40,7 @@ public class MagicHexScreen extends Screen {
 		int x0 = (sw - w) / 2;
 		int y0 = (sh - h) / 2;
 		graph.box.setSize(this, x0, y0, h, h, 8);
+		graph.initScale();
 		result.box.setSize(this, x0 + h, y0, h / 2, h, 8);
 		if (product.usable()) {
 			graph.compile();
@@ -183,8 +185,12 @@ public class MagicHexScreen extends Screen {
 
 	@Override
 	public void onClose() {
-		if (this.minecraft != null && this.minecraft.screen == this && this.parent != null)
+		if (this.minecraft != null && this.minecraft.screen == this && this.parent != null) {
 			this.minecraft.setScreen(this.parent);
+			if (parent instanceof ResearchTreeScreen tree) {
+				tree.focusOn(product);
+			}
+		}
 	}
 
 }

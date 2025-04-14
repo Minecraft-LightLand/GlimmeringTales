@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.content.research.render;
+package dev.xkmc.glimmeringtales.content.research.client.base;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;

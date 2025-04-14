@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.content.research.tree;
+package dev.xkmc.glimmeringtales.content.research.client.tree;
 
 import dev.xkmc.glimmeringtales.content.research.core.HexGraphData;
 import dev.xkmc.glimmeringtales.content.research.core.ResearchDependency;

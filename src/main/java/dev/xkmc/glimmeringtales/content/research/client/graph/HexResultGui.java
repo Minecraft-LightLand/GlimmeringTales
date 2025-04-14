@@ -1,6 +1,8 @@
-package dev.xkmc.glimmeringtales.content.research.render;
+package dev.xkmc.glimmeringtales.content.research.client.graph;
 
 import dev.xkmc.glimmeringtales.content.core.spell.SpellElement;
+import dev.xkmc.glimmeringtales.content.research.client.base.AbstractHexGui;
+import dev.xkmc.glimmeringtales.content.research.client.base.WindowBox;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraph;
 import dev.xkmc.glimmeringtales.content.research.core.HexOrder;
 import dev.xkmc.glimmeringtales.init.data.GTLang;

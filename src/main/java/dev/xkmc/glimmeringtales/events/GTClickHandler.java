@@ -1,7 +1,10 @@
 package dev.xkmc.glimmeringtales.events;
 
 import dev.xkmc.glimmeringtales.content.item.rune.BaseRuneItem;
+import dev.xkmc.glimmeringtales.content.item.rune.SpellCoreItem;
 import dev.xkmc.glimmeringtales.content.research.core.OpenGraphPacket;
+import dev.xkmc.glimmeringtales.content.research.core.PlayerResearch;
+import dev.xkmc.glimmeringtales.content.research.core.ResearchState;
 import dev.xkmc.glimmeringtales.init.GlimmeringTales;
 import dev.xkmc.l2core.util.ServerProxy;
 import dev.xkmc.l2menustacker.click.ReadOnlyStackClickHandler;
@@ -17,6 +20,10 @@ public class GTClickHandler extends ReadOnlyStackClickHandler {
 
 	@Override
 	protected void handle(ServerPlayer player, ItemStack stack) {
+		if (stack.getItem() instanceof SpellCoreItem) {
+			GlimmeringTales.HANDLER.toClientPlayer(new OpenGraphPacket(GlimmeringTales.loc("all")), player);
+			return;
+		}
 		var reg = ServerProxy.getRegistryAccess();
 		if (reg == null || !(stack.getItem() instanceof BaseRuneItem rune)) return;
 		var spell = rune.getSpellInfo(reg).spell();
@@ -24,11 +31,17 @@ public class GTClickHandler extends ReadOnlyStackClickHandler {
 		var graph = spell.value().graph();
 		if (graph == null) return;
 		var id = graph.unwrapKey().orElseThrow().location();
+		var prog = PlayerResearch.of(player).get(id);
+		if (prog == null || prog.getState() == ResearchState.LOCKED)
+			id = GlimmeringTales.loc("all");
 		GlimmeringTales.HANDLER.toClientPlayer(new OpenGraphPacket(id), player);
 	}
 
 	@Override
 	public boolean isAllowed(ItemStack stack) {
+		if (stack.getItem() instanceof SpellCoreItem) {
+			return true;
+		}
 		var reg = ServerProxy.getRegistryAccess();
 		if (reg != null && stack.getItem() instanceof BaseRuneItem rune) {
 			var spell = rune.getSpellInfo(reg).spell();

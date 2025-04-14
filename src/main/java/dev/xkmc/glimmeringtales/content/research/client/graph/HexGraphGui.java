@@ -1,6 +1,8 @@
-package dev.xkmc.glimmeringtales.content.research.render;
+package dev.xkmc.glimmeringtales.content.research.client.graph;
 
 import dev.xkmc.glimmeringtales.content.core.spell.SpellElement;
+import dev.xkmc.glimmeringtales.content.research.client.base.AbstractHexGui;
+import dev.xkmc.glimmeringtales.content.research.client.base.AbstractScalableGui;
 import dev.xkmc.glimmeringtales.content.research.core.HexGraph;
 import dev.xkmc.glimmeringtales.content.research.core.HexOrder;
 import dev.xkmc.glimmeringtales.content.research.logic.*;
@@ -8,7 +10,6 @@ import dev.xkmc.glimmeringtales.init.reg.GTRegistries;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
-import net.minecraft.util.Mth;
 import org.apache.logging.log4j.LogManager;
 import org.jetbrains.annotations.Nullable;
 
@@ -17,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HexGraphGui {
+public class HexGraphGui extends AbstractScalableGui {
 
 	private static final int PERIOD = 60;
 	private static final double MARGIN = 0.9, RADIUS = 2 / Math.sqrt(3);
@@ -48,13 +49,10 @@ public class HexGraphGui {
 	FlowChart flow = null;
 	boolean[] wrong_flow = new boolean[6];
 	boolean[] ignore = new boolean[6];
-	final WindowBox box = new WindowBox();
 
 	protected HexCalcException error = null;
 	protected HexDirection selected = null;
 
-	private float magn = 14;
-	private double scrollX, scrollY;
 	private int tick;
 
 	public HexGraphGui(MagicHexScreen screen) {
@@ -63,12 +61,17 @@ public class HexGraphGui {
 		GTRegistries.ELEMENT.get().forEach((a) -> ELEM_2_ID.put(a, ELEM_2_ID.size()));
 	}
 
+	@Override
+	public void initScale() {
+		magn = Math.min(box.w, box.h) / 2f / (getRadius() * 2 + 1);
+	}
+
 	public void render(GuiGraphics g, double mx, double my, float partial) {
 		double x0 = box.x + box.w / 2d;
 		double y0 = box.y + box.h / 2d;
 		g.pose().pushPose();
 		g.pose().translate(x0 + scrollX, y0 + scrollY, 0);
-		LocateResult hover = handler.getElementOnHex((mx - x0 - scrollX) / magn, (my - y0 - scrollY) / magn);
+		LocateResult hover = handler.getElementOnHex(getMX(mx), getMY(my));
 		renderBG(g, hover);
 		double ratio, width, length;
 		ratio = 1 / 4d;
@@ -86,9 +89,7 @@ public class HexGraphGui {
 	}
 
 	public void renderHover(GuiGraphics g, double mx, double my) {
-		double x0 = box.x + box.w / 2d;
-		double y0 = box.y + box.h / 2d;
-		LocateResult hover = handler.getElementOnHex((mx - x0 - scrollX) / magn, (my - y0 - scrollY) / magn);
+		LocateResult hover = handler.getElementOnHex(getMX(mx), getMY(my));
 		renderTooltip(g, (int) mx, (int) my, hover);
 	}
 
@@ -100,16 +101,9 @@ public class HexGraphGui {
 		return handler.radius;
 	}
 
-	public void scroll(double dx, double dy) {
-		scrollX += dx;
-		scrollY += dy;
-	}
-
 	public boolean mouseClicked(double mx, double my, int button) {
-		double x0 = box.x + box.w / 2d;
-		double y0 = box.y + box.h / 2d;
 		if (button == 0) {
-			LocateResult hover = handler.getElementOnHex((mx - x0 - scrollX) / magn, (my - y0 - scrollY) / magn);
+			LocateResult hover = handler.getElementOnHex(getMX(mx), getMY(my));
 			if (click(hover)) {
 				flow = null;
 				error = null;
@@ -151,11 +145,6 @@ public class HexGraphGui {
 	public void tick() {
 		tick++;
 		tick %= PERIOD;
-	}
-
-	public boolean mouseScrolled(double mx, double my, double amount) {
-		magn = Mth.clamp(magn + (float) amount, box.w / 50f, box.w / 10f);
-		return true;
 	}
 
 	public boolean charTyped(char ch) {

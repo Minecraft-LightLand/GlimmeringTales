@@ -1,6 +1,7 @@
-package dev.xkmc.glimmeringtales.content.research.tree;
+package dev.xkmc.glimmeringtales.content.research.client.tree;
 
-import dev.xkmc.glimmeringtales.content.research.render.WindowBox;
+import dev.xkmc.glimmeringtales.content.research.client.base.WindowBox;
+import dev.xkmc.glimmeringtales.content.research.core.SpellResearch;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -32,6 +33,14 @@ public class ResearchTreeScreen extends Screen {
 		int x0 = (sw - w) / 2;
 		int y0 = (sh - h) / 2;
 		graph.box.setSize(this, x0, y0, w, h, 8);
+		graph.initScale();
+	}
+
+	public void focusOn(SpellResearch product) {
+		var node = tree.allNodes.get(product.getId());
+		if (node != null) {
+			graph.scrollTo(node.getX(), node.getY());
+		}
 	}
 
 	@Override

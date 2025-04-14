@@ -45,7 +45,7 @@ public class GTTagGen {
 
 	public static void genItemTag(RegistrateItemTagsProvider pvd) {
 		pvd.addTag(CORE).addTags(CRYSTAL, RUNE, SPELL);
-		pvd.addTag(L2MSTagGen.QUICK_ACCESS).addTags(RUNE, SPELL);
+		pvd.addTag(L2MSTagGen.QUICK_ACCESS).addTags(CRYSTAL, RUNE, SPELL);
 
 	}
 

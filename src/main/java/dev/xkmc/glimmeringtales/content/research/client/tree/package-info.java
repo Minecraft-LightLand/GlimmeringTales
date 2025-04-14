@@ -1,7 +1,7 @@
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 
-package dev.xkmc.glimmeringtales.content.research.tree;
+package dev.xkmc.glimmeringtales.content.research.client.tree;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 

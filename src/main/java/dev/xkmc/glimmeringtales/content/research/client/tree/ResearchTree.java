@@ -1,4 +1,4 @@
-package dev.xkmc.glimmeringtales.content.research.tree;
+package dev.xkmc.glimmeringtales.content.research.client.tree;
 
 import dev.xkmc.glimmeringtales.content.research.core.PlayerResearch;
 import dev.xkmc.glimmeringtales.content.research.logic.AbstractHex;
@@ -18,7 +18,7 @@ public class ResearchTree extends AbstractHex {
 	final PlayerResearch data;
 
 	ResearchNode root;
-	private final Map<ResourceLocation, ResearchNode> allNodes = new LinkedHashMap<>();
+	final Map<ResourceLocation, ResearchNode> allNodes = new LinkedHashMap<>();
 	final Map<HexHalfResult, ResearchNode> locatedNodes = new LinkedHashMap<>();
 
 	public ResearchTree(Player player, PlayerResearch data) {
