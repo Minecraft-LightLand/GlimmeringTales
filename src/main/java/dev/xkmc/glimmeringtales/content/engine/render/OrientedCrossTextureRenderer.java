@@ -2,6 +2,7 @@ package dev.xkmc.glimmeringtales.content.engine.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import dev.xkmc.fastprojectileapi.render.ProjTypeHolder;
 import dev.xkmc.l2magic.content.entity.core.LMProjectile;
 import dev.xkmc.l2magic.content.entity.renderer.LMProjectileRenderer;
 import dev.xkmc.l2magic.content.entity.renderer.ProjectileRenderer;
@@ -23,7 +24,7 @@ public record OrientedCrossTextureRenderer(
 		pose.pushPose();
 		pose.mulPose(Axis.YP.rotationDegrees(90 - Mth.lerp(pTick, e.yRotO, e.getYRot())));
 		pose.mulPose(Axis.ZP.rotationDegrees(90 + Mth.lerp(pTick, e.xRotO, e.getXRot())));
-		new OrientedCrossSpriteType(texture).create(r, e, pose, pTick);
+		ProjTypeHolder.wrap(new OrientedCrossSpriteType(texture)).create(r, e, pose, pTick);
 		pose.popPose();
 
 	}

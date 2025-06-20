@@ -4,7 +4,6 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import dev.xkmc.fastprojectileapi.entity.SimplifiedProjectile;
-import dev.xkmc.fastprojectileapi.render.ProjectileRenderHelper;
 import dev.xkmc.fastprojectileapi.render.ProjectileRenderer;
 import dev.xkmc.fastprojectileapi.render.RenderableProjectileType;
 import dev.xkmc.l2magic.content.entity.renderer.LMRenderStates;
@@ -14,11 +13,14 @@ import net.minecraft.resources.ResourceLocation;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 
+import java.util.List;
+import java.util.function.Consumer;
+
 public record VerticalSpriteType(ResourceLocation tex)
 		implements RenderableProjectileType<VerticalSpriteType, VerticalSpriteType.Ins> {
 
 	@Override
-	public void start(MultiBufferSource buffer, Iterable<Ins> list) {
+	public void start(MultiBufferSource buffer, List<Ins> list) {
 		VertexConsumer vc = buffer.getBuffer(LMRenderStates.solid(tex));
 		for (var e : list) {
 			e.tex(vc);
@@ -26,14 +28,14 @@ public record VerticalSpriteType(ResourceLocation tex)
 	}
 
 	@Override
-	public void create(ProjectileRenderer r, SimplifiedProjectile e, PoseStack pose, float pTick) {
+	public void create(Consumer<Ins> cons, ProjectileRenderer<?> r, SimplifiedProjectile e, PoseStack pose, float pTick) {
 		var cam = Minecraft.getInstance().getCameraEntity();
 		if (cam == null) return;
 		pose.mulPose(Axis.YP.rotationDegrees(-cam.getViewYRot(pTick)));
 		PoseStack.Pose mat = pose.last();
 		Matrix4f m4 = new Matrix4f(mat.pose());
 		Matrix3f m3 = new Matrix3f(mat.normal());
-		ProjectileRenderHelper.add(this, new Ins(m3, m4));
+		cons.accept(new Ins(m3, m4));
 	}
 
 	public record Ins(Matrix3f m3, Matrix4f m4) {

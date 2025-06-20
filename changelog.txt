@@ -1,3 +1,7 @@
+3.0.13
+- Research UI rework
+- More spell research
+
 3.0.12
 - Allow spells to hit multi-part entities such as ender dragon
 - Allow spell projectiles to hit some non-living entities

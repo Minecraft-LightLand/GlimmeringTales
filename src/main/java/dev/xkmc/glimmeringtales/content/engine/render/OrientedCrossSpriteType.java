@@ -3,18 +3,21 @@ package dev.xkmc.glimmeringtales.content.engine.render;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.xkmc.fastprojectileapi.entity.SimplifiedProjectile;
-import dev.xkmc.fastprojectileapi.render.ProjectileRenderHelper;
+import dev.xkmc.fastprojectileapi.render.ProjTypeHolder;
 import dev.xkmc.fastprojectileapi.render.ProjectileRenderer;
 import dev.xkmc.fastprojectileapi.render.RenderableProjectileType;
 import dev.xkmc.l2magic.content.entity.renderer.LMRenderStates;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.resources.ResourceLocation;
 
+import java.util.List;
+import java.util.function.Consumer;
+
 public record OrientedCrossSpriteType(ResourceLocation tex)
 		implements RenderableProjectileType<OrientedCrossSpriteType, OrientedCrossSpriteType.Ins> {
 
 	@Override
-	public void start(MultiBufferSource buffer, Iterable<Ins> list) {
+	public void start(MultiBufferSource buffer, List<Ins> list) {
 		VertexConsumer vc = buffer.getBuffer(LMRenderStates.solid(tex));
 		for (var e : list) {
 			e.tex(vc);
@@ -22,14 +25,14 @@ public record OrientedCrossSpriteType(ResourceLocation tex)
 	}
 
 	@Override
-	public void create(ProjectileRenderer r, SimplifiedProjectile e, PoseStack pose, float pTick) {
+	public void create(Consumer<Ins> cons, ProjectileRenderer<?> r, SimplifiedProjectile e, PoseStack pose, float pTick) {
 		PoseStack.Pose mat = pose.last().copy();
-		ProjectileRenderHelper.add(this, new Ins(mat, 1, 0));
+		cons.accept(new Ins(mat, 1, 0));
 	}
 
 	public void create(PoseStack pose, int index, int max) {
 		PoseStack.Pose mat = pose.last().copy();
-		ProjectileRenderHelper.add(this, new Ins(mat, 1f / max, 1f * index / max));
+		ProjTypeHolder.wrap(this).accept(new Ins(mat, 1f / max, 1f * index / max));
 	}
 
 	public record Ins(PoseStack.Pose m4, float scale, float offset) {

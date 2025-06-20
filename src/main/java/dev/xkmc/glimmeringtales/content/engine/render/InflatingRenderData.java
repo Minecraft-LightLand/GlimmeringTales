@@ -3,8 +3,10 @@ package dev.xkmc.glimmeringtales.content.engine.render;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import dev.xkmc.fastprojectileapi.render.ProjTypeHolder;
 import dev.xkmc.glimmeringtales.init.reg.GTEngine;
 import dev.xkmc.l2magic.content.engine.context.EngineContext;
+import dev.xkmc.l2magic.content.entity.renderer.LMProjectileType;
 import dev.xkmc.l2magic.content.entity.renderer.ProjectileRenderData;
 import dev.xkmc.l2magic.content.entity.renderer.ProjectileRenderType;
 import dev.xkmc.l2magic.content.entity.renderer.ProjectileRenderer;
@@ -28,6 +30,10 @@ public record InflatingRenderData(
 	@Override
 	public ProjectileRenderer resolve(EngineContext ctx) {
 		return new InflatingTextureRenderer(texture, initial, rate);
+	}
+
+	public void buildRenderer() {
+		ProjTypeHolder.wrap(new LMProjectileType(texture));
 	}
 
 }
